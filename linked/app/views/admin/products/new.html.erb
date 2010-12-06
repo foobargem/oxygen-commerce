@@ -1,0 +1,12 @@
+
+<%= semantic_form_for [:admin, @product] do |f| %>
+
+  <h3>상품등록</h3>
+
+  <%= render 'admin/products/form', :f => f %>
+
+  <%= f.buttons do %>
+    <%= f.submit "등록" %>
+  <% end %>
+
+<% end %>
