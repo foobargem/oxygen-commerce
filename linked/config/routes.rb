@@ -1,4 +1,16 @@
 Linked::Application.routes.draw do
+
+  devise_for :admins,
+    :path => 'admin',
+    :path_names => {
+      :sign_in => 'login',
+      :sign_out => 'logout'
+    },
+    :controllers => {
+      :sessions => 'admin/sessions'
+    }
+  match 'admin' => redirect('/admin/products'), :as => 'admin_root'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,6 +70,7 @@ Linked::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root :to => "reservations#index"
 
   # See how all your routes lay out with "rake routes"
 
