@@ -2,10 +2,12 @@
 class SessionsController < ApplicationController
 
   def new
+    @coupon = Coupon.new
   end
 
   def create
-    coupon = Coupon.where("coupon_number = ? and purchaser_name = ?", params[:coupon_number], params[:purchaser_name]).first
+    coupon = Coupon.where("coupon_number = ? and purchaser_name = ?", params[:sessions][:coupon_number], params[:sessions][:purchaser_name]).first
+
     if coupon
       session[:user_id] = coupon.id
       flash[:notice] = "로그인이 성공적으로 되었습니다."
