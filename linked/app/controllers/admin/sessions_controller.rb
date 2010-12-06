@@ -12,10 +12,9 @@ class Admin::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    logger.debug("-------------------------hello")
     resource = warden.authenticate!(:scope => resource_name, :recall => "new")
     set_flash_message :notice, :signed_in
-    #sign_in_and_redirect(resource_name, resource)
+    sign_in_and_redirect(resource_name, resource)
   end
 
   # GET /resource/sign_out
