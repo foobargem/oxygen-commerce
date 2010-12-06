@@ -11,6 +11,7 @@
       <th>스키장</th>
       <th>이용권</th>
       <th>이용기간</th>
+      <th>구매내역</th>
       <th></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
       <td class="">
         <%= l(product.opened_at) %> ~ <%= l(product.closed_at) %>
       </td>
+      <td><%= link_to "구매내역", admin_product_purchases_path(product) %></td>
       <td class="">
         <%= link_to "show", admin_product_path(product) %>
         <%= link_to "edit", edit_admin_product_path(product) %>
