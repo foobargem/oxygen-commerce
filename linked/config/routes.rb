@@ -12,6 +12,7 @@ Linked::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resources :reservations
 
   # Sample resource route with options:
   #   resources :products do
@@ -45,6 +46,14 @@ Linked::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  namespace :admin do
+    resources :reservations
+    resources :products do
+      resources :perchases
+    end
+  end
+
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
