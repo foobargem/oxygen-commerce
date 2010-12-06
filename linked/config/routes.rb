@@ -1,4 +1,16 @@
 Linked::Application.routes.draw do
+
+  devise_for :admins,
+    :path => 'admin',
+    :path_names => {
+      :sign_in => 'login',
+      :sign_out => 'logout'
+    },
+    :controllers => {
+      :sessions => 'admin/sessions'
+    }
+  match 'admin' => redirect('/admin/dashboard'), :as => 'admin_root'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -55,10 +67,15 @@ Linked::Application.routes.draw do
   #   end
 
   namespace :admin do
+
+    match 'dashboard' => 'dashboard#show'
+
     resources :reservations
+
     resources :products do
-      resources :perchases
+      resources :purchases
     end
+
   end
 
 
@@ -66,8 +83,8 @@ Linked::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
   
-  root :to => 'sessions#new'
-  
+  root :to => 'reservations#index'
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
