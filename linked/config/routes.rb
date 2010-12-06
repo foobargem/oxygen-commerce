@@ -9,7 +9,7 @@ Linked::Application.routes.draw do
     :controllers => {
       :sessions => 'admin/sessions'
     }
-  match 'admin' => redirect('/admin/products'), :as => 'admin_root'
+  match 'admin' => redirect('/admin/dashboard'), :as => 'admin_root'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,6 +60,9 @@ Linked::Application.routes.draw do
   #   end
 
   namespace :admin do
+
+    match 'dashboard' => 'dashboard#show'
+
     resources :reservations
     resources :products do
       resources :purchases
