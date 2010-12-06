@@ -1,0 +1,10 @@
+
+<%= form_for resource, :url => session_path(resource) do |f| %>
+
+  <%= f.text_field :login %>
+  <%= f.password_field :password %>
+
+
+  <%= f.submit "Login" %>
+
+<% end %>
