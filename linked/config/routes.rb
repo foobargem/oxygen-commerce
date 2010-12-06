@@ -50,7 +50,7 @@ Linked::Application.routes.draw do
   namespace :admin do
     resources :reservations
     resources :products do
-      resources :perchases
+      resources :purchases
     end
   end
 
