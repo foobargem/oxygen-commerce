@@ -64,9 +64,11 @@ Linked::Application.routes.draw do
     match 'dashboard' => 'dashboard#show'
 
     resources :reservations
+
     resources :products do
       resources :purchases
     end
+
   end
 
 

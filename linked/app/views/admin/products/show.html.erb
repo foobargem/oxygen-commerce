@@ -1,0 +1,25 @@
+
+<dl class="product">
+  <dt class="">상품명</dt>
+  <dd class=""><%= @product.name %></dd>
+
+  <dt class="">공급업체</dt>
+  <dd class=""><%= @product.provider_name %></dd>
+
+  <dt class="">이용권</dt>
+  <dd class=""><%= @product.ticket_type %></dd>
+
+  <dt class="">스키장</dt>
+  <dd class=""><%= @product.resort %></dd>
+
+  <dt class="">이용기간</dt>
+  <dd class="">
+    <%= l(@product.opened_at) %>
+    ~
+    <%= l(@product.closed_at) %>
+  </dd>
+
+</dl>
+
+<%= link_to "Back to list", admin_products_path %>
+

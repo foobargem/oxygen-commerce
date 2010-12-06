@@ -1,0 +1,36 @@
+
+<h3>Products List</h3>
+
+<%= link_to "Add new product", new_admin_product_path %>
+
+<table class="">
+  <thead>
+    <tr>
+      <th>상품명</th>
+      <th>공급업체</th>
+      <th>스키장</th>
+      <th>이용권</th>
+      <th>이용기간</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td class=""><%= product.name %></td>
+      <td class=""><%= product.provider_name %></td>
+      <td class=""><%= product.resort %></td>
+      <td class=""><%= product.ticket_type %></td>
+      <td class="">
+        <%= l(product.opened_at) %> ~ <%= l(product.closed_at) %>
+      </td>
+      <td class="">
+        <%= link_to "show", admin_product_path(product) %>
+        <%= link_to "edit", edit_admin_product_path(product) %>
+        <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
