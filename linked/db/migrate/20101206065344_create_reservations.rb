@@ -9,7 +9,8 @@ class CreateReservations < ActiveRecord::Migration
       t.string :resort
 
       t.datetime :used_at
-
+      t.string :part_time
+      
       t.timestamps
     end
   end

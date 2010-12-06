@@ -29,3 +29,10 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'nifty-generators'
+gem "mocha", :group => :test
+
+gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
+
+gem 'calendar_date_select', :git => 'http://github.com/paneq/calendar_date_select.git', :branch => 'rails3test'

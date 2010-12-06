@@ -1,0 +1,28 @@
+<%= form_for @reservation do |f| %> 
+  <%= f.error_messages %>
+  <p>
+    이용일 선택<br />
+    <% CalendarDateSelect.format=(:iso_date)%>
+	<%= f.calendar_date_select :used_at %>
+  </p>
+  <p>
+    사용자명: <%= Coupon.find(session[:user_id]).purchaser_name %><br />
+  </p>
+  <p>
+    스키장 선택<br />
+	  <%= f.text_field :resort %>
+  </p>
+  <p>
+    시간 선택<br />
+	  <%= f.text_field :part_time %>
+  </p>
+  <p>
+    신장<br />
+	  <%= f.text_field :height %>
+  </p>
+  <p>
+    발사이즈<br />
+	  <%= f.text_field :shoe_size %>
+  </p>
+  <p><%= f.submit "예약 완료" %></p>
+<% end %>

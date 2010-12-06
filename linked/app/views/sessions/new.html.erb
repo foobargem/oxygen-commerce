@@ -1,0 +1,11 @@
+<% title "투어포스코리아 예약 페이지" %>
+
+<%= form_tag sessions_path do %>
+  <p>
+    <%= label_tag :login, "구매자 이름" %>
+    <%= text_field_tag :purchaser_name, params[:purchaser_name] %>
+    <%= label_tag :coupon, "쿠폰 번호" %>
+    <%= text_field_tag :coupon_number %>
+    <%= submit_tag "로그인" %>
+  </p>
+<% end %>
