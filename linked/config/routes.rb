@@ -10,6 +10,7 @@ Linked::Application.routes.draw do
       :sessions => 'admin/sessions'
     }
   match 'admin' => redirect('/admin/dashboard'), :as => 'admin_root'
+  match 'sessions/admin' => redirect('/admin/dashboard')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,32 @@
+<% title "Reservation" %>
+
+<table>
+  <tr>
+    <th>쿠폰번호</th>
+    <th>이름</th>
+    <th>구매업체</th>
+    <th>핸드폰</th>
+    <th>스키장</th>
+    <th>신발 사이즈</th>
+    <th>신장</th>
+    <th>이용일</th>
+    <th>사용시간</th>
+  </tr>
+  <% for reservation in @reservations %>
+    <tr>
+	  <td><%= reservation.coupon.coupon_number %></td>
+	  <td><%= reservation.coupon.purchaser_name %></td>
+	  <td><%= reservation.coupon.agency_name %></td>
+	  <td><%= reservation.coupon.phone_number %></td>
+      <td><%= reservation.resort %></td>
+      <td><%= reservation.shoe_size %></td>
+      <td><%= reservation.height %></td>
+      <td><%= reservation.used_at %></td>
+      <td><%= reservation.part_time %></td>
+      <td><%= link_to "Edit", edit_admin_reservation_path(reservation) %></td>
+      <td><%= link_to "Destroy", admin_reservation_path(reservation), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Reservation", new_admin_reservation_path %></p>

@@ -1,0 +1,12 @@
+
+<%= semantic_form_for [:admin, @reservation] do |f| %>
+
+  <h3>예약 편집</h3>
+
+  <%= render 'form_edit', :f => f , :reservation => @reservation %>
+
+  <%= f.buttons do %>
+    <%= f.submit "수정" %>
+  <% end %>
+
+<% end %>

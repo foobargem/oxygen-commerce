@@ -1,0 +1,32 @@
+<% title "@reservation" %>
+
+<table>
+  <tr>
+    <th>쿠폰번호</th>
+    <th>이름</th>
+    <th>구매업체</th>
+    <th>상품명</th>
+    <th>구매날짜</th>
+    <th>예약</th>
+    <th>스키장</th>
+    <th>신발 사이즈</th>
+    <th>신장</th>
+    <th>이용일</th>
+    <th>사용시간</th>
+  </tr>
+    <tr>
+	  <td><%= @reservation.coupon.coupon_number %></td>
+	  <td><%= @reservation.coupon.purchaser_name %></td>
+	  <td><%= @reservation.coupon.agency_name %></td>
+	  <td><%= @reservation.coupon.phone_number %></td>
+      <td><%= @reservation.resort %></td>
+      <td><%= @reservation.shoe_size %></td>
+      <td><%= @reservation.height %></td>
+      <td><%= @reservation.used_at %></td>
+      <td><%= @reservation.part_time %></td>
+    </tr>
+</table>
+
+<div class="">
+  <%= link_to "Back to list", admin_@reservations_path %>
+</div>
