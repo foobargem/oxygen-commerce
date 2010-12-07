@@ -1,0 +1,11 @@
+
+쿠폰: <%= text_field_tag 'coupon_number', reservation.coupon.coupon_number, :class => 'coupon' %><br>
+사용자명: <%= text_field_tag 'purchaser_name', reservation.coupon.coupon_number,  :class => 'coupon' %><br>
+구매업체: <%= text_field_tag 'agency_name', reservation.coupon.coupon_number, :class => 'coupon' %><br>
+핸드폰: <%= text_field_tag 'phone_number', reservation.coupon.coupon_number, :class => 'coupon' %><br>
+<p>
+이용일 선택: <% CalendarDateSelect.format=(:iso_date)%><%= f.calendar_date_select :used_at %></br>
+<%= f.input :resort, :as => :string, :label => "스키장 선택" %></br>
+<%= f.input :part_time, :as => :string, :label => "시간 선택" %></br>
+<%= f.input :height, :as => :string, :label => "신장" %></br>
+<%= f.input :shoe_size, :as => :string, :label => "발사이즈" %></br>

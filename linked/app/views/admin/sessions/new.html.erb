@@ -1,10 +1,6 @@
 
-<%= form_for resource, :url => session_path(resource) do |f| %>
-
-  <%= f.text_field :login %>
-  <%= f.password_field :password %>
-
-
+<%= semantic_form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>  
+  <%= f.input :login, :as => :string, :label => "admin loginname: " %>
+  <%= f.input :password, :label => "admin password: " %>
   <%= f.submit "Login" %>
-
 <% end %>

@@ -1,0 +1,12 @@
+
+<%= semantic_form_for [:admin, @reservation] do |f| %>
+
+  <h3>예약 쿠폰 등록</h3>
+
+  <%= render 'form', :f => f %>
+
+  <%= f.buttons do %>
+    <%= f.submit "등록" %>
+  <% end %>
+
+<% end %>

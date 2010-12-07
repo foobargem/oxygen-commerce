@@ -2,6 +2,7 @@ class CreateCoupons < ActiveRecord::Migration
   def self.up
     create_table :coupons do |t|
       t.integer :product_id
+      t.integer :reservation_id
 
       t.string :coupon_number
 

@@ -10,6 +10,7 @@ Linked::Application.routes.draw do
       :sessions => 'admin/sessions'
     }
   match 'admin' => redirect('/admin/dashboard'), :as => 'admin_root'
+  match 'sessions/admin' => redirect('/admin/dashboard')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -25,7 +26,14 @@ Linked::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :reservations
+  
+  match 'logout' => 'sessions#destroy', :as => :logout
 
+  match 'login' => 'sessions#new', :as => :login
+
+  resources :sessions
+  resources :reservations
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -79,7 +87,8 @@ Linked::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => "reservations#index"
+  
+  root :to => 'reservations#index'
 
   # See how all your routes lay out with "rake routes"
 

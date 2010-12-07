@@ -1,0 +1,17 @@
+<% title "예약 확인" %>
+
+<div id="reservations">
+<table>
+  <tr>
+    <th>쿠폰번호</th>
+    <th>이름</th>
+    <th>구매업체</th>
+    <th>상품명</th>
+    <th>구매날짜</th>
+    <th>예약</th>
+  </tr>
+    <%= render "div_coupon", :coupon => @coupon %>
+</table>
+</div>
+
+<%= link_to "로그아웃", :logout %>
