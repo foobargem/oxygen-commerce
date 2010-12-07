@@ -1,8 +1,8 @@
 
-쿠폰: <%= text_field_tag 'coupon_number', nil, :class => 'coupon' %><br>
-사용자명: <%= text_field_tag 'purchaser_name', nil,  :class => 'coupon' %><br>
-스키장 선택: <%= text_field_tag 'agency_name', nil, :class => 'coupon' %><br>
-핸드폰: <%= text_field_tag 'phone_number', nil, :class => 'coupon' %><br>
+쿠폰: <%= text_field_tag 'coupon_number', nil %><br>
+사용자명: <%= text_field_tag 'purchaser_name', nil %><br>
+구매업체: <%= text_field_tag 'agency_name', nil %><br>
+핸드폰: <%= text_field_tag 'phone_number', nil, %><br>
 <p>
 이용일 선택: <% CalendarDateSelect.format=(:iso_date)%><%= f.calendar_date_select :used_at %></br>
 <%= f.input :resort, :as => :string, :label => "스키장 선택" %></br>

@@ -1,4 +1,3 @@
-<%= semantic_form_for @reservation do |f| %> 
   <%= f.error_messages %>
     쿠폰: <%= Coupon.find(session[:user_id]).coupon_number %>
     사용자명: <%= Coupon.find(session[:user_id]).purchaser_name %><p>
@@ -7,5 +6,3 @@
     <%= f.input :part_time, :as => :string, :label => "시간 선택" %></br>
     <%= f.input :height, :as => :string, :label => "신장" %></br>
     <%= f.input :shoe_size, :as => :string, :label => "발사이즈" %></br>
-    <%= f.submit "예약 완료" %>
-<% end %>

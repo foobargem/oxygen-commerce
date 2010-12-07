@@ -4,5 +4,5 @@
   <td><%= coupon.purchaser_name %></td>
   <td><%= coupon.agency_name %></td>
   <td><%= coupon.phone_number %></td>
-  <td><%= link_to "선택", new_reservation_path %></td>
+  <td><%= link_to "선택", edit_reservation_path(coupon.reservation) %></td>
 </tr>

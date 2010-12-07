@@ -1,7 +1,7 @@
 <% title "투어포스코리아 예약 페이지" %>
 
 <%= semantic_form_for :sessions, :url => { :action => "create" } do |f| %>
-   <%= f.input :purchaser_name, :as => :string, :label => "구매자 이름" %>
    <%= f.input :coupon_number, :as => :string, :label => "쿠폰 번호" %>
+   <%= f.input :purchaser_name, :as => :string, :label => "구매자 이름" %>
    <%= f.submit "로그인" %>
 <% end %>
