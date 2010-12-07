@@ -1,0 +1,11 @@
+<%= f.inputs do %>
+  <%= f.input :coupon_number, :as => :string, :label => "쿠폰번호" %>
+  <%= f.input :purchaser_name, :as => :string, :label => "구매자" %>
+  <%= f.input :phone_number, :as => :string, :label => "연락처" %>
+<% end %>
+
+<%= f.inputs do %>
+  <%= f.input :agency_name, :as => :string, :label => "구매업체" %>
+<% end %>
+
+<%= f.input :product_id, :as => :hidden, :value => product.id %>

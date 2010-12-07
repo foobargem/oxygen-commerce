@@ -1,0 +1,35 @@
+
+<div class="">
+  <h4>상품명: <%= link_to @product.name, admin_product_path(@product) %>
+
+  <div class="">
+    <%= link_to "Add new coupon entries", new_coupons_admin_product_path(@product) %>
+  </div>
+</div>
+
+
+<table class="coupons">
+  <thead>
+    <tr>
+      <th class="">구매업체</th>
+      <th class="">구매자</th>
+      <th class="">쿠폰번호</th>
+      <th class="">연락처</th>
+      <th class=""></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr>
+        <td class=""><%= coupon.agency_name %></td>
+        <td class=""><%= coupon.purchaser_name %></td>
+        <td class=""><%= coupon.coupon_number %></td>
+        <td class=""><%= coupon.phone_number %></td>
+        <td class="">
+          <%= link_to "edit", edit_admin_product_coupon_path(@product, coupon) %>
+          <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

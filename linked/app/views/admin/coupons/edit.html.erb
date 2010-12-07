@@ -1,0 +1,14 @@
+<%= semantic_form_for [:admin, @product, @coupon] do |f| %>
+
+  <h3>구매내역수정</h3>
+
+  <h4>상품명: <%= link_to @product.name, admin_product_path(@product) %></h4>
+
+  <%= render 'form', :f => f, :product => @product %>
+
+  <%= f.buttons do %>
+    <%= f.submit "수정" %>
+  <% end %>
+
+<% end %>
+

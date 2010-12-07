@@ -1,0 +1,26 @@
+<%= semantic_form_for [:admin, @product], :url => create_coupons_admin_product_path(@product) do |product_form| %>
+
+  <h3>쿠폰 구매내역 등록</h3>
+
+  <h4>상품명: <%= link_to @product.name, admin_product_path(@product) %></h4>
+
+  <% 5.times do %>
+    <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
+      <div>
+        쿠폰번호: <%= coupon_fields.text_field :coupon_number, :name => "product[coupon_attributes][][coupon_number]" %>
+        구매자: <%= coupon_fields.text_field :purcharse_name, :name => "product[coupon_attributes][][purchaser_name]" %>
+        연락처: <%= coupon_fields.text_field :phone_number, :name => "product[coupon_attributes][][phone_number]" %>
+        구매업체: <%= coupon_fields.text_field :agency_name, :name => "product[coupon_attributes][][agency_name]" %>
+
+        <%= coupon_fields.hidden_field :product_id, :name => "product[coupon_attributes][][product_id]", :value => @product.id %>
+      </div>
+    <% end %>
+  <% end %>
+
+
+  <%= product_form.buttons do %>
+    <%= product_form.submit "등록" %>
+  <% end %>
+
+<% end %>
+
