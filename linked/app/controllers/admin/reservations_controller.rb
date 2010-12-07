@@ -1,4 +1,5 @@
 class Admin::ReservationsController < ApplicationController
+
   def index
     @reservations = Reservation.paginate(:page => params[:page], :per_page => 20, :order => "id DESC")    
   end
