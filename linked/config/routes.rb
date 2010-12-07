@@ -66,7 +66,11 @@ Linked::Application.routes.draw do
     resources :reservations
 
     resources :products do
-      resources :purchases
+      member do
+        get 'new_coupons'
+        put 'create_coupons'
+      end
+      resources :coupons
     end
 
   end

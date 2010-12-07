@@ -4,4 +4,9 @@ class Product < ActiveRecord::Base
   validates_presence_of :ticket_type, :resort
   validates_presence_of :opened_at, :closed_at
 
+
+  has_many :coupons
+
+  accepts_nested_attributes_for :coupons
+
 end

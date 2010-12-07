@@ -27,8 +27,7 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update_attributes(params[:product])
-    if @product.save
+    if @product.update_attributes(params[:product])
       redirect_to admin_product_path(@product)
     else
       render :action => :edit
@@ -39,6 +38,31 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_path
+  end
+
+
+  def new_coupons
+    @product = Product.find(params[:id])
+    @coupon = Coupon.new
+  end
+
+  def create_coupons
+    coupon_attrs = params[:product][:coupon_attributes]
+    @product = Product.find(params[:id])
+    coupons = []
+
+    coupon_attrs.each do |coupon|
+      unless coupon.values.any?{ |m| m.blank? }
+        coupons << coupon
+      end
+    end
+
+    logger.debug "----------- #{coupons}"
+    if Coupon.create(coupons)
+      redirect_to admin_product_coupons_path(@product)
+    else
+      render :action => :new_coupons
+    end
   end
 
 end
