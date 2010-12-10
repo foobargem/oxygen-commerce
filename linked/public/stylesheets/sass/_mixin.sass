@@ -1,0 +1,627 @@
+@import suddenlybunt/suddenlybunt.sass
+
+
+//
+// Formtastic
+
+=form_background_buttons
+  .buttons
+    .commit
+      input
+        +background_button("/images/design/bg/button_commit.gif", #155AFF, #fff, 5px, 4px, 20px)
+    .cancel
+      input
+        +background_button("/images/design/bg/button_cancel.gif", #B9B9B9, #666, 5px, 4px, 20px)
+
+=formtastic_base($label_width, $input_width)
+  :padding 10px 0
+  +form_background_buttons
+  ul.errors
+    :color #cc0000
+    :margin 0.2em 0 0.5em $label_width
+    li
+      :padding 0
+      :border none
+  div.buttons
+    +clearfix
+    :padding 10px 0 40px $label_width
+    .button
+      +float_left
+      :margin-left 15px
+      a
+        :margin-top 2px
+  fieldset
+    +clearfix
+    &.inputs
+    &.buttons
+      :padding 10px 0 40px $label_width
+      li
+        +float_left
+        :margin-left 15px
+        :font-size 0.9em
+        a
+          +normal_anchor_style(red, transparent, underline)
+          +active_anchor_style(white, red, none)
+        &.link
+          :margin-top 2px
+          :margin-right 5px
+    legend
+      span
+        :font-size 1.1em
+        :font-weight bold
+        :color #343434
+  fieldset
+    ol
+      li
+        +clearfix
+        :margin-bottom 5px
+        label
+          +float_left
+          :display block
+          :width $label_width
+          :padding-top .2em
+        &.required
+        &.optional
+        &.error
+          input
+            :border 3px solid #e00
+            :margin 0
+      li
+        &.string
+        &.password
+        &.numeric
+        &.file
+        &.text
+        &.boolean 
+          input
+            :margin 0 0.5em 0 0.2em
+        &.radio
+          fieldset ol
+            :margin-bottom -0.6em
+            li
+              :margin 1px 0 5px
+              label
+                :float none
+                :width 100%
+                input
+                  :margin-right 0.2em
+        &.check_boxes
+          fieldset ol
+            :margin-bottom -0.6em
+            li
+              :margin 0.1em 0 0.5em 0
+              label
+                :float none
+                :width 100%
+                input
+                  :margin-right 0.2em
+        &.date, &.time, &.datetime
+          fieldset ol 
+            li
+              +float_left
+              :width auto
+              .IE &, .FF &
+                :margin-left 3px
+                :padding-bottom 3px
+              label
+                :display none
+                input
+                  :display inline
+                  :margin 0
+                  :padding 0
+      li
+        &.preview
+          .preview_content
+            +has_framed_image(60px, 60px)
+        &.tip
+          :background #ececec
+          :color #444
+          :padding 7px 10px 6px
+          :margin-bottom 10px
+        &.desc
+          :margin-bottom 15px
+          :color #666
+          p
+            :font-size 0.9em
+      li
+        p.inline-hints
+          :color #989898
+          :margin-top 3px
+          :font-size 0.9em
+        p.inline-errors
+          :color #c00
+          :margin-top 3px
+          :font-size 0.9em
+      fieldset
+        :position relative
+        legend
+          :position absolute
+          :width 95%
+          :padding-top 0.1em
+          :left 0px
+          span
+            :position absolute
+          &.label label
+            :position absolute
+        ol
+          +float_left
+          :width $input_width
+          :margin 0
+          :padding 0 0 0 $label_width
+          li
+            :padding 0
+            :border 0
+
+
+=formtastic_normal($label_width: 158px, $input_width: 70%)
+  +formtastic_base($label_width, $input_width)
+  ol
+    li
+      &.string
+        input
+          :max-width $input_width
+      &.password
+        input
+          :max-width $input_width
+      &.numeric
+        input
+          :max-width $input_width
+      &.file
+        input
+          :max-width $input_width
+      &.text
+        textarea
+          :max-width $input_width
+      &.boolean 
+        label
+          :padding-left $input_width
+          :width auto
+      &.radio
+      &.check_boxes
+      &.date, &.time, &.datetime
+    li
+      &.preview
+        .preview_content
+          :margin-left $label_width
+      &.tip
+      &.desc
+    li
+      p.inline-hints
+        :margin-left ($label_width + 2)
+      p.inline-errors
+        :margin-left ($label_width + 2)
+  fieldset.sub_section
+    :margin 25px 0 25px ($label_width + 20)
+    :position relative
+    legend
+      :font-weight bold
+      .IE &
+        :position relative
+        :left -7px
+      span
+        :text-decoration none
+        :color #333
+  iframe.editor
+    :border 1px solid #999
+    :height 400px
+    :width 662px
+    :margin 0 0 0 $label_width
+    :font-family Dotum
+    :font-size 0.9em
+    :background #fff
+
+
+=formtastic_multistep($label_width: 158px, $input_width: 70%)
+  +formtastic_normal($label_width, $input_width)
+  +grid_form_style
+
+
+=formtastic_simple($label_width: 158px, $input_width: 70%)
+  +formtastic_base($label_width, $input_width)
+
+
+=formtastic_popup($label_width: 158px, $input_width: 70%)
+  +formtastic_base($label_width, $input_width)
+  fieldset
+    &.inputs
+      :padding 10px 0 20px
+
+
+=formtastic_inline($label_width: 100px, $input_width: 70%)
+  +formtastic_base($label_width, $input_width)
+  fieldset.buttons
+    :padding 10px $label_width 5px
+  fieldset
+    ol
+      li
+        p.inline-hints
+          :margin-left ($label_width + 2)
+        p.inline-errors
+          :margin-left ($label_width + 2)
+
+
+=formtastic_sectioned
+  h3
+    :font-size 1em
+    :margin 24px 10px 6px
+  fieldset
+    +clearfix
+    &.inputs
+      :margin 0 10px 25px
+      :border 1px solid #e2e2e2
+      :padding 1px
+    &.buttons
+    &.no_border
+      :margin 0 10px 25px
+  ol
+    li
+      p.inline-hints
+        :color #989898
+        :margin-top 3px
+        :font-size 0.9em
+      p.inline-errors
+        :color #c00
+        :font-size 0.9em
+    li
+      :padding 10px
+      label
+        :display none
+      &.legend
+        :background #ececec
+        :color #444
+        :font-size 0.9em
+        :padding 5px 11px
+      &.text_counter
+        :margin-bottom 12px
+        :padding 0 10px
+        .counter
+          :text-align right
+          :color #ececec
+          :font-size 2em
+          :font-weight bold
+        .counter-exceed
+          :color #ff0000
+      &.text
+        textarea
+          :width 550px
+      &.string
+        input
+          :width 450px
+      &.select
+      &.boolean 
+        label
+          :font-size 0.9em
+          :padding-left 60px
+          :width auto
+          :display inline
+        p.inline-errors
+          :padding-left 80px
+      &.with_label
+        +clearfix
+        :padding 3px 0
+        label
+          +float_left
+          :font-size 0.9em
+          :display block
+          :padding-top .2em
+          :padding-left 20px
+          :width 120px
+        &.string
+          input
+            :width 300px
+          p.inline-errors
+            :padding-left 140px
+      &.rating
+        label
+          +float_left
+          :font-size 0.9em
+          :display block
+          :padding-top .2em
+          :padding-left 20px
+          :padding-right 20px
+        .rate_point
+          +float_left
+      &.address
+        +clearfix
+        :padding 3px 0
+        label
+          +float_left
+          :font-size 0.9em
+          :display block
+          :margin-top 20px
+          :padding-left 20px
+          :width 120px
+          .Safari &
+            :width 118px
+          .IE6 &
+            :width 123px
+        .address_field
+          +float_left
+          p.postcode
+          p.address
+            .Safari &
+              :margin-left 2px
+            input
+              :width 300px
+  .bordered
+    :border-top 1px solid #e2e2e2
+    :margin-top 2px
+  .desc
+    :padding 10px
+  fieldset.buttons
+    :padding-bottom 20px
+    :padding-left 120px
+    ol
+      +clearfix
+      li
+        +float_left
+      li.commit
+        input
+          .IE &
+            :padding-left 0
+            :padding-right 0
+  div.buttons
+    +clearfix
+    :padding-bottom 20px
+    :padding-left 120px
+    :padding-right 10px
+    .button
+      +float_right
+
+
+
+// message styles
+
+=form_message_style
+  .warning
+    :border 1px solid #64d1f2
+    :padding 6px 15px 5px
+    :margin 10px 0 30px
+    :color #454545
+    em
+      :color #059cc7
+  .tip
+    :background #ececec
+    :color #444
+    :padding 7px 10px 6px
+    :margin-bottom 10px
+
+
+
+
+
+
+
+
+// 
+
+=simple_table_style
+  :width 100%
+  thead
+    tr
+      :background #eee
+      th
+        :background #eee
+        :border 1px solid #ccc
+        :padding 10px 3px
+        :vertical-align middle
+        :text-align center
+        :font-weight bold
+        :font-size 0.9em
+  tbody
+    tr
+      td
+        :border 1px solid #ccc
+        :padding 4px 7px
+        :font-size 0.9em
+    tr.total, tr.average
+      :background #eee
+      td
+        :background #eee
+      td.total
+        :text-align center
+    td.actions
+      a
+        :padding 0 2px
+  .msg
+    :padding 30px
+    :text-align center
+
+
+=summary_table_style
+  :width 100%
+  thead
+    tr
+      :background #eee
+      th
+        :background #eee
+        :border 1px solid #ccc
+        :padding 4px 7px
+        :vertical-align middle
+        :text-align center
+        :font-weight normal
+        :font-size 0.9em
+  tbody
+    tr
+      td
+        :border 1px solid #ccc
+        :padding 4px 7px
+        :font-size 0.9em
+  .first
+    :border-left none
+  .last
+    :border-right none
+  .msg
+    :padding 30px
+    :text-align center
+
+
+
+
+
+//
+
+=grid_form_style
+  .warning
+    :background #ececec
+    :padding 10px 15px
+    :margin-bottom 10px
+  div.agreement
+    :padding 20px 15px 10px
+    .intro
+      p
+        :padding 10px 0
+  fieldset.inputs
+    :position relative
+    :padding 15px 0
+    ol
+      li
+        :padding 10px 20px
+        :border-bottom 1px solid #e1e1e1
+        &.first
+        &.last
+          :border none
+        &.merge_bottom
+          :padding-bottom 0
+          :border none
+        &.merge_top
+          :padding-top 0
+        &.term
+          :padding-top 3px
+          :padding-left 180px
+          label
+            :float none
+            :width auto
+            :font-weight bold
+          input
+            :margin 6px 0 4px
+          p.desc
+            :color #666
+            :font-size 0.95em
+          p
+            :margin-left 0
+        &.table
+          :padding 7px 25px
+          :border-bottom 1px solid #e1e1e1
+          .label
+            +float_left
+          .value
+            :padding-left 173px
+            :color #777
+        &.table_buttons
+          :padding 10px 25px 50px
+          :border-bottom none
+          .value
+            +clearfix
+            :padding-left 173px
+            span
+              +float_left
+              :margin-right 12px
+              :font-size 0.9em
+              a
+                +normal_anchor_style(#444, transparent, none)
+                +active_anchor_style(#444, transparent, underline)
+            span.preview_campaign
+              +image_background_anchor("/images/design/bg/submit_gray.gif", 1px, 0px, 10px)
+            span.edit_campaign
+              +image_background_anchor("/images/design/bg/submit_white.gif", 1px, 0px, 10px)
+      li.legend
+        :padding 0 12px 30px
+        :background url(/images/design/f/i_arrow_b.gif) 1px 5px no-repeat
+        :color #128be3
+        :font-size 1.1em
+        :font-weight bold
+        :border none
+    fieldset
+      :padding 0
+      ol
+        li
+          :border none
+          :margin 0
+          :padding 0
+  fieldset.inputs.secondary
+    :border-top 1px solid #bfdff8
+  input.read_only
+    :background #f1f8fe
+  fieldset.invoice
+    ol
+      li
+        :border none
+        :padding 8px 0
+        :margin 0
+        .label
+          +float_left
+        .amount
+          :margin-left 350px
+          :width 130px
+          :text-align right
+        &.total
+          :border-top 1px solid #e1e1e1
+          :font-weight bold
+          :color #fc3633
+          :padding-left 25px
+          :margin-left 21px
+        &.sum
+          :font-weight bold
+          :padding-left 25px
+          :margin-left 21px
+        &.list
+          :border-top 1px solid #e1e1e1
+          :border-bottom 1px solid #e1e1e1
+          :padding 8px 0 8px 25px
+          :margin-left 21px
+          :color #666
+          .element
+            :padding 4px 0
+          .label
+            :padding-left 120px
+        &.notice
+          :padding 20px 0 20px 25px
+          :margin-left 21px
+  fieldset
+    ol
+      li.no_indent
+        label
+          :padding-left 0
+        p
+          :margin-left 0
+          &.inline-errors
+            +clear
+
+
+
+//
+
+=center_box($width: 640px)
+  :width $width
+  :margin 0 auto
+  h2
+    :font-size 1.4em
+    :color #353535
+    :border-bottom 2px solid #0db4e9
+
+
+
+//
+
+=IE_line_height($base, $ie6, $ie7, $ie8)
+  :line-height $base
+  .IE6 &
+    :line-height $ie6
+  .IE7 &
+    :line-height $ie7
+  .IE8 &
+    :line-height $ie8
+
+
+
+
+
+
+
+
+
+
+
+
+

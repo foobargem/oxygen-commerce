@@ -1,0 +1,184 @@
+@import mixin.sass
+
+
+//
+
+html
+
+#contents
+  :background #fff
+
+#footer
+  +clear
+  :padding-bottom 30px
+  ul.copyright
+    +clearfix
+    :font-size 0.8em
+    :color #999
+    li.left
+      +float_left
+    li.right
+      +float_right
+    a
+      +normal_anchor_style(#999, transparent, none)
+      +active_anchor_style(#999, transparent, underline)
+
+
+
+// Sections
+
+div.main_section
+  +clearfix
+  :padding-top 35px
+  h3
+    :font-size 1.2em
+    :background url(/images/design/icons/hd.gif) left 2px no-repeat
+    :padding-left 22px
+    .more
+      :font-weight normal
+      :font-size 0.75em
+      :margin-left 15px
+      a
+        +normal_anchor_style(#06d, transparent, underline)
+        +active_anchor_style(#fff, #37d, none)
+    &.bottom_line
+      :padding-bottom 10px
+      :border-bottom 1px solid #ccc
+  p.remark
+  p.desc
+    :margin 10px 0
+
+
+div.rail_section
+  :padding 10px 15px 25px
+  :border-bottom 1px dotted #cdcdcd
+  div.header
+    +clearfix
+    :padding 5px 0
+    :border-bottom 1px solid #cdcdcd
+    h4
+      +float_left
+      :font-size 1em
+      :color #343434
+    span.more
+      +float_right
+      :font-size 0.8em
+      :margin-top 6px
+      a
+        +image_replacement("/images/design/icons/more.gif", 32px, 10px)
+  div.content
+    +clearfix
+    :padding 12px 0
+    ul.lists
+      :padding-left 20px
+      :font-size 0.9em
+      :color #656565
+      li
+        :list-style disc
+        :padding 3px 0
+
+div.rail_section_2
+  :padding 10px 15px 25px
+  :border-bottom 1px dotted #cdcdcd
+  div.header
+    +clearfix
+    :padding 5px 0
+    h4
+      +float_left
+      :font-size 1em
+      :color #343434
+    span.more
+      +float_right
+      :font-size 0.8em
+      :margin-top 6px
+      a
+        +image_replacement("/images/design/icons/more.gif", 32px, 10px)
+  div.content
+
+
+
+.section_title
+  +clearfix
+
+.section_body
+  +clearfix
+
+
+
+
+// Navigations
+
+ul.main_tab_nav
+  +no_text_selection
+  :height 22px
+  :padding-left 1px
+  :background url(/images/design/nav/dot_ccc.gif) left bottom repeat-x
+  li
+    +float_left
+    :margin 0 2px
+    :padding 0 0 0 15px
+    :background url(/images/design/nav/tab1_off.gif) no-repeat
+    a
+      :display block
+      :font-size 0.9em
+      :padding 1px 15px 0 0
+      :background url(/images/design/nav/tab1_off.gif) right no-repeat
+      +normal_anchor_style(#000, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+  li.current
+    :padding 0 0 0 15px
+    :background url(/images/design/nav/tab1_on.gif) no-repeat
+    a
+      :padding 2px 15px 0 0
+      :background url(/images/design/nav/tab1_on.gif) right no-repeat
+  li.spacer
+    :background none
+
+
+ul.sub_tab_nav
+  +clearfix
+  +no_text_selection
+  :margin-top 15px
+  li
+    +float_left
+    a
+      :font-size 0.9em
+      :padding 0 15px
+      :border-right 1px solid #999
+      +normal_anchor_style(#999, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+      &.last
+        :border none
+  li.current
+    a
+      +normal_anchor_style(#000, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+
+
+
+ul.vertical_sub_tab_nav
+  +clearfix
+  +no_text_selection
+  :margin-top 15px
+  :width 12em
+  li
+    :text-align right
+    a
+      :font-size 1.1em
+      :padding 0 15px      
+      +normal_anchor_style(#999, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+      &.last
+        :border none
+  li.current
+    a
+      +normal_anchor_style(#000, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+
+
+//
+
+.notice_central
+  :margin 10% 0
+  :text-align center
+

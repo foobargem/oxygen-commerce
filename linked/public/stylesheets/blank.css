@@ -1,0 +1,263 @@
+body .fixedwidth {
+  width: 860px;
+  margin: 0 auto; }
+body .minwidth {
+  width: 100%;
+  min-width: 860px;
+  overflow: auto;
+  overflow: visible; }
+body .IE .minwidth div.minwidth_wrapper {
+  border-left: 760px "solid" white;
+  position: relative;
+  float: left;
+  z-index: 1; }
+body .IE .minwidth div.minwidth_holder {
+  margin-left: "-760px";
+  position: relative;
+  float: left;
+  z-index: 2; }
+
+#h {
+  padding: 100px 15px 20px; }
+  #h h1 a {
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(/images/design/logo.gif);
+    background-repeat: no-repeat;
+    width: 110px;
+    height: 30px;
+    background-position: 0px 0px;
+    text-indent: -9999em;
+    overflow: hidden;
+    text-align: left; }
+
+#contents {
+  padding: 0 15px; }
+
+#footer {
+  margin-top: 50px; }
+  #footer ul.copyright {
+    padding: 8px 20px;
+    border-top: 4px solid #f0f0f0; }
+    #footer ul.copyright li.right {
+      padding-right: 20px; }
+
+.new_advertiser_title {
+  margin-top: 40px; }
+  .new_advertiser_title h2 {
+    font-size: 2em;
+    margin-bottom: 20px; }
+  .new_advertiser_title ul.nav {
+    padding: 15px 20px;
+    border-top: 2px solid #57aced;
+    border-bottom: 2px solid #57aced; }
+    .new_advertiser_title ul.nav:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .new_advertiser_title ul.nav {
+      display: inline-block; }
+    .IE .new_advertiser_title ul.nav {
+      height: 1%; }
+    .new_advertiser_title ul.nav {
+      display: block; }
+    .new_advertiser_title ul.nav li {
+      display: inline;
+      float: left;
+      color: #bbbbbb;
+      margin-top: 5px;
+      font-size: 1em;
+      font-weight: bold; }
+      .new_advertiser_title ul.nav li.spacer {
+        margin: 0 15px;
+        color: #666666;
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step_arrow_small.gif);
+        background-repeat: no-repeat;
+        width: 14px;
+        height: 30px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_advertiser_title ul.nav li.current {
+        color: #118ae5; }
+
+.new_advertiser_form {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .new_advertiser_form h2 {
+    margin-bottom: 10px; }
+  .new_advertiser_form div.summary {
+    margin: 10px 0 10px 300px; }
+    .new_advertiser_form div.summary p {
+      padding: 2px 0; }
+  .new_advertiser_form .notice {
+    color: #118ae5;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em; }
+  .new_advertiser_form .warning {
+    width: 500px;
+    margin: 20px auto;
+    background: #ececec;
+    color: #444444;
+    padding: 10px 15px; }
+    .new_advertiser_form .warning em {
+      color: #118ae5; }
+  .new_advertiser_form .buttons {
+    margin-top: 20px;
+    border-top: 1px solid #cccccc;
+    padding-top: 30px;
+    padding-left: 320px;
+    padding-bottom: 60px; }
+    .new_advertiser_form .buttons:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .new_advertiser_form .buttons {
+      display: inline-block; }
+    .IE .new_advertiser_form .buttons {
+      height: 1%; }
+    .new_advertiser_form .buttons {
+      display: block; }
+    .new_advertiser_form .buttons li {
+      display: inline;
+      float: left;
+      padding-right: 17px;
+      font-size: 0.95em; }
+
+div.login_form:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+div.login_form {
+  display: inline-block; }
+.IE div.login_form {
+  height: 1%; }
+div.login_form {
+  display: block; }
+div.login_form div.intro {
+  display: inline;
+  float: left;
+  margin-right: 44px; }
+div.login_form div.login {
+  display: inline;
+  float: left; }
+  div.login_form div.login h2 {
+    font-size: 1.5em;
+    margin: 10px 20px 15px;
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(/images/design/ad_login_heading.gif);
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 14px;
+    background-position: 0px 0px;
+    text-indent: -9999em;
+    overflow: hidden;
+    text-align: left; }
+  div.login_form div.login form {
+    background: #eeeeee;
+    padding: 20px 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 290px; }
+    div.login_form div.login form label {
+      font-size: 0.9em; }
+    div.login_form div.login form li.string:after, div.login_form div.login form li.password:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    div.login_form div.login form li.string, div.login_form div.login form li.password {
+      display: inline-block; }
+    .IE div.login_form div.login form li.string, .IE div.login_form div.login form li.password {
+      height: 1%; }
+    div.login_form div.login form li.string, div.login_form div.login form li.password {
+      display: block; }
+    .IE div.login_form div.login form li.string, .IE div.login_form div.login form li.password {
+      margin-bottom: 2px; }
+    div.login_form div.login form li.string label, div.login_form div.login form li.password label {
+      display: inline;
+      float: left;
+      width: 60px;
+      padding-top: 5px; }
+    div.login_form div.login form li.string input, div.login_form div.login form li.password input {
+      display: inline;
+      float: left;
+      width: 75%; }
+      .IE div.login_form div.login form li.string input, .IE div.login_form div.login form li.password input {
+        margin-top: 2px; }
+      .IE6 div.login_form div.login form li.string input, .IE6 div.login_form div.login form li.password input {
+        width: 200px; }
+    div.login_form div.login form li.boolean {
+      padding-top: 10px; }
+      div.login_form div.login form li.boolean label {
+        padding-left: 60px; }
+    div.login_form div.login form li.login_error {
+      padding-left: 60px;
+      color: #cc0000;
+      font-size: 0.9em; }
+    div.login_form div.login form fieldset.buttons {
+      padding: 10px 20px 10px 60px; }
+      div.login_form div.login form fieldset.buttons li.login input {
+        color: white;
+        padding: 1px 17px 0;
+        text-shadow: #333333 0 -1px 0;
+@end;
+        border: 1px solid #333333;
+        background: url("/images/design/bg/button_gray_small.gif") repeat-x;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        cursor: pointer;
+        border-radius: 0px;
+        -moz-border-radius: 0px;
+        -webkit-border-radius: 0px;
+        font-size: 0.9em; }
+        .IE div.login_form div.login form fieldset.buttons li.login input {
+          border: #666666;
+          background-color: #333333;
+          font-weight: bold;
+          padding: 2px 13.6px -1; }
+        div.login_form div.login form fieldset.buttons li.login input:hover {
+          background-position: 0 -5px; }
+        .IE div.login_form div.login form fieldset.buttons li.login input {
+          padding-top: 4px;
+          padding-left: 10px;
+          padding-right: 10px; }
+    div.login_form div.login form ul.links {
+      padding-left: 60px;
+      font-size: 0.9em; }
+      div.login_form div.login form ul.links li {
+        padding: 2px 0; }
+
+p.advertiser_login_message {
+  display: block;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: url(/images/design/ad_index.jpg);
+  background-repeat: no-repeat;
+  width: 437px;
+  height: 313px;
+  background-position: 0px 0px;
+  text-indent: -9999em;
+  overflow: hidden;
+  text-align: left; }

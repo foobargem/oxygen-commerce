@@ -1,0 +1,1181 @@
+@import mixin.sass
+
+
+//
+
+body
+  +min_width_container(980px, true)
+
+#h
+  +clearfix
+  :border-top 5px solid #eceeed
+  :background url(/images/design/h/main_shadow.gif) left bottom repeat-x
+  :padding-bottom 3px
+  :margin-bottom 15px
+  h1
+    +float_left
+    :margin-top 26px
+    a
+      +image_replacement("/images/design/logo_beta.gif", 323px, 55px)
+  ul.account_nav
+    +float_right
+    :margin 8px 10px
+    li
+      +float_left
+      :font-size 0.8em
+      :color #cdcdcd
+      a
+        +normal_anchor_style(#656565, transparent, none)
+        +active_anchor_style(#656565, transparent, underline)
+      &.spacer
+        :margin 0 6px
+      &.name
+        :color #656565
+        em
+          :font-style normal
+          :font-weight bold
+          :color #0db4e9
+
+#footer
+  :margin-top 0
+  ul.copyright
+    :padding 8px 8px
+    :border-top 1px solid #cdcdcd
+
+
+div.main_header
+  +clear
+  :background url(/images/design/h/main_bg.gif) repeat-x
+  :padding 0
+  :height 39px
+  ul.top_nav
+    +float_left
+    :margin-top 8px
+    :margin-left 24px
+    :font-size 0.9em
+    +heading_font_family
+    li
+      +float_left
+      a
+        :padding 3px 4px
+        :display block
+        +normal_anchor_style(#b1b1b1, transparent, none)
+        +active_anchor_style(#b1b1b1, transparent, underline)
+    li.spacer
+      :font-size 0.9em
+      :color #9a9a9a
+      :margin 2px 16px 0
+    li.current
+      a
+        +normal_anchor_style(#fefcfd, transparent, none)
+        +active_anchor_style(#fefcfd, transparent, underline)
+  ul.advertiser_account_nav
+    +float_right
+    :margin-top 10px
+    :margin-right 16px
+    li
+      +float_left
+      :font-size 0.8em
+      :color #555
+      a
+        +normal_anchor_style(#eddedf, transparent, none)
+        +active_anchor_style(#eddedf, transparent, underline)
+      &.spacer
+        :margin 0 4px
+        :color #9a9a9a
+  div.advertiser_program
+    +float_right
+    :margin-top 9px
+    :margin-right 17px
+    a
+      +image_replacement("/images/design/h/btn_advertiser.gif", 73px, 22px)
+
+
+.container_1box
+  .container_header
+    +clear
+  .unit_content
+
+.container_2box
+  .container_header
+    +clear
+  .container_wrapper
+    +clearfix
+    :background url(/images/design/bg/280_f0.gif) right 40px repeat-y
+  .unit_content
+    +float_left
+    :width 680px
+  .unit_rail
+    +float_right
+    :width 280px
+
+.container_2box_left
+  +clearfix
+  .container_header
+    +clear
+  .unit_content
+    +float_right
+    :width 680px
+  .unit_rail
+    +float_left
+    :width 280px
+
+.container_3box
+  +clearfix
+  .container_header
+    +clear
+  .unit_content
+    :margin-left 217px
+    :margin-right 231px
+  .unit_rail1
+    +float_left
+    :width 200px
+  .unit_rail2
+    +float_right
+    :width 231px
+
+
+div.rail_container
+  :padding-bottom 40px
+  div.rail_section
+    +border_top_left_radius(10px)
+    +border_top_right_radius(10px)
+
+
+
+// Banner
+
+.main_banner
+  :width 680px
+  :height 160px
+  :background #eee
+  :margin-bottom 25px
+
+.rail_banner
+  :padding-bottom 10px
+  :background #fff
+  img
+    :width 280px
+    :height 232px
+
+.rail_banner2
+  :border 1px solid #ddd
+  :margin 10px 15px 0
+  :background #fff
+  :width 248px
+  :height 50px
+
+.banner_buttons
+  :padding 10px 15px
+  :text-align right
+  li
+    :display inline
+
+
+
+// Campaigns - Collection
+
+div.main_filters
+  +clearfix
+  :padding 9px 6px 4px 8px
+  :border-top 2px solid #353535
+  :border-bottom 1px solid #efefef
+  ul.status_options
+    +float_left
+    +heading_font_family
+    :font-size 0.8em
+    li
+      +float_left
+      :text-align center
+      :margin-right 5px
+      a
+        :display block
+        :width 66px
+        :height 27px
+        :line-height 200%
+        :background url(/images/design/filter/status_off.gif) no-repeat
+        +normal_anchor_style(#656565, transparent, none)
+        +active_anchor_style(#656565, transparent, underline)
+    li.current
+      a
+        +normal_anchor_style(#fff, transparent, none)
+        +active_anchor_style(#fff, transparent, underline)
+        &.all
+          :background url(/images/design/filter/status_orange.gif) no-repeat
+        &.joining
+          :background url(/images/design/filter/status_red.gif) no-repeat
+        &.running
+          :background url(/images/design/filter/status_cyan.gif) no-repeat
+        &.completed
+          :background url(/images/design/filter/status_gray.gif) no-repeat
+  ul.order_options
+    +float_right
+    +heading_font_family
+    li
+      +float_left
+      :text-align center
+      :font-size 0.8em
+      a
+        :display block
+        :width 29px
+        :height 21px
+        :text-align center
+        :line-height 200%
+        +normal_anchor_style(#333, transparent, none)
+        +active_anchor_style(#333, transparent, underline)
+        &.left
+          :background url("/images/design/filter/selected_off_left.gif") no-repeat
+        &.right
+          :background url("/images/design/filter/selected_off_right.gif") no-repeat
+      &.current
+        a
+          :border none
+          :background url("/images/design/filter/selected_on.gif") no-repeat
+          +normal_anchor_style(#fff, transparent, none)
+          +active_anchor_style(#fff, transparent, underline)
+
+ul.campaigns
+  li.campaign
+    +clearfix
+    :padding 13px 8px
+    :border-bottom 1px solid #efefef
+    div.header
+      +float_left
+      :margin-right 20px
+      .preview
+        a
+        img
+          :padding 2px
+          :border 1px solid #ccc
+          :width 100px
+          :height 70px
+    div.content
+      +float_left
+      :width 535px
+      .title
+        +clearfix
+        :font-size 1.1em
+        .status
+          +float_left
+          :margin-right 6px
+          :margin-top 3px
+        h4
+          +float_left
+          a
+            +normal_anchor_style(#343434, transparent, none)
+            +active_anchor_style(#343434, transparent, underline)
+        .campaign_type
+          +float_right
+          :margin-top 0.2em
+      .extra
+        +clearfix
+        :margin-top 5px
+        .info
+          +float_left
+          :width 360px
+          :font-size 0.9em
+          :line-height 150%
+          .desc
+          .schedule
+            :margin-top 5px
+            :color #777
+        .stats
+          +float_right
+          :width 160px
+          :text-align right
+          :color #444
+          .prize
+          .users
+
+.more_campaign
+  +clearfix
+  :padding 10px 8px 50px
+  span
+    +float_right
+
+
+
+
+// Campaign - Member
+
+.campaign_info
+  +clearfix
+  :border-top 2px solid #000
+  :padding 10px 10px 20px
+  div.campaign_status
+    +clear
+    +clearfix
+    .status
+      +float_left
+      +heading_font_family
+      :font-size 0.8em
+      +IE_line_height(200%, 210%, 190%, 200%)
+      span
+        +float_left
+        :color #fff
+        :text-align center
+        :width 66px
+        :padding-bottom 30px
+        &.joining
+          :background url(/images/design/filter/status_red.gif) no-repeat
+        &.progress
+          :background url(/images/design/filter/status_cyan.gif) no-repeat
+        &.completed
+          :background url(/images/design/filter/status_gray.gif) no-repeat
+        &.waiting
+          :color #333
+          :background url(/images/design/filter/status_off.gif) no-repeat
+  div.header
+    +float_left
+    :margin-right 20px
+    .preview
+      :margin-bottom 5px
+      img
+        :padding 2px
+        :border 1px solid #ccc
+        :width 115px
+        :height 115px
+    .tweet_button
+      :text-align center
+  div.content
+    +float_left
+    :width 515px
+    h2
+      +float_left
+      :font-size 1.2em
+      :color #343434
+    .campaign_type
+      +float_left
+      :margin-top 2px
+      :margin-left 10px
+    .desc
+      +clear
+      :color #656565
+      :padding-top 5px
+    ul.info
+      :margin 10px 20px 20px
+      :font-size 0.9em
+      li
+        :list-style square
+        :padding 0
+    .schedule
+      +float_left
+    .actions
+      +clear
+      +float_left
+      :margin-left 120px
+      :margin-top 30px
+      :margin-bottom 20px
+      div.participate
+        +float_left
+        a
+          :padding-left 25px
+          :padding-right 25px
+
+
+div.schedule
+  .step
+    +float_left
+    :color #6d6d6d
+    :font-size 0.9em
+    :line-height 130%
+    .IE &
+      :line-height 120%
+    :padding-left 8px
+    :background url(/images/design/bg/schedule_box.gif) no-repeat
+    .step_wrapper
+      :padding 5px 8px 2px 0
+      .FF &
+        :padding-top 4px
+      :background url(/images/design/bg/schedule_box.gif) right no-repeat
+    .caption
+      :text-align center
+    .date
+      :text-align center
+    .date_fixed
+      :width 60px
+    &.current
+      .step_wrapper
+  .spacer
+    +float_left
+    :color #838383
+    :font-size 1.2em
+    :padding 10px 7px 0
+
+
+ul.campaign_nav
+  +no_text_selection
+  :height 30px
+  :padding-left 7px
+  :background url(/images/design/nav/tab2_bg.gif) left bottom repeat-x
+  li
+    +float_left
+    :margin 0 2px
+    :width 130px
+    :height 30px
+    :text-align center
+    :background url(/images/design/nav/tab2_130_off.gif) no-repeat
+    a
+      :display block
+      :padding-top 6px
+      +normal_anchor_style(#000, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+  li.current
+    :background url(/images/design/nav/tab2_130_on.gif) no-repeat
+    a
+      :font-weight bold
+      :padding-top 7px
+  span.count
+    :font-weight normal
+    :font-size 0.85em
+    :color #c00
+
+
+div.campaign_content
+  :margin 30px 0px 0
+  h1
+    :font-size 1.4em
+    :line-height 150%
+  h2
+    :font-size 1.2em
+    :line-height 150%
+  h3
+    :font-size 1.05em
+    :line-height 150%
+  p
+    :padding 3px 0
+    :text-align justify
+  ul
+    :padding 5px 20px
+    li
+      :list-style square
+  ol
+    :padding 5px 20px
+    li
+      :list-style decimal
+  img
+    :max-width 680px
+  a
+    +normal_anchor_style(#3526ab, transparent, underline)
+    +active_anchor_style(#fff, #3526ab, none)
+    &.image_button
+      +normal_anchor_style(#3526ab, transparent, none)
+      +active_anchor_style(#fff, transparent, none)
+    
+
+
+// Campaign Conditions & Actions
+
+div.campaign_conditions
+  :padding 10px 10px 60px
+  .condition
+    :padding 10px 0
+    h4
+      +float_left
+      :font-size 0.9em
+      :width 66px
+      :padding 1px 0
+      :text-align center
+    .condition_content
+      +clear
+      :padding-top 5px
+      :padding-left 3px
+      p
+        :padding 0
+        :line-height 140%
+    .important
+      :color #ff6161
+      :font-size 0.9em
+      :margin-top 3px
+      :line-height 130%
+    h5
+      :color #da011c
+      :font-weight bold
+
+.more_budget_info
+  :margin-top 10px
+  :background url(/images/design/icons/i_help02.gif) no-repeat left 2px
+  :padding-left 18px
+  a
+    +normal_anchor_style(#666, transparent, none)
+    +active_anchor_style(#222, transparent, underline)
+
+.post_condition
+  h4
+    :background url(/images/design/bg/bu_green.gif) no-repeat
+    :color #fff
+
+.review_condition
+  h4
+    :background url(/images/design/bg/bu_purple.gif) no-repeat
+    :color #fff
+
+
+.campaign_actions
+  +float_left
+  :margin-bottom 80px
+  :margin-left 250px
+  div
+    +float_left
+
+
+// JoinRequests & Reviews
+
+ul.join_requests
+  :width 668px
+  :margin 28px 0 8px 8px
+  li
+    +clearfix
+    :border-bottom 1px solid #ddd
+    :padding 9px
+    :margin 0
+    div.logo
+      +float_left
+      :padding 2px
+      :border 1px solid #ccc
+      img
+        +float_left
+        :width 40px
+        :height 40px
+    div.request_info
+      +float_left
+      :font-size 0.9em
+      :margin-left 10px
+      :width 590px
+      span.login
+        :margin-right 7px
+        :color #079cc7
+        :font-weight bold
+      span.timestamp
+        :color #989898
+        :font-size 0.9em
+      p.comment
+        :color #5a5a5a
+
+
+div.accepted_requests
+  :margin 30px 8px 0 8px
+  :width 660px
+  :background url(/images/design/bg/shadowbox_top_660.gif) left top no-repeat
+  :padding-top 15px
+  div.content
+    :background url(/images/design/bg/shadowbox_body_660.gif) bottom no-repeat
+    :padding 0 18px
+    h3
+      :font-size 1em
+      :font-weight bold
+      :color #939
+      :padding 8px 0 8px 60px
+      :background url(/images/design/icons/accepted2.gif) 20px no-repeat
+      :border-bottom 1px solid #ccc
+    ul.users
+      +clearfix
+      :padding 10px 8px 15px
+      li
+        +float_left
+        :width 140px
+        :padding 5px
+        .logo
+          +float_left
+          :margin-right 10px
+          :padding 2px
+          :border 1px solid #898481
+          img
+            +float_left
+            :width 40px
+            :height 40px
+        .request_info
+          +float_left
+          :margin-top 12px
+          .login
+            :color #079cc7
+            :font-weight bold
+            :font-size 0.9em
+
+
+.reviews_notice
+  +clearfix
+  :padding 20px 5px
+  p
+    +float_left
+    :font-size 0.9em
+    &.update_time
+      +float_right
+
+
+ul.reviews
+  :border-top 1px solid #e6e6e6
+  li.review
+    +clearfix
+    :border-bottom 1px solid #e6e6e6
+    :padding 5px
+    .ranker_yes
+      :background #69cbe8
+    .ranker_no
+      :background #eee
+    div.ranking
+      +float_left
+      :color #fff
+      :width 62px
+      :height 62px
+      .place
+        +float_left
+        :margin-left 8px
+        :margin-top 9px
+        :font-size 1.5em
+        :font-weight bold
+      .place_delta
+        +float_right
+        :margin-right 6px
+        :margin-top 40px
+        img
+          :margin-right 3px
+        .delta
+          :font-size 0.8em
+    div.user_logo
+      +float_left
+      :margin-left 1px
+      img
+        +float_left
+        :width 60px
+        :height 60px
+        :border 1px solid #999
+    div.review_data
+      +float_left
+      :margin-left 10px
+      :margin-right 10px
+      p
+        :width 340px
+        &.review_user
+          +ellipsis
+          :margin-top 5px
+          .user_name
+            :margin-right 10px
+            :color #343434
+          .review_url
+            a
+              +normal_anchor_style(#999, transparent, none)
+              +active_anchor_style(#999, transparent, underline)
+        &.review_comment
+          :margin-top 5px
+          :margin-bottom 5px
+          :font-size 0.9em
+          :color #333
+    div.review_scores
+      +float_right
+      :width 183px
+      :text-align center
+      :font-size 0.85em
+      :color #333
+      :cursor default
+      .total_score
+        :padding 4px 0
+        :background #e0e0e0
+        :margin-bottom 1px
+        .label
+        .score
+      .detail_scores
+        +clearfix
+        .score_element
+          +float_left
+          :width 45px
+          :padding 5px 0
+          :background #e0e0e0
+          .score
+        .traffic_score, .reference_score, .streaming_score
+          :margin-right 1px
+
+
+
+
+
+
+
+
+// JoinRequest & Reviews - Popup
+
+.join_popup
+  :border 10px solid #0db4e9
+  :padding 25px 30px 0
+  :width 600px
+  .popup_header
+    +clearfix
+    :border-bottom 2px solid #dedede
+    h2
+      :color #333
+      +float_left
+      span.campaign_review
+        :color #7a319d
+      span.campaign_post
+        :color #509e2e
+    .close_button
+      +float_right
+      a
+        +image_replacement("/images/design/icons/close.gif", 14px, 14px)
+  .popup_content
+    :width 600px
+    :padding 0
+    :margin 0
+    div.message
+      +clearfix
+      :margin 15px 10px
+      h3
+        :margin-bottom 10px
+  .badge_html
+    +clearfix
+    :padding 20px 10px
+    .image
+      +float_left
+    .code
+      +float_right
+      textarea
+        :width 300px
+  .help_badge
+    :padding 10px 10px 20px
+    h4
+      :font-size 1em
+      :margin-bottom 5px
+    ul
+      +clearfix
+      :padding 0
+      :margin 0
+      li
+        +float_left
+        :padding 0
+        :margin 0
+        :font-size 0.9em
+        &.spacer
+          :padding 0 5px
+  ul.buttons
+    +clearfix
+    :padding-left 10px
+    :padding-bottom 30px
+    li
+      +float_left
+
+ul.blog_posts
+  :height 200px
+  :overflow auto
+  li.blog_post
+    +clearfix
+    :margin 4px
+    :padding 6px 10px 4px
+    :border 1px solid #eee
+    .post_name
+      +float_left
+      +ellipsis
+      :width 420px
+    .post_timestamp
+      +float_right
+      :font-size 0.9em
+      :color #999
+  li.blog_post_empty
+    :padding 20px
+  li.selected_blog_post
+    :background #eee
+    :border 1px solid #fb0
+
+
+
+// Top 100 Publishers
+
+.simple_title
+  :padding 10px 8px
+  :border-bottom 2px solid #000
+  h2
+    :font-size 1.2em
+
+ul.ranking_pagination
+  +clearfix
+  +heading_font_family
+  :font-size 0.9em
+  :padding 14px 0
+  li
+    +float_left
+    :margin-left 8px
+    a
+      :display block
+      :text-align center
+      :width 66px
+      :padding 2px 0
+      :color #535353
+      :background url(/images/design/bg/rank_pagination_off.gif) no-repeat
+  li.current
+    a
+      :color #fff
+      :background url(/images/design/bg/rank_pagination_on.gif) no-repeat
+
+
+ul.rankings
+  :border-top 1px solid #dedede
+  :margin 0 8px
+  li.ranking
+    +clearfix
+    :padding 8px
+    :border-bottom 1px solid #dedede
+    .place
+      +float_left
+      :width 42px
+      :height 42px
+      :background #69cbe7
+      :color #fff
+      .place_number
+        :display block
+        :text-align center
+        :font-size 1.5em
+        :font-weight bold
+        :margin-top 10px
+    .place_user
+      +float_left
+      :margin-left 1px
+      img
+        +float_left
+        :width 40px
+        :height 40px
+        :border 1px solid #999
+    .user_info
+      +float_left
+      :margin-left 10px
+      .ranking_badge
+        +float_left
+        :margin-right 10px
+      .user_name
+        +float_left
+        :margin-right 20px
+        :margin-top 10px
+      .blog_name
+        +float_left
+        :color #666
+        :margin-top 10px
+    .created_at
+      +float_right
+      :color #999
+      :margin-top 10px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Doc - Static Pages
+
+.container_2box_cs
+  .container_header
+    +clear
+  .container_wrapper
+    +clearfix
+    :margin-top 7px
+    :background url(/images/design/bg/220_f8.gif) left 40px repeat-y
+  .unit_content
+    +float_right
+    :width 725px
+  .unit_rail
+    +float_left
+    :width 250px
+
+
+ul.doc_nav
+  :border-top 2px solid #828282
+  :width 220px
+  li
+    a
+      +heading_font_family
+      :font-size 1em
+      :font-weight bold
+      :display block
+      :height 27px
+      :width 220px
+      :padding-left 20px
+      :padding-top 6px
+      :background url(/images/design/nav/leftm_step02.gif) no-repeat
+      :color #333
+      :text-decoration none
+      &:hover
+        :background url(/images/design/nav/leftm_step03.gif) no-repeat
+    a.subgroup
+      :padding-left 40px
+      :color #666
+    a.subgroup_bg
+      :background url(/images/design/nav/leftmsub_step02.gif) no-repeat
+      &:hover
+        :background url(/images/design/nav/leftmsub_step03.gif) no-repeat
+  li.current
+    a, a:hover
+      :background url(/images/design/nav/leftm_step03.gif) no-repeat
+    a.subgroup_bg, a.subgroup_bg:hover
+      :background url(/images/design/nav/leftmsub_step03.gif) no-repeat
+
+
+.policy
+  :padding-bottom 60px
+  h2
+    :padding-top 10px
+    :font-size 1.3em
+    :border-bottom 1px solid #bcbcbc
+    :padding-bottom 2px
+    :margin-bottom 5px
+  h3
+    :margin-top 20px
+    :margin-bottom 10px
+    :font-size 1.1em
+  h4
+    :margin-top 20px
+    :font-size 1em
+  p
+    :padding 10px 0
+  ol
+    :margin-left 30px
+    li
+      :padding 5px 0
+      :list-style decimal
+      p
+        :padding 2px 0
+    ol
+      li
+        :list-style lower-alpha
+    &.alpha
+      :list-style lower-alpha
+  ul
+    :margin-left 30px
+    li
+      :padding 5px 0
+      :list-style circle
+  strong
+    :font-weight bold
+
+
+.contact_us
+  :padding-bottom 200px
+  h2
+    :padding-top 10px
+    :font-size 1.3em
+    :border-bottom 1px solid #bcbcbc
+    :padding-bottom 2px
+    :margin-bottom 5px
+    :padding-left 10px
+  ul.contacts
+    +clearfix
+    :margin-left 25px
+    :margin-top 40px
+    li
+      +float_left
+      :padding-right 80px
+      :padding-top 90px
+      :padding-bottom 5px
+    li.contact_blog
+      :background url(/images/design/icons/rss.png) no-repeat
+      :padding-left 135px
+      a
+        +image_replacement("/images/design/bu_blog.gif", 122px, 24px)
+    li.contact_twitter
+      :background url(/images/design/icons/twitter.png) no-repeat
+      :padding-left 125px
+      a
+        +image_replacement("/images/design/bu_twitter.gif", 122px, 24px)
+  table.other_contacts
+    :margin-left 25px
+    :margin-top 30px
+    :width 680px
+    tr
+      td
+        :font-size 0.9em
+        :vertical-align top
+        :padding 5px 20px
+        :border-top 1px solid #bcbcbc
+        :border-bottom 1px solid #bcbcbc
+        &.contact_type
+          :color #666
+          :font-weight bold
+          :width 80px
+        &.contact_info
+          :color #7f7f7f
+    tr.top
+      td
+        :border-top 2px solid #bcbcbc
+
+
+.about
+  :padding-bottom 200px
+  h2
+    :padding-top 10px
+    :font-size 1.3em
+    :border-bottom 1px solid #bcbcbc
+    :padding-bottom 2px
+    :margin-bottom 5px
+    :padding-left 10px
+  .section
+    :padding 15px 10px
+    h3
+      :font-size 1.1em
+      :margin-bottom 5px
+    p
+  .intro_banner
+    +clearfix
+    :padding 30px 10px 50px 30px
+    :border-bottom 1px solid #eee
+    h3
+    .desc
+      :margin-top 50px
+    .big_button
+      :font-size 1.2em
+      :margin-top 30px
+      a
+  .sub_section
+    +clearfix
+    :padding 20px 10px 20px
+    .section_content
+      +clear
+      img
+        :margin-top 10px
+    .section_illust
+      +float_left
+      :width 200px
+      :margin-right 25px
+    .section_text
+      +float_left
+      :width 480px
+    h4
+      :font-size 1.1em
+      :color #333
+      :margin-bottom 15px
+      &.top_padding
+        :margin-top 20px
+      &.top_padding3
+        :margin-top 60px
+    p
+      :color #333
+    p.annotation
+      :color #999
+      :font-size 0.9em
+      :margin-top 15px
+  .point
+    :background url(/images/design/icons/i_point.gif) no-repeat
+    :padding-left 40px
+    :margin 25px 0
+  strong
+    :color red
+  ul.tips
+    :list-style disc
+    :margin-left 20px
+    li
+      :font-size 0.9em
+
+.intro_publisher
+  h3
+    +image_replacement("/images/design/s/title_service_publisher.gif", 603px, 23px)
+  .desc
+  .big_button
+    a
+      +image_replacement("/images/design/s/bu_service_publisher.gif", 193px, 35px)
+
+.intro_advertiser
+  :background url(/images/design/s/service_advertiser_img00.gif) no-repeat 25px 80px
+  h3
+    +image_replacement("/images/design/s/title_service_advertiser.gif", 600px, 23px)
+  .desc
+    :margin-left 170px
+  .big_button
+    :margin-left 170px
+    a
+      +image_replacement("/images/design/s/bu_service_advertiser.gif", 195px, 35px)
+
+.intro_budget
+  h3
+    +image_replacement("/images/design/s/title_service_payment.gif", 670px, 23px)
+  .bonus_desc
+    :color #193DA9
+    :padding-left 1em
+  strong
+    :color red
+
+
+// Questions
+
+.new_question
+  .new_question_title
+    h2
+      :padding-top 10px
+      :padding-left 10px
+      :font-size 1.3em
+      :border-bottom 1px solid #bcbcbc
+      :padding-bottom 2px
+      :margin-bottom 5px
+    .info
+      :padding 15px 10px
+      em
+        :color #1fa6b9
+    ul
+      :margin 5px 5px 0 0
+  form.question_form
+    :margin-left 10px
+  .section
+    .summary
+      :border 2px solid #ddd
+      :margin 20px 10px
+      :padding 20px 20px
+      ul
+        :padding-left 30px
+        :list-style square
+        li
+          a
+            :color #666
+            :font-weight bold
+            :font-size 0.9em
+    .full_content
+      :padding 10px 10px 50px
+      ul
+        li
+          :padding 2px 5px 2px 35px
+          :background url(/images/design/icons/q.gif) no-repeat
+          .q
+            :margin-bottom 12px
+          .a
+            :margin-bottom 30px
+            :color #666
+            p
+              :padding 3px 0
+          a
+            :text-decoration underline
+          a.anchor
+            :color #000
+            :text-decoration none
+
+
+
+
+
+
+
+
+
+
+div.info_banners
+  :padding 20px 0
+  .entry
+    :border 1px solid #ccc
+    :margin 10px 0
+    :padding 10px
+    :text-align center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

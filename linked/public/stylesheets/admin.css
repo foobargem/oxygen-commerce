@@ -1,0 +1,1293 @@
+body .minwidth {
+  width: 100%;
+  min-width: 980px;
+  overflow: auto;
+  overflow: visible; }
+body .IE .minwidth div.minwidth_wrapper {
+  border-left: 880px "solid" white;
+  position: relative;
+  float: left;
+  z-index: 1; }
+body .IE .minwidth div.minwidth_holder {
+  margin-left: "-880px";
+  position: relative;
+  float: left;
+  z-index: 2; }
+
+#h {
+  padding: 0 10px; }
+  #h:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  #h {
+    display: inline-block; }
+  .IE #h {
+    height: 1%; }
+  #h {
+    display: block; }
+  #h h1 {
+    display: inline;
+    float: left;
+    margin-top: 26px; }
+    #h h1 a {
+      display: block;
+      overflow: hidden;
+      background-color: transparent;
+      background-image: url(/images/design/pangsday_logo_alpha.png);
+      background-repeat: no-repeat;
+      width: 136px;
+      height: 79px;
+      background-position: 0px 0px;
+      text-indent: -9999em;
+      overflow: hidden;
+      text-align: left; }
+  #h ul.account_nav {
+    display: inline;
+    float: right;
+    margin: 15px 20px; }
+    #h ul.account_nav li {
+      display: inline;
+      float: left;
+      font-size: 1em;
+      color: #cdcdcd; }
+      #h ul.account_nav li a {
+        padding: 1px 3px; }
+        #h ul.account_nav li a, #h ul.account_nav li a:visited {
+          color: #656565;
+          background-color: transparent;
+          text-decoration: underline; }
+        #h ul.account_nav li a:hover, #h ul.account_nav li a:active {
+          color: white;
+          background-color: #333333;
+          text-decoration: none; }
+      #h ul.account_nav li.spacer {
+        margin: 0 9px; }
+  #h ul.main_tab_nav {
+    clear: both;
+    padding-top: 15px; }
+
+#contents {
+  padding: 0 10px; }
+
+.container_1box .container_header {
+  clear: both; }
+.container_1box .unit_content {
+  padding: 15px 10px; }
+
+.container_2box {
+  padding: 15px 10px; }
+  .container_2box:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  .container_2box {
+    display: inline-block; }
+  .IE .container_2box {
+    height: 1%; }
+  .container_2box {
+    display: block; }
+  .container_2box .container_header {
+    clear: both; }
+  .container_2box .unit_content {
+    display: inline;
+    float: left;
+    width: 70%; }
+  .container_2box .unit_rail {
+    display: inline;
+    float: right;
+    width: 29%; }
+
+.filters {
+  display: inline;
+  float: right;
+  padding: 5px; }
+  .filters li {
+    display: inline;
+    float: left; }
+    .filters li.spacer {
+      padding: 0 5px; }
+
+.bg_anchor {
+  display: block;
+  background: url("/images/design/bg/submit_cancel.gif") left no-repeat;
+  padding-left: 13px; }
+  .bg_anchor a {
+    display: block;
+    margin: 0;
+    background: url("/images/design/bg/submit_cancel.gif") right no-repeat;
+    padding: 7px 13px 6px 0; }
+    .IE .bg_anchor a {
+      font-weight: bold; }
+
+.actions .button a {
+  font-size: 0.95em;
+  border: 1px solid #888888;
+  padding: 1px 2px; }
+  .actions .button a, .actions .button a:visited {
+    color: #333333;
+    background-color: transparent;
+    text-decoration: none; }
+  .actions .button a:hover, .actions .button a:active {
+    color: white;
+    background-color: #888888;
+    text-decoration: none; }
+  .actions .button a.pause, .actions .button a.pause:visited {
+    color: #333333;
+    background-color: #ffeeee;
+    text-decoration: none; }
+  .actions .button a.pause:hover, .actions .button a.pause:active {
+    color: white;
+    background-color: #888888;
+    text-decoration: none; }
+  .actions .button a.start, .actions .button a.start:visited {
+    color: #333333;
+    background-color: #ffeeee;
+    text-decoration: none; }
+  .actions .button a.start:hover, .actions .button a.start:active {
+    color: white;
+    background-color: #888888;
+    text-decoration: none; }
+  .actions .button a.approve, .actions .button a.approve:visited {
+    color: #333333;
+    background-color: #ddeeff;
+    text-decoration: none; }
+  .actions .button a.approve:hover, .actions .button a.approve:active {
+    color: white;
+    background-color: #888888;
+    text-decoration: none; }
+  .actions .button a.destroy, .actions .button a.destroy:visited {
+    color: #333333;
+    background-color: #ffdddd;
+    text-decoration: none; }
+  .actions .button a.destroy:hover, .actions .button a.destroy:active {
+    color: white;
+    background-color: #888888;
+    text-decoration: none; }
+
+.section {
+  padding: 10px 5px 20px; }
+  .section h3 {
+    font-size: 1.1em;
+    color: #343434;
+    text-decoration: underline;
+    margin-bottom: 5px; }
+    .section h3 span.more {
+      font-size: 0.8em;
+      font-weight: normal;
+      margin-left: 10px; }
+      .section h3 span.more a, .section h3 span.more a:visited {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none; }
+      .section h3 span.more a:hover, .section h3 span.more a:active {
+        color: white;
+        background-color: blue;
+        text-decoration: none; }
+  .section h4 span.more {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-left: 10px; }
+    .section h4 span.more a, .section h4 span.more a:visited {
+      color: blue;
+      background-color: transparent;
+      text-decoration: none; }
+    .section h4 span.more a:hover, .section h4 span.more a:active {
+      color: white;
+      background-color: blue;
+      text-decoration: none; }
+  .section p.strong {
+    color: #ff3333; }
+  .section div.note {
+    margin-top: 20px; }
+  .section form {
+    padding: 10px 0;
+    border: 5px solid #999999;
+    background: #ddeeff;
+    padding-top: 20px;
+    padding-left: 20px; }
+    .section form .buttons .commit input {
+      color: white;
+      padding: 5px 20px 4px;
+      text-shadow: #155aff 0 -1px 0;
+@end;
+      border: 1px solid #155aff;
+      background: url("/images/design/bg/button_commit.gif") repeat-x;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      cursor: pointer; }
+      .IE .section form .buttons .commit input {
+        border: #666666;
+        background-color: #155aff;
+        font-weight: bold;
+        padding: 6px 16px 3px; }
+      .section form .buttons .commit input:hover {
+        background-position: 0 -5px; }
+    .section form .buttons .cancel input {
+      color: #666666;
+      padding: 5px 20px 4px;
+@end;
+      border: 1px solid #b9b9b9;
+      background: url("/images/design/bg/button_cancel.gif") repeat-x;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      cursor: pointer; }
+      .IE .section form .buttons .cancel input {
+        border: #666666;
+        background-color: #b9b9b9;
+        font-weight: bold;
+        padding: 6px 16px 3px; }
+      .section form .buttons .cancel input:hover {
+        background-position: 0 -5px; }
+    .section form ul.errors {
+      color: #cc0000;
+      margin: 0.2em 0 0.5em 158px; }
+      .section form ul.errors li {
+        padding: 0;
+        border: none; }
+    .section form div.buttons {
+      padding: 10px 0 40px 158px; }
+      .section form div.buttons:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      .section form div.buttons {
+        display: inline-block; }
+      .IE .section form div.buttons {
+        height: 1%; }
+      .section form div.buttons {
+        display: block; }
+      .section form div.buttons .button {
+        display: inline;
+        float: left;
+        margin-left: 15px; }
+        .section form div.buttons .button a {
+          margin-top: 2px; }
+    .section form fieldset:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .section form fieldset {
+      display: inline-block; }
+    .IE .section form fieldset {
+      height: 1%; }
+    .section form fieldset {
+      display: block; }
+    .section form fieldset.buttons {
+      padding: 10px 0 40px 158px; }
+      .section form fieldset.buttons li {
+        display: inline;
+        float: left;
+        margin-left: 15px;
+        font-size: 0.9em; }
+        .section form fieldset.buttons li a, .section form fieldset.buttons li a:visited {
+          color: red;
+          background-color: transparent;
+          text-decoration: underline; }
+        .section form fieldset.buttons li a:hover, .section form fieldset.buttons li a:active {
+          color: white;
+          background-color: red;
+          text-decoration: none; }
+        .section form fieldset.buttons li.link {
+          margin-top: 2px;
+          margin-right: 5px; }
+    .section form fieldset legend span {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #343434; }
+    .section form fieldset ol li {
+      margin-bottom: 5px; }
+      .section form fieldset ol li:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      .section form fieldset ol li {
+        display: inline-block; }
+      .IE .section form fieldset ol li {
+        height: 1%; }
+      .section form fieldset ol li {
+        display: block; }
+      .section form fieldset ol li label {
+        display: inline;
+        float: left;
+        display: block;
+        width: 158px;
+        padding-top: 0.2em; }
+      .section form fieldset ol li.error input {
+        border: 3px solid #ee0000;
+        margin: 0; }
+    .section form fieldset ol li.boolean input {
+      margin: 0 0.5em 0 0.2em; }
+    .section form fieldset ol li.radio fieldset ol {
+      margin-bottom: -0.6em; }
+      .section form fieldset ol li.radio fieldset ol li {
+        margin: 1px 0 5px; }
+        .section form fieldset ol li.radio fieldset ol li label {
+          float: none;
+          width: 100%; }
+          .section form fieldset ol li.radio fieldset ol li label input {
+            margin-right: 0.2em; }
+    .section form fieldset ol li.check_boxes fieldset ol {
+      margin-bottom: -0.6em; }
+      .section form fieldset ol li.check_boxes fieldset ol li {
+        margin: 0.1em 0 0.5em 0; }
+        .section form fieldset ol li.check_boxes fieldset ol li label {
+          float: none;
+          width: 100%; }
+          .section form fieldset ol li.check_boxes fieldset ol li label input {
+            margin-right: 0.2em; }
+    .section form fieldset ol li.date fieldset ol li, .section form fieldset ol li.time fieldset ol li, .section form fieldset ol li.datetime fieldset ol li {
+      display: inline;
+      float: left;
+      width: auto; }
+      .IE .section form fieldset ol li.date fieldset ol li, .FF .section form fieldset ol li.date fieldset ol li, .IE .section form fieldset ol li.time fieldset ol li, .FF .section form fieldset ol li.time fieldset ol li, .IE .section form fieldset ol li.datetime fieldset ol li, .FF .section form fieldset ol li.datetime fieldset ol li {
+        margin-left: 3px;
+        padding-bottom: 3px; }
+      .section form fieldset ol li.date fieldset ol li label, .section form fieldset ol li.time fieldset ol li label, .section form fieldset ol li.datetime fieldset ol li label {
+        display: none; }
+        .section form fieldset ol li.date fieldset ol li label input, .section form fieldset ol li.time fieldset ol li label input, .section form fieldset ol li.datetime fieldset ol li label input {
+          display: inline;
+          margin: 0;
+          padding: 0; }
+    .section form fieldset ol li.preview .preview_content img {
+      border: 1px solid #999999;
+      padding: 2px;
+      width: 60px;
+      height: 60px; }
+    .section form fieldset ol li.tip {
+      background: #ececec;
+      color: #444444;
+      padding: 7px 10px 6px;
+      margin-bottom: 10px; }
+    .section form fieldset ol li.desc {
+      margin-bottom: 15px;
+      color: #666666; }
+      .section form fieldset ol li.desc p {
+        font-size: 0.9em; }
+    .section form fieldset ol li p.inline-hints {
+      color: #989898;
+      margin-top: 3px;
+      font-size: 0.9em; }
+    .section form fieldset ol li p.inline-errors {
+      color: #cc0000;
+      margin-top: 3px;
+      font-size: 0.9em; }
+    .section form fieldset ol fieldset {
+      position: relative; }
+      .section form fieldset ol fieldset legend {
+        position: absolute;
+        width: 95%;
+        padding-top: 0.1em;
+        left: 0px; }
+        .section form fieldset ol fieldset legend span {
+          position: absolute; }
+        .section form fieldset ol fieldset legend.label label {
+          position: absolute; }
+      .section form fieldset ol fieldset ol {
+        display: inline;
+        float: left;
+        width: 70%;
+        margin: 0;
+        padding: 0 0 0 158px; }
+        .section form fieldset ol fieldset ol li {
+          padding: 0;
+          border: 0; }
+    .section form ol li.string input {
+      max-width: 70%; }
+    .section form ol li.password input {
+      max-width: 70%; }
+    .section form ol li.numeric input {
+      max-width: 70%; }
+    .section form ol li.file input {
+      max-width: 70%; }
+    .section form ol li.text textarea {
+      max-width: 70%; }
+    .section form ol li.boolean label {
+      padding-left: 70%;
+      width: auto; }
+    .section form ol li.preview .preview_content {
+      margin-left: 158px; }
+    .section form ol li p.inline-hints {
+      margin-left: 160px; }
+    .section form ol li p.inline-errors {
+      margin-left: 160px; }
+    .section form fieldset.sub_section {
+      margin: 25px 0 25px 178px;
+      position: relative; }
+      .section form fieldset.sub_section legend {
+        font-weight: bold; }
+        .IE .section form fieldset.sub_section legend {
+          position: relative;
+          left: -7px; }
+        .section form fieldset.sub_section legend span {
+          text-decoration: none;
+          color: #333333; }
+    .section form iframe.editor {
+      border: 1px solid #999999;
+      height: 400px;
+      width: 662px;
+      margin: 0 0 0 158px;
+      font-family: Dotum;
+      font-size: 0.9em;
+      background: white; }
+    .section form fieldset.inputs {
+      margin-bottom: 20px; }
+      .section form fieldset.inputs legend {
+        margin-bottom: 5px; }
+
+.subsection {
+  color: #666666;
+  padding: 10px 20px; }
+
+.product_header {
+  padding: 5px 0; }
+  .product_header h2 {
+    font-size: 1.4em; }
+  .product_header p {
+    color: #666666; }
+  .product_header .main_tab_nav {
+    margin: 20px 0; }
+
+.product_filter {
+  margin: 20px 0 10px; }
+
+table.products {
+  width: 100%; }
+  table.products thead tr {
+    background: #eeeeee; }
+    table.products thead tr th {
+      background: #eeeeee;
+      border: 1px solid #cccccc;
+      padding: 10px 3px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9em; }
+  table.products tbody tr td {
+    border: 1px solid #cccccc;
+    padding: 4px 7px;
+    font-size: 0.9em; }
+  table.products tbody tr.total, table.products tbody tr.average {
+    background: #eeeeee; }
+    table.products tbody tr.total td, table.products tbody tr.average td {
+      background: #eeeeee; }
+    table.products tbody tr.total td.total, table.products tbody tr.average td.total {
+      text-align: center; }
+  table.products tbody td.actions a {
+    padding: 0 2px; }
+  table.products .msg {
+    padding: 30px;
+    text-align: center; }
+  table.products th.provider_name {
+    width: 140px; }
+  table.products th.resort {
+    width: 140px; }
+  table.products th.ticket_type {
+    width: 140px; }
+  table.products th.date_range {
+    width: 160px; }
+  table.products th.coupons {
+    width: 100px; }
+  table.products th.actions {
+    width: 100px; }
+  table.products td.name {
+    text-align: left; }
+  table.products td.provider_name {
+    text-align: center; }
+  table.products td.resort {
+    text-align: center; }
+  table.products td.ticket_type {
+    text-align: center; }
+  table.products td.date_range {
+    text-align: center; }
+  table.products td.coupons {
+    text-align: center; }
+  table.products td.actions {
+    text-align: center; }
+
+table.coupons {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.coupons thead tr {
+    background: #dddddd; }
+    table.coupons thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.coupons tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.coupons tbody tr.total, table.coupons tbody tr.average {
+    background: #ddeeff; }
+    table.coupons tbody tr.total td, table.coupons tbody tr.average td {
+      background: #ddeeff; }
+  table.coupons tbody td.actions a {
+    padding: 0 2px; }
+  table.coupons th.quantity {
+    width: 90px; }
+  table.coupons th.used_quantity {
+    width: 90px; }
+  table.coupons th.purchaser_name {
+    width: 160px; }
+  table.coupons th.phone_number {
+    width: 160px; }
+  table.coupons th.agency_name {
+    width: 160px; }
+  table.coupons th.actions {
+    width: 120px; }
+  table.coupons td.coupon_number {
+    text-align: center; }
+  table.coupons td.quantity {
+    text-align: center; }
+  table.coupons td.used_quantity {
+    text-align: center; }
+  table.coupons td.purchaser_name {
+    text-align: center; }
+  table.coupons td.phone_number {
+    text-align: center; }
+  table.coupons td.agency_name {
+    text-align: center; }
+  table.coupons td.actions {
+    text-align: center; }
+
+table.reservations {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.reservations thead tr {
+    background: #dddddd; }
+    table.reservations thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.reservations tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.reservations tbody tr.total, table.reservations tbody tr.average {
+    background: #ddeeff; }
+    table.reservations tbody tr.total td, table.reservations tbody tr.average td {
+      background: #ddeeff; }
+  table.reservations tbody td.actions a {
+    padding: 0 2px; }
+  table.reservations th.user_name {
+    width: 100px; }
+  table.reservations th.part_time {
+    width: 100px; }
+  table.reservations th.shoe_type {
+    width: 100px; }
+  table.reservations th.board_stance {
+    width: 100px; }
+  table.reservations th.height {
+    width: 100px; }
+  table.reservations th.shoe_size {
+    width: 100px; }
+  table.reservations th.actions {
+    width: 140px; }
+  table.reservations td.user_name {
+    text-align: center; }
+  table.reservations td.resort {
+    text-align: center; }
+  table.reservations td.part_time {
+    text-align: center; }
+  table.reservations td.shoe_type {
+    text-align: center; }
+  table.reservations td.board_stance {
+    text-align: center; }
+  table.reservations td.height {
+    text-align: center; }
+  table.reservations td.shoe_size {
+    text-align: center; }
+  table.reservations td.actions {
+    text-align: center; }
+
+table.not_reviewed {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.not_reviewed thead tr {
+    background: #dddddd; }
+    table.not_reviewed thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.not_reviewed tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.not_reviewed tbody tr.total, table.not_reviewed tbody tr.average {
+    background: #ddeeff; }
+    table.not_reviewed tbody tr.total td, table.not_reviewed tbody tr.average td {
+      background: #ddeeff; }
+  table.not_reviewed tbody td.actions a {
+    padding: 0 2px; }
+  table.not_reviewed th.user, table.not_reviewed td.user {
+    width: 140px;
+    text-align: center; }
+  table.not_reviewed th.blog, table.not_reviewed td.blog {
+    text-align: left; }
+  table.not_reviewed th.phone, table.not_reviewed td.phone {
+    width: 150px;
+    text-align: center; }
+  table.not_reviewed th.email, table.not_reviewed td.email {
+    width: 200px;
+    text-align: center; }
+  table.not_reviewed th.status, table.not_reviewed td.status {
+    width: 150px;
+    text-align: center; }
+
+.review_information {
+  padding: 10px; }
+
+table.join_requests {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.join_requests thead tr {
+    background: #dddddd; }
+    table.join_requests thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.join_requests tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.join_requests tbody tr.total, table.join_requests tbody tr.average {
+    background: #ddeeff; }
+    table.join_requests tbody tr.total td, table.join_requests tbody tr.average td {
+      background: #ddeeff; }
+  table.join_requests tbody td.actions a {
+    padding: 0 2px; }
+  table.join_requests th.publisher {
+    width: 160px; }
+  table.join_requests th.blog {
+    width: 200px; }
+  table.join_requests th.history {
+    width: 300px; }
+  table.join_requests th.actions {
+    width: 120px; }
+  table.join_requests td.publisher {
+    text-align: center; }
+  table.join_requests td.blog {
+    text-align: left; }
+  table.join_requests td.history {
+    text-align: left; }
+  table.join_requests td.actions {
+    text-align: center; }
+  table.join_requests tr.chosen {
+    background: #ddffdd; }
+    table.join_requests tr.chosen td {
+      background: #ddffdd; }
+  table.join_requests tr.rejected {
+    background: #ffdddd; }
+    table.join_requests tr.rejected td {
+      background: #ffdddd; }
+
+table.profits {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.profits thead tr {
+    background: #dddddd; }
+    table.profits thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.profits tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.profits tbody tr.total, table.profits tbody tr.average {
+    background: #ddeeff; }
+    table.profits tbody tr.total td, table.profits tbody tr.average td {
+      background: #ddeeff; }
+  table.profits tbody td.actions a {
+    padding: 0 2px; }
+  table.profits th.ranking {
+    width: 50px; }
+  table.profits th.login {
+    width: 120px; }
+  table.profits th.point {
+    width: 120px; }
+  table.profits th.contribution {
+    width: 80px; }
+  table.profits th.prize {
+    width: 120px; }
+  table.profits th.status {
+    width: 60px; }
+  table.profits th.result_code {
+    width: 100px; }
+  table.profits th.prize_money {
+    width: 160px; }
+  table.profits td.ranking {
+    text-align: center; }
+  table.profits td.login {
+    text-align: center; }
+  table.profits td.blog {
+    text-align: left; }
+  table.profits td.point {
+    text-align: center; }
+  table.profits td.contribution {
+    text-align: center; }
+  table.profits td.prize {
+    text-align: right; }
+  table.profits td.status {
+    text-align: center; }
+  table.profits td.result_code {
+    text-align: center; }
+  table.profits td.prize_money {
+    text-align: center; }
+
+.prize_info {
+  padding: 15px 10px; }
+  .prize_info p {
+    padding: 1px 0; }
+
+table.advertisers {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.advertisers thead tr {
+    background: #dddddd; }
+    table.advertisers thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.advertisers tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.advertisers tbody tr.total, table.advertisers tbody tr.average {
+    background: #ddeeff; }
+    table.advertisers tbody tr.total td, table.advertisers tbody tr.average td {
+      background: #ddeeff; }
+  table.advertisers tbody td.actions a {
+    padding: 0 2px; }
+  table.advertisers th.checkbox {
+    width: 50px; }
+  table.advertisers th.login {
+    width: 150px; }
+  table.advertisers th.phone {
+    width: 150px; }
+  table.advertisers th.company {
+    width: 180px; }
+  table.advertisers td.checkbox {
+    text-align: center; }
+  table.advertisers td.login {
+    text-align: center; }
+  table.advertisers td.email {
+    text-align: center; }
+  table.advertisers td.phone {
+    text-align: center; }
+  table.advertisers td.company {
+    text-align: center; }
+
+table.advertisers {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.advertisers thead tr {
+    background: #dddddd; }
+    table.advertisers thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.advertisers tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.advertisers tbody tr.total, table.advertisers tbody tr.average {
+    background: #ddeeff; }
+    table.advertisers tbody tr.total td, table.advertisers tbody tr.average td {
+      background: #ddeeff; }
+  table.advertisers tbody td.actions a {
+    padding: 0 2px; }
+  table.advertisers th.checkbox {
+    width: 50px; }
+  table.advertisers th.login {
+    width: 160px; }
+  table.advertisers th.phone {
+    width: 180px; }
+  table.advertisers th.company {
+    width: 200px; }
+  table.advertisers th.actions {
+    width: 180px; }
+  table.advertisers td.checkbox {
+    text-align: center; }
+  table.advertisers td.login {
+    text-align: center; }
+  table.advertisers td.email {
+    text-align: center; }
+  table.advertisers td.phone {
+    text-align: center; }
+  table.advertisers td.company {
+    text-align: center; }
+  table.advertisers td.actions {
+    text-align: center; }
+
+table.publishers {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.publishers thead tr {
+    background: #dddddd; }
+    table.publishers thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.publishers tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.publishers tbody tr.total, table.publishers tbody tr.average {
+    background: #ddeeff; }
+    table.publishers tbody tr.total td, table.publishers tbody tr.average td {
+      background: #ddeeff; }
+  table.publishers tbody td.actions a {
+    padding: 0 2px; }
+  table.publishers th.checkbox {
+    width: 50px; }
+  table.publishers th.login {
+    width: 160px; }
+  table.publishers th.email {
+    width: 200px; }
+  table.publishers th.phone {
+    width: 180px; }
+  table.publishers th.actions {
+    width: 180px; }
+  table.publishers td.checkbox {
+    text-align: center; }
+  table.publishers td.login {
+    text-align: center; }
+  table.publishers td.email {
+    text-align: center; }
+  table.publishers td.phone {
+    text-align: center; }
+  table.publishers td.blog {
+    text-align: center; }
+  table.publishers td.actions {
+    text-align: center; }
+
+table.blogs {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.blogs thead tr {
+    background: #dddddd; }
+    table.blogs thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.blogs tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.blogs tbody tr.total, table.blogs tbody tr.average {
+    background: #ddeeff; }
+    table.blogs tbody tr.total td, table.blogs tbody tr.average td {
+      background: #ddeeff; }
+  table.blogs tbody td.actions a {
+    padding: 0 2px; }
+  table.blogs th.publisher {
+    width: 180px; }
+  table.blogs th.category {
+    width: 180px; }
+  table.blogs th.sns_score {
+    width: 120px; }
+  table.blogs th.score {
+    width: 120px; }
+  table.blogs td.publisher {
+    text-align: center; }
+  table.blogs td.url {
+    text-align: center; }
+  table.blogs td.category {
+    text-align: center; }
+  table.blogs td.sns_score {
+    text-align: center; }
+  table.blogs td.score {
+    text-align: center; }
+
+div.notifications:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+div.notifications {
+  display: inline-block; }
+.IE div.notifications {
+  height: 1%; }
+div.notifications {
+  display: block; }
+div.notifications .total_count {
+  display: inline;
+  float: left; }
+div.notifications .date_info {
+  display: inline;
+  float: right; }
+
+table.requests {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.requests thead tr {
+    background: #dddddd; }
+    table.requests thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.requests tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.requests tbody tr.total, table.requests tbody tr.average {
+    background: #ddeeff; }
+    table.requests tbody tr.total td, table.requests tbody tr.average td {
+      background: #ddeeff; }
+  table.requests tbody td.actions a {
+    padding: 0 2px; }
+  table.requests th.publisher {
+    width: 120px; }
+  table.requests th.requested_date {
+    width: 150px; }
+  table.requests th.transfered_date {
+    width: 150px; }
+  table.requests th.amount {
+    width: 120px; }
+  table.requests th.commission {
+    width: 120px; }
+  table.requests th.tax {
+    width: 120px; }
+  table.requests th.net_price {
+    width: 120px; }
+  table.requests th.action {
+    width: 100px; }
+  table.requests td.publisher {
+    text-align: center; }
+  table.requests td.requested_date {
+    text-align: center; }
+  table.requests td.transfered_date {
+    text-align: center; }
+  table.requests td.amount {
+    text-align: right; }
+  table.requests td.commission {
+    text-align: right; }
+  table.requests td.tax {
+    text-align: right; }
+  table.requests td.net_price {
+    text-align: right; }
+  table.requests td.note {
+    text-align: left; }
+  table.requests td.action {
+    text-align: center; }
+
+.request_header .main_tab_nav {
+  margin-top: 20px; }
+.request_header .notifications {
+  padding: 15px 0; }
+
+table.waiting_campaigns {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.waiting_campaigns thead tr {
+    background: #dddddd; }
+    table.waiting_campaigns thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.waiting_campaigns tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.waiting_campaigns tbody tr.total, table.waiting_campaigns tbody tr.average {
+    background: #ddeeff; }
+    table.waiting_campaigns tbody tr.total td, table.waiting_campaigns tbody tr.average td {
+      background: #ddeeff; }
+  table.waiting_campaigns tbody td.actions a {
+    padding: 0 2px; }
+  table.waiting_campaigns th.status {
+    width: 80px; }
+  table.waiting_campaigns th.title {
+    width: 300px; }
+  table.waiting_campaigns th.updated_at {
+    width: 200px; }
+  table.waiting_campaigns td.status {
+    text-align: center; }
+  table.waiting_campaigns td.title {
+    text-align: left; }
+  table.waiting_campaigns td.updated_at {
+    text-align: left; }
+  table.waiting_campaigns td.note {
+    text-align: left; }
+
+table.review_campaigns {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.review_campaigns thead tr {
+    background: #dddddd; }
+    table.review_campaigns thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.review_campaigns tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.review_campaigns tbody tr.total, table.review_campaigns tbody tr.average {
+    background: #ddeeff; }
+    table.review_campaigns tbody tr.total td, table.review_campaigns tbody tr.average td {
+      background: #ddeeff; }
+  table.review_campaigns tbody td.actions a {
+    padding: 0 2px; }
+  table.review_campaigns th.end_date {
+    width: 200px; }
+  table.review_campaigns th.selection_count {
+    width: 150px; }
+  table.review_campaigns th.request_count {
+    width: 150px; }
+  table.review_campaigns th.amount {
+    width: 150px; }
+  table.review_campaigns td.title {
+    text-align: left; }
+  table.review_campaigns td.end_date {
+    text-align: center; }
+  table.review_campaigns td.selection_count {
+    text-align: center; }
+  table.review_campaigns td.request_count {
+    text-align: center; }
+  table.review_campaigns td.amount {
+    text-align: right; }
+
+table.transfer_requests {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.transfer_requests thead tr {
+    background: #dddddd; }
+    table.transfer_requests thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.transfer_requests tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.transfer_requests tbody tr.total, table.transfer_requests tbody tr.average {
+    background: #ddeeff; }
+    table.transfer_requests tbody tr.total td, table.transfer_requests tbody tr.average td {
+      background: #ddeeff; }
+  table.transfer_requests tbody td.actions a {
+    padding: 0 2px; }
+  table.transfer_requests th.amount {
+    width: 100px; }
+  table.transfer_requests th.publisher {
+    width: 100px; }
+  table.transfer_requests td.requested_date {
+    text-align: center; }
+  table.transfer_requests td.amount {
+    text-align: right; }
+  table.transfer_requests td.publisher {
+    text-align: center; }
+
+.campaign_title .campaign_type {
+  display: inline;
+  float: left;
+  margin-right: 5px; }
+.campaign_title .campaign_name {
+  display: inline;
+  float: left; }
+
+table.notices {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.notices thead tr {
+    background: #dddddd; }
+    table.notices thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.notices tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.notices tbody tr.total, table.notices tbody tr.average {
+    background: #ddeeff; }
+    table.notices tbody tr.total td, table.notices tbody tr.average td {
+      background: #ddeeff; }
+  table.notices tbody td.actions a {
+    padding: 0 2px; }
+
+table.referrers {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.referrers thead tr {
+    background: #dddddd; }
+    table.referrers thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.referrers tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.referrers tbody tr.total, table.referrers tbody tr.average {
+    background: #ddeeff; }
+    table.referrers tbody tr.total td, table.referrers tbody tr.average td {
+      background: #ddeeff; }
+  table.referrers tbody td.actions a {
+    padding: 0 2px; }
+  table.referrers th.count {
+    width: 60px; }
+  table.referrers th.validity {
+    width: 100px; }
+  table.referrers th.actions {
+    witdh: 160px; }
+  table.referrers td.url {
+    text-align: left; }
+  table.referrers td.count {
+    text-align: center; }
+  table.referrers td.validity {
+    text-align: center; }
+  table.referrers td.actions {
+    text-align: center; }
+
+table.stream_sources {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.stream_sources thead tr {
+    background: #dddddd; }
+    table.stream_sources thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.stream_sources tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.stream_sources tbody tr.total, table.stream_sources tbody tr.average {
+    background: #ddeeff; }
+    table.stream_sources tbody tr.total td, table.stream_sources tbody tr.average td {
+      background: #ddeeff; }
+  table.stream_sources tbody td.actions a {
+    padding: 0 2px; }
+  table.stream_sources th.message {
+    width: 520px; }
+  table.stream_sources th.followers_count {
+    width: 100px; }
+  table.stream_sources th.published {
+    width: 140px; }
+  table.stream_sources th.validity {
+    width: 120px; }
+  table.stream_sources th.actions {
+    width: 80px; }
+  table.stream_sources td.message {
+    text-align: left; }
+  table.stream_sources td.followers_count {
+    text-align: center; }
+  table.stream_sources td.published {
+    text-align: center; }
+  table.stream_sources td.url {
+    text-align: center; }
+  table.stream_sources td.validity {
+    text-align: center; }
+  table.stream_sources td.actions {
+    text-align: center; }
+
+table.publisher_profits {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.publisher_profits thead tr {
+    background: #dddddd; }
+    table.publisher_profits thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.publisher_profits tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.publisher_profits tbody tr.total, table.publisher_profits tbody tr.average {
+    background: #ddeeff; }
+    table.publisher_profits tbody tr.total td, table.publisher_profits tbody tr.average td {
+      background: #ddeeff; }
+  table.publisher_profits tbody td.actions a {
+    padding: 0 2px; }
+  table.publisher_profits th.review_url {
+    width: 200px; }
+  table.publisher_profits th.prize {
+    width: 100px; }
+  table.publisher_profits th.passed_at {
+    width: 120px; }
+  table.publisher_profits td.campaign {
+    text-align: left; }
+  table.publisher_profits td.review_url {
+    text-align: left; }
+  table.publisher_profits td.prize {
+    text-align: right; }
+  table.publisher_profits td.passed_at {
+    text-align: center; }
+  table.publisher_profits tr.summary {
+    background: #ddeeff; }
+    table.publisher_profits tr.summary td.message {
+      text-align: right; }

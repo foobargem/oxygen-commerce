@@ -1,0 +1,159 @@
+@import mixin.sass
+
+
+//
+
+body
+  +min_width_container(860px, true)
+
+#h
+  :padding 100px 15px 20px
+  h1
+    a
+      +image_replacement("/images/design/logo.gif", 110px, 30px)
+
+#contents
+  :padding 0 15px
+
+#footer
+  :margin-top 50px
+  ul.copyright
+    :padding 8px 20px
+    :border-top 4px solid #f0f0f0
+    li.right
+      :padding-right 20px
+
+
+
+
+// Advertiser Signup
+
+.new_advertiser_title
+  :margin-top 40px
+  h2
+    :font-size 2em
+    :margin-bottom 20px
+  ul.nav
+    +clearfix
+    :padding 15px 20px
+    :border-top 2px solid #57ACED
+    :border-bottom 2px solid #57ACED
+    li
+      +float_left
+      :color #bbb
+      :margin-top 5px
+      :font-size 1em
+      :font-weight bold
+      &.spacer
+        :margin 0 15px
+        :color #666
+        +image_replacement("/images/design/f/step_arrow_small.gif", 14px, 30px)
+      &.current
+        :color #118ae5
+
+.new_advertiser_form
+  :margin-top 20px
+  :margin-bottom 20px
+  h2
+    :margin-bottom 10px
+  div.summary
+    :margin 10px 0 10px 300px
+    p
+      :padding 2px 0
+  .notice
+    :color #118AE5
+    :text-align center
+    :padding 10px
+    :font-size 1.2em
+  .warning
+    :width 500px
+    :margin 20px auto
+    :background #ececec
+    :color #444
+    :padding 10px 15px
+    em
+      :color #118ae5
+  .buttons
+    +clearfix
+    :margin-top 20px
+    :border-top 1px solid #ccc
+    :padding-top 30px
+    :padding-left 320px
+    :padding-bottom 60px
+    li
+      +float_left
+      :padding-right 17px
+      :font-size 0.95em
+
+
+
+
+// Advertiser Login
+
+div.login_form
+  +clearfix
+  div.intro
+    +float_left
+    :margin-right 44px
+  div.login
+    +float_left
+    h2
+      :font-size 1.5em
+      :margin 10px 20px 15px
+      +image_replacement("/images/design/ad_login_heading.gif", 70px, 14px)
+    form
+      :background #eee
+      :padding 20px 20px
+      +border_radius(10px)
+      :width 290px
+      label
+        :font-size 0.9em
+      li.string, li.password
+        +clearfix
+        .IE &
+          :margin-bottom 2px
+        label
+          +float_left
+          :width 60px
+          :padding-top 5px
+        input
+          +float_left
+          :width 75%
+          .IE &
+            :margin-top 2px
+          .IE6 &
+            :width 200px
+      li.boolean
+        :padding-top 10px
+        label
+          :padding-left 60px
+      li.login_error
+        :padding-left 60px
+        :color #c00
+        :font-size 0.9em
+      fieldset.buttons
+        :padding 10px 20px 10px 60px
+        li.login
+          input
+            +background_button("/images/design/bg/button_gray_small.gif", #333, #fff, 1px, 0, 17px)
+            +border_radius(0px)
+            :font-size 0.9em
+            .IE &
+              :padding-top 4px
+              :padding-left 10px
+              :padding-right 10px
+      ul.links
+        :padding-left 60px
+        :font-size 0.9em
+        li
+          :padding 2px 0
+
+p.advertiser_login_message
+  +image_replacement("/images/design/ad_index.jpg", 437px, 313px)
+
+
+
+
+
+
+

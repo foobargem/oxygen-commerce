@@ -1,0 +1,648 @@
+@import mixin.sass
+
+
+
+// Layouts
+
+body
+  +min_width_container(1000px, false)
+
+#h
+  +clearfix
+  :background url(/images/design/h/bottom_shadow.gif) bottom repeat-x
+  :padding-bottom 6px
+  ul.account_nav
+    +float_right
+    +no_text_selection
+    :text-align right
+    :padding 12px 12px 0 11px
+    :background url(/images/design/icons/smile.gif) left 16px no-repeat
+    :margin-right 20px
+    :height 33px
+    li
+      +float_left
+      :margin 0 5px
+    li.bg
+      a
+        :display block
+        :font-size 0.8em
+        :padding-left 10px
+        :background url(/images/design/bg/btn_gray.gif) no-repeat
+        span
+          :display block
+          :padding-right 10px
+          :background url(/images/design/bg/btn_gray.gif) right no-repeat
+    li.mypage
+      a
+        :font-size 0.9em
+        :color #595959
+  h1
+    +float_left
+    :padding-right 17px
+    :background url(/images/design/h/menu_front.gif) right bottom no-repeat
+    a.logo
+      +float_left
+      +image_replacement("/images/design/logo_wp.gif", 109px, 82px)
+    a.dashboard
+      +float_left
+      +image_replacement("/images/design/logo_ad.gif", 91px, 82px)
+  ul.top_nav
+    +clearfix
+    +no_text_selection
+    :clear right
+    :margin-right 30px
+    .IE6 &, .IE7 &
+      :position absolute
+      :width 80%
+      :height 37px
+    :background #979797 url(/images/design/h/menu_back.gif) right no-repeat
+    li
+      +float_left
+      :padding-top 10px
+      :padding-bottom 7px
+      a
+        :font-size 1em
+        :padding 0 37px
+        :border-right 1px solid #c7c7c7
+        +normal_anchor_style(#fff, transparent, none)
+        +active_anchor_style(#fff, transparent, underline)
+    li.current
+      a
+        :font-weight bold
+        +normal_anchor_style(#000, transparent, none)
+        +active_anchor_style(#000, transparent, none)
+
+#footer
+  :margin-top 50px
+  ul.copyright
+    :padding 8px 20px
+    :border-top 4px solid #f0f0f0
+    li.right
+      :padding-right 20px
+
+
+.container_1box
+  .container_header
+    +clear
+    :padding-left 20px
+    :padding-right 30px
+  .unit_content
+    :padding-left 20px
+    :padding-right 30px
+
+.container_2box
+  +clearfix
+  .container_header
+    +clear
+    :padding-left 20px
+    :padding-right 30px
+  .unit_content
+    +float_left
+    :padding-left 20px
+    :width 74%
+  .unit_rail
+    +float_right
+    :padding-right 30px
+    :width 25%
+
+.container_2box_left
+  +clearfix
+  .container_header
+    +clear
+  .unit_content
+    :margin-left 217px
+    :padding-right 30px
+  .unit_rail
+    +float_left
+    :width 200px
+
+.container_3box
+  +clearfix
+  .container_header
+    +clear
+  .unit_content
+    :margin-left 217px
+    :margin-right 231px
+  .unit_rail1
+    +float_left
+    :width 200px
+  .unit_rail2
+    +float_right
+    :width 231px
+
+
+
+//
+
+.filters
+  :padding 20px 10px 10px
+
+
+
+
+// Dashboard
+
+.messages
+  :padding-top 35px
+  h3
+    +image_replacement("/images/design/notice_heading.gif", 230px, 41px)
+  ul
+    :padding 10px 10px 20px 35px
+    :list-style disc
+    li
+      :padding 5px 0
+      :margin 0
+      :font-size 0.9em
+
+.dashboard_section
+  :padding-right 30px
+  :border-right 1px solid #cacaca
+  :padding-bottom 20px
+
+
+
+
+// Campaign - Common
+
+div.campaign_toolbox
+  +clearfix
+  :margin 14px 12px 11px
+  :padding-top 14px
+  :background url(/images/design/bg/rbox_top.gif) top no-repeat
+  h3
+    :font-size 1.1em
+    +image_replacement("/images/design/new_campaign_heading.gif", 176px, 34px)
+  ul
+    :background url(/images/design/bg/rbox_bottom.gif) bottom no-repeat
+    :padding 10px 10px 20px 35px
+    :list-style disc
+    li
+      :padding 5px 0
+      :font-size 0.9em
+      a
+
+table.active_campaigns
+  +simple_table_style
+  th
+    &.status
+      :width 80px
+    &.name
+    &.users
+      :width 80px
+    &.schedule
+      :width 160px
+  td
+    &.status
+    &.name
+    &.users
+      :text-align center
+    &.schedule
+      :text-align center
+
+.status
+  span
+    :padding-left 15px
+    &.creating
+      :background url(/images/design/icons/dot_gray.gif) 0 1px no-repeat
+    &.waiting
+      :background url(/images/design/icons/dot_yellow.gif) 0 1px no-repeat
+    &.approved
+      :background url(/images/design/icons/dot_green.gif) 0 1px no-repeat
+    &.running
+      :background url(/images/design/icons/dot_green.gif) 0 1px no-repeat
+    &.paused
+      :background url(/images/design/icons/dot_red.gif) 0 1px no-repeat
+    &.deleted
+      :background url(/images/design/icons/dot_red.gif) 0 1px no-repeat
+    &.completed
+      :background url(/images/design/icons/dot_blue.gif) 0 1px no-repeat
+
+
+
+// Campaign - Collection
+
+.campaign_filter
+  :padding-top 22px
+
+table.campaigns
+  +simple_table_style
+  th
+    &.status
+      :width 80px
+    &.name
+    &.starts_at
+      :width 80px
+    &.ends_at
+      :width 80px
+    &.money
+      :width 100px
+    &.users
+      :width 80px
+    &.traffic_pv
+      :width 80px
+    &.traffic_uv
+      :width 80px
+    &.link_freq
+      :width 60px
+    &.stream_diffusion
+      :width 60px
+    &.stream_rate
+      :width 40px
+    &.total_score
+      :width 80px
+  td
+    &.status
+    &.name
+      .campaign_name
+        +float_left
+      span.edit_button
+        +float_left
+        :margin-left 6px
+        a
+          +image_replacement("/images/design/icons/edit.gif", 47px, 18px)
+          :font-size 0.8em
+          +normal_anchor_style(blue, transparent, underline)
+          +active_anchor_style(#fff, blue, none)
+    &.starts_at, &.ends_at
+      :text-align center
+    &.money
+      :text-align right
+    &.users
+      :text-align center
+    &.traffic_pv
+      :text-align right
+    &.traffic_uv
+      :text-align right
+    &.link_freq
+      :text-align right
+    &.stream_diffusion
+      :text-align right
+    &.stream_rate
+      :text-align right
+    &.total_score
+      :text-align right
+
+
+
+// Campaign - Member
+
+.campaign_header
+  +clearfix
+  ul.nav
+    :padding-top 10px
+    :padding-bottom 10px
+    li
+      a
+        :font-size 0.9em
+        :color #595959
+  div.campaign_type
+    :margin-bottom 10px
+  div.campaign_info
+    .preview
+      +float_left
+      .preview_image
+        img
+          :border 1px solid #999
+          :width 100px
+          :height 70px
+      .campaign_link
+        .IE &
+          :margin-top 5px
+        a
+          :font-size 0.9em
+          :color #595959
+          +image_replacement("/images/design/webpageopen.gif", 102px, 19px)
+    .info
+      :margin 0 360px 0 112px
+      h2
+        :font-size 1.5em
+      p
+        :color #595959
+        &.desc
+          :padding-top 10px
+        &.status
+          :padding-top 10px
+          :font-size 0.9em
+    .schedule
+      +float_right
+  .main_tab_nav
+    +clear
+    :padding-top 30px
+
+
+div.schedule
+  .step
+    +float_left
+    :color #6d6d6d
+    :font-size 0.9em
+    :line-height 150%
+    :padding-left 12px
+    :background url(/images/design/bg/box_gray.gif) no-repeat
+    .step_wrapper
+      :padding 8px 12px 7px 0
+      :background url(/images/design/bg/box_gray.gif) right no-repeat
+    .caption
+      :text-align center
+    .date
+      :text-align center
+    &.current
+      :background url(/images/design/bg/box_blue.gif) no-repeat
+      :color #063760
+      .step_wrapper
+        :background url(/images/design/bg/box_blue.gif) right no-repeat
+  .spacer
+    +float_left
+    :color #6d6d6d
+    :font-size 1.2em
+    :padding 17px 5px 0
+
+
+.campaign_setting
+  :margin 30px 20px
+  :width 1000px
+  h4
+    +float_left
+    :font-size 1em
+    :padding-left 17px
+    :margin-left 3px
+    :background url(/images/design/icons/stats.gif) left no-repeat
+  div.actions
+    +float_right
+    :font-size 0.9em
+    :margin-right 20px
+    a.download_invoice
+      :padding 2px 0 2px 25px
+      :background url(/images/design/icons/download_invoice.gif) no-repeat
+      +normal_anchor_style(#28b, transparent, none)
+      +active_anchor_style(#28b, transparent, underline)
+  div.header
+    +clearfix
+    :background url(/images/design/bg/big_shadowbox_top.gif) bottom no-repeat
+    :padding-bottom 20px
+  ul.budget_summary
+    +clear
+    :padding 0 30px 20px
+    :background url(/images/design/bg/big_shadowbox_body.gif) bottom no-repeat
+    li
+      :padding 10px 0
+      .label
+        +float_left
+        :width 150px
+        :text-align right
+        :font-weight bold
+        :color #555
+      .amount
+        :margin-left 180px
+        p
+          :color #555
+    li.element
+    li.total
+      :border-bottom 2px solid #ccc
+      :margin-bottom 20px
+
+
+
+
+
+// Campaign - Form
+
+.new_campaign_title
+  :padding-top 14px
+  :padding-left 46px
+  h2
+    :font-size 1.2em
+    :background url(/images/design/icons/hd.gif) left no-repeat
+    :padding-left 22px
+  ul.nav
+    +clearfix
+    :margin 0 20px
+    :padding 30px 5px 15px
+    :width 970px
+    :border-bottom 2px solid #57ACED
+    li
+      +float_left
+      :color #888
+      &.spacer
+        :margin 0 20px
+        :color #666
+        +image_replacement("/images/design/f/step_arrow.gif", 24px, 49px)
+      &.current
+        :color #000
+      &.basic
+        +image_replacement("/images/design/f/step01_off.gif", 168px, 49px)
+      &.budget
+        +image_replacement("/images/design/f/step02_off.gif", 168px, 49px)
+      &.confirm
+        +image_replacement("/images/design/f/step03_off.gif", 168px, 49px)
+      &.basic_current
+        +image_replacement("/images/design/f/step01_on.gif", 168px, 49px)
+      &.budget_current
+        +image_replacement("/images/design/f/step02_on.gif", 168px, 49px)
+      &.confirm_current
+        +image_replacement("/images/design/f/step03_on.gif", 168px, 49px)
+  div.info
+    :border 1px solid #cdcdcd
+    :margin-top 20px
+    :padding 2px
+    :width 1000px
+    .wrapper
+      +clearfix
+      :border 1px solid #f0f0f0
+      :padding 10px
+      img
+        +float_left
+        :margin-right 10px
+      p
+        +float_left
+        :width 900px
+
+
+
+
+// Review - Collection
+
+table.reviews
+  +simple_table_style
+  th
+    &.user
+      :width 100px
+    &.blog
+    &.created_at
+      :width 120px
+    &.ranking
+      :width 50px
+    &.ratio
+      :width 60px
+    &.traffic_score
+      :width 70px
+    &.traffic_pv
+      :width 80px
+    &.traffic_uv
+      :width 80px
+    &.link_score
+      :width 60px
+    &.link_freq
+      :width 50px
+    &.stream_score
+      :width 60px
+    &.stream_diffusion
+      :width 50px
+    &.stream_rate
+      :width 40px
+    &.total_score
+      :width 70px
+  td
+    &.user
+      :text-align center
+    &.blog
+    &.created_at
+      :text-align center
+    &.ranking
+      :text-align center
+    &.ratio
+      :text-align center
+    &.traffic_score
+      :text-align right
+    &.traffic_uv
+      :text-align right
+    &.link_score
+      :text-align right
+    &.link_freq
+      :text-align right
+    &.stream_score
+      :text-align right
+    &.stream_diffusion
+      :text-align right
+    &.stream_rate
+      :text-align right
+    &.total_score
+      :text-align right
+
+
+
+// JoinRequest - Collection
+
+ul.join_requests
+  :margin 0 10px
+  :width 1000px
+  :border-bottom 1px solid #ddd
+  li
+    +clearfix
+    :border-top 1px solid #ddd
+    :padding 7px
+    :margin 0
+    div.logo
+      +float_left
+      img
+        +float_left
+        :width 40px
+        :height 40px
+    div.request_info
+      +float_left
+      :font-size 0.9em
+      :margin-left 10px
+      span.login
+        :margin-right 15px
+      span.timestamp
+      p.comment
+
+div.accepted_requests
+  :margin 20px 15px
+  :width 1000px
+  div.header
+    +clearfix
+    :background url(/images/design/bg/big_shadowbox_top.gif) bottom no-repeat
+    :padding-bottom 15px
+    h3
+      +float_left
+      :font-size 1em
+      :font-weight normal
+      :color #d4641f
+      :padding 15px 30px 5px
+      :background url(/images/design/icons/accepted.gif) no-repeat
+    ul.actions
+      +float_right
+      :font-size 0.9em
+      :margin-right 20px
+      :margin-top 13px
+      a.download_accepted_list
+        :padding 2px 0 2px 25px
+        :background url(/images/design/icons/download_list.gif) no-repeat
+        +normal_anchor_style(#28b, transparent, none)
+        +active_anchor_style(#28b, transparent, underline)
+  ul.users
+    +clearfix
+    :padding 5px 13px 5px 12px
+    :background url(/images/design/bg/big_shadowbox_body.gif) bottom no-repeat
+    li
+      +float_left
+      :width 175px
+      :padding 0 7px 15px 8px
+      .logo
+        +float_left
+        :margin-right 10px
+        img
+          +float_left
+          :width 40px
+          :height 40px
+      .request_info
+        +float_left
+        .login
+        .blog
+          :font-size 0.9em
+          :width 125px
+          a
+            :color #6d6d6d
+
+
+
+
+
+// Payments
+
+table.payments
+  +simple_table_style
+  th
+    &.date
+      :width 100px
+    &.desc
+    &.receipt
+      :width 150px
+    &.payment
+      :width 150px
+    &.bill
+      :width 100px
+  td
+    &.date
+      :text-align center
+    &.desc
+      :text-align left
+    &.receipt
+      :text-align right
+    &.payment
+      :text-align right
+    &.bill
+      :text-align center
+
+
+
+
+
+
+// Report
+
+.report_panel
+  .report_options
+    .option
+  .report_actions
+
+.campaign_report
+  :padding 20px 10px
+  p.notice
+    :padding 100px 0
+    :text-align center
+
+
+
+
+

@@ -1,0 +1,1008 @@
+body .minwidth {
+  width: 100%;
+  min-width: 1000px;
+  overflow: auto;
+  overflow: visible; }
+body .IE .minwidth div.minwidth_wrapper {
+  border-left: 900px "solid" white;
+  position: relative;
+  float: left;
+  z-index: 1; }
+body .IE .minwidth div.minwidth_holder {
+  margin-left: "-900px";
+  position: relative;
+  float: left;
+  z-index: 2; }
+
+#h {
+  background: url(/images/design/h/bottom_shadow.gif) bottom repeat-x;
+  padding-bottom: 6px; }
+  #h:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  #h {
+    display: inline-block; }
+  .IE #h {
+    height: 1%; }
+  #h {
+    display: block; }
+  #h ul.account_nav {
+    display: inline;
+    float: right;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    text-align: right;
+    padding: 12px 12px 0 11px;
+    background: url(/images/design/icons/smile.gif) left 16px no-repeat;
+    margin-right: 20px;
+    height: 33px; }
+    #h ul.account_nav li {
+      display: inline;
+      float: left;
+      margin: 0 5px; }
+    #h ul.account_nav li.bg a {
+      display: block;
+      font-size: 0.8em;
+      padding-left: 10px;
+      background: url(/images/design/bg/btn_gray.gif) no-repeat; }
+      #h ul.account_nav li.bg a span {
+        display: block;
+        padding-right: 10px;
+        background: url(/images/design/bg/btn_gray.gif) right no-repeat; }
+    #h ul.account_nav li.mypage a {
+      font-size: 0.9em;
+      color: #595959; }
+  #h h1 {
+    display: inline;
+    float: left;
+    padding-right: 17px;
+    background: url(/images/design/h/menu_front.gif) right bottom no-repeat; }
+    #h h1 a.logo {
+      display: inline;
+      float: left;
+      display: block;
+      overflow: hidden;
+      background-color: transparent;
+      background-image: url(/images/design/logo_wp.gif);
+      background-repeat: no-repeat;
+      width: 109px;
+      height: 82px;
+      background-position: 0px 0px;
+      text-indent: -9999em;
+      overflow: hidden;
+      text-align: left; }
+    #h h1 a.dashboard {
+      display: inline;
+      float: left;
+      display: block;
+      overflow: hidden;
+      background-color: transparent;
+      background-image: url(/images/design/logo_ad.gif);
+      background-repeat: no-repeat;
+      width: 91px;
+      height: 82px;
+      background-position: 0px 0px;
+      text-indent: -9999em;
+      overflow: hidden;
+      text-align: left; }
+  #h ul.top_nav {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    clear: right;
+    margin-right: 30px;
+    background: #979797 url(/images/design/h/menu_back.gif) right no-repeat; }
+    #h ul.top_nav:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    #h ul.top_nav {
+      display: inline-block; }
+    .IE #h ul.top_nav {
+      height: 1%; }
+    #h ul.top_nav {
+      display: block; }
+    .IE6 #h ul.top_nav, .IE7 #h ul.top_nav {
+      position: absolute;
+      width: 80%;
+      height: 37px; }
+    #h ul.top_nav li {
+      display: inline;
+      float: left;
+      padding-top: 10px;
+      padding-bottom: 7px; }
+      #h ul.top_nav li a {
+        font-size: 1em;
+        padding: 0 37px;
+        border-right: 1px solid #c7c7c7; }
+        #h ul.top_nav li a, #h ul.top_nav li a:visited {
+          color: white;
+          background-color: transparent;
+          text-decoration: none; }
+        #h ul.top_nav li a:hover, #h ul.top_nav li a:active {
+          color: white;
+          background-color: transparent;
+          text-decoration: underline; }
+    #h ul.top_nav li.current a {
+      font-weight: bold; }
+      #h ul.top_nav li.current a, #h ul.top_nav li.current a:visited {
+        color: black;
+        background-color: transparent;
+        text-decoration: none; }
+      #h ul.top_nav li.current a:hover, #h ul.top_nav li.current a:active {
+        color: black;
+        background-color: transparent;
+        text-decoration: none; }
+
+#footer {
+  margin-top: 50px; }
+  #footer ul.copyright {
+    padding: 8px 20px;
+    border-top: 4px solid #f0f0f0; }
+    #footer ul.copyright li.right {
+      padding-right: 20px; }
+
+.container_1box .container_header {
+  clear: both;
+  padding-left: 20px;
+  padding-right: 30px; }
+.container_1box .unit_content {
+  padding-left: 20px;
+  padding-right: 30px; }
+
+.container_2box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+.container_2box {
+  display: inline-block; }
+.IE .container_2box {
+  height: 1%; }
+.container_2box {
+  display: block; }
+.container_2box .container_header {
+  clear: both;
+  padding-left: 20px;
+  padding-right: 30px; }
+.container_2box .unit_content {
+  display: inline;
+  float: left;
+  padding-left: 20px;
+  width: 74%; }
+.container_2box .unit_rail {
+  display: inline;
+  float: right;
+  padding-right: 30px;
+  width: 25%; }
+
+.container_2box_left:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+.container_2box_left {
+  display: inline-block; }
+.IE .container_2box_left {
+  height: 1%; }
+.container_2box_left {
+  display: block; }
+.container_2box_left .container_header {
+  clear: both; }
+.container_2box_left .unit_content {
+  margin-left: 217px;
+  padding-right: 30px; }
+.container_2box_left .unit_rail {
+  display: inline;
+  float: left;
+  width: 200px; }
+
+.container_3box:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+.container_3box {
+  display: inline-block; }
+.IE .container_3box {
+  height: 1%; }
+.container_3box {
+  display: block; }
+.container_3box .container_header {
+  clear: both; }
+.container_3box .unit_content {
+  margin-left: 217px;
+  margin-right: 231px; }
+.container_3box .unit_rail1 {
+  display: inline;
+  float: left;
+  width: 200px; }
+.container_3box .unit_rail2 {
+  display: inline;
+  float: right;
+  width: 231px; }
+
+.filters {
+  padding: 20px 10px 10px; }
+
+.messages {
+  padding-top: 35px; }
+  .messages h3 {
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(/images/design/notice_heading.gif);
+    background-repeat: no-repeat;
+    width: 230px;
+    height: 41px;
+    background-position: 0px 0px;
+    text-indent: -9999em;
+    overflow: hidden;
+    text-align: left; }
+  .messages ul {
+    padding: 10px 10px 20px 35px;
+    list-style: disc; }
+    .messages ul li {
+      padding: 5px 0;
+      margin: 0;
+      font-size: 0.9em; }
+
+.dashboard_section {
+  padding-right: 30px;
+  border-right: 1px solid #cacaca;
+  padding-bottom: 20px; }
+
+div.campaign_toolbox {
+  margin: 14px 12px 11px;
+  padding-top: 14px;
+  background: url(/images/design/bg/rbox_top.gif) top no-repeat; }
+  div.campaign_toolbox:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  div.campaign_toolbox {
+    display: inline-block; }
+  .IE div.campaign_toolbox {
+    height: 1%; }
+  div.campaign_toolbox {
+    display: block; }
+  div.campaign_toolbox h3 {
+    font-size: 1.1em;
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(/images/design/new_campaign_heading.gif);
+    background-repeat: no-repeat;
+    width: 176px;
+    height: 34px;
+    background-position: 0px 0px;
+    text-indent: -9999em;
+    overflow: hidden;
+    text-align: left; }
+  div.campaign_toolbox ul {
+    background: url(/images/design/bg/rbox_bottom.gif) bottom no-repeat;
+    padding: 10px 10px 20px 35px;
+    list-style: disc; }
+    div.campaign_toolbox ul li {
+      padding: 5px 0;
+      font-size: 0.9em; }
+
+table.active_campaigns {
+  width: 100%; }
+  table.active_campaigns thead tr {
+    background: #eeeeee; }
+    table.active_campaigns thead tr th {
+      background: #eeeeee;
+      border: 1px solid #cccccc;
+      padding: 10px 3px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9em; }
+  table.active_campaigns tbody tr td {
+    border: 1px solid #cccccc;
+    padding: 4px 7px;
+    font-size: 0.9em; }
+  table.active_campaigns tbody tr.total, table.active_campaigns tbody tr.average {
+    background: #eeeeee; }
+    table.active_campaigns tbody tr.total td, table.active_campaigns tbody tr.average td {
+      background: #eeeeee; }
+    table.active_campaigns tbody tr.total td.total, table.active_campaigns tbody tr.average td.total {
+      text-align: center; }
+  table.active_campaigns tbody td.actions a {
+    padding: 0 2px; }
+  table.active_campaigns .msg {
+    padding: 30px;
+    text-align: center; }
+  table.active_campaigns th.status {
+    width: 80px; }
+  table.active_campaigns th.users {
+    width: 80px; }
+  table.active_campaigns th.schedule {
+    width: 160px; }
+  table.active_campaigns td.users {
+    text-align: center; }
+  table.active_campaigns td.schedule {
+    text-align: center; }
+
+.status span {
+  padding-left: 15px; }
+  .status span.creating {
+    background: url(/images/design/icons/dot_gray.gif) 0 1px no-repeat; }
+  .status span.waiting {
+    background: url(/images/design/icons/dot_yellow.gif) 0 1px no-repeat; }
+  .status span.approved {
+    background: url(/images/design/icons/dot_green.gif) 0 1px no-repeat; }
+  .status span.running {
+    background: url(/images/design/icons/dot_green.gif) 0 1px no-repeat; }
+  .status span.paused {
+    background: url(/images/design/icons/dot_red.gif) 0 1px no-repeat; }
+  .status span.deleted {
+    background: url(/images/design/icons/dot_red.gif) 0 1px no-repeat; }
+  .status span.completed {
+    background: url(/images/design/icons/dot_blue.gif) 0 1px no-repeat; }
+
+.campaign_filter {
+  padding-top: 22px; }
+
+table.campaigns {
+  width: 100%; }
+  table.campaigns thead tr {
+    background: #eeeeee; }
+    table.campaigns thead tr th {
+      background: #eeeeee;
+      border: 1px solid #cccccc;
+      padding: 10px 3px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9em; }
+  table.campaigns tbody tr td {
+    border: 1px solid #cccccc;
+    padding: 4px 7px;
+    font-size: 0.9em; }
+  table.campaigns tbody tr.total, table.campaigns tbody tr.average {
+    background: #eeeeee; }
+    table.campaigns tbody tr.total td, table.campaigns tbody tr.average td {
+      background: #eeeeee; }
+    table.campaigns tbody tr.total td.total, table.campaigns tbody tr.average td.total {
+      text-align: center; }
+  table.campaigns tbody td.actions a {
+    padding: 0 2px; }
+  table.campaigns .msg {
+    padding: 30px;
+    text-align: center; }
+  table.campaigns th.status {
+    width: 80px; }
+  table.campaigns th.starts_at {
+    width: 80px; }
+  table.campaigns th.ends_at {
+    width: 80px; }
+  table.campaigns th.money {
+    width: 100px; }
+  table.campaigns th.users {
+    width: 80px; }
+  table.campaigns th.traffic_pv {
+    width: 80px; }
+  table.campaigns th.traffic_uv {
+    width: 80px; }
+  table.campaigns th.link_freq {
+    width: 60px; }
+  table.campaigns th.stream_diffusion {
+    width: 60px; }
+  table.campaigns th.stream_rate {
+    width: 40px; }
+  table.campaigns th.total_score {
+    width: 80px; }
+  table.campaigns td.name .campaign_name {
+    display: inline;
+    float: left; }
+  table.campaigns td.name span.edit_button {
+    display: inline;
+    float: left;
+    margin-left: 6px; }
+    table.campaigns td.name span.edit_button a {
+      display: block;
+      overflow: hidden;
+      background-color: transparent;
+      background-image: url(/images/design/icons/edit.gif);
+      background-repeat: no-repeat;
+      width: 47px;
+      height: 18px;
+      background-position: 0px 0px;
+      text-indent: -9999em;
+      overflow: hidden;
+      text-align: left;
+      font-size: 0.8em; }
+      table.campaigns td.name span.edit_button a, table.campaigns td.name span.edit_button a:visited {
+        color: blue;
+        background-color: transparent;
+        text-decoration: underline; }
+      table.campaigns td.name span.edit_button a:hover, table.campaigns td.name span.edit_button a:active {
+        color: white;
+        background-color: blue;
+        text-decoration: none; }
+  table.campaigns td.starts_at, table.campaigns td.ends_at {
+    text-align: center; }
+  table.campaigns td.money {
+    text-align: right; }
+  table.campaigns td.users {
+    text-align: center; }
+  table.campaigns td.traffic_pv {
+    text-align: right; }
+  table.campaigns td.traffic_uv {
+    text-align: right; }
+  table.campaigns td.link_freq {
+    text-align: right; }
+  table.campaigns td.stream_diffusion {
+    text-align: right; }
+  table.campaigns td.stream_rate {
+    text-align: right; }
+  table.campaigns td.total_score {
+    text-align: right; }
+
+.campaign_header:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden; }
+.campaign_header {
+  display: inline-block; }
+.IE .campaign_header {
+  height: 1%; }
+.campaign_header {
+  display: block; }
+.campaign_header ul.nav {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .campaign_header ul.nav li a {
+    font-size: 0.9em;
+    color: #595959; }
+.campaign_header div.campaign_type {
+  margin-bottom: 10px; }
+.campaign_header div.campaign_info .preview {
+  display: inline;
+  float: left; }
+  .campaign_header div.campaign_info .preview .preview_image img {
+    border: 1px solid #999999;
+    width: 100px;
+    height: 70px; }
+  .IE .campaign_header div.campaign_info .preview .campaign_link {
+    margin-top: 5px; }
+  .campaign_header div.campaign_info .preview .campaign_link a {
+    font-size: 0.9em;
+    color: #595959;
+    display: block;
+    overflow: hidden;
+    background-color: transparent;
+    background-image: url(/images/design/webpageopen.gif);
+    background-repeat: no-repeat;
+    width: 102px;
+    height: 19px;
+    background-position: 0px 0px;
+    text-indent: -9999em;
+    overflow: hidden;
+    text-align: left; }
+.campaign_header div.campaign_info .info {
+  margin: 0 360px 0 112px; }
+  .campaign_header div.campaign_info .info h2 {
+    font-size: 1.5em; }
+  .campaign_header div.campaign_info .info p {
+    color: #595959; }
+    .campaign_header div.campaign_info .info p.desc {
+      padding-top: 10px; }
+    .campaign_header div.campaign_info .info p.status {
+      padding-top: 10px;
+      font-size: 0.9em; }
+.campaign_header div.campaign_info .schedule {
+  display: inline;
+  float: right; }
+.campaign_header .main_tab_nav {
+  clear: both;
+  padding-top: 30px; }
+
+div.schedule .step {
+  display: inline;
+  float: left;
+  color: #6d6d6d;
+  font-size: 0.9em;
+  line-height: 150%;
+  padding-left: 12px;
+  background: url(/images/design/bg/box_gray.gif) no-repeat; }
+  div.schedule .step .step_wrapper {
+    padding: 8px 12px 7px 0;
+    background: url(/images/design/bg/box_gray.gif) right no-repeat; }
+  div.schedule .step .caption {
+    text-align: center; }
+  div.schedule .step .date {
+    text-align: center; }
+  div.schedule .step.current {
+    background: url(/images/design/bg/box_blue.gif) no-repeat;
+    color: #063760; }
+    div.schedule .step.current .step_wrapper {
+      background: url(/images/design/bg/box_blue.gif) right no-repeat; }
+div.schedule .spacer {
+  display: inline;
+  float: left;
+  color: #6d6d6d;
+  font-size: 1.2em;
+  padding: 17px 5px 0; }
+
+.campaign_setting {
+  margin: 30px 20px;
+  width: 1000px; }
+  .campaign_setting h4 {
+    display: inline;
+    float: left;
+    font-size: 1em;
+    padding-left: 17px;
+    margin-left: 3px;
+    background: url(/images/design/icons/stats.gif) left no-repeat; }
+  .campaign_setting div.actions {
+    display: inline;
+    float: right;
+    font-size: 0.9em;
+    margin-right: 20px; }
+    .campaign_setting div.actions a.download_invoice {
+      padding: 2px 0 2px 25px;
+      background: url(/images/design/icons/download_invoice.gif) no-repeat; }
+      .campaign_setting div.actions a.download_invoice, .campaign_setting div.actions a.download_invoice:visited {
+        color: #2288bb;
+        background-color: transparent;
+        text-decoration: none; }
+      .campaign_setting div.actions a.download_invoice:hover, .campaign_setting div.actions a.download_invoice:active {
+        color: #2288bb;
+        background-color: transparent;
+        text-decoration: underline; }
+  .campaign_setting div.header {
+    background: url(/images/design/bg/big_shadowbox_top.gif) bottom no-repeat;
+    padding-bottom: 20px; }
+    .campaign_setting div.header:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .campaign_setting div.header {
+      display: inline-block; }
+    .IE .campaign_setting div.header {
+      height: 1%; }
+    .campaign_setting div.header {
+      display: block; }
+  .campaign_setting ul.budget_summary {
+    clear: both;
+    padding: 0 30px 20px;
+    background: url(/images/design/bg/big_shadowbox_body.gif) bottom no-repeat; }
+    .campaign_setting ul.budget_summary li {
+      padding: 10px 0; }
+      .campaign_setting ul.budget_summary li .label {
+        display: inline;
+        float: left;
+        width: 150px;
+        text-align: right;
+        font-weight: bold;
+        color: #555555; }
+      .campaign_setting ul.budget_summary li .amount {
+        margin-left: 180px; }
+        .campaign_setting ul.budget_summary li .amount p {
+          color: #555555; }
+    .campaign_setting ul.budget_summary li.total {
+      border-bottom: 2px solid #cccccc;
+      margin-bottom: 20px; }
+
+.new_campaign_title {
+  padding-top: 14px;
+  padding-left: 46px; }
+  .new_campaign_title h2 {
+    font-size: 1.2em;
+    background: url(/images/design/icons/hd.gif) left no-repeat;
+    padding-left: 22px; }
+  .new_campaign_title ul.nav {
+    margin: 0 20px;
+    padding: 30px 5px 15px;
+    width: 970px;
+    border-bottom: 2px solid #57aced; }
+    .new_campaign_title ul.nav:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .new_campaign_title ul.nav {
+      display: inline-block; }
+    .IE .new_campaign_title ul.nav {
+      height: 1%; }
+    .new_campaign_title ul.nav {
+      display: block; }
+    .new_campaign_title ul.nav li {
+      display: inline;
+      float: left;
+      color: #888888; }
+      .new_campaign_title ul.nav li.spacer {
+        margin: 0 20px;
+        color: #666666;
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step_arrow.gif);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.current {
+        color: black; }
+      .new_campaign_title ul.nav li.basic {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step01_off.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.budget {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step02_off.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.confirm {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step03_off.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.basic_current {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step01_on.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.budget_current {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step02_on.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+      .new_campaign_title ul.nav li.confirm_current {
+        display: block;
+        overflow: hidden;
+        background-color: transparent;
+        background-image: url(/images/design/f/step03_on.gif);
+        background-repeat: no-repeat;
+        width: 168px;
+        height: 49px;
+        background-position: 0px 0px;
+        text-indent: -9999em;
+        overflow: hidden;
+        text-align: left; }
+  .new_campaign_title div.info {
+    border: 1px solid #cdcdcd;
+    margin-top: 20px;
+    padding: 2px;
+    width: 1000px; }
+    .new_campaign_title div.info .wrapper {
+      border: 1px solid #f0f0f0;
+      padding: 10px; }
+      .new_campaign_title div.info .wrapper:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      .new_campaign_title div.info .wrapper {
+        display: inline-block; }
+      .IE .new_campaign_title div.info .wrapper {
+        height: 1%; }
+      .new_campaign_title div.info .wrapper {
+        display: block; }
+      .new_campaign_title div.info .wrapper img {
+        display: inline;
+        float: left;
+        margin-right: 10px; }
+      .new_campaign_title div.info .wrapper p {
+        display: inline;
+        float: left;
+        width: 900px; }
+
+table.reviews {
+  width: 100%; }
+  table.reviews thead tr {
+    background: #eeeeee; }
+    table.reviews thead tr th {
+      background: #eeeeee;
+      border: 1px solid #cccccc;
+      padding: 10px 3px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9em; }
+  table.reviews tbody tr td {
+    border: 1px solid #cccccc;
+    padding: 4px 7px;
+    font-size: 0.9em; }
+  table.reviews tbody tr.total, table.reviews tbody tr.average {
+    background: #eeeeee; }
+    table.reviews tbody tr.total td, table.reviews tbody tr.average td {
+      background: #eeeeee; }
+    table.reviews tbody tr.total td.total, table.reviews tbody tr.average td.total {
+      text-align: center; }
+  table.reviews tbody td.actions a {
+    padding: 0 2px; }
+  table.reviews .msg {
+    padding: 30px;
+    text-align: center; }
+  table.reviews th.user {
+    width: 100px; }
+  table.reviews th.created_at {
+    width: 120px; }
+  table.reviews th.ranking {
+    width: 50px; }
+  table.reviews th.ratio {
+    width: 60px; }
+  table.reviews th.traffic_score {
+    width: 70px; }
+  table.reviews th.traffic_pv {
+    width: 80px; }
+  table.reviews th.traffic_uv {
+    width: 80px; }
+  table.reviews th.link_score {
+    width: 60px; }
+  table.reviews th.link_freq {
+    width: 50px; }
+  table.reviews th.stream_score {
+    width: 60px; }
+  table.reviews th.stream_diffusion {
+    width: 50px; }
+  table.reviews th.stream_rate {
+    width: 40px; }
+  table.reviews th.total_score {
+    width: 70px; }
+  table.reviews td.user {
+    text-align: center; }
+  table.reviews td.created_at {
+    text-align: center; }
+  table.reviews td.ranking {
+    text-align: center; }
+  table.reviews td.ratio {
+    text-align: center; }
+  table.reviews td.traffic_score {
+    text-align: right; }
+  table.reviews td.traffic_uv {
+    text-align: right; }
+  table.reviews td.link_score {
+    text-align: right; }
+  table.reviews td.link_freq {
+    text-align: right; }
+  table.reviews td.stream_score {
+    text-align: right; }
+  table.reviews td.stream_diffusion {
+    text-align: right; }
+  table.reviews td.stream_rate {
+    text-align: right; }
+  table.reviews td.total_score {
+    text-align: right; }
+
+ul.join_requests {
+  margin: 0 10px;
+  width: 1000px;
+  border-bottom: 1px solid #dddddd; }
+  ul.join_requests li {
+    border-top: 1px solid #dddddd;
+    padding: 7px;
+    margin: 0; }
+    ul.join_requests li:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    ul.join_requests li {
+      display: inline-block; }
+    .IE ul.join_requests li {
+      height: 1%; }
+    ul.join_requests li {
+      display: block; }
+    ul.join_requests li div.logo {
+      display: inline;
+      float: left; }
+      ul.join_requests li div.logo img {
+        display: inline;
+        float: left;
+        width: 40px;
+        height: 40px; }
+    ul.join_requests li div.request_info {
+      display: inline;
+      float: left;
+      font-size: 0.9em;
+      margin-left: 10px; }
+      ul.join_requests li div.request_info span.login {
+        margin-right: 15px; }
+
+div.accepted_requests {
+  margin: 20px 15px;
+  width: 1000px; }
+  div.accepted_requests div.header {
+    background: url(/images/design/bg/big_shadowbox_top.gif) bottom no-repeat;
+    padding-bottom: 15px; }
+    div.accepted_requests div.header:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    div.accepted_requests div.header {
+      display: inline-block; }
+    .IE div.accepted_requests div.header {
+      height: 1%; }
+    div.accepted_requests div.header {
+      display: block; }
+    div.accepted_requests div.header h3 {
+      display: inline;
+      float: left;
+      font-size: 1em;
+      font-weight: normal;
+      color: #d4641f;
+      padding: 15px 30px 5px;
+      background: url(/images/design/icons/accepted.gif) no-repeat; }
+    div.accepted_requests div.header ul.actions {
+      display: inline;
+      float: right;
+      font-size: 0.9em;
+      margin-right: 20px;
+      margin-top: 13px; }
+      div.accepted_requests div.header ul.actions a.download_accepted_list {
+        padding: 2px 0 2px 25px;
+        background: url(/images/design/icons/download_list.gif) no-repeat; }
+        div.accepted_requests div.header ul.actions a.download_accepted_list, div.accepted_requests div.header ul.actions a.download_accepted_list:visited {
+          color: #2288bb;
+          background-color: transparent;
+          text-decoration: none; }
+        div.accepted_requests div.header ul.actions a.download_accepted_list:hover, div.accepted_requests div.header ul.actions a.download_accepted_list:active {
+          color: #2288bb;
+          background-color: transparent;
+          text-decoration: underline; }
+  div.accepted_requests ul.users {
+    padding: 5px 13px 5px 12px;
+    background: url(/images/design/bg/big_shadowbox_body.gif) bottom no-repeat; }
+    div.accepted_requests ul.users:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    div.accepted_requests ul.users {
+      display: inline-block; }
+    .IE div.accepted_requests ul.users {
+      height: 1%; }
+    div.accepted_requests ul.users {
+      display: block; }
+    div.accepted_requests ul.users li {
+      display: inline;
+      float: left;
+      width: 175px;
+      padding: 0 7px 15px 8px; }
+      div.accepted_requests ul.users li .logo {
+        display: inline;
+        float: left;
+        margin-right: 10px; }
+        div.accepted_requests ul.users li .logo img {
+          display: inline;
+          float: left;
+          width: 40px;
+          height: 40px; }
+      div.accepted_requests ul.users li .request_info {
+        display: inline;
+        float: left; }
+        div.accepted_requests ul.users li .request_info .blog {
+          font-size: 0.9em;
+          width: 125px; }
+          div.accepted_requests ul.users li .request_info .blog a {
+            color: #6d6d6d; }
+
+table.payments {
+  width: 100%; }
+  table.payments thead tr {
+    background: #eeeeee; }
+    table.payments thead tr th {
+      background: #eeeeee;
+      border: 1px solid #cccccc;
+      padding: 10px 3px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9em; }
+  table.payments tbody tr td {
+    border: 1px solid #cccccc;
+    padding: 4px 7px;
+    font-size: 0.9em; }
+  table.payments tbody tr.total, table.payments tbody tr.average {
+    background: #eeeeee; }
+    table.payments tbody tr.total td, table.payments tbody tr.average td {
+      background: #eeeeee; }
+    table.payments tbody tr.total td.total, table.payments tbody tr.average td.total {
+      text-align: center; }
+  table.payments tbody td.actions a {
+    padding: 0 2px; }
+  table.payments .msg {
+    padding: 30px;
+    text-align: center; }
+  table.payments th.date {
+    width: 100px; }
+  table.payments th.receipt {
+    width: 150px; }
+  table.payments th.payment {
+    width: 150px; }
+  table.payments th.bill {
+    width: 100px; }
+  table.payments td.date {
+    text-align: center; }
+  table.payments td.desc {
+    text-align: left; }
+  table.payments td.receipt {
+    text-align: right; }
+  table.payments td.payment {
+    text-align: right; }
+  table.payments td.bill {
+    text-align: center; }
+
+.campaign_report {
+  padding: 20px 10px; }
+  .campaign_report p.notice {
+    padding: 100px 0;
+    text-align: center; }

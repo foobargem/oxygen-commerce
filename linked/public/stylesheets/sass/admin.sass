@@ -1,0 +1,739 @@
+@import mixin.sass
+
+
+
+// Layouts
+
+body
+  +min_width_container(980px, false)
+
+#h
+  +clearfix
+  :padding 0 10px
+  h1
+    +float_left
+    :margin-top 26px
+    a
+      +image_replacement("/images/design/pangsday_logo_alpha.png", 136px, 79px)
+  ul.account_nav
+    +float_right
+    :margin 15px 20px
+    li
+      +float_left
+      :font-size 1em
+      :color #cdcdcd
+      a
+        +normal_anchor_style(#656565, transparent, underline)
+        +active_anchor_style(#fff, #333, none)
+        :padding 1px 3px
+      &.spacer
+        :margin 0 9px
+  ul.main_tab_nav
+    +clear
+    :padding-top 15px
+
+
+#contents
+  :padding 0 10px
+
+#footer
+
+.container_1box
+  .container_header
+    +clear
+  .unit_content
+    :padding 15px 10px
+
+.container_2box
+  +clearfix
+  :padding 15px 10px
+  .container_header
+    +clear
+  .unit_content
+    +float_left
+    :width 70%
+  .unit_rail
+    +float_right
+    :width 29%
+
+
+
+//
+
+.filters
+  +float_right
+  :padding 5px
+  li
+    +float_left
+    &.spacer
+      :padding 0 5px
+
+.bg_anchor
+  +image_background_anchor("/images/design/bg/submit_cancel.gif", 7px, 6px, 13px)
+
+
+.actions
+  .button
+    a
+      :font-size 0.95em
+      :border 1px solid #888
+      :padding 1px 2px
+      +normal_anchor_style(#333, transparent, none)
+      +active_anchor_style(#fff, #888, none)
+      &.pause
+        +normal_anchor_style(#333, #fee, none)
+        +active_anchor_style(#fff, #888, none)
+      &.start
+        +normal_anchor_style(#333, #fee, none)
+        +active_anchor_style(#fff, #888, none)
+      &.approve
+        +normal_anchor_style(#333, #def, none)
+        +active_anchor_style(#fff, #888, none)
+      &.destroy
+        +normal_anchor_style(#333, #fdd, none)
+        +active_anchor_style(#fff, #888, none)
+        
+.section
+  :padding 10px 5px 20px
+  h3
+    :font-size 1.1em
+    :color #343434
+    :text-decoration underline
+    :margin-bottom 5px
+    span.more
+      :font-size 0.8em
+      :font-weight normal
+      :margin-left 10px
+      a
+        +normal_anchor_style(blue, transparent, none)
+        +active_anchor_style(#fff, blue, none)
+  h4
+    span.more
+      :font-size 0.8em
+      :font-weight normal
+      :margin-left 10px
+      a
+        +normal_anchor_style(blue, transparent, none)
+        +active_anchor_style(#fff, blue, none)
+  p
+    &.strong
+      :color #f33
+  div.note
+    :margin-top 20px
+  form
+    +formtastic_normal
+    :border 5px solid #999
+    :background #def
+    :padding-top 20px
+    :padding-left 20px
+    fieldset.inputs
+      :margin-bottom 20px
+      legend
+        :margin-bottom 5px
+
+.subsection
+  :color #666
+  :padding 10px 20px
+  p
+
+
+
+
+// Products
+
+.product_header
+  :padding 5px 0
+  h2
+    :font-size 1.4em
+  p
+    :color #666
+  .main_tab_nav
+    :margin 20px 0
+
+.product_filter
+  :margin 20px 0 10px
+
+table.products
+  +simple_table_style
+  th
+    &.name
+    &.provider_name
+      :width 140px
+    &.resort
+      :width 140px
+    &.ticket_type
+      :width 140px
+    &.date_range
+      :width 160px
+    &.coupons
+      :width 100px
+    &.actions
+      :width 100px
+  td
+    &.name
+      :text-align left
+    &.provider_name
+      :text-align center
+    &.resort
+      :text-align center
+    &.ticket_type
+      :text-align center
+    &.date_range
+      :text-align center
+    &.coupons
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+
+// Coupons
+
+table.coupons
+  +table_style1
+  th
+    &.coupon_number
+    &.quantity
+      :width 90px
+    &.used_quantity
+      :width 90px
+    &.purchaser_name
+      :width 160px
+    &.phone_number
+      :width 160px
+    &.agency_name
+      :width 160px
+    &.actions
+      :width 120px
+  td
+    &.coupon_number
+      :text-align center
+    &.quantity
+      :text-align center
+    &.used_quantity
+      :text-align center
+    &.purchaser_name
+      :text-align center
+    &.phone_number
+      :text-align center
+    &.agency_name
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+table.reservations
+  +table_style1
+  th
+    &.user_name
+      :width 100px
+    &.resort
+    &.part_time
+      :width 100px
+    &.shoe_type
+      :width 100px
+    &.board_stance
+      :width 100px
+    &.height
+      :width 100px
+    &.shoe_size
+      :width 100px
+    &.actions
+      :width 140px
+  td
+    &.user_name
+      :text-align center
+    &.resort
+      :text-align center
+    &.part_time
+      :text-align center
+    &.shoe_type
+      :text-align center
+    &.board_stance
+      :text-align center
+    &.height
+      :text-align center
+    &.shoe_size
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+
+
+
+
+
+/////
+
+
+
+
+
+
+
+table.not_reviewed
+  +table_style1
+  th, td
+    &.user
+      :width 140px
+      :text-align center
+    &.blog
+      :text-align left
+    &.phone
+      :width 150px
+      :text-align center
+    &.email
+      :width 200px
+      :text-align center
+    &.status
+      :width 150px
+      :text-align center
+
+.review_information
+  :padding 10px
+
+
+
+
+// JoinRequest
+
+table.join_requests
+  +table_style1
+  th
+    &.publisher
+      :width 160px
+    &.blog
+      :width 200px
+    &.comment
+    &.history
+      :width 300px
+    &.actions
+      :width 120px
+  td
+    &.publisher
+      :text-align center
+    &.blog
+      :text-align left
+    &.history
+      :text-align left
+    &.actions
+      :text-align center
+  tr.chosen
+    :background #dfd
+    td
+      :background #dfd
+  tr.rejected
+    :background #fdd
+    td
+      :background #fdd
+  
+
+// Profits
+
+table.profits
+  +table_style1
+  th
+    &.ranking
+      :width 50px
+    &.login
+      :width 120px
+    &.blog
+    &.point
+      :width 120px
+    &.contribution
+      :width 80px
+    &.prize
+      :width 120px
+    &.status
+      :width 60px
+    &.result_code
+      :width 100px
+    &.prize_money
+      :width 160px
+  td
+    &.ranking
+      :text-align center
+    &.login
+      :text-align center
+    &.blog
+      :text-align left
+    &.point
+      :text-align center
+    &.contribution
+      :text-align center
+    &.prize
+      :text-align right
+    &.status
+      :text-align center
+    &.result_code
+      :text-align center
+    &.prize_money
+      :text-align center
+
+.prize_info
+  :padding 15px 10px
+  p
+    :padding 1px 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// advertisers
+
+table.advertisers
+  +table_style1
+  th
+    &.checkbox
+      width: 50px
+    &.login
+      width: 150px
+    &.email
+    &.phone
+      width: 150px
+    &.company
+      width: 180px
+  td
+    &.checkbox
+      text-align: center
+    &.login
+      text-align: center
+    &.email
+      text-align: center
+    &.phone
+      text-align: center
+    &.company
+      text-align: center
+
+
+
+// advertiser
+
+table.advertisers
+  +table_style1
+  th
+    &.checkbox
+      :width 50px
+    &.login
+      :width 160px
+    &.email
+    &.phone
+      :width 180px
+    &.company
+      :width 200px
+    &.actions
+      :width 180px
+  td
+    &.checkbox
+      :text-align center
+    &.login
+      :text-align center
+    &.email
+      :text-align center
+    &.phone
+      :text-align center
+    &.company
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+// publishers
+
+table.publishers
+  +table_style1
+  th
+    &.checkbox
+      :width 50px
+    &.login
+      :width 160px
+    &.email
+      :width 200px
+    &.phone
+      :width 180px
+    &.blog
+    &.actions
+      :width 180px
+  td
+    &.checkbox
+      :text-align center
+    &.login
+      :text-align center
+    &.email
+      :text-align center
+    &.phone
+      :text-align center
+    &.blog
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+
+// blogs
+
+table.blogs
+  +table_style1
+  th
+    &.publisher
+      width: 180px
+    &.url
+    &.category
+      width: 180px
+    &.sns_score
+      width: 120px
+    &.score
+      width: 120px
+
+  td
+    &.publisher
+      text-align: center
+    &.url
+      text-align: center
+    &.category
+      text-align: center
+    &.sns_score
+      text-align: center
+    &.score
+      text-align: center
+
+
+// requests
+
+div.notifications
+  +clearfix
+  .total_count
+    +float_left
+  .date_info
+    +float_right
+
+table.requests
+  +table_style1
+  th
+    &.publisher
+      :width 120px
+    &.requested_date
+      :width 150px
+    &.transfered_date
+      :width 150px
+    &.amount
+      :width 120px
+    &.commission
+      :width 120px
+    &.tax
+      :width 120px
+    &.net_price
+      :width 120px
+    &.note
+    &.action
+      :width 100px
+  td
+    &.publisher
+      :text-align center
+    &.requested_date
+      :text-align center
+    &.transfered_date
+      :text-align center
+    &.amount
+      :text-align right
+    &.commission
+      :text-align right
+    &.tax
+      :text-align right
+    &.net_price
+      :text-align right
+    &.note
+      :text-align left
+    &.action
+      :text-align center
+
+.request_header
+  h3
+  .main_tab_nav
+    :margin-top 20px
+  .notifications
+    :padding 15px 0
+  
+
+
+
+
+
+// dashboard
+
+table.waiting_campaigns
+  +table_style1
+  th
+    &.status
+      :width 80px
+    &.title
+      :width 300px
+    &.updated_at
+      :width 200px
+    &.note
+  td
+    &.status
+      :text-align center
+    &.title
+      :text-align left
+    &.updated_at
+      :text-align left
+    &.note
+      :text-align left
+
+table.review_campaigns
+  +table_style1
+  th
+    &.title
+    &.end_date
+      :width 200px
+    &.selection_count
+      :width 150px
+    &.request_count
+      :width 150px
+    &.amount
+      :width 150px
+  td
+    &.title
+      :text-align left
+    &.end_date
+      :text-align center
+    &.selection_count
+      :text-align center
+    &.request_count
+      :text-align center
+    &.amount
+      :text-align right
+
+
+table.transfer_requests
+  +table_style1
+  th
+    &.requested_date
+    &.amount
+      :width 100px
+    &.publisher
+      :width 100px
+  td
+    &.requested_date
+      :text-align center
+    &.amount
+      :text-align right
+    &.publisher
+      :text-align center
+
+
+.campaign_title
+  .campaign_type
+    +float_left
+    :margin-right 5px
+  .campaign_name
+    +float_left
+
+
+// notices
+
+table.notices
+  +table_style1
+
+
+
+
+
+table.referrers
+  +table_style1
+  th
+    &.url
+    &.count
+      :width 60px
+    &.validity
+      :width 100px
+    &.actions
+      :witdh 160px
+  td
+    &.url
+      :text-align left
+    &.count
+      :text-align center
+    &.validity
+      :text-align center
+    &.actions
+      :text-align center
+
+
+table.stream_sources
+  +table_style1
+  th
+    &.message
+      :width 520px
+    &.followers_count
+      :width 100px
+    &.published
+      :width 140px
+    &.url
+    &.validity
+      :width 120px
+    &.actions
+      :width 80px
+  td
+    &.message
+      :text-align left
+    &.followers_count
+      :text-align center
+    &.published
+      :text-align center
+    &.url
+      :text-align center
+    &.validity
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+table.publisher_profits
+  +table_style1
+  th
+    &.campaign
+    &.review_url
+      :width 200px
+    &.prize
+      :width 100px
+    &.passed_at
+      :width 120px
+  td
+    &.campaign
+      :text-align left
+    &.review_url
+      :text-align left
+    &.prize
+      :text-align right
+    &.passed_at
+      :text-align center
+  tr.summary
+    :background #def
+    td
+      &.message
+        :text-align right
+
+

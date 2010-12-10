@@ -1,0 +1,132 @@
+@import mixin.sass
+
+
+// default
+
+body
+  :color #000
+
+body, p, ol, ul, td, pre
+  +default_font_family
+  :font-size 10pt
+  :line-height 1.5em
+  
+input, textarea
+  .IE &
+    :padding 2px 1px
+  .FF &, .Safari &, .Chrome &
+    :font-size 10pt
+    :line-height 1.5em
+
+input[type="submit"]
+  .FF &
+    :font-size 12px
+
+h1, h2, h3, h4, h5, h6
+  +heading_font_family
+  .IE &
+    :font-family NanumGothicExtraBold
+
+
+
+// headings
+
+h1
+  :font
+    :size 2.5em
+    :weight bold
+  :line-height 1.5em
+
+h2
+  :font
+    :size 1.4em
+    :weight bold
+  :line-height 1.5em
+
+h3
+  :font
+    :size 1.2em
+    :weight bold
+  :line-height 1.5em
+
+h4
+  :font
+    :size 1em
+    :weight bold
+  :line-height 1.5em
+
+
+
+// anchors
+
+$anchor_color: #000
+$anchor_hover_color: #f09
+
+
+a
+  +normal_anchor_style($anchor_color, transparent, none)
+  +active_anchor_style($anchor_hover_color, transparent, underline)
+
+a.action
+  +normal_anchor_style($anchor_color, transparent, none)
+  +active_anchor_style(#fff, $anchor_color, none)
+
+a.silent
+  +normal_anchor_style(auto, transparent, none)
+  +active_anchor_style(auto, transparent, none)
+
+a.careful
+  +normal_anchor_style(red, transparent, underline)
+  +active_anchor_style(#fff, red, underline)
+
+a.careful_action
+  +normal_anchor_style(#0769b8, transparent, underline)
+  +active_anchor_style(red, transparent, underline)
+
+a.blue
+  +normal_anchor_style(#29a5af, transparent, none)
+  +active_anchor_style(#29a5af, transparent, underline)
+
+a.blue_simple
+  +normal_anchor_style(#29a5af, transparent, none)
+  +active_anchor_style($anchor_hover_color, transparent, underline)
+
+a.gray
+  +normal_anchor_style(#333, transparent, underline)
+  +active_anchor_style(#fff, #222, none)
+
+a.gray_simple
+  +normal_anchor_style(#333, transparent, none)
+  +active_anchor_style($anchor_hover_color, transparent, underline)
+
+a.lgray
+  +normal_anchor_style(#666, transparent, none)
+  +active_anchor_style(#fff, #555, none)
+
+a.lgray_simple
+  +normal_anchor_style(#666, transparent, none)
+  +active_anchor_style($anchor_hover_color, transparent, underline)
+
+a.black
+  +normal_anchor_style(#000, transparent, underline)
+  +active_anchor_style(#fff, #000, none)
+
+a.black_simple
+  +normal_anchor_style(#000, transparent, none)
+  +active_anchor_style(#000, transparent, underline)
+
+
+
+// texts
+
+p.remark
+  :color #118ae7
+  :font-size 0.9em
+  :padding 15px 15px 15px
+  a
+    +normal_anchor_style(#118ae7, transparent, none)
+    +active_anchor_style(#118ae7, transparent, underline)
+
+
+
+

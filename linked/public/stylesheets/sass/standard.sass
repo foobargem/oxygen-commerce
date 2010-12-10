@@ -1,0 +1,465 @@
+@import reset.sass
+@import typo.sass
+@import layout.sass
+@import popup.sass
+@import form.sass
+@import mixin.sass
+
+
+
+// Common
+
+div.filters
+  ul
+    :padding-bottom 5px
+    li
+      +float_left
+      a
+        :display block
+        :padding 0 5px
+        :font-size 0.9em
+  .left
+    +float_left
+  .right
+    +float_right
+
+
+dl.table_view
+  +clearfix
+  :padding 20px 40px
+  dt,dd
+    :padding-top 3px
+    :padding-bottom 3px
+  dt
+    +float_left
+  dd
+    :padding-left 150px
+    :color #666
+
+
+.profile_form
+  :padding 15px 0 0 40px
+  form.formtastic
+    :padding-bottom 0
+    fieldset.buttons
+      :padding-bottom 0
+
+.profile_image
+  +has_framed_image(60px,60px)
+
+
+ul.nav_history
+  +clearfix
+  :padding 5px 10px 15px 17px
+  +sprite_background("/images/design/icons/i_arrow_loc.gif")
+  +sprite_offset(7px, 33%)
+  li
+    +float_left
+    :font-size 0.9em
+    a
+      +normal_anchor_style(#666, transparent, none)
+      +active_anchor_style(#666, transaprent, underline)
+    &.spacer
+      :color #666
+      :padding 0 5px
+  &.with_border
+    :border-bottom 2px solid #353535
+
+
+div.pagination_info
+  +clearfix
+  :padding 10px 5px 50px
+  .pagination
+    +float_left
+    a, span
+      +float_left
+      :padding 1px 7px
+    a
+      +normal_anchor_style(#333, transparent, none)
+      :border 1px solid #fff
+      &:hover
+        :color #08b2ed
+        :text-decoration none
+        :border 1px solid #80ddfc
+    a.current
+      :color #08b2ed
+      :text-decoration underline
+      :font-weight bold
+    .previous_page, .next_page
+      :padding 0
+      :margin 4px 5px 0
+      :border 1px solid #fff
+      &:hover
+        :border 1px solid #fff
+    .previous_page
+      +image_replacement("/images/design/nav/go_prev.gif", 13px, 17px)
+    .next_page
+      +image_replacement("/images/design/nav/go_next.gif", 13px, 17px)
+  .page_info
+    +float_right
+    :color #555
+    :font-size 0.9em
+    span
+      &.page_total
+        :font-weight bold
+      &.page_num
+        :font-weight bold
+
+
+
+// Layouts
+
+div.center_box
+  +center_box(640px)
+  :margin-top 30px
+  :margin-bottom 60px
+  h2
+    :margin-bottom 40px
+  div.flash_notice
+    :margin 0 10px 40px
+    :padding 10px 20px
+    :background #f5f5f5
+  div.form_container
+    :width 430px
+    :margin 0 auto
+    form
+      +clearfix
+      :padding-left 30px
+      p
+        :font-size 0.9em
+        &.element
+          :margin-bottom 3px
+        &.button
+          :padding 10px 0
+        &.inline-error
+          :color #f60
+          :padding 2px
+        input.text_field
+  div.buttons
+    +clearfix
+    :margin-top 10px
+    :margin-left 140px
+    .button
+      +float_left
+
+
+
+
+// Common Partials
+
+.profile_form
+  :padding 15px 0 0 40px
+  form.formtastic
+    :padding-bottom 0
+    fieldset.buttons
+      :padding-bottom 0
+
+.profile_image
+  img
+    :padding 2px
+    :border 1px solid #ccc
+
+
+
+
+
+
+.login_box
+  :width 430px
+  :margin 0 auto
+  form
+    +clearfix
+    :padding-left 30px
+    .left_side
+      +float_left
+      :width 280px
+      p
+        +clearfix
+        &.element
+          .IE &
+            :padding 3px 0
+      label
+        +float_left
+        :width 60px
+        :margin-top 5px
+        :font-size 0.9em
+      input
+        +float_left
+        :width 75%
+    .right_side
+      +float_left
+      :width 100px
+      :margin-left 10px
+      p.element
+        :margin-top 2px
+      p.checkbox
+        :margin-top 8px
+      input, label
+        :font-size 0.9em
+  ul.links
+    :padding 25px 30px 30px
+    :font-size 0.9em
+    :border-bottom 1px solid #ccc
+    li
+      a
+        +normal_anchor_style(#099ecf, transparent, none)
+        +active_anchor_style(#099ecf, transparent, underline)
+  div.signup_banner
+    :text-align center
+    :padding-top 30px
+    h3
+      :font-size 1.4em
+    p
+      :padding 15px 0
+      :font-size 0.9em
+
+
+
+
+
+
+
+// Campaign - Common
+
+.campaign_type
+  span
+    &.review
+      :color #fff
+      :background #939
+      +image_replacement("/images/design/icons/campaign_review.gif", 50px, 18px)
+    &.post
+      :color #fff
+      :background #393
+      +image_replacement("/images/design/icons/campaign_post.gif", 50px, 18px)
+
+
+
+
+
+// Campaign - Result
+
+.campaign_result
+  :padding 30px 20px 20px
+  p.campaign_term
+    :font-weight bold
+    :color #444
+    :padding-left 15px
+    :background url(/images/design/icons/stats.gif) left 50% no-repeat
+  table.result
+    :margin-top 5px
+    :margin-bottom 30px
+    +simple_table_style
+    :width auto
+    th
+      &.ranking
+        :width 50px
+      &.user
+        :width 300px
+      &.prize
+        :width 80px
+      &.rating
+        :width 120px
+    td
+      &.ranking
+        :text-align center
+      &.user
+      &.prize
+        :text-align center
+      &.rating
+        :text-align center
+  div.user, li.user
+    img
+      +float_left
+      :width 40px
+      :height 40px
+      :margin-right 15px
+    .name
+      +float_left
+      :margin-top 10px
+  div.summary
+    :padding-bottom 5px
+  ul.users
+    +clearfix
+    :width 280px
+    li
+      +float_left
+      :width 140px
+      :margin 5px 0
+
+
+
+// Invoices
+
+.campaign_invoice
+  :margin-left 15%
+  dl.section
+    +clearfix
+    :margin-top 20px
+    :margin-bottom 30px
+    dt
+      :clear left
+      :float left
+      :width 150px
+      &.t1
+      &.d
+        :text-indent 30px
+    dd
+      :float left
+      :width 230px
+      :text-align right
+    .t1
+      :font-size 1.1em
+      :padding 0 5px
+      :border-bottom 1px solid #666
+      :margin-bottom 10px
+    .d
+      :padding 5px
+      :color #555
+    .desc
+      :padding 0 5px
+      :margin-bottom 10px
+      :color #888
+      :font-size 0.95em
+  div.notice
+    :margin-bottom 20px
+
+
+
+// Reviewers
+
+div.review_info
+  :margin 10px 0 20px
+  p
+    :font-size 1.1em
+  a
+    :text-decoration underline
+
+
+div.review_badge
+  :padding 10px
+  ul.helps
+    +clearfix
+    :margin 10px 0
+    li
+      :padding 3px 0
+      :margin-right 15px
+  div.test_badge
+    .button
+      +float_left
+    .test_msg
+      +float_left
+      :margin-left 20px
+      :padding 5px 25px
+      :background #eee
+    #test_passed
+      :color blue
+
+div.review_stats
+  :padding 10px 0
+
+
+
+
+
+
+
+
+
+/* Tooltips CSS definitions */	
+
+.tooltip
+  :position absolute
+  :overflow hidden
+  :font-size 11px
+  :z-index 10000
+  .xarrow
+    :position relative
+    :width 11px
+    :height 6px
+    b
+      :display block
+      :background #333
+      :border-left 1px solid #333
+      :border-right 1px solid #333
+      :font-size 1px
+      :height 1px
+    .a1
+      :margin 0 5px
+      :background-color #333
+      :border 0
+      :width 1px
+    .a2
+      :width 1px
+      :margin 0 4px
+    .a3
+      :width 3px
+      :margin 0 3px
+    .a4
+      :width 5px
+      :margin 0 2px
+    .a5
+      :width 7px
+      :margin 0 1px
+    .a6
+      :width 9px
+      :margin 0 0px
+  .xboxcontent
+    :padding 5px 10px
+    :margin 0
+    :color #fff
+    :word-wrap break-word
+    :background-color #333
+    :border 1px solid #333
+    +border_radius(6px)
+    ul
+      :font-size 12px
+
+
+
+
+// Rail Sections - partial collections
+
+ul.publishers
+  :background #fff
+  :border 1px solid #ccc
+  :padding 6px 10px
+  li.publisher
+    +clearfix
+    :padding 4px 0
+    .publisher_logo
+      +float_left
+      :padding 1px
+      :border 1px solid #999
+      img
+        +float_left
+        :width 30px
+        :height 30px
+    .publisher_name
+      +float_left
+      :margin-left 10px
+      :font-size 0.9em
+      :line-height 150%
+      +ellipsis
+      :width 180px
+      .name
+        :font-weight bold
+        :color #323232
+      .blog_name
+        a
+          +normal_anchor_style(#5a5a5a, transparent, none)
+          +active_anchor_style(#5a5a5a, transparent, underline)
+
+
+
+
+
+
+//
+
+iframe.fake_ajax
+  :margin 0
+  :border 0
+  :width 0
+  :height 0
+
+

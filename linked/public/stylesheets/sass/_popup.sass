@@ -1,0 +1,149 @@
+@import mixin.sass
+
+
+// Popup
+
+.popup_container
+  padding: 10px 13px
+  width: 400px
+  .popup_header
+    +clearfix
+    h2
+      +float_left
+    .close_button
+      +float_right
+      a
+        +image_replacement("/images/design/popup/close.gif", 14px, 14px)
+  .popup_body
+    +clearfix
+
+
+.popup_waiting
+  padding: 5px
+  img
+    width: 14px
+
+
+// Popup - FaceBox
+
+.popup
+  h3
+
+
+
+// Login Popup
+
+#login_popup
+  :position absolute
+  :border 5px solid #d5d5d5
+  :background #fff
+  :width 256px
+
+#login_popup_form
+  :margin 7px 10px
+  :width 236px
+  :color #666
+  input.text_field
+    :width 226px
+  p
+    :font-size 0.9em
+    :padding 5px 0
+    &.element
+    &.buttons
+      :font-size 0.9em
+      .button
+        :margin-right 10px
+      .commit
+        +background_button("/images/design/bg/button_commit_small.gif", #155AFF, #fff, 2px, 2px, 12px)
+        :font-size 12px
+        .IE &
+          :font-weight bold
+          :font-family NanumGothicExtraBold
+          :padding-top 5px
+          :padding-bottom 2px
+  ul.links
+    :padding 5px 0
+    li
+      a
+        :font-size 0.85em
+        +normal_anchor_style(#099ecf, transparent, none)
+        +active_anchor_style(#099ecf, transparent, underline)
+
+
+// Message Popup
+
+.message_popup
+  :border 5px solid #ddd
+  :padding 15px 20px
+  :width 400px
+  .popup_header
+    +clearfix
+    :border-bottom 2px solid #dedede
+    h2
+      +float_left
+      :font-size 1.1em
+      :color #333
+    .close_button
+      +float_right
+      a
+        +image_replacement("/images/design/icons/close.gif", 14px, 14px)
+  .popup_content
+    :width 400px
+    :padding 20px 0 0
+    :margin 0
+
+
+
+// ZipCode Popup
+
+.zipcode_search_popup
+  h3
+    :padding-bottom 15px
+  form
+  #zipcodes
+    :padding 10px 0
+    :margin-top 10px
+    :height 150px
+    :overflow-y auto
+    ul
+      :height 100%
+
+
+// Wysihat Popups
+
+.wysihat_file
+  h3
+    :padding-bottom 15px
+  form
+
+
+
+
+
+
+
+
+
+//
+
+.flash_error
+  padding: 15px 20px
+  border: 2px solid #999
+  margin-bottom: 15px
+  background: #ffc
+  color: #c36
+
+
+//
+
+.option_container
+  border: 1px solid #aaa
+  ul.options_for
+    padding: 5px 15px
+    li
+
+.option_login
+  padding: 10px
+  .button
+    padding-top: 10px
+    text-align: center
