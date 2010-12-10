@@ -1,7 +1,39 @@
-<% title "투어포스코리아 예약 페이지" %>
+<div class="container_1box">
 
-<%= semantic_form_for :sessions, :url => { :action => "create" } do |f| %>
-   <%= f.input :coupon_number, :as => :string, :label => "쿠폰 번호" %>
-   <%= f.input :purchaser_name, :as => :string, :label => "구매자 이름" %>
-   <%= f.submit "로그인" %>
-<% end %>
+  <div class="container_header">
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="center_box">
+
+      <h2>로그인</h2>
+
+      <div class="login_box">
+
+        <%= form_tag :sessions, :method => :post do %>
+
+          <div class="left_side">
+            <p class="element">
+              <%= label_tag :coupon_number, "쿠폰번호" %>
+              <%= text_field_tag :coupon_number %>
+            </p>
+            <p class="element">
+              <%= label_tag :purchaser_name, "구매자 이름" %>
+              <%= text_field_tag :purchaser_name %>
+            </p>
+          </div>
+          <div class="right_side">
+            <p class="element">
+              <%= submit_tag "Login" %>
+            </p>
+          </div>
+        <% end %>
+
+      </div><!-- login_box -->
+
+    </div><!-- center_box -->
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

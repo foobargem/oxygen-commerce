@@ -1,3 +1,5 @@
 class Reservation < ActiveRecord::Base
-  has_one :coupon
+
+  belongs_to :coupon, :counter_cache => true
+
 end

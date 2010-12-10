@@ -1,17 +1,45 @@
-<% title "예약 확인" %>
+<div class="container_1box">
 
-<div id="reservations">
-<table>
-  <tr>
-    <th>쿠폰번호</th>
-    <th>이름</th>
-    <th>구매업체</th>
-    <th>상품명</th>
-    <th>구매날짜</th>
-    <th>예약</th>
-  </tr>
-    <%= render "div_coupon", :coupon => @coupon %>
-</table>
-</div>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-<%= link_to "로그아웃", :logout %>
+  <div class="unit_content">
+
+    <div class="">
+      <h3>쿠폰번호: <%= @coupon.coupon_number %></h3>
+      <p>구매한 수량: <%= number_with_delimiter(@coupon.quantity) %></p>
+      <p>사용한 수량: <%= number_with_delimiter(@coupon.reservations_count) %></p>
+      <p>남은 수량: <%= number_with_delimiter(@coupon.usable_quantity) %></p>
+      <%= link_to "예약하기", :new_reservation %>
+    </div>
+
+    <table class="reservations">
+      <thead>
+        <tr>
+          <th class="user_name">사용자명</th>
+          <th class="resort">스키장</th>
+          <th class="part_time">시간대</th>
+          <th class="shoe_type">장비구분</th>
+          <th class="board_stance">스탠스(보드 시)</th>
+          <th class="height">신장</th>
+          <th class="shoe_size">발사이즈</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td class="user_name"><%= reservation.coupon.coupon_number %></td>
+            <td class="resort"><%= reservation.resort %></td>
+            <td class="part_time"><%= reservation.part_time %></td>
+            <td class="shoe_type"><%= reservation.shoe_type %></td>
+            <td class="board_stance"><%= reservation.board_stance %></td>
+            <td class="height"><%= reservation.height %> cm</td>
+            <td class="shoe_size"><%= reservation.shoe_size %> mm</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

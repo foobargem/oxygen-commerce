@@ -1,17 +1,16 @@
-# encoding: utf-8
 class ReservationsController < ApplicationController
+
+  layout "subscriber"
+
   before_filter :login_required
+  before_filter :find_coupon
   
   def index
-    @coupon = Coupon.find(session[:user_id])
+    @reservations = @coupon.reservations
   end
   
   def new
-    if Reservation.find_by_coupon_id(session[:user_id])
-      @reservation = Reservation.find_by_coupon_id(session[:user_id])
-    else
-      @reservation = Reservation.new
-    end  
+    @reservation = Reservation.new
   end
   
   def edit
@@ -19,7 +18,12 @@ class ReservationsController < ApplicationController
   end
   
   def create
-
+    @reservation = Reservation.new(params[:reservation])
+    if @reservation.save
+      redirect_to :reservations
+    else
+      render :action => :new
+    end
   end
   
   def update
@@ -31,11 +35,19 @@ class ReservationsController < ApplicationController
     @reservation.part_time = params[:reservation][:part_time]    
     
     if @reservation.save
-      flash[:notice] = "예약이 완료되었습니다."
+      flash[:notice] = "Reservation complete."
       redirect_to :action => 'index'
     else
       redirect_to :action => 'new'
     end
   end
+
+
+  protected
+
+    def find_coupon
+      @coupon = Coupon.find(session[:user_id])
+      @product = @coupon.product
+    end
   
 end

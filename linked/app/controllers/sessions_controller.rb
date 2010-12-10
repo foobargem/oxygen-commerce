@@ -1,27 +1,25 @@
-# encoding: utf-8
 class SessionsController < ApplicationController
 
+  layout "blank"
+
   def new
-    @coupon = Coupon.new
   end
 
   def create
-    coupon = Coupon.where("coupon_number = ? and purchaser_name = ?", params[:sessions][:coupon_number], params[:sessions][:purchaser_name]).first
-
-    if coupon
+    if coupon = Coupon.authorize_by_coupon_and_purchaser(params)
       session[:user_id] = coupon.id
-      flash[:notice] = "로그인이 성공적으로 되었습니다."
+      flash[:notice] = "Successfuly logged in"
       redirect_to reservations_path
     else
-      flash.now[:error] = "예약자 이름이나 쿠폰번호가 다릅니다."
-      render :action => 'new'
+      flash[:error] = "Authorize failed."
+      render :action => :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "로그아웃이 되었습니다."
-    redirect_to "/"
+    flash[:notice] = "Successfuly logged out."
+    redirect_to root_path
   end
   
 end
