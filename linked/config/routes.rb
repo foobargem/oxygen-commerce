@@ -10,8 +10,7 @@ Linked::Application.routes.draw do
       :sessions => 'admin/sessions'
     }
 
-  match 'admin' => redirect('/admin/dashboard'), :as => 'admin_root'
-  #match 'sessions/admin' => redirect('/admin/dashboard')
+  match 'admin' => redirect('/admin/reservations'), :as => 'admin_root'
   
 
   resources :sessions

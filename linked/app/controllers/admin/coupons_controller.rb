@@ -1,8 +1,9 @@
 class Admin::CouponsController < ApplicationController
 
-  layout "admin"
-
+  before_filter :authenticate_admin!
   before_filter :find_product
+
+  layout "admin"
 
   def index
     @coupons = @product.coupons
