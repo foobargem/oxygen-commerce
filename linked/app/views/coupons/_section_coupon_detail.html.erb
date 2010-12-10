@@ -1,0 +1,8 @@
+<% coupon = coupon %>
+<p>쿠폰번호: <%= coupon.coupon_number %></p>
+<p>
+  구매수량: <%= number_with_delimiter(coupon.quantity) %>
+  (사용한 수량: <%= number_with_delimiter(coupon.reservations_count) %>,
+  남은 수량: <%= number_with_delimiter(coupon.usable_quantity) %>)
+</p>
+<p>구매자: <%= coupon.purchaser_name %></p>

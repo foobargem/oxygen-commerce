@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="Author" content="OxygenComputing Inc." />
   <title>투어포스코리아::예약시스템</title>
-  <%= stylesheet_link_tag "standard", "suddenlybunt" %>
+  <%= stylesheet_link_tag "standard", "suddenlybunt", "static" %>
   <%= javascript_include_tag :defaults %>
   <%= (yield :stylesheets) if content_for?(:stylesheets) %>
   <%= (yield :javascripts) if content_for?(:javascripts) %>
@@ -23,15 +23,6 @@
 
   <div id="footer">
     <ul class="copyright">
-      <li class="left">© 2010 Oxygen Computing Inc. All rights reserved.</li>
-      <li class="right">
-        <%= link_to "와플소개", "/about_us", :class => "black_simple" %> |
-        <%= link_to "공식 블로그", "http://wapl.tistory.com/", :class => "black_simple", :target => "_blank" %> |
-        <%= link_to "공식 트위터", "http://twitter.com/wapl_tweet", :class => "black_simple", :target => "_blank" %> |
-        <%= link_to "운영정책", "/cs/policy", :class => "black_simple" %> |
-        <%= link_to "이용약관", "/cs/terms_of_service", :class => "black_simple" %> |
-        <%= link_to "개인정보보호정책", "/cs/privacy_policy", :class => "black_simple" %>
-      </li>
     </ul>
   </div>
 

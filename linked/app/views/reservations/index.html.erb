@@ -1,16 +1,13 @@
 <div class="container_1box">
 
   <div class="container_header">
+    <%= render "reservations/main_nav" %>
   </div><!-- container_header -->
 
   <div class="unit_content">
 
-    <div class="">
-      <h3>쿠폰번호: <%= @coupon.coupon_number %></h3>
-      <p>구매한 수량: <%= number_with_delimiter(@coupon.quantity) %></p>
-      <p>사용한 수량: <%= number_with_delimiter(@coupon.reservations_count) %></p>
-      <p>남은 수량: <%= number_with_delimiter(@coupon.usable_quantity) %></p>
-      <%= link_to "예약하기", :new_reservation %>
+    <div class="reservation_header">
+      <%= render "coupons/section_coupon_detail", :coupon => @coupon %>
     </div>
 
     <table class="reservations">
