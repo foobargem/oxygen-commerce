@@ -1,0 +1,28 @@
+
+Prototype.js Patch List
+=======================
+
+IE6/IE7:
+clonePosition() throws exception
+
+line 2085
+
+getOffsetParent: function(element) {
+  ...
+  while ((element = element.parentNode) && element != document.body && element != document)
+  ...
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
