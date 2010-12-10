@@ -1,0 +1,429 @@
+ul.subscriber_nav {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  height: 30px;
+  padding-left: 7px;
+  background: url(/images/design/nav/tab2_bg.gif) left bottom repeat-x; }
+  ul.subscriber_nav li {
+    display: inline;
+    float: left;
+    margin: 0 2px;
+    width: 160px;
+    height: 30px;
+    text-align: center;
+    background: url(/images/design/nav/tab2_160_off.gif) no-repeat; }
+    ul.subscriber_nav li a {
+      display: block;
+      padding-top: 6px; }
+      ul.subscriber_nav li a, ul.subscriber_nav li a:visited {
+        color: black;
+        background-color: transparent;
+        text-decoration: none; }
+      ul.subscriber_nav li a:hover, ul.subscriber_nav li a:active {
+        color: black;
+        background-color: transparent;
+        text-decoration: underline; }
+  ul.subscriber_nav li.current {
+    background: url(/images/design/nav/tab2_160_on.gif) no-repeat; }
+    ul.subscriber_nav li.current a {
+      font-weight: bold;
+      padding-top: 7px; }
+
+.reservation_header {
+  padding: 20px 8px;
+  border-bottom: 2px solid #dddddd;
+  margin-bottom: 20px; }
+  .reservation_header:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  .reservation_header {
+    display: inline-block; }
+  .IE .reservation_header {
+    height: 1%; }
+  .reservation_header {
+    display: block; }
+  .reservation_header div.user_profile {
+    display: inline;
+    float: left; }
+    .reservation_header div.user_profile .user_logo {
+      display: inline;
+      float: left;
+      margin-right: 20px; }
+      .reservation_header div.user_profile .user_logo img {
+        border: 1px solid #999999;
+        padding: 2px;
+        width: 100px;
+        height: 100px; }
+    .reservation_header div.user_profile .user_data {
+      display: inline;
+      float: left; }
+      .reservation_header div.user_profile .user_data ul.infos {
+        font-size: 0.9em;
+        margin-top: 5px;
+        margin-left: 20px; }
+        .reservation_header div.user_profile .user_data ul.infos li {
+          list-style: disc;
+          padding: 2px 0; }
+  .reservation_header div.help {
+    display: inline;
+    float: right;
+    width: 600px; }
+    .reservation_header div.help h4 {
+      padding-left: 20px;
+      background: url(/images/design/icons/i_help02.gif) left no-repeat;
+      color: #666666;
+      margin-bottom: 5px; }
+    .reservation_header div.help ul {
+      margin-left: 20px; }
+      .reservation_header div.help ul li {
+        color: #888888;
+        padding: 1px 0; }
+        .reservation_header div.help ul li a {
+          color: #888888; }
+          .reservation_header div.help ul li a:hover, .reservation_header div.help ul li a:active {
+            color: black;
+            background-color: transparent;
+            text-decoration: underline; }
+
+table.reservations {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.reservations thead tr {
+    background: #dddddd; }
+    table.reservations thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.reservations tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.reservations tbody tr.total, table.reservations tbody tr.average {
+    background: #ddeeff; }
+    table.reservations tbody tr.total td, table.reservations tbody tr.average td {
+      background: #ddeeff; }
+  table.reservations tbody td.actions a {
+    padding: 0 2px; }
+  table.reservations th.user_name {
+    width: 100px; }
+  table.reservations th.part_time {
+    width: 100px; }
+  table.reservations th.shoe_type {
+    width: 100px; }
+  table.reservations th.board_stance {
+    width: 100px; }
+  table.reservations th.height {
+    width: 100px; }
+  table.reservations th.shoe_size {
+    width: 100px; }
+  table.reservations th.actions {
+    width: 140px; }
+  table.reservations td.user_name {
+    text-align: center; }
+  table.reservations td.resort {
+    text-align: center; }
+  table.reservations td.part_time {
+    text-align: center; }
+  table.reservations td.shoe_type {
+    text-align: center; }
+  table.reservations td.board_stance {
+    text-align: center; }
+  table.reservations td.height {
+    text-align: center; }
+  table.reservations td.shoe_size {
+    text-align: center; }
+  table.reservations td.actions {
+    text-align: center; }
+
+.section {
+  padding: 10px 5px 20px; }
+  .section h3 {
+    font-size: 1.1em;
+    color: #343434;
+    text-decoration: underline;
+    margin-bottom: 5px; }
+    .section h3 span.more {
+      font-size: 0.8em;
+      font-weight: normal;
+      margin-left: 10px; }
+      .section h3 span.more a, .section h3 span.more a:visited {
+        color: blue;
+        background-color: transparent;
+        text-decoration: none; }
+      .section h3 span.more a:hover, .section h3 span.more a:active {
+        color: white;
+        background-color: blue;
+        text-decoration: none; }
+  .section h4 span.more {
+    font-size: 0.8em;
+    font-weight: normal;
+    margin-left: 10px; }
+    .section h4 span.more a, .section h4 span.more a:visited {
+      color: blue;
+      background-color: transparent;
+      text-decoration: none; }
+    .section h4 span.more a:hover, .section h4 span.more a:active {
+      color: white;
+      background-color: blue;
+      text-decoration: none; }
+  .section p.strong {
+    color: #ff3333; }
+  .section div.note {
+    margin-top: 20px; }
+  .section form {
+    padding: 10px 0;
+    border: 5px solid #999999;
+    background: #ddeeff;
+    padding-top: 20px;
+    padding-left: 20px; }
+    .section form .buttons .commit input {
+      color: white;
+      padding: 5px 20px 4px;
+      text-shadow: #155aff 0 -1px 0;
+@end;
+      border: 1px solid #155aff;
+      background: url("/images/design/bg/button_commit.gif") repeat-x;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      cursor: pointer; }
+      .IE .section form .buttons .commit input {
+        border: #666666;
+        background-color: #155aff;
+        font-weight: bold;
+        padding: 6px 16px 3px; }
+      .section form .buttons .commit input:hover {
+        background-position: 0 -5px; }
+    .section form .buttons .cancel input {
+      color: #666666;
+      padding: 5px 20px 4px;
+@end;
+      border: 1px solid #b9b9b9;
+      background: url("/images/design/bg/button_cancel.gif") repeat-x;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      cursor: pointer; }
+      .IE .section form .buttons .cancel input {
+        border: #666666;
+        background-color: #b9b9b9;
+        font-weight: bold;
+        padding: 6px 16px 3px; }
+      .section form .buttons .cancel input:hover {
+        background-position: 0 -5px; }
+    .section form ul.errors {
+      color: #cc0000;
+      margin: 0.2em 0 0.5em 158px; }
+      .section form ul.errors li {
+        padding: 0;
+        border: none; }
+    .section form div.buttons {
+      padding: 10px 0 40px 158px; }
+      .section form div.buttons:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      .section form div.buttons {
+        display: inline-block; }
+      .IE .section form div.buttons {
+        height: 1%; }
+      .section form div.buttons {
+        display: block; }
+      .section form div.buttons .button {
+        display: inline;
+        float: left;
+        margin-left: 15px; }
+        .section form div.buttons .button a {
+          margin-top: 2px; }
+    .section form fieldset:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    .section form fieldset {
+      display: inline-block; }
+    .IE .section form fieldset {
+      height: 1%; }
+    .section form fieldset {
+      display: block; }
+    .section form fieldset.buttons {
+      padding: 10px 0 40px 158px; }
+      .section form fieldset.buttons li {
+        display: inline;
+        float: left;
+        margin-left: 15px;
+        font-size: 0.9em; }
+        .section form fieldset.buttons li a, .section form fieldset.buttons li a:visited {
+          color: red;
+          background-color: transparent;
+          text-decoration: underline; }
+        .section form fieldset.buttons li a:hover, .section form fieldset.buttons li a:active {
+          color: white;
+          background-color: red;
+          text-decoration: none; }
+        .section form fieldset.buttons li.link {
+          margin-top: 2px;
+          margin-right: 5px; }
+    .section form fieldset legend span {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #343434; }
+    .section form fieldset ol li {
+      margin-bottom: 5px; }
+      .section form fieldset ol li:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden; }
+      .section form fieldset ol li {
+        display: inline-block; }
+      .IE .section form fieldset ol li {
+        height: 1%; }
+      .section form fieldset ol li {
+        display: block; }
+      .section form fieldset ol li label {
+        display: inline;
+        float: left;
+        display: block;
+        width: 158px;
+        padding-top: 0.2em; }
+      .section form fieldset ol li.error input {
+        border: 3px solid #ee0000;
+        margin: 0; }
+    .section form fieldset ol li.boolean input {
+      margin: 0 0.5em 0 0.2em; }
+    .section form fieldset ol li.radio fieldset ol {
+      margin-bottom: -0.6em; }
+      .section form fieldset ol li.radio fieldset ol li {
+        margin: 1px 0 5px; }
+        .section form fieldset ol li.radio fieldset ol li label {
+          float: none;
+          width: 100%; }
+          .section form fieldset ol li.radio fieldset ol li label input {
+            margin-right: 0.2em; }
+    .section form fieldset ol li.check_boxes fieldset ol {
+      margin-bottom: -0.6em; }
+      .section form fieldset ol li.check_boxes fieldset ol li {
+        margin: 0.1em 0 0.5em 0; }
+        .section form fieldset ol li.check_boxes fieldset ol li label {
+          float: none;
+          width: 100%; }
+          .section form fieldset ol li.check_boxes fieldset ol li label input {
+            margin-right: 0.2em; }
+    .section form fieldset ol li.date fieldset ol li, .section form fieldset ol li.time fieldset ol li, .section form fieldset ol li.datetime fieldset ol li {
+      display: inline;
+      float: left;
+      width: auto; }
+      .IE .section form fieldset ol li.date fieldset ol li, .FF .section form fieldset ol li.date fieldset ol li, .IE .section form fieldset ol li.time fieldset ol li, .FF .section form fieldset ol li.time fieldset ol li, .IE .section form fieldset ol li.datetime fieldset ol li, .FF .section form fieldset ol li.datetime fieldset ol li {
+        margin-left: 3px;
+        padding-bottom: 3px; }
+      .section form fieldset ol li.date fieldset ol li label, .section form fieldset ol li.time fieldset ol li label, .section form fieldset ol li.datetime fieldset ol li label {
+        display: none; }
+        .section form fieldset ol li.date fieldset ol li label input, .section form fieldset ol li.time fieldset ol li label input, .section form fieldset ol li.datetime fieldset ol li label input {
+          display: inline;
+          margin: 0;
+          padding: 0; }
+    .section form fieldset ol li.preview .preview_content img {
+      border: 1px solid #999999;
+      padding: 2px;
+      width: 60px;
+      height: 60px; }
+    .section form fieldset ol li.tip {
+      background: #ececec;
+      color: #444444;
+      padding: 7px 10px 6px;
+      margin-bottom: 10px; }
+    .section form fieldset ol li.desc {
+      margin-bottom: 15px;
+      color: #666666; }
+      .section form fieldset ol li.desc p {
+        font-size: 0.9em; }
+    .section form fieldset ol li p.inline-hints {
+      color: #989898;
+      margin-top: 3px;
+      font-size: 0.9em; }
+    .section form fieldset ol li p.inline-errors {
+      color: #cc0000;
+      margin-top: 3px;
+      font-size: 0.9em; }
+    .section form fieldset ol fieldset {
+      position: relative; }
+      .section form fieldset ol fieldset legend {
+        position: absolute;
+        width: 95%;
+        padding-top: 0.1em;
+        left: 0px; }
+        .section form fieldset ol fieldset legend span {
+          position: absolute; }
+        .section form fieldset ol fieldset legend.label label {
+          position: absolute; }
+      .section form fieldset ol fieldset ol {
+        display: inline;
+        float: left;
+        width: 70%;
+        margin: 0;
+        padding: 0 0 0 158px; }
+        .section form fieldset ol fieldset ol li {
+          padding: 0;
+          border: 0; }
+    .section form ol li.string input {
+      max-width: 70%; }
+    .section form ol li.password input {
+      max-width: 70%; }
+    .section form ol li.numeric input {
+      max-width: 70%; }
+    .section form ol li.file input {
+      max-width: 70%; }
+    .section form ol li.text textarea {
+      max-width: 70%; }
+    .section form ol li.boolean label {
+      padding-left: 70%;
+      width: auto; }
+    .section form ol li.preview .preview_content {
+      margin-left: 158px; }
+    .section form ol li p.inline-hints {
+      margin-left: 160px; }
+    .section form ol li p.inline-errors {
+      margin-left: 160px; }
+    .section form fieldset.sub_section {
+      margin: 25px 0 25px 178px;
+      position: relative; }
+      .section form fieldset.sub_section legend {
+        font-weight: bold; }
+        .IE .section form fieldset.sub_section legend {
+          position: relative;
+          left: -7px; }
+        .section form fieldset.sub_section legend span {
+          text-decoration: none;
+          color: #333333; }
+    .section form iframe.editor {
+      border: 1px solid #999999;
+      height: 400px;
+      width: 662px;
+      margin: 0 0 0 158px;
+      font-family: Dotum;
+      font-size: 0.9em;
+      background: white; }
+    .section form fieldset.inputs {
+      margin-bottom: 20px; }
+      .section form fieldset.inputs legend {
+        margin-bottom: 5px; }
+
+.subsection {
+  color: #666666;
+  padding: 10px 20px; }

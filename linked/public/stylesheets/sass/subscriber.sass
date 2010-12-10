@@ -1,0 +1,156 @@
+@import mixin.sass
+
+
+
+ul.subscriber_nav
+  +no_text_selection
+  :height 30px
+  :padding-left 7px
+  :background url(/images/design/nav/tab2_bg.gif) left bottom repeat-x
+  li
+    +float_left
+    :margin 0 2px
+    :width 160px
+    :height 30px
+    :text-align center
+    :background url(/images/design/nav/tab2_160_off.gif) no-repeat
+    a
+      :display block
+      :padding-top 6px
+      +normal_anchor_style(#000, transparent, none)
+      +active_anchor_style(#000, transparent, underline)
+  li.current
+    :background url(/images/design/nav/tab2_160_on.gif) no-repeat
+    a
+      :font-weight bold
+      :padding-top 7px
+
+
+
+.reservation_header
+  +clearfix
+  :padding 20px 8px
+  :border-bottom 2px solid #ddd
+  :margin-bottom 20px
+  div.user_profile
+    +float_left
+    .user_logo
+      +float_left
+      +has_framed_image(100px,100px)
+      :margin-right 20px
+    .user_data
+      +float_left
+      h3
+      ul.infos
+        :font-size 0.9em
+        :margin-top 5px
+        :margin-left 20px
+        li
+          :list-style disc
+          :padding 2px 0
+        .label
+        .value
+  div.help
+    +float_right
+    :width 600px
+    h4
+      :padding-left 20px
+      :background url(/images/design/icons/i_help02.gif) left no-repeat
+      :color #666
+      :margin-bottom 5px
+    ul
+      :margin-left 20px
+      li
+        :color #888
+        :padding 1px 0
+        a 
+          :color #888
+          +active_anchor_style(#000, transparent, underline)
+
+
+
+// Rservations
+
+table.reservations
+  +table_style1
+  th
+    &.user_name
+      :width 100px
+    &.resort
+    &.part_time
+      :width 100px
+    &.shoe_type
+      :width 100px
+    &.board_stance
+      :width 100px
+    &.height
+      :width 100px
+    &.shoe_size
+      :width 100px
+    &.actions
+      :width 140px
+  td
+    &.user_name
+      :text-align center
+    &.resort
+      :text-align center
+    &.part_time
+      :text-align center
+    &.shoe_type
+      :text-align center
+    &.board_stance
+      :text-align center
+    &.height
+      :text-align center
+    &.shoe_size
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+
+.section
+  :padding 10px 5px 20px
+  h3
+    :font-size 1.1em
+    :color #343434
+    :text-decoration underline
+    :margin-bottom 5px
+    span.more
+      :font-size 0.8em
+      :font-weight normal
+      :margin-left 10px
+      a
+        +normal_anchor_style(blue, transparent, none)
+        +active_anchor_style(#fff, blue, none)
+  h4
+    span.more
+      :font-size 0.8em
+      :font-weight normal
+      :margin-left 10px
+      a
+        +normal_anchor_style(blue, transparent, none)
+        +active_anchor_style(#fff, blue, none)
+  p
+    &.strong
+      :color #f33
+  div.note
+    :margin-top 20px
+  form
+    +formtastic_normal
+    :border 5px solid #999
+    :background #def
+    :padding-top 20px
+    :padding-left 20px
+    fieldset.inputs
+      :margin-bottom 20px
+      legend
+        :margin-bottom 5px
+
+.subsection
+  :color #666
+  :padding 10px 20px
+  p
+
+
