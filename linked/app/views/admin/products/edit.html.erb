@@ -1,12 +1,27 @@
+<div class="container_1box">
 
-<%= semantic_form_for [:admin, @product] do |f| %>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-  <h3>상품편집</h3>
+  <div class="unit_content">
 
-  <%= render 'admin/products/form', :f => f %>
+    <div class="nav_history">
+      <%= link_to "상품목록>", :admin_products %>
+      <span>상품편집</span>
+    </div>
 
-  <%= f.buttons do %>
-    <%= f.submit "수정" %>
-  <% end %>
+    <div class="section">
+      <%= semantic_form_for [:admin, @product] do |f| %>
 
-<% end %>
+        <%= render 'admin/products/form', :f => f %>
+
+        <%= f.buttons do %>
+          <%= f.submit "수정" %>
+        <% end %>
+
+      <% end %>
+    </div>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

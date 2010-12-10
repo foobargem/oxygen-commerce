@@ -6,6 +6,9 @@
 <%= f.inputs do %>
   <%= f.input :ticket_type, :as => :string, :label => "이용권" %>
   <%= f.input :resort, :as => :string, :label => "스키장" %>
-  <%= f.input :opened_at, :as => :datetime, :label => "시작일" %>
-  <%= f.input :closed_at, :as => :datetime, :label => "종료일" %>
+<% end %>
+
+<%= f.inputs do %>
+  <%= f.input :opened_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 2, :label => "시작일" %>
+  <%= f.input :closed_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 2, :label => "종료일" %>
 <% end %>

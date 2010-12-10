@@ -1,29 +1,16 @@
+<div class="container_1box">
 
-<dl class="product">
-  <dt class="">상품명</dt>
-  <dd class=""><%= @product.name %></dd>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-  <dt class="">공급업체</dt>
-  <dd class=""><%= @product.provider_name %></dd>
+  <div class="unit_content">
 
-  <dt class="">이용권</dt>
-  <dd class=""><%= @product.ticket_type %></dd>
+    <%= render "admin/products/header" %>
 
-  <dt class="">스키장</dt>
-  <dd class=""><%= @product.resort %></dd>
+    <div class="section">
+      <%= render "admin/products/section_product_detail", :product => @product %>
+    </div>
 
-  <dt class="">이용기간</dt>
-  <dd class="">
-    <%= l(@product.opened_at) %>
-    ~
-    <%= l(@product.closed_at) %>
-  </dd>
+  </div><!-- unit_content -->
 
-</dl>
-
-
-
-<div class="">
-  <%= link_to "Add new coupon entries", new_admin_product_coupon_path(@product) %>
-  <%= link_to "Back to list", admin_products_path %>
-</div>
+</div><!-- container_1box -->

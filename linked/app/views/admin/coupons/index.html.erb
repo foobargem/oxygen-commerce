@@ -1,35 +1,42 @@
+<div class="container_1box">
 
-<div class="">
-  <h4>상품명: <%= link_to @product.name, admin_product_path(@product) %>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-  <div class="">
-    <%= link_to "Add new coupon entries", new_coupons_admin_product_path(@product) %>
-  </div>
-</div>
+  <div class="unit_content">
 
+    <%= render "admin/products/header" %>
 
-<table class="coupons">
-  <thead>
-    <tr>
-      <th class="">구매업체</th>
-      <th class="">구매자</th>
-      <th class="">쿠폰번호</th>
-      <th class="">연락처</th>
-      <th class=""></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @coupons.each do |coupon| %>
-      <tr>
-        <td class=""><%= coupon.agency_name %></td>
-        <td class=""><%= coupon.purchaser_name %></td>
-        <td class=""><%= coupon.coupon_number %></td>
-        <td class=""><%= coupon.phone_number %></td>
-        <td class="">
-          <%= link_to "edit", edit_admin_product_coupon_path(@product, coupon) %>
-          <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <table class="coupons">
+      <thead>
+        <tr>
+          <th class="coupon_number">쿠폰번호</th>
+          <th class="quantity">수량</th>
+          <th class="used_quantity">사용한 수량</th>
+          <th class="purchaser_name">구매자</th>
+          <th class="phone_number">연락처</th>
+          <th class="agency_name">구매업체</th>
+          <th class="actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @coupons.each do |coupon| %>
+          <tr>
+            <td class="coupon_number"><%= coupon.coupon_number %></td>
+            <td class="quantity"><%= number_with_delimiter(coupon.quantity) %></td>
+            <td class="used_quantity"><%= number_with_delimiter(coupon.reservations_count) %></td>
+            <td class="purcharser_name"><%= coupon.purchaser_name %></td>
+            <td class="phone_number"><%= coupon.phone_number %></td>
+            <td class="agency_name"><%= coupon.agency_name %></td>
+            <td class="actions">
+              <%= link_to "edit", edit_admin_product_coupon_path(@product, coupon) %>
+              <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

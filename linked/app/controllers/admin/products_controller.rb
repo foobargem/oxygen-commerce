@@ -1,5 +1,7 @@
 class Admin::ProductsController < ApplicationController
 
+  layout "admin"
+
   def index
     @products = Product.all
   end
@@ -14,6 +16,7 @@ class Admin::ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
+    @product.closed_at = @product.closed_at.end_of_day
     if @product.save
       redirect_to admin_products_path
     else
@@ -28,6 +31,8 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
+      @product.update_attribute(:closed_at, @product.closed_at.end_of_day)
+
       redirect_to admin_product_path(@product)
     else
       render :action => :edit

@@ -1,5 +1,7 @@
 class Admin::CouponsController < ApplicationController
 
+  layout "admin"
+
   before_filter :find_product
 
   def index

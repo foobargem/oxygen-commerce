@@ -1,5 +1,6 @@
 class Admin::SessionsController < Devise::SessionsController
 
+  layout "admin"
   before_filter :authenticate_admin!, :only => [:destroy]
 
   include Devise::Controllers::InternalHelpers

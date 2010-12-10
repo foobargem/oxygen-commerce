@@ -1,0 +1,15 @@
+<div class="nav_history">
+  <%= link_to "상품 목록>", :admin_products %>
+</div>
+
+<div class="product_header">
+  <h2><%= @product.name %></h2>
+  <%= render "admin/products/section_product_detail", :product => @product %>
+
+  <ul class="main_tab_nav">
+    <%= navigation_tag :li, current_controller?(["admin/coupons"]) && current_action?("index"),
+      (link_to "쿠폰 목록", [:admin, @product, :coupons], :class => "") %>
+    <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("new_coupons"),
+      (link_to "쿠폰 등록", new_coupons_admin_product_path(@product)) %>
+  </ul>
+</div>

@@ -1,6 +1,40 @@
+<div class="container_1box">
 
-<%= semantic_form_for(resource_name, resource, :url => session_path(resource_name)) do |f| %>  
-  <%= f.input :login, :as => :string, :label => "admin loginname: " %>
-  <%= f.input :password, :label => "admin password: " %>
-  <%= f.submit "Login" %>
-<% end %>
+  <div class="container_header">
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="center_box">
+
+      <h2>로그인</h2>
+
+      <div class="login_box">
+
+        <%= form_for resource, :as => resource_name, :url => admin_session_path do |f| %>
+
+          <div class="left_side">
+            <p class="element">
+              <%= f.label :login, "아이디" %>
+              <%= f.text_field :login %>
+            </p>
+            <p class="element">
+              <%= f.label :password, "비밀번호" %>
+              <%= f.password_field :password %>
+            </p>
+          </div>
+          <div class="right_side">
+            <p class="element">
+              <%= f.submit "Login" %>
+            </p>
+          </div>
+        <% end %>
+
+      </div><!-- login_box -->
+
+    </div><!-- center_box -->
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
+

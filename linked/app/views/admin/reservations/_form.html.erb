@@ -1,11 +1,12 @@
+<%= f.inputs do %>
+  <%= f.input :user_name, :as => :string, :label => "사용자명" %>
+  <%= f.input :resort, :as => :string, :label => "스키장" %>
+  <%= f.input :part_time, :as => :select, :include_blank => false, :collection => ["오전+오후", "오후+야간"], :label => "시간선택" %>
+<% end %>
 
-쿠폰: <%= text_field_tag 'coupon_number', nil %><br>
-사용자명: <%= text_field_tag 'purchaser_name', nil %><br>
-구매업체: <%= text_field_tag 'agency_name', nil %><br>
-핸드폰: <%= text_field_tag 'phone_number', nil, %><br>
-<p>
-이용일 선택: <% CalendarDateSelect.format=(:iso_date)%><%= f.calendar_date_select :used_at %></br>
-<%= f.input :resort, :as => :string, :label => "스키장 선택" %></br>
-<%= f.input :part_time, :as => :string, :label => "시간 선택" %></br>
-<%= f.input :height, :as => :string, :label => "신장" %></br>
-<%= f.input :shoe_size, :as => :string, :label => "발사이즈" %></br>
+<%= f.inputs do %>
+  <%= f.input :shoe_type, :as => :select, :include_blank => false, :collection => ["스키", "보드"], :label => "장비구분" %>
+  <%= f.input :board_stance, :as => :string, :label => "스탠스(보드 시)" %>
+  <%= f.input :height, :as => :string, :label => "신장" %>
+  <%= f.input :shoe_size, :as => :string, :label => "발사이즈" %>
+<% end %>

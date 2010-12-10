@@ -1,38 +1,54 @@
+<div class="container_1box">
 
-<h3>Products List</h3>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-<%= link_to "Add new product", new_admin_product_path %>
+  <div class="unit_content">
 
-<table class="">
-  <thead>
-    <tr>
-      <th>상품명</th>
-      <th>공급업체</th>
-      <th>스키장</th>
-      <th>이용권</th>
-      <th>이용기간</th>
-      <th>구매내역</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @products.each do |product| %>
-    <tr>
-      <td class=""><%= product.name %></td>
-      <td class=""><%= product.provider_name %></td>
-      <td class=""><%= product.resort %></td>
-      <td class=""><%= product.ticket_type %></td>
-      <td class="">
-        <%= l(product.opened_at) %> ~ <%= l(product.closed_at) %>
-      </td>
-      <td><%= link_to "쿠폰구매내역", admin_product_coupons_path(product) %></td>
-      <td class="">
-        <%= link_to "show", admin_product_path(product) %>
-        <%= link_to "edit", edit_admin_product_path(product) %>
-        <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    <h3>상품목록</h3>
 
+    <ul class="filters">
+      <li>
+        <div class="bg_anchor"><%= link_to "Add new product", new_admin_product_path %></div>
+      </li>
+    </ul>
+
+    <table class="products">
+      <thead>
+        <tr>
+          <th class="name">상품명</th>
+          <th class="provider_name">공급업체</th>
+          <th class="resort">스키장</th>
+          <th class="ticket_type">이용권</th>
+          <th class="date_range">이용기간</th>
+          <th class="coupons">쿠폰목록</th>
+          <th class="actions"></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td class="name"><%= product.name %></td>
+          <td class="provider_name"><%= product.provider_name %></td>
+          <td class="resort"><%= product.resort %></td>
+          <td class="ticket_type"><%= product.ticket_type %></td>
+          <td class="date_range">
+            <%= l(product.opened_at) %> ~ <%= l(product.closed_at) %>
+          </td>
+          <td class="coupons"><%= link_to "쿠폰구매내역", admin_product_coupons_path(product) %></td>
+          <td class="actions">
+            <%= link_to "edit", edit_admin_product_path(product) %>
+            <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+
+  </div><!-- unit_content -->
+
+  <div class="unit_rail">
+  </div><!-- unit_rail -->
+
+</div><!-- container_1box -->

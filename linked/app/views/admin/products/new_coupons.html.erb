@@ -1,26 +1,58 @@
-<%= semantic_form_for [:admin, @product], :url => create_coupons_admin_product_path(@product) do |product_form| %>
+<div class="container_1box">
 
-  <h3>쿠폰 구매내역 등록</h3>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-  <h4>상품명: <%= link_to @product.name, admin_product_path(@product) %></h4>
+  <div class="unit_content">
 
-  <% 5.times do %>
-    <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
-      <div>
-        쿠폰번호: <%= coupon_fields.text_field :coupon_number, :name => "product[coupon_attributes][][coupon_number]" %>
-        구매자: <%= coupon_fields.text_field :purcharse_name, :name => "product[coupon_attributes][][purchaser_name]" %>
-        연락처: <%= coupon_fields.text_field :phone_number, :name => "product[coupon_attributes][][phone_number]" %>
-        구매업체: <%= coupon_fields.text_field :agency_name, :name => "product[coupon_attributes][][agency_name]" %>
+    <%= render "admin/products/header" %>
 
-        <%= coupon_fields.hidden_field :product_id, :name => "product[coupon_attributes][][product_id]", :value => @product.id %>
-      </div>
-    <% end %>
-  <% end %>
+    <div class="section">
+      <%= semantic_form_for [:admin, @product], :url => create_coupons_admin_product_path(@product) do |product_form| %>
 
+        <table>
+          <thead>
+            <tr>
+              <th class="coupon_number">쿠폰번호</th>
+              <th class="quantity">수량</th>
+              <th class="purchaser_name">구매자</th>
+              <th class="phone_number">연락처</th>
+              <th class="agency_name">구매업체</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% 5.times do %>
+              <tr>
+                <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
+                  <td class="coupon_number">
+                    <%= coupon_fields.text_field :coupon_number, :name => "product[coupon_attributes][][coupon_number]", :size => 20 %>
+                  </td>
+                  <td class="quantity">
+                    <%= coupon_fields.text_field :quantity, :name => "product[coupon_attributes][][quantity]", :size => 4 %>
+                  </td>
+                  <td class="purchaser_name">
+                    <%= coupon_fields.text_field :purcharse_name, :name => "product[coupon_attributes][][purchaser_name]", :size => 10 %>
+                  </td>
+                  <td class="phone_number">
+                    <%= coupon_fields.text_field :phone_number, :name => "product[coupon_attributes][][phone_number]", :size => 14 %>
+                  </td>
+                  <td class="agency_name">
+                    <%= coupon_fields.text_field :agency_name, :name => "product[coupon_attributes][][agency_name]", :size => 20 %>
+                    <%= coupon_fields.hidden_field :product_id, :name => "product[coupon_attributes][][product_id]", :value => @product.id %>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-  <%= product_form.buttons do %>
-    <%= product_form.submit "등록" %>
-  <% end %>
+        <%= product_form.buttons do %>
+          <%= product_form.submit "등록" %>
+        <% end %>
 
-<% end %>
+      <% end %>
+    </div>
 
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
