@@ -1,6 +1,6 @@
 <ul class="subscriber_nav">
   <%= navigation_tag :li, current_controller?("reservations") && current_action?("index"),
-   (link_to "예약목록", reservations_path) %>
-  <%= navigation_tag :li, current_controller?("reservations") && current_action?("new"),
-   (link_to "예약하기", new_reservation_path) %>
+   (link_to "예약목록", coupon_reservations_path) %>
+  <%= navigation_tag :li, current_controller?("coupon") && current_action?("new_reservations"),
+   (link_to "예약하기", new_reservations_coupon_path) %>
 </ul>

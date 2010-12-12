@@ -8,4 +8,12 @@ module ApplicationHelper
     end
   end
 
+  def display_date(date)
+    unless date.nil?
+      I18n.l(date.to_date)
+    else
+      "-"
+    end
+  end
+
 end

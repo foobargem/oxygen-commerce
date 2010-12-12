@@ -1,0 +1,52 @@
+<div class="container_1box">
+
+  <div class="container_header">
+    <%= render "reservations/main_nav" %>
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="reservation_header">
+      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
+    </div>
+
+    <div class="section">
+      <% unless @coupon.usable_quantity > 0 %>
+        <strong>남은 수량이 없습니다.</strong>
+      <% else %>
+        <%= semantic_form_for @coupon, :url => create_reservations_coupon_path do |coupon_form| %>
+
+          <%= link_to "사용자 추가", add_reservation_fields_coupon_path, :remote => :true, :id => "add_user_button", :onclick => "Element.toggle(this);Element.toggle('add_user_button_hide')" %>
+          <span id="add_user_button_hide" style="display:none">Loading..</span>
+
+          <table class="new_reservations">
+            <thead>
+              <tr>
+                <th class="user_name">사용자명</th>
+                <th class="resort">스키장</th>
+                <th class="used_at">사용일</th>
+                <th class="part_time">시간대</th>
+                <th class="shoe_type">장비구분</th>
+                <th class="board_stance">스탠스</th>
+                <th class="height">신장</th>
+                <th class="shoe_size">발사이즈</th>
+              </tr>
+            </thead>
+            <tbody id="reservation_fields_wrapper">
+              <%= coupon_form.fields_for :reservation_attributes do |reservation_fields| %>
+                <%= render "coupon/tr_form", :product => @product, :coupon => @coupon %>
+              <% end %>
+            </tbody>
+          </table>
+
+          <div class="">
+            <%= coupon_form.submit "예약" %>
+          </div>
+
+        <% end %>
+      <% end %>
+    </div>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

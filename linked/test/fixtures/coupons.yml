@@ -11,3 +11,10 @@ one:
   reservations_count: 2
   purchaser_name: "user#1"
 
+two:
+  product_id: 1
+  coupon_number: ABCE
+  quantity: 3
+  reservations_count: 2
+  purchaser_name: "user#2"
+

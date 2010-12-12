@@ -17,7 +17,16 @@ Linked::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
   match 'login' => 'sessions#new', :as => :login
 
-  resources :reservations
+
+  resource :coupon, :controller => :coupon do
+    member do
+      get "new_reservations"
+      put "create_reservations"
+      get "add_reservation_fields"
+      get "remove_reservation_fields"
+    end
+    resources :reservations
+  end
   
 
 
