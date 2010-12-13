@@ -85,4 +85,50 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def new_coupons_from_import
+    @product = Product.find(params[:id])
+    @coupon = Coupon.new
+    session[:current_tr_count] = 1
+  end
+
+  def new_import
+    @product = Product.find(params[:id])
+    render :partial => "admin/products/new_import", :locals => { :product => @product }
+  end
+
+  def import_from_excel_file
+    @product = Product.find(params[:id])
+    excel_file = params[:excel_file]
+    unless excel_file.nil?
+      src_filename = "#{excel_file.tempfile.path}.xls"
+      File.rename(excel_file.tempfile.path, src_filename)
+
+      excel = Excel.new(src_filename)
+      rows = (2..excel.last_row).to_a
+
+      respond_to_parent do
+        render :update do |page|
+
+
+          (2..excel.last_row).to_a.each do |row_no|
+            session[:current_tr_count] += 1
+
+            coupon = Coupon.new(
+              :coupon_number => excel.cell(row_no, 1),
+              :quantity => excel.cell(row_no, 2).to_i,
+              :purchaser_name => excel.cell(row_no, 3),
+              :phone_number => excel.cell(row_no, 4),
+              :agency_name => excel.cell(row_no, 5)
+            )
+
+            page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",
+                              :locals => { :product => @product, :coupon => coupon }
+          end
+        end 
+      end
+    else
+      render :text => ""
+    end
+  end
+
 end

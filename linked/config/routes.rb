@@ -40,8 +40,11 @@ Linked::Application.routes.draw do
       member do
         get 'new_coupons'
         put 'create_coupons'
-        get "add_coupon_fields"
-        get "remove_coupon_fields"
+        get 'add_coupon_fields'
+        get 'remove_coupon_fields'
+        get 'new_coupons_from_import'
+        get 'new_import'
+        put 'import_from_excel_file'
       end
       resources :coupons
     end

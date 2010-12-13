@@ -1,0 +1,19 @@
+<% product = product %>
+
+<div class="popup_container">
+
+  <div class="popup_header">
+    <h2>Import from excel file</h2>
+  </div><!-- popup_header -->
+
+  <div class="popup_body">
+    <%= form_tag import_from_excel_file_admin_product_path(product), :method => :put, :multipart => true, :target => "magic_hole" do %>
+
+      File: <%= file_field_tag "excel_file" %>
+
+      <%= submit_tag "Import" %>
+
+    <% end %>
+  </div><!-- popup_body -->
+
+</div><!-- popup_container -->
