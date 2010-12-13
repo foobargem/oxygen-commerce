@@ -594,22 +594,26 @@ table.reservations {
   table.reservations tbody td.actions a {
     padding: 0 2px; }
   table.reservations th.user_name {
-    width: 100px; }
+    width: 120px; }
+  table.reservations th.used_at {
+    width: 120px; }
   table.reservations th.part_time {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.shoe_type {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.board_stance {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.height {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.shoe_size {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.actions {
     width: 140px; }
   table.reservations td.user_name {
     text-align: center; }
   table.reservations td.resort {
+    text-align: center; }
+  table.reservations td.used_at {
     text-align: center; }
   table.reservations td.part_time {
     text-align: center; }

@@ -30,7 +30,7 @@
             <td class="agency_name"><%= coupon.agency_name %></td>
             <td class="actions">
               <%= link_to "edit", edit_admin_product_coupon_path(@product, coupon) %>
-              <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?" %>
+              <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?", :class => "careful" %>
             </td>
           </tr>
         <% end %>

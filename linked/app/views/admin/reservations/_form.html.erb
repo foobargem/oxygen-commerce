@@ -1,11 +1,20 @@
+<% f = f %>
+<% CalendarDateSelect.format = :iso_date %>
+
 <%= f.inputs do %>
   <%= f.input :user_name, :as => :string, :label => "사용자명" %>
   <%= f.input :resort, :as => :string, :label => "스키장" %>
-  <%= f.input :part_time, :as => :select, :include_blank => false, :collection => ["오전+오후", "오후+야간"], :label => "시간선택" %>
+
+  <li class="string required">
+    <label for="reservation_user_name">이용일<abbr title="required">*</abbr></label>
+    <%= f.calendar_date_select :used_at, :popup => :force, :size => 14 %>
+  </li>
+
+  <%= f.input :part_time, :as => :select, :include_blank => false, :collection => PART_TIME_OPTIONS.map{|k,v| [v,k]}, :label => "시간선택" %>
 <% end %>
 
 <%= f.inputs do %>
-  <%= f.input :shoe_type, :as => :select, :include_blank => false, :collection => ["스키", "보드"], :label => "장비구분" %>
+  <%= f.input :shoe_type, :as => :select, :include_blank => false, :collection => SHOE_TYPE_OPTIONS.map{|k,v| [v,k]}, :label => "장비구분" %>
   <%= f.input :board_stance, :as => :string, :label => "스탠스(보드 시)" %>
   <%= f.input :height, :as => :string, :label => "신장" %>
   <%= f.input :shoe_size, :as => :string, :label => "발사이즈" %>

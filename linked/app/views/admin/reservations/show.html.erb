@@ -1,32 +1,29 @@
-<% title "@reservation" %>
+<div class="container_1box">
 
-<table>
-  <tr>
-    <th>쿠폰번호</th>
-    <th>이름</th>
-    <th>구매업체</th>
-    <th>상품명</th>
-    <th>구매날짜</th>
-    <th>예약</th>
-    <th>스키장</th>
-    <th>신발 사이즈</th>
-    <th>신장</th>
-    <th>이용일</th>
-    <th>사용시간</th>
-  </tr>
-    <tr>
-	  <td><%= @reservation.coupon.coupon_number %></td>
-	  <td><%= @reservation.coupon.purchaser_name %></td>
-	  <td><%= @reservation.coupon.agency_name %></td>
-	  <td><%= @reservation.coupon.phone_number %></td>
-      <td><%= @reservation.resort %></td>
-      <td><%= @reservation.shoe_size %></td>
-      <td><%= @reservation.height %></td>
-      <td><%= @reservation.used_at %></td>
-      <td><%= @reservation.part_time %></td>
-    </tr>
-</table>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-<div class="">
-  <%= link_to "Back to list", admin_@reservations_path %>
-</div>
+  <div class="unit_content">
+
+    <div class="section">
+
+        <h3>예약 내용
+          <span class="more"><%= link_to "편집", edit_admin_reservation_path(@reservation) %></span>
+        </h3>
+
+        <div class="">
+          <p>사용자명: <%= @reservation.user_name %></p>
+          <p>스키장: <%= @reservation.resort %></p>
+          <p>이용일: <%= display_date(@reservation.used_at) %></p>
+          <p>이용시간: <%= @reservation.part_time %></p>
+          <p>장비: <%= @reservation.shoe_type %></p>
+          <p>스탠스: <%= @reservation.board_stance %></p>
+          <p>신장: <%= @reservation.height %></p>
+          <p>발사이즈: <%= @reservation.shoe_size %></p>
+        </div>
+
+    </div>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->

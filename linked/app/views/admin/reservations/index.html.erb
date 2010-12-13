@@ -10,6 +10,7 @@
         <tr>
           <th class="user_name">사용자명</th>
           <th class="resort">스키장</th>
+          <th class="used_at">이용일</th>
           <th class="part_time">시간대</th>
           <th class="show_type">장비구분</th>
           <th class="board_stance">스탠스</th>
@@ -23,6 +24,7 @@
           <tr>
             <td class="user_name"><%= reservation.user_name %></td>
             <td class="resort"><%= reservation.resort %></td>
+            <td class="used_at"><%= display_date(reservation.used_at) %></td>
             <td class="part_time"><%= reservation.part_time %></td>
             <td class="shoe_type"><%= reservation.shoe_type %></td>
             <td class="board_stance"><%= reservation.board_stance %></td>
@@ -30,7 +32,7 @@
             <td class="shoe_size"><%= reservation.shoe_size %></td>
             <td class="actions">
               <%= link_to "edit", edit_admin_reservation_path(reservation) %>
-              <%= link_to "delete", [:admin, reservation], :method => :delete, :confirm => "Are you sure?" %>
+              <%= link_to "delete", [:admin, reservation], :method => :delete, :confirm => "Are you sure?", :class => "careful" %>
             </td>
           </tr>
         <% end %>
