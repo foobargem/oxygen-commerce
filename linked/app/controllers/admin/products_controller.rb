@@ -75,8 +75,13 @@ class Admin::ProductsController < ApplicationController
 
   def remove_coupon_fields
     count = params[:tr_count]
-    render :udpate do |page|
-      page.remove "new_coupon_#{count}"
+    if count.to_i > 0
+      render :udpate do |page|
+        page.remove "new_coupon_#{count}"
+      end
+    else
+      render :update do |page|
+      end
     end
   end
 
