@@ -51,24 +51,32 @@ class Admin::ProductsController < ApplicationController
   def new_coupons
     @product = Product.find(params[:id])
     @coupon = Coupon.new
+    session[:current_tr_count] = 1
   end
 
   def create_coupons
-    coupon_attrs = params[:product][:coupon_attributes]
     @product = Product.find(params[:id])
-    coupons = []
-
-    coupon_attrs.each do |coupon|
-      unless coupon.values.any?{ |m| m.blank? }
-        coupons << coupon
-      end
-    end
-
-    logger.debug "----------- #{coupons}"
-    if Coupon.create(coupons)
+    if @product.update_attributes(params[:product])
       redirect_to admin_product_coupons_path(@product)
     else
       render :action => :new_coupons
+    end
+  end
+
+  def add_coupon_fields
+    @product = Product.find(params[:id])
+    session[:current_tr_count] += 1
+    render :update do |page|
+      page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",
+                        :locals => { :product => @product }
+      page.toggle "add_coupon_button", "add_coupon_button_hide"
+    end 
+  end 
+
+  def remove_coupon_fields
+    count = params[:tr_count]
+    render :udpate do |page|
+      page.remove "new_coupon_#{count}"
     end
   end
 

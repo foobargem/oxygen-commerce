@@ -40,6 +40,8 @@ Linked::Application.routes.draw do
       member do
         get 'new_coupons'
         put 'create_coupons'
+        get "add_coupon_fields"
+        get "remove_coupon_fields"
       end
       resources :coupons
     end

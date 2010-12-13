@@ -1,0 +1,22 @@
+<% product = product %>
+
+<%= content_tag :tr, :id => "new_coupon_#{session[:current_tr_count]}" do %>
+  <td class="coupon_number">
+    <%= text_field_tag :coupon_number, "", :name => "product[coupons_attributes][][coupon_number]", :size => 20 %>
+  </td>
+  <td class="quantity">
+    <%= text_field_tag :quantity, "", :name => "product[coupons_attributes][][quantity]", :size => 4 %>
+  </td>
+  <td class="purchaser_name">
+    <%= text_field_tag :purcharse_name, "", :name => "product[coupons_attributes][][purchaser_name]", :size => 10 %>
+  </td>
+  <td class="phone_number">
+    <%= text_field_tag :phone_number, "", :name => "product[coupons_attributes][][phone_number]", :size => 14 %>
+  </td>
+  <td class="agency_name">
+    <%= text_field_tag :agency_name, "", :name => "product[coupons_attributes][][agency_name]", :size => 20 %>
+    <%= hidden_field_tag :product_id, product.id, :name => "product[coupons_attributes][][product_id]" %>
+
+    <%= link_to "remove", remove_coupon_fields_admin_product_path(product, :tr_count => session[:current_tr_count]), :remote => :true if session[:current_tr_count] > 1 %>
+  </td>
+<% end %>

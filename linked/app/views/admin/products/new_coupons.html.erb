@@ -8,6 +8,10 @@
     <%= render "admin/products/header" %>
 
     <div class="section">
+
+      <%= link_to "항목추가", add_coupon_fields_admin_product_path(@product), :remote => true, :id => "add_coupon_button", :onclick => "Element.toggle(this);Element.toggle('add_coupon_button_hide')" %>
+      <span id="add_coupon_button_hide" style="display:none">Loading..</span>
+
       <%= semantic_form_for [:admin, @product], :url => create_coupons_admin_product_path(@product) do |product_form| %>
 
         <table>
@@ -20,35 +24,16 @@
               <th class="agency_name">구매업체</th>
             </tr>
           </thead>
-          <tbody>
-            <% 5.times do %>
-              <tr>
-                <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
-                  <td class="coupon_number">
-                    <%= coupon_fields.text_field :coupon_number, :name => "product[coupon_attributes][][coupon_number]", :size => 20 %>
-                  </td>
-                  <td class="quantity">
-                    <%= coupon_fields.text_field :quantity, :name => "product[coupon_attributes][][quantity]", :size => 4 %>
-                  </td>
-                  <td class="purchaser_name">
-                    <%= coupon_fields.text_field :purcharse_name, :name => "product[coupon_attributes][][purchaser_name]", :size => 10 %>
-                  </td>
-                  <td class="phone_number">
-                    <%= coupon_fields.text_field :phone_number, :name => "product[coupon_attributes][][phone_number]", :size => 14 %>
-                  </td>
-                  <td class="agency_name">
-                    <%= coupon_fields.text_field :agency_name, :name => "product[coupon_attributes][][agency_name]", :size => 20 %>
-                    <%= coupon_fields.hidden_field :product_id, :name => "product[coupon_attributes][][product_id]", :value => @product.id %>
-                  </td>
-                <% end %>
-              </tr>
+          <tbody id="coupon_fields_wrapper">
+            <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
+              <%= render "admin/products/tr_form", :product => @product %>
             <% end %>
           </tbody>
         </table>
 
-        <%= product_form.buttons do %>
+        <div class="">
           <%= product_form.submit "등록" %>
-        <% end %>
+        </div>
 
       <% end %>
     </div>
