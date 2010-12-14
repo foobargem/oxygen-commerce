@@ -13,5 +13,7 @@
       (link_to "쿠폰 등록", new_coupons_admin_product_path(@product)) %>
     <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("new_coupons_from_import"),
       (link_to "쿠폰 등록(Import from Excel file)", new_coupons_from_import_admin_product_path(@product)) %>
+    <%= navigation_tag :li, current_controller?(["admin/reservations"]) && current_action?("index"),
+      (link_to "예약목록", [:admin, @product, :reservations]) %>
   </ul>
 </div>

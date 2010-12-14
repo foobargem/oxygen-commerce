@@ -1,9 +1,9 @@
 <% product = product %>
 <p>공급업체: <%= product.provider_name %></p>
-<p>이용권: <%= product.ticket_type %></p>
-<p>스키장: <%= product.resort %></p>
+<p>이용권: <%= display_ticket_type(product.ticket_type) %></p>
+<p>스키장: <%= display_resort(product) %></p>
 <p>이용기간: 
-  <%= display_date_with_time(product.opened_at) %>
+  <%= display_date(product.opened_at) %>
   ~
-  <%= display_date_with_time(product.closed_at) %>
+  <%= display_date(product.closed_at) %>
 </p>

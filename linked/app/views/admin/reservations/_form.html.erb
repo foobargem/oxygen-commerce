@@ -1,9 +1,10 @@
 <% f = f %>
+<% product = product %>
 <% CalendarDateSelect.format = :iso_date %>
 
 <%= f.inputs do %>
   <%= f.input :user_name, :as => :string, :label => "사용자명" %>
-  <%= f.input :resort, :as => :string, :label => "스키장" %>
+  <%= f.input :resort, :as => :select, :collection => resort_collection_by_ticket(product), :include_blank => false, :label => "스키장" %>
 
   <li class="string required">
     <label for="reservation_user_name">이용일<abbr title="required">*</abbr></label>
@@ -15,7 +16,7 @@
 
 <%= f.inputs do %>
   <%= f.input :shoe_type, :as => :select, :include_blank => false, :collection => SHOE_TYPE_OPTIONS.map{|k,v| [v,k]}, :label => "장비구분" %>
-  <%= f.input :board_stance, :as => :string, :label => "스탠스(보드 시)" %>
+  <%= f.input :board_stance, :as => :select, :collection => BOARD_STANCE_OPTIONS, :include_blank => true, :label => "스탠스(보드 시)" %>
   <%= f.input :height, :as => :string, :label => "신장" %>
   <%= f.input :shoe_size, :as => :string, :label => "발사이즈" %>
 <% end %>

@@ -1,0 +1,15 @@
+<% product = product %>
+<tr>
+  <td class="name"><%= product.name %></td>
+  <td class="provider_name"><%= product.provider_name %></td>
+  <td class="resort"><%= display_resort(product) %></td>
+  <td class="ticket_type"><%= display_ticket_type(product.ticket_type) %></td>
+  <td class="date_range">
+    <%= display_date(product.opened_at) %> ~ <%= display_date(product.closed_at) %>
+  </td>
+  <td class="coupons"><%= link_to "쿠폰구매내역", admin_product_coupons_path(product) %></td>
+  <td class="actions">
+    <%= link_to "edit", edit_admin_product_path(product) %>
+    <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "careful" %>
+  </td>
+</tr>

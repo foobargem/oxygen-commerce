@@ -21,18 +21,7 @@
       </thead>
       <tbody>
         <% @coupons.each do |coupon| %>
-          <tr>
-            <td class="coupon_number"><%= coupon.coupon_number %></td>
-            <td class="quantity"><%= number_with_delimiter(coupon.quantity) %></td>
-            <td class="used_quantity"><%= number_with_delimiter(coupon.reservations_count) %></td>
-            <td class="purcharser_name"><%= coupon.purchaser_name %></td>
-            <td class="phone_number"><%= coupon.phone_number %></td>
-            <td class="agency_name"><%= coupon.agency_name %></td>
-            <td class="actions">
-              <%= link_to "edit", edit_admin_product_coupon_path(@product, coupon) %>
-              <%= link_to "delete", admin_product_coupon_path(@product, coupon), :method => :delete, :confirm => "Are you sure?", :class => "careful" %>
-            </td>
-          </tr>
+          <%= render 'admin/coupons/tr_coupon', :product => @product, :coupon => coupon %>
         <% end %>
       </tbody>
     </table>

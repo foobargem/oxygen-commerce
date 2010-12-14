@@ -3,8 +3,6 @@
   <li class="spacer">&nbsp;</li>
   <%= navigation_tag :li, current_controller?("admin/dashboard"),
     (link_to "Dashboard", :admin_dashboard, :class => "action") %>
-  <%= navigation_tag :li, current_controller?("admin/reservations"),
-    (link_to "예약관리", :admin_reservations, :class => "action") %>
   <%= navigation_tag :li, current_controller?(["admin/products", "admin/coupons"]),
     (link_to "상품및 쿠폰관리", :admin_products, :class => "action") %>
 </ul>

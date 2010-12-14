@@ -34,8 +34,6 @@ Linked::Application.routes.draw do
 
     match 'dashboard' => 'dashboard#show'
 
-    resources :reservations
-
     resources :products do
       member do
         get 'new_coupons'
@@ -47,6 +45,7 @@ Linked::Application.routes.draw do
         put 'import_from_excel_file'
       end
       resources :coupons
+      resources :reservations
     end
 
   end

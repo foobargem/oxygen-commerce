@@ -5,39 +5,47 @@
 
   <div class="unit_content">
 
-    <table class="reservations">
-      <thead>
-        <tr>
-          <th class="user_name">사용자명</th>
-          <th class="resort">스키장</th>
-          <th class="used_at">이용일</th>
-          <th class="part_time">시간대</th>
-          <th class="show_type">장비구분</th>
-          <th class="board_stance">스탠스</th>
-          <th class="height">신장</th>
-          <th class="shoe_size">발사이즈</th>
-          <th class="actions"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @reservations.each do |reservation| %>
-          <tr>
-            <td class="user_name"><%= reservation.user_name %></td>
-            <td class="resort"><%= reservation.resort %></td>
-            <td class="used_at"><%= display_date(reservation.used_at) %></td>
-            <td class="part_time"><%= reservation.part_time %></td>
-            <td class="shoe_type"><%= reservation.shoe_type %></td>
-            <td class="board_stance"><%= reservation.board_stance %></td>
-            <td class="height"><%= reservation.height %></td>
-            <td class="shoe_size"><%= reservation.shoe_size %></td>
-            <td class="actions">
-              <%= link_to "edit", edit_admin_reservation_path(reservation) %>
-              <%= link_to "delete", [:admin, reservation], :method => :delete, :confirm => "Are you sure?", :class => "careful" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <%= render "admin/products/header" %>
+
+    <div class="section">
+      <ul class="filters">
+        <li><%= link_to "사용일별", "?groupby=used_at" %></li>
+        <li class="spacer">|</li>
+        <li><%= link_to "구매업체별", "?groupby=agency" %></li>
+        <li class="spacer">|</li>
+        <li><%= link_to "공급업체별", "?groupby=provider" %></li>
+      </ul>
+    </div>
+
+    <% @grouped_reservations.each do |key, reservations| %>
+
+      <div class="section">
+        <h4><%= key %></h4>
+
+        <table class="reservations">
+          <thead>
+            <tr>
+              <th class="user_name">사용자명</th>
+              <th class="resort">스키장</th>
+              <th class="used_at">이용일</th>
+              <th class="part_time">시간대</th>
+              <th class="show_type">장비구분</th>
+              <th class="board_stance">스탠스</th>
+              <th class="height">신장</th>
+              <th class="shoe_size">발사이즈</th>
+              <th class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% reservations.each do |reservation| %>
+              <%= render 'admin/reservations/tr_reservation', :product => @product, :reservation => reservation %>
+            <% end %>
+          </tbody>
+        </table>
+
+      </div>
+
+    <% end %>
 
   </div><!-- unit_content -->
 

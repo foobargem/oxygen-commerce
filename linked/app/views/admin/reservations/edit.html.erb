@@ -7,14 +7,14 @@
 
     <div class="section">
 
-      <%= semantic_form_for [:admin, @reservation] do |f| %>
+      <%= semantic_form_for [:admin, @product, @reservation] do |f| %>
 
         <h3>예약 편집</h3>
 
-        <%= render "admin/reservations/form", :f => f , :reservation => @reservation %>
+        <%= render "admin/reservations/form", :f => f , :reservation => @reservation, :product => @product %>
 
         <%= f.submit "수정" %>
-        <%= link_to "취소", [:admin, :reservations], :class => "careful" %>
+        <%= link_to "취소", [:admin, @product, :reservations], :class => "careful" %>
 
       <% end %>
 

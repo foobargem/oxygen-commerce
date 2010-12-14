@@ -26,22 +26,9 @@
         </tr>
       </thead>
       <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td class="name"><%= product.name %></td>
-          <td class="provider_name"><%= product.provider_name %></td>
-          <td class="resort"><%= product.resort %></td>
-          <td class="ticket_type"><%= product.ticket_type %></td>
-          <td class="date_range">
-            <%= l(product.opened_at) %> ~ <%= l(product.closed_at) %>
-          </td>
-          <td class="coupons"><%= link_to "쿠폰구매내역", admin_product_coupons_path(product) %></td>
-          <td class="actions">
-            <%= link_to "edit", edit_admin_product_path(product) %>
-            <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "careful" %>
-          </td>
-        </tr>
-      <% end %>
+        <% @products.each do |product| %>
+          <%= render 'admin/products/tr_product', :product => product %>
+        <% end %>
       </tbody>
     </table>
 

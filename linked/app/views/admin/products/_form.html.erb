@@ -4,11 +4,11 @@
 <% end %>
 
 <%= f.inputs do %>
-  <%= f.input :ticket_type, :as => :string, :label => "이용권" %>
-  <%= f.input :resort, :as => :string, :label => "스키장" %>
+  <%= f.input :ticket_type, :as => :select, :collection => TICKET_TYPE_OPTIONS.map{|k,v| [v,k]}, :include_blank => false, :label => "이용권" %>
+  <%= f.input :resort, :as => :select, :collection => RESORT_OPTIONS, :label => "스키장", :hint => "자유권인경우 스키장을 선택하지 마세요." %>
 <% end %>
 
 <%= f.inputs do %>
-  <%= f.input :opened_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 2, :label => "시작일" %>
-  <%= f.input :closed_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 2, :label => "종료일" %>
+  <%= f.input :opened_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 1, :label => "시작일" %>
+  <%= f.input :closed_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 1, :label => "종료일" %>
 <% end %>
