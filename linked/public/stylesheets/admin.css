@@ -113,6 +113,8 @@ body .IE .minwidth div.minwidth_holder {
     float: left; }
     .filters li.spacer {
       padding: 0 5px; }
+    .filters li.current {
+      background: #ddffee; }
 
 .bg_anchor {
   display: block;

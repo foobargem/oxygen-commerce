@@ -119,15 +119,15 @@ table.reservations {
   table.reservations th.part_time {
     width: 100px; }
   table.reservations th.shoe_type {
-    width: 120px; }
+    width: 90px; }
   table.reservations th.board_stance {
     width: 120px; }
   table.reservations th.height {
-    width: 120px; }
+    width: 100px; }
   table.reservations th.shoe_size {
-    width: 120px; }
+    width: 100px; }
   table.reservations th.actions {
-    width: 140px; }
+    width: 100px; }
   table.reservations td.user_name {
     text-align: center; }
   table.reservations td.resort {
