@@ -9,36 +9,26 @@ class ReservationsController < ApplicationController
     @reservations = @coupon.reservations
   end
   
-  def new
-  end
-  
   def edit
     @reservation = Reservation.find(params[:id])
-  end
-  
-  def create
-    @reservation = Reservation.new(params[:reservation])
-    if @reservation.save
-      redirect_to :reservations
-    else
-      render :action => :new
-    end
+    editable_checking
   end
   
   def update
     @reservation = Reservation.find(params[:id])
-    @reservation.height = params[:reservation][:height]
-    @reservation.shoe_size = params[:reservation][:shoe_size]
-    @reservation.resort = params[:reservation][:resort]
-    @reservation.used_at = params[:reservation][:used_at]
-    @reservation.part_time = params[:reservation][:part_time]    
-    
-    if @reservation.save
-      flash[:notice] = "Reservation complete."
-      redirect_to :action => 'index'
+    editable_checking
+    if @reservation.update_attributes(params[:reservation])
+      redirect_to [:coupon, :reservations]
     else
-      redirect_to :action => 'new'
+      render :action => :edit
     end
+  end
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    editable_checking
+    @reservation.destroy
+    redirect_to [:coupon, :reservations]
   end
 
 
@@ -49,4 +39,10 @@ class ReservationsController < ApplicationController
       @product = @coupon.product
     end
   
+    def editable_checking
+      unless @reservation.editable?
+        redirect_to [:coupon, :reservations]
+      end
+    end
+
 end

@@ -21,6 +21,7 @@
           <th class="board_stance">스탠스(보드 시)</th>
           <th class="height">신장</th>
           <th class="shoe_size">발사이즈</th>
+          <th class="actions"></th>
         </tr>
       </thead>
       <tbody>
@@ -30,10 +31,18 @@
             <td class="resort"><%= reservation.resort %></td>
             <td class="used_at"><%= display_date(reservation.used_at) %></td>
             <td class="part_time"><%= reservation.part_time %></td>
-            <td class="shoe_type"><%= reservation.shoe_type %></td>
+            <td class="shoe_type"><%= display_shoe_type(reservation.shoe_type) %></td>
             <td class="board_stance"><%= reservation.board_stance %></td>
             <td class="height"><%= reservation.height %> cm</td>
             <td class="shoe_size"><%= reservation.shoe_size %> mm</td>
+            <td class="actions">
+              <% if reservation.editable? %>
+                <%= link_to "변경", edit_coupon_reservation_path(reservation) %>
+                <%= link_to "예약취소", [:coupon, reservation], :method => :delete, :confirm => "정말 취소하시겠습니까?", :class => "careful" %>
+              <% else %>
+                예약변경 불가
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>

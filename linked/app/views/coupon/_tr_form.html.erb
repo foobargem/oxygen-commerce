@@ -7,10 +7,10 @@
     <%= text_field_tag :user_name, nil, :name => "coupon[reservations_attributes][][user_name]", :size => 10 %>
   </td>
   <td class="resort">
-    <%= text_field_tag :resort, nil, :name => "coupon[reservations_attributes][][resort]", :size => 10 %>
+    <%= select_tag :resort, options_for_select(resort_collection_by_ticket(product)), :name => "coupon[reservations_attributes][][resort]" %>
   </td>
   <td class="used_at">
-    <%= calendar_date_select_tag "coupon[reservations_attributes][][used_at]", "", :popup => :force, :size => 14 %>
+    <%= calendar_date_select_tag "coupon[reservations_attributes][][used_at]", "", :popup => :force, :size => 10 %>
   </td>
   <td class="part_time">
     <%= select_tag :part_time, options_for_select(PART_TIME_OPTIONS.map{|k,v| [v,k]}), { :name => "coupon[reservations_attributes][][part_time]" } %>
@@ -19,7 +19,7 @@
     <%= select_tag :shoe_type, options_for_select(SHOE_TYPE_OPTIONS.map{|k,v| [v,k]}), { :name => "coupon[reservations_attributes][][shoe_type]" } %>
   </td>
   <td class="board_stance">
-    <%= text_field_tag :board_stance, nil, :name => "coupon[reservations_attributes][][board_stance]", :size => 14 %>
+    <%= select_tag :board_stance, options_for_select(BOARD_STANCE_OPTIONS), :include_blank => true, :name => "coupon[reservations_attributes][][board_stance]" %>
   </td>
   <td class="height">
     <%= text_field_tag :height, nil, :name => "coupon[reservations_attributes][][height]", :size => 5 %>

@@ -1,9 +1,29 @@
-<%= semantic_form_for @reservation do |f| %>
+<div class="container_1box">
 
-  <h3>예약 편집</h3>
+  <div class="container_header">
+    <%= render "reservations/main_nav" %>
+  </div><!-- container_header -->
 
-  <%= render 'admin/reservations/form', :f => f , :reservation => @reservation %>
+  <div class="unit_content">
 
-  <%= f.submit "수정" %>
+    <div class="reservation_header">
+      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
+    </div>
 
-<% end %>
+
+    <div class="section">
+      <%= semantic_form_for [:coupon, @reservation] do |f| %>
+
+        <h3>예약 변경</h3>
+
+        <%= render 'reservations/form', :f => f , :reservation => @reservation, :coupon => @coupon %>
+
+        <%= f.submit "수정" %>
+
+      <% end %>
+
+    </div>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
