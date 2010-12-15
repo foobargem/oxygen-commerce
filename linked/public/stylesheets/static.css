@@ -39,18 +39,6 @@ body .IE .minwidth div.minwidth_holder {
     display: inline;
     float: left;
     margin-top: 26px; }
-    #h h1 a {
-      display: block;
-      overflow: hidden;
-      background-color: transparent;
-      background-image: url(/images/design/pangsday_logo.jpg);
-      background-repeat: no-repeat;
-      width: 285px;
-      height: 82px;
-      background-position: 0px 0px;
-      text-indent: -9999em;
-      overflow: hidden;
-      text-align: left; }
   #h ul.account_nav {
     display: inline;
     float: right;

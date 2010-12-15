@@ -7,7 +7,8 @@
   <td class="date_range">
     <%= display_date(product.opened_at) %> ~ <%= display_date(product.closed_at) %>
   </td>
-  <td class="coupons"><%= link_to "쿠폰구매내역", admin_product_coupons_path(product) %></td>
+  <td class="coupons"><%= link_to "쿠폰구매목록", [:admin, product, :coupons] %></td>
+  <td class="reservations"><%= link_to "예약목록", [:admin, product, :reservations] %></td>
   <td class="actions">
     <%= link_to "edit", edit_admin_product_path(product) %>
     <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "careful" %>

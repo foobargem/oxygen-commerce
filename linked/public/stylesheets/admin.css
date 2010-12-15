@@ -502,10 +502,12 @@ table.products {
   table.products th.resort {
     width: 140px; }
   table.products th.ticket_type {
-    width: 140px; }
+    width: 100px; }
   table.products th.date_range {
     width: 160px; }
   table.products th.coupons {
+    width: 100px; }
+  table.products th.reservations {
     width: 100px; }
   table.products th.actions {
     width: 100px; }
@@ -520,6 +522,8 @@ table.products {
   table.products td.date_range {
     text-align: center; }
   table.products td.coupons {
+    text-align: center; }
+  table.products td.reservations {
     text-align: center; }
   table.products td.actions {
     text-align: center; }
@@ -596,22 +600,26 @@ table.reservations {
   table.reservations tbody td.actions a {
     padding: 0 2px; }
   table.reservations th.user_name {
-    width: 120px; }
+    width: 100px; }
+  table.reservations th.resort {
+    width: 90px; }
   table.reservations th.used_at {
-    width: 120px; }
+    width: 100px; }
   table.reservations th.part_time {
-    width: 120px; }
+    width: 100px; }
   table.reservations th.shoe_type {
-    width: 120px; }
+    width: 90px; }
   table.reservations th.board_stance {
-    width: 120px; }
+    width: 100px; }
   table.reservations th.height {
-    width: 120px; }
+    width: 80px; }
   table.reservations th.shoe_size {
-    width: 120px; }
+    width: 80px; }
   table.reservations th.actions {
-    width: 140px; }
+    width: 90px; }
   table.reservations td.user_name {
+    text-align: center; }
+  table.reservations td.coupon_number {
     text-align: center; }
   table.reservations td.resort {
     text-align: center; }

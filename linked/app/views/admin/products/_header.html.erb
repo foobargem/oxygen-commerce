@@ -15,5 +15,7 @@
       (link_to "쿠폰 등록(Import from Excel file)", new_coupons_from_import_admin_product_path(@product)) %>
     <%= navigation_tag :li, current_controller?(["admin/reservations"]) && current_action?("index"),
       (link_to "예약목록", [:admin, @product, :reservations]) %>
+    <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("export_reservations_to_excel"),
+      (link_to "예약목록(Export to Excel file)", export_reservations_to_excel_admin_product_path(@product)) %>
   </ul>
 </div>

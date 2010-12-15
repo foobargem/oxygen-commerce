@@ -1,11 +1,13 @@
 <% reservation = reservation %>
+<% coupon = coupon || reservation.coupon %>
 <% product = product %>
 <tr>
   <td class="user_name"><%= reservation.user_name %></td>
+  <td class="coupon_number"><%= coupon.coupon_number %></td>
   <td class="resort"><%= reservation.resort %></td>
   <td class="used_at"><%= display_date(reservation.used_at) %></td>
   <td class="part_time"><%= reservation.part_time %></td>
-  <td class="shoe_type"><%= reservation.shoe_type %></td>
+  <td class="shoe_type"><%= display_shoe_type(reservation.shoe_type) %></td>
   <td class="board_stance"><%= reservation.board_stance %></td>
   <td class="height"><%= reservation.height %></td>
   <td class="shoe_size"><%= reservation.shoe_size %></td>
