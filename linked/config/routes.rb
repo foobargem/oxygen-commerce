@@ -10,7 +10,7 @@ Linked::Application.routes.draw do
       :sessions => 'admin/sessions'
     }
 
-  match 'admin' => redirect('/admin/reservations'), :as => 'admin_root'
+  match 'admin' => redirect('/admin/products'), :as => 'admin_root'
   
 
   resources :sessions
@@ -43,6 +43,7 @@ Linked::Application.routes.draw do
         get 'new_coupons_from_import'
         get 'new_import'
         put 'import_from_excel_file'
+        get 'export_reservations_to_excel'
       end
       resources :coupons
       resources :reservations
