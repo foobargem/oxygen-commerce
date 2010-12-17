@@ -29,7 +29,8 @@
 
     <%= hidden_field_tag :coupon_id, coupon.id, :name => "coupon[reservations_attributes][][coupon_id]" %>
     <%= hidden_field_tag :product_id, product.id, :name => "coupon[reservations_attributes][][product_id]" %>
-
+  </td>
+  <td class="actions">
     <%= link_to "remove", remove_reservation_fields_coupon_path, :remote => :true if session[:current_tr_count] > 1 %>
   </td>
 <% end %>

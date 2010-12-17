@@ -3269,13 +3269,13 @@ div.center_box {
       .login_box form .left_side label {
         display: inline;
         float: left;
-        width: 60px;
+        width: 80px;
         margin-top: 5px;
         font-size: 0.9em; }
       .login_box form .left_side input {
         display: inline;
         float: left;
-        width: 75%; }
+        width: 65%; }
     .login_box form .right_side {
       display: inline;
       float: left;

@@ -431,3 +431,63 @@ table.reservations {
 .subsection {
   color: #666666;
   padding: 10px 20px; }
+
+table.new_reservations {
+  margin-bottom: 20px;
+  width: 100%;
+  width: 97%; }
+  table.new_reservations thead tr {
+    background: #dddddd; }
+    table.new_reservations thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.new_reservations tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.new_reservations tbody tr.total, table.new_reservations tbody tr.average {
+    background: #ddeeff; }
+    table.new_reservations tbody tr.total td, table.new_reservations tbody tr.average td {
+      background: #ddeeff; }
+  table.new_reservations tbody td.actions a {
+    padding: 0 2px; }
+  table.new_reservations th.user_name {
+    width: 100px; }
+  table.new_reservations th.resort {
+    width: 80px; }
+  table.new_reservations th.used_at {
+    width: 130px; }
+  table.new_reservations th.part_time {
+    width: 100px; }
+  table.new_reservations th.shoe_type {
+    width: 90px; }
+  table.new_reservations th.board_stance {
+    width: 120px; }
+  table.new_reservations th.height {
+    width: 80px; }
+  table.new_reservations th.shoe_size {
+    width: 80px; }
+  table.new_reservations td {
+    background: white; }
+    table.new_reservations td.user_name {
+      text-align: center; }
+    table.new_reservations td.resort {
+      text-align: center; }
+    table.new_reservations td.used_at {
+      text-align: center; }
+    table.new_reservations td.part_time {
+      text-align: center; }
+    table.new_reservations td.shoe_type {
+      text-align: center; }
+    table.new_reservations td.board_stance {
+      text-align: center; }
+    table.new_reservations td.height {
+      text-align: center; }
+    table.new_reservations td.shoe_size {
+      text-align: center; }
+    table.new_reservations td.actions {
+      text-align: center; }
