@@ -16,6 +16,8 @@ class CreateCoupons < ActiveRecord::Migration
       # 구매업체(중계업체)
       t.string :agency_name
 
+      t.datetime :locked_at
+
       t.timestamps
     end
   end
