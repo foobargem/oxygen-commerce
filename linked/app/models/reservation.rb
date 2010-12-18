@@ -75,6 +75,8 @@ class Reservation < ActiveRecord::Base
     cweek = Date.today.cweek
     current_hour = Time.zone.now.hour
 
+    return false if self.used_at.nil?
+
     if self.product.closed_at.to_date < self.used_at.to_date
       return false
     end
