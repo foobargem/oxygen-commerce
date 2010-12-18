@@ -1,10 +1,29 @@
+# == Schema Information
+# Schema version: 20101218012805
+#
+# Table name: coupons
+#
+#  id             :integer(4)      not null, primary key
+#  product_id     :integer(4)
+#  coupon_number  :string(255)
+#  quantity       :integer(4)      default(0)
+#  orders_count   :integer(4)      default(0)
+#  purchaser_name :string(255)
+#  phone_number   :string(255)
+#  agency_name    :string(255)
+#  locked_at      :datetime
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 class Coupon < ActiveRecord::Base
 
   belongs_to :product
 
   has_many :reservations
+  has_many :orders
 
-  accepts_nested_attributes_for :reservations
+  #accepts_nested_attributes_for :reservations
 
 
   validates_presence_of :coupon_number, :purchaser_name, :phone_number
@@ -23,8 +42,16 @@ class Coupon < ActiveRecord::Base
   end
 
 
+  def locked?
+    !!self.locked_at
+  end
+
   def usable_quantity
-    self.quantity - self.reservations_count
+    if self.product.free_type_ticket?
+      1
+    else
+      self.quantity - self.orders_count
+    end
   end
 
   def reservable?

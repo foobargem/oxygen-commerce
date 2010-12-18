@@ -1,0 +1,15 @@
+<tr>
+  <td class="subscriber_name"><%= reservation.user_name %></td>
+  <td class="resort"><%= reservation.resort %></td>
+  <td class="used_at"><%= display_date(reservation.used_at) %></td>
+  <td class="part_time"><%= reservation.part_time %></td>
+  <td class="booking_number"><%= display_shoe_type(reservation.shoe_type) %></td>
+  <td class="actions">
+    <% if reservation.editable? %>
+      <%= link_to "변경", edit_coupon_reservation_path(reservation) %>
+      <%= link_to "예약취소", [:coupon, reservation], :method => :delete, :confirm => "정말 취소하시겠습니까?", :class => "careful" %>
+    <% else %>
+      예약변경 불가
+    <% end %>
+  </td>
+</tr>

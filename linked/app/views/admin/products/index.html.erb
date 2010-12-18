@@ -21,6 +21,7 @@
           <th class="resort">스키장</th>
           <th class="ticket_type">이용권</th>
           <th class="date_range">이용기간</th>
+          <th class="daily_reservations_limit">예약가능인원(1일)</th>
           <th class="coupons">쿠폰목록</th>
           <th class="reservations">예약목록</th>
           <th class="actions"></th>
@@ -28,7 +29,7 @@
       </thead>
       <tbody>
         <% @products.each do |product| %>
-          <%= render 'admin/products/tr_product', :product => product %>
+          <%= render "admin/products/tr_product", :product => product %>
         <% end %>
       </tbody>
     </table>

@@ -25,8 +25,8 @@ Linked::Application.routes.draw do
       get "add_reservation_fields"
       get "remove_reservation_fields"
     end
-    resources :reservations
   end
+  resources :reservations
   
 
 
@@ -44,7 +44,10 @@ Linked::Application.routes.draw do
         get 'new_import'
         put 'import_from_excel_file'
         get 'export_reservations_to_excel'
+
+        #get 'new_constraints'
       end
+      resources :constraints
       resources :coupons
       resources :reservations
     end

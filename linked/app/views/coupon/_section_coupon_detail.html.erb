@@ -1,11 +1,16 @@
 <% coupon = coupon %>
 <% product = coupon.product %>
+
 <p>구매자: <%= coupon.purchaser_name %></p>
 <p>쿠폰번호: <%= coupon.coupon_number %></p>
 <p>
-  구매수량: <%= number_with_delimiter(coupon.quantity) %>
-  (사용한 수량: <%= number_with_delimiter(coupon.reservations_count) %>,
-  남은 수량: <%= number_with_delimiter(coupon.usable_quantity) %>)
+  <% if product.free_type_ticket? %>
+    사용 횟수: <%= number_with_delimiter(coupon.orders_count) %>
+  <% else %>
+    구매수량: <%= number_with_delimiter(coupon.quantity) %>
+    (사용한 수량: <%= number_with_delimiter(coupon.orders_count) %>,
+    남은 수량: <%= number_with_delimiter(coupon.usable_quantity) %>)
+  <% end %>
 </p>
 <p>구매업체: <%= product.provider_name %></p>
 <p>이용권: <%= display_ticket_type(product.ticket_type) %></p>

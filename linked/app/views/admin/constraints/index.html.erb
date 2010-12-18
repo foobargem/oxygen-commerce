@@ -1,0 +1,31 @@
+<div class="container_1box">
+
+  <div class="container_header">
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <%= render "admin/products/header" %>
+
+    <div class="section">
+      <%= render "admin/constraints/new", :product => @product, :constraint => @constraint %>
+    </div>
+
+    <table class="constraints">
+      <thead>
+        <tr>
+          <th class="unavailabled_at">제한된 날짜</th>
+          <th class="actions"></th>
+        </tr>
+      </thead>
+      <tbody id="constraints_wrapper">
+        <% @constraints.each do |constraint| %>
+          <%= render "admin/constraints/tr_constraint", :constraint => constraint %>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
+

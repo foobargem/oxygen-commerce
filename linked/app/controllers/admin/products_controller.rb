@@ -50,8 +50,10 @@ class Admin::ProductsController < ApplicationController
 
 
   def new_coupons
+    flash[:error_message] = nil
     @product = Product.find(params[:id])
-    @coupon = Coupon.new
+    coupon = @product.coupons.build
+    @coupons = [coupon]
     session[:current_tr_count] = 1
   end
 
@@ -60,6 +62,11 @@ class Admin::ProductsController < ApplicationController
     if @product.update_attributes(params[:product])
       redirect_to admin_product_coupons_path(@product)
     else
+      @coupons = []
+      flash[:error_message] = "등록실패"
+      params[:product][:coupons_attributes].each do |coupon_attrs|
+        @coupons << @product.coupons.build(coupon_attrs)
+      end
       render :action => :new_coupons
     end
   end
@@ -68,23 +75,23 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     session[:current_tr_count] += 1
     render :update do |page|
-      page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",
+      page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/new_coupon",
                         :locals => { :product => @product }
       page.toggle "add_coupon_button", "add_coupon_button_hide"
     end 
   end 
 
-  def remove_coupon_fields
-    count = params[:tr_count]
-    if count.to_i > 0
-      render :udpate do |page|
-        page.remove "new_coupon_#{count}"
-      end
-    else
-      render :update do |page|
-      end
-    end
-  end
+#  def remove_coupon_fields
+#    count = params[:tr_count]
+#    if count.to_i > 0
+#      render :udpate do |page|
+#        page.remove "new_coupon_#{count}"
+#      end
+#    else
+#      render :update do |page|
+#      end
+#    end
+#  end
 
   def new_coupons_from_import
     @product = Product.find(params[:id])

@@ -498,13 +498,15 @@ table.products {
     padding: 30px;
     text-align: center; }
   table.products th.provider_name {
-    width: 140px; }
+    width: 120px; }
   table.products th.resort {
-    width: 140px; }
+    width: 120px; }
   table.products th.ticket_type {
     width: 100px; }
   table.products th.date_range {
     width: 160px; }
+  table.products th.daily_reservations_limit {
+    width: 110px; }
   table.products th.coupons {
     width: 100px; }
   table.products th.reservations {
@@ -520,6 +522,8 @@ table.products {
   table.products td.ticket_type {
     text-align: center; }
   table.products td.date_range {
+    text-align: center; }
+  table.products td.daily_reservations_limit {
     text-align: center; }
   table.products td.coupons {
     text-align: center; }
@@ -1305,3 +1309,35 @@ table.publisher_profits {
     background: #ddeeff; }
     table.publisher_profits tr.summary td.message {
       text-align: right; }
+
+table.constraints {
+  margin-bottom: 20px;
+  width: 100%;
+  width: 300px; }
+  table.constraints thead tr {
+    background: #dddddd; }
+    table.constraints thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.constraints tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.constraints tbody tr.total, table.constraints tbody tr.average {
+    background: #ddeeff; }
+    table.constraints tbody tr.total td, table.constraints tbody tr.average td {
+      background: #ddeeff; }
+  table.constraints tbody td.actions a {
+    padding: 0 2px; }
+  table.constraints th.unavailabled_at {
+    width: 150px; }
+  table.constraints th.actions {
+    width: 150px; }
+  table.constraints td.unavailabled_at {
+    text-align: center; }
+  table.constraints td.actions {
+    text-align: center; }

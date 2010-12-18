@@ -112,23 +112,17 @@ table.reservations {
       background: #ddeeff; }
   table.reservations tbody td.actions a {
     padding: 0 2px; }
-  table.reservations th.user_name {
+  table.reservations th.subscriber_name {
+    width: 120px; }
+  table.reservations th.resort {
     width: 100px; }
   table.reservations th.used_at {
-    width: 120px; }
+    width: 110px; }
   table.reservations th.part_time {
     width: 100px; }
-  table.reservations th.shoe_type {
-    width: 90px; }
-  table.reservations th.board_stance {
-    width: 120px; }
-  table.reservations th.height {
-    width: 100px; }
-  table.reservations th.shoe_size {
-    width: 100px; }
-  table.reservations th.actions {
-    width: 100px; }
-  table.reservations td.user_name {
+  table.reservations th.booking_number {
+    width: 80px; }
+  table.reservations td.subscriber_name {
     text-align: center; }
   table.reservations td.resort {
     text-align: center; }
@@ -136,13 +130,7 @@ table.reservations {
     text-align: center; }
   table.reservations td.part_time {
     text-align: center; }
-  table.reservations td.shoe_type {
-    text-align: center; }
-  table.reservations td.board_stance {
-    text-align: center; }
-  table.reservations td.height {
-    text-align: center; }
-  table.reservations td.shoe_size {
+  table.reservations td.booking_number {
     text-align: center; }
   table.reservations td.actions {
     text-align: center; }

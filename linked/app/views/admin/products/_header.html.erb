@@ -7,6 +7,10 @@
   <%= render "admin/products/section_product_detail", :product => @product %>
 
   <ul class="main_tab_nav">
+    <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("edit"),
+      (link_to "상품수정", edit_admin_product_path(@product), :class => "") %>
+    <%= navigation_tag :li, current_controller?(["admin/constraints"]) && current_action?("index"),
+      (link_to "제약설정", [:admin, @product, :constraints], :class => "") %>
     <%= navigation_tag :li, current_controller?(["admin/coupons"]) && current_action?("index"),
       (link_to "쿠폰 목록", [:admin, @product, :coupons], :class => "") %>
     <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("new_coupons"),

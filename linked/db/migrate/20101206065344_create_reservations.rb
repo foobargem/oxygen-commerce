@@ -4,18 +4,17 @@ class CreateReservations < ActiveRecord::Migration
       t.integer :coupon_id
       t.integer :product_id
 
-      t.string :user_name
-      t.string :resort
+      # 예약자
+      t.string :subscriber_name
 
-      # 장비
-      t.string :shoe_type
-      t.string :board_stance
-      t.string :height
-      t.string :shoe_size
+      # 예약인원
+      t.integer :booking_number
 
       t.datetime :used_at
       t.string :part_time
-      
+      t.string :resort
+
+
       t.timestamps
     end
   end

@@ -1,0 +1,9 @@
+<% constraint = constraint %>
+
+<%= content_tag_for :tr, constraint do %>
+  <td class="unavailabled_at"><%= display_date(constraint.unavailabled_at) %></td>
+  <td class="actions">
+    <%= link_to "Edit", edit_admin_product_constraint_path(@product, constraint) %>
+    <%= link_to "Delete", admin_product_constraint_path(@product, constraint), :method => :delete, :remote => true, :confirm => "Are you sure?" %>
+  </td>
+<% end %>

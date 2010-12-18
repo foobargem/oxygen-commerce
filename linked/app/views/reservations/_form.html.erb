@@ -2,7 +2,6 @@
 <% coupon = coupon %>
 <% product = coupon.product %>
 <% f = f %>
-<% CalendarDateSelect.format = :iso_date %>
 
 <%= f.inputs do %>
   <%= f.input :user_name, :as => :string, :label => "사용자명" %>
@@ -10,7 +9,7 @@
 
   <li class="string required">
     <label for="reservation_user_name">이용일<abbr title="required">*</abbr></label>
-    <%= f.calendar_date_select :used_at, :popup => :force, :size => 14 %>
+    <%= f.calendar_date_select :used_at, :size => 14 %>
   </li>
 
   <%= f.input :part_time, :as => :select, :include_blank => false, :collection => PART_TIME_OPTIONS.map{|k,v| [v,k]}, :label => "시간선택" %>

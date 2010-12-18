@@ -1,3 +1,21 @@
+# == Schema Information
+# Schema version: 20101218012805
+#
+# Table name: coupons
+#
+#  id             :integer(4)      not null, primary key
+#  product_id     :integer(4)
+#  coupon_number  :string(255)
+#  quantity       :integer(4)      default(0)
+#  orders_count   :integer(4)      default(0)
+#  purchaser_name :string(255)
+#  phone_number   :string(255)
+#  agency_name    :string(255)
+#  locked_at      :datetime
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 # This model initially had no columns defined.  If you add columns to the

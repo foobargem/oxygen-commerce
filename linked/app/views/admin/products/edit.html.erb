@@ -5,10 +5,7 @@
 
   <div class="unit_content">
 
-    <div class="nav_history">
-      <%= link_to "상품목록>", :admin_products %>
-      <span>상품편집</span>
-    </div>
+    <%= render "admin/products/header" %>
 
     <div class="section">
       <%= semantic_form_for [:admin, @product] do |f| %>

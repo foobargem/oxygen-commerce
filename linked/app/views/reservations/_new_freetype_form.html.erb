@@ -1,0 +1,37 @@
+<% coupon = coupon %>
+<% product = product %>
+<% CalendarDateSelect.format = :iso_date %>
+
+<%= content_tag :tr, :id => "new_reservation_#{session[:current_tr_count]}" do %>
+  <td class="user_name">
+    <%= coupon.purchaser_name %>
+    <%= hidden_field_tag :user_name, coupon.purchaser_name, :name => "coupon[reservations_attributes][][user_name]" %>
+  </td>
+  <td class="resort">
+    <%= select_tag :resort, options_for_select(resort_collection_by_ticket(product)), :name => "coupon[reservations_attributes][][resort]" %>
+  </td>
+  <td class="used_at">
+    <%= calendar_date_select_tag "coupon[reservations_attributes][][used_at]", "", :popup => :force, :size => 10, :time => false, :year_range => [Date.today.year, Date.today.year + 1], :valid_date_check => date_validates %>
+  </td>
+  <td class="part_time">
+    <%= select_tag :part_time, options_for_select(PART_TIME_OPTIONS.map{|k,v| [v,k]}), { :name => "coupon[reservations_attributes][][part_time]" } %>
+  </td>
+  <td class="shoe_type">
+    <%= select_tag :shoe_type, options_for_select(SHOE_TYPE_OPTIONS.map{|k,v| [v,k]}), { :name => "coupon[reservations_attributes][][shoe_type]" } %>
+  </td>
+  <td class="board_stance">
+    <%= select_tag :board_stance, options_for_select(BOARD_STANCE_OPTIONS), :include_blank => true, :name => "coupon[reservations_attributes][][board_stance]" %>
+  </td>
+  <td class="height">
+    <%= text_field_tag :height, nil, :name => "coupon[reservations_attributes][][height]", :size => 5 %>
+  </td>
+  <td class="shoe_size">
+    <%= text_field_tag :shoe_size, nil, :name => "coupon[reservations_attributes][][shoe_size]", :size => 5 %>
+
+    <%= hidden_field_tag :coupon_id, coupon.id, :name => "coupon[reservations_attributes][][coupon_id]" %>
+    <%= hidden_field_tag :product_id, product.id, :name => "coupon[reservations_attributes][][product_id]" %>
+  </td>
+  <td class="actions">
+    <%= link_to "remove", remove_reservation_fields_coupon_path, :remote => :true if session[:current_tr_count] > 1 %>
+  </td>
+<% end %>

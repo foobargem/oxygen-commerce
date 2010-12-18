@@ -160,13 +160,15 @@ table.products
   th
     &.name
     &.provider_name
-      :width 140px
+      :width 120px
     &.resort
-      :width 140px
+      :width 120px
     &.ticket_type
       :width 100px
     &.date_range
       :width 160px
+    &.daily_reservations_limit
+      :width 110px
     &.coupons
       :width 100px
     &.reservations
@@ -183,6 +185,8 @@ table.products
     &.ticket_type
       :text-align center
     &.date_range
+      :text-align center
+    &.daily_reservations_limit
       :text-align center
     &.coupons
       :text-align center
@@ -750,4 +754,18 @@ table.publisher_profits
       &.message
         :text-align right
 
+
+table.constraints
+  +table_style1
+  :width 300px
+  th
+    &.unavailabled_at
+      :width 150px
+    &.actions
+      :width 150px
+  td
+    &.unavailabled_at
+      :text-align center
+    &.actions
+      :text-align center
 

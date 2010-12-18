@@ -5,10 +5,14 @@
 
 <%= f.inputs do %>
   <%= f.input :ticket_type, :as => :select, :collection => TICKET_TYPE_OPTIONS.map{|k,v| [v,k]}, :include_blank => false, :label => "이용권" %>
-  <%= f.input :resort, :as => :select, :collection => RESORT_OPTIONS, :label => "스키장", :hint => "자유권인경우 스키장을 선택하지 마세요." %>
+  <%= f.input :resort, :as => :select, :collection => RESORT_OPTIONS, :label => "스키장", :hint => "자유권인경우 스키장을 선택하지 말아주세요." %>
 <% end %>
 
 <%= f.inputs do %>
   <%= f.input :opened_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 1, :label => "시작일" %>
   <%= f.input :closed_at, :as => :date, :use_month_numbers => true, :include_blank => false, :start_year => Time.zone.now.year, :end_year => Time.zone.now.year + 1, :label => "종료일" %>
+<% end %>
+
+<%= f.inputs do %>
+  <%= f.input :daily_reservations_limit, :as => :string, :label => "예약가능 인원(1일)", :input_html => { :size => 3 } %>
 <% end %>

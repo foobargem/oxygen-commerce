@@ -1,0 +1,27 @@
+<% product = product %>
+<% coupon = coupon || product.coupons.build %>
+<% new_or_existing = coupon.new_record? ? "new" : "existing" %>
+<% prefix = "product[#{new_or_existing}_coupon_attributes][]" %>
+
+<%= fields_for prefix, coupon do |f| %>
+  <%= content_tag :tr do %>
+    <td class="coupon_number">
+      <%= f.text_field :coupon_number, :name => "product[coupons_attributes][][coupon_number]", :size => 20 %>
+    </td>
+    <td class="quantity">
+      <%= f.text_field :quantity, :name => "product[coupons_attributes][][quantity]", :size => 4 %>
+    </td>
+    <td class="purchaser_name">
+      <%= f.text_field :purchaser_name, :name => "product[coupons_attributes][][purchaser_name]", :size => 10 %>
+    </td>
+    <td class="phone_number">
+      <%= f.text_field :phone_number, :name => "product[coupons_attributes][][phone_number]", :size => 14 %>
+    </td>
+    <td class="agency_name">
+      <%= f.text_field :agency_name, :name => "product[coupons_attributes][][agency_name]", :size => 20 %>
+      <%= f.hidden_field :product_id, :value => product.id, :name => "product[coupons_attributes][][product_id]" %>
+
+      <%= link_to_function "remove", "$(this).up().up().remove()" %>
+    </td>
+  <% end %>
+<% end %>

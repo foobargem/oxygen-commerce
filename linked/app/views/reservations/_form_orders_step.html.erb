@@ -1,0 +1,22 @@
+<% product = product %>
+<% coupon = coupon %>
+<% f = f %>
+<% order = Order.new %>
+<% prefix = "reservation[new_order_attributes][]" %>
+
+<%= fields_for prefix, order do |order_form| %>
+  <fieldset class="inputs">
+    <ol>
+      <li class="string required">
+        <label for="order_user_name">사용자명<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :size => 10 %>
+        <%= order_form.errors[:user_name] unless order_form.errors.nil? %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>
+
+
+<%= f.hidden_field :product_id, :value => product.id %>
+
+<%= f.submit "예약" %>

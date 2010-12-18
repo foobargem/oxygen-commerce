@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if coupon = Coupon.authorize_by_coupon_and_purchaser(params)
       session[:user_id] = coupon.id
       flash[:notice] = "Successfuly logged in"
-      redirect_to coupon_reservations_path
+      redirect_to reservations_path
     else
       flash[:error] = "Authorize failed."
       render :action => :new

@@ -6,7 +6,11 @@
   <td class="ticket_type"><%= display_ticket_type(product.ticket_type) %></td>
   <td class="date_range">
     <%= display_date(product.opened_at) %> ~ <%= display_date(product.closed_at) %>
+    <p>
+      <%= link_to "제약설정", [:admin, product, :constraints] %>
+    </p>
   </td>
+  <td class="daily_reservations_limit"><%= number_with_delimiter(product.daily_reservations_limit) %></td>
   <td class="coupons"><%= link_to "쿠폰구매목록", [:admin, product, :coupons] %></td>
   <td class="reservations"><%= link_to "예약목록", [:admin, product, :reservations] %></td>
   <td class="actions">

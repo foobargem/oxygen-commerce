@@ -13,6 +13,8 @@ class CreateProducts < ActiveRecord::Migration
       t.datetime :opened_at
       t.datetime :closed_at
 
+      t.integer :daily_reservations_limit, :default => 0
+
       t.timestamps
     end
   end

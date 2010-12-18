@@ -34,8 +34,14 @@
               </tr>
             </thead>
             <tbody id="reservation_fields_wrapper">
-              <%= coupon_form.fields_for :reservation_attributes do |reservation_fields| %>
-                <%= render "coupon/tr_form", :product => @product, :coupon => @coupon %>
+              <% if @product.free_type_ticket? %>
+                <%= coupon_form.fields_for :reservation_attributes do |reservation_fields| %>
+                  <%= render "reservations/new_freetype_form", :product => @product, :coupon => @coupon %>
+                <% end %>
+              <% else %>
+                <%= coupon_form.fields_for :reservation_attributes do |reservation_fields| %>
+                  <%= render "coupon/tr_form", :product => @product, :coupon => @coupon %>
+                <% end %>
               <% end %>
             </tbody>
           </table>

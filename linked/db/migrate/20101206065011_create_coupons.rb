@@ -7,7 +7,7 @@ class CreateCoupons < ActiveRecord::Migration
 
       # 구매수량/사용한 수량
       t.integer :quantity, :default => 0
-      t.integer :reservations_count, :default => 0
+      t.integer :orders_count, :default => 0
 
       # 구매자
       t.string :purchaser_name

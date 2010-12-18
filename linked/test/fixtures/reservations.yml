@@ -1,3 +1,20 @@
+# == Schema Information
+# Schema version: 20101218012805
+#
+# Table name: reservations
+#
+#  id              :integer(4)      not null, primary key
+#  coupon_id       :integer(4)
+#  product_id      :integer(4)
+#  subscriber_name :string(255)
+#  booking_number  :integer(4)      default(0)
+#  used_at         :datetime
+#  part_time       :string(255)
+#  resort          :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 # This model initially had no columns defined.  If you add columns to the

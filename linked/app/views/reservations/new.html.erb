@@ -1,0 +1,28 @@
+<div class="container_2box">
+
+  <div class="container_header">
+    <%= render "reservations/main_nav" %>
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="reservation_header">
+      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
+    </div>
+
+
+    <div class="section">
+      <h3>예약</h3>
+      <%= semantic_form_for @reservation do |f| %>
+
+        <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :f => f %>
+
+      <% end %>
+    </div>
+
+  </div><!-- unit_content -->
+
+  <div class="unit_rail">
+  </div><!-- unit_rail -->
+
+</div><!-- container_1box -->

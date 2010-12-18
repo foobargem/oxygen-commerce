@@ -8,7 +8,36 @@ class ReservationsController < ApplicationController
   def index
     @reservations = @coupon.reservations
   end
-  
+
+  def new
+    session[:reservation_params] ||= {}  
+    @reservation = Reservation.new(session[:reservation_params])
+    @reservation.current_step = session[:reservation_step]
+  end
+
+  def create
+    session[:reservation_params].deep_merge!(params[:reservation]) if params[:reservation]  
+    @reservation = Reservation.new(session[:reservation_params])
+    @reservation.current_step = session[:reservation_step]
+
+    if @reservation.first_step?
+      if @reservation.valid?
+        @reservation.next_step
+      end
+      if @reservation.new_record?
+        render "new"
+      end
+    elsif @reservation.last_step?
+      if @reservation.valid?
+        @reservation.save
+      else
+        render "new"
+      end
+    else
+      render "new"
+    end
+  end
+
   def edit
     @reservation = Reservation.find(params[:id])
     editable_checking

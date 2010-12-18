@@ -28,8 +28,8 @@
             </tr>
           </thead>
           <tbody id="coupon_fields_wrapper">
-            <%= product_form.fields_for :coupon_attributes do |coupon_fields| %>
-              <%= render "admin/products/tr_form", :product => @product %>
+            <% @coupons.each do |coupon| %>
+              <%= render "admin/products/new_coupon", :product => @product, :coupon => coupon %>
             <% end %>
           </tbody>
         </table>
@@ -46,3 +46,7 @@
 </div><!-- container_1box -->
 
 <iframe id="magic_hole" class="fake_ajax"></iframe>
+
+<% if flash[:error_message] %>
+  <%= javascript_tag "alert('" + flash[:error_message] + "')" %>
+<% end %>
