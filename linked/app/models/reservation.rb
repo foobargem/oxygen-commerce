@@ -115,7 +115,7 @@ class Reservation < ActiveRecord::Base
   class UnavailableDateValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       unavailabled_dates = record.product.product_constraints.map{ |pc| pc.unavailabled_at.to_date }
-      if unavailabled_dates.include?(value.to_date)
+      if value && unavailabled_dates.include?(value.to_date)
         record.errors[attribute] << "Unavailabled. Please select another day."
       end
       unless record.reservable_date?
