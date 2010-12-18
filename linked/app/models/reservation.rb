@@ -75,8 +75,6 @@ class Reservation < ActiveRecord::Base
     cweek = Date.today.cweek
     current_hour = Time.zone.now.hour
 
-    return false if self.used_at.nil?
-
     if self.product.closed_at.to_date < self.used_at.to_date
       return false
     end
@@ -117,7 +115,7 @@ class Reservation < ActiveRecord::Base
   class UnavailableDateValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       unavailabled_dates = record.product.product_constraints.map{ |pc| pc.unavailabled_at.to_date }
-      if value && unavailabled_dates.include?(value.to_date)
+      if unavailabled_dates.include?(value.to_date)
         record.errors[attribute] << "Unavailabled. Please select another day."
       end
       unless record.reservable_date?
@@ -125,7 +123,7 @@ class Reservation < ActiveRecord::Base
       end
     end
   end
-  validates :used_at, :unavailable_date => true
+  validates :used_at, :unavailable_date => true, :unless => :used_at_is_nil?
 
 
 
@@ -137,6 +135,11 @@ class Reservation < ActiveRecord::Base
       end
     end
   end
-  validates :booking_number, :daily_orders_limit => true
+  validates :booking_number, :daily_orders_limit => true, :unless => :used_at_is_nil?
+
+
+  def used_at_is_nil?
+    self.used_at.nil?
+  end
 
 end
