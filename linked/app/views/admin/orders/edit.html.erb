@@ -12,20 +12,22 @@
     </div>
 
     <div class="section">
+      <%= render "reservations/section_reservation_detail", :reservation => @reservation %>
+    </div>
 
-      <%= semantic_form_for [:admin, @product, @reservation] do |f| %>
+    <div class="section">
 
-        <h3>예약 편집</h3>
+      <%= semantic_form_for [:admin, @product, @reservation, @order] do |f| %>
+        <%= render "admin/orders/edit_form", :f  => f %>
 
-        <%= render "admin/reservations/edit_form", :f => f , :reservation => @reservation, :product => @product %>
-
-        <%= f.submit "수정" %>
-        <%= link_to "취소", [:admin, @product, :reservations], :class => "careful" %>
-
+        <%= f.submit "Update" %>
       <% end %>
 
     </div>
 
   </div><!-- unit_content -->
+
+  <div class="unit_rail">
+  </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

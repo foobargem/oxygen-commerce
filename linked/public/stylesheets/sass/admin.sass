@@ -209,13 +209,15 @@ table.coupons
     &.used_quantity
       :width 90px
     &.purchaser_name
-      :width 160px
+      :width 140px
     &.phone_number
-      :width 160px
+      :width 140px
     &.agency_name
-      :width 160px
+      :width 140px
+    &.locked
+      :width 100px
     &.actions
-      :width 120px
+      :width 160px
   td
     &.coupon_number
       :text-align center
@@ -229,23 +231,64 @@ table.coupons
       :text-align center
     &.agency_name
       :text-align center
+    &.locked
+      :text-align center
     &.actions
       :text-align center
-
 
 
 table.reservations
   +table_style1
   th
-    &.user_name
+    &.subscriber_name
+      :width 120px
+    &.coupon_number
+    &.resort
+      :width 120px
+    &.used_at
+      :width 120px
+    &.part_time
+      :width 120px
+    &.booking_number
       :width 100px
+    &.orders
+      :width 120px
+    &.actions
+      :width 120px
+  td
+    &.subscriber_name
+      :text-align center
+    &.coupon_number
+      :text-align center
+    &.resort
+      :text-align center
+    &.used_at
+      :text-align center
+    &.part_time
+      :text-align center
+    &.booking_number
+      :text-align center
+    &.orders
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+table.orders
+  +table_style1
+  th
+    &.subscriber_name
+      :width 90px
     &.coupon_number
     &.resort
       :width 90px
     &.used_at
       :width 100px
     &.part_time
-      :width 100px
+      :width 90px
+    &.user_name
+      :width 90px
     &.shoe_type
       :width 90px
     &.board_stance
@@ -257,7 +300,7 @@ table.reservations
     &.actions
       :width 90px
   td
-    &.user_name
+    &.subscriber_name
       :text-align center
     &.coupon_number
       :text-align center
@@ -266,6 +309,8 @@ table.reservations
     &.used_at
       :text-align center
     &.part_time
+      :text-align center
+    &.user_name
       :text-align center
     &.shoe_type
       :text-align center

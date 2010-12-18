@@ -27,7 +27,7 @@ class Admin::ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update_attributes(params[:reservation])
-      redirect_to [:admin, @product, @reservation]
+      redirect_to [:admin, @product, :reservations]
     else
       render :action => :edit
     end

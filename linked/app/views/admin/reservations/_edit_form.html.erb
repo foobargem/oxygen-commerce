@@ -1,0 +1,15 @@
+<% f = f %>
+<% product = product %>
+
+<%= f.inputs do %>
+  <%= f.input :subscriber_name, :as => :string, :label => "예약자명" %>
+  <%= f.input :resort, :as => :select, :collection => resort_collection_by_ticket(product), :include_blank => false, :label => "스키장" %>
+
+  <li class="string required">
+    <label for="reservation_user_name">이용일<abbr title="required">*</abbr></label>
+    <%= f.calendar_date_select :used_at, :time => false, :size => 14 %>
+    <%= f.inline_errors_for :used_at %>
+  </li>
+
+  <%= f.input :part_time, :as => :select, :include_blank => false, :collection => part_time_options_collection, :label => "시간선택" %>
+<% end %>

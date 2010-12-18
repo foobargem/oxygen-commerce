@@ -34,8 +34,6 @@ class ReservationsController < ApplicationController
       else
         render "new"
       end
-    else
-      render "new"
     end
   end
 
@@ -48,7 +46,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     editable_checking
     if @reservation.update_attributes(params[:reservation])
-      redirect_to [:coupon, :reservations]
+      redirect_to :reservations
     else
       render :action => :edit
     end
@@ -71,7 +69,7 @@ class ReservationsController < ApplicationController
   
     def editable_checking
       unless @reservation.editable?
-        redirect_to [:coupon, :reservations]
+        redirect_to :reservations
       end
     end
 

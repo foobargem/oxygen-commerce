@@ -12,11 +12,19 @@
 
 
     <div class="section">
-      <h3>예약</h3>
-      <%= semantic_form_for @reservation do |f| %>
+      <% if @coupon.locked? %>
+        <h3>쿠폰 사용이 정지 되었습니다.</h3>
+        <p><strong>02) 2278 - 6633 으로 문의해주세요.</strong></p>
+      <% elsif !@coupon.reservable? %>
+        <h3>쿠폰을 모두 사용하셨습니다.</h3>
+        <p><strong>02) 2278 - 6633 으로 문의해주세요.</strong></p>
+      <% else %>
+        <h3>예약</h3>
+        <%= semantic_form_for @reservation do |f| %>
 
-        <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
+          <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
 
+        <% end %>
       <% end %>
     </div>
 

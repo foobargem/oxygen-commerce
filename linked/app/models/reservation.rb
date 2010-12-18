@@ -19,7 +19,7 @@ class Reservation < ActiveRecord::Base
 
   belongs_to :product
   belongs_to :coupon
-  has_many :orders
+  has_many :orders, :dependent => :destroy
   accepts_nested_attributes_for :orders
 
 
@@ -70,6 +70,32 @@ class Reservation < ActiveRecord::Base
     Time.zone.now < self.used_at.to_date.ago(ago_days).change(:hour => 12)
   end
 
+  def reservable_date?
+    cday = Date.today.cwday
+    cweek = Date.today.cweek
+    current_hour = Time.zone.now.hour
+
+    if self.product.closed_at.to_date < self.used_at.to_date
+      return false
+    end
+
+    if current_hour < 12 && !([6, 7].include?(cday))
+      true
+    else
+      dt_cday = self.used_at.to_date.cwday
+      dt_cweek = self.used_at.to_date.cweek
+
+      if [6, 7].include?(dt_cday) && cweek == dt_cweek
+        false
+      elsif 1 == dt_cday && (self.used_at.to_date - Date.today).to_i < 7
+        false
+      else
+        true
+      end
+    end
+  end
+
+
   class CouponLimitQuantityValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       unless record.product.free_type_ticket?
@@ -86,12 +112,29 @@ class Reservation < ActiveRecord::Base
 
 
 
-  #class DailyReservationsLimitValidator < ActiveModel::EachValidator
-    #def validate_each(record, attribute, value)
-      #if record.product.daily_reservations_limit.to_i < record.coupon.reservations_count.to_i + 1
-        #record.errors[attribute] << "Quantity exceeded"
-      #end
-    #end
-  #end
+  class UnavailableDateValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      unavailabled_dates = record.product.product_constraints.map{ |pc| pc.unavailabled_at.to_date }
+      if unavailabled_dates.include?(value.to_date)
+        record.errors[attribute] << "Unavailabled. Please select another day."
+      end
+      unless record.reservable_date?
+        record.errors[attribute] << "Unreservabled. Please select another day."
+      end
+    end
+  end
+  validates :used_at, :unavailable_date => true
+
+
+
+  class DailyOrdersLimitValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      orders_count = record.product.daily_reserved_orders_count(record.used_at.to_date)
+      if record.product.daily_reservations_limit.to_i < (orders_count + value.to_i)
+        record.errors[attribute] << "Exceeded daily order limit."
+      end
+    end
+  end
+  validates :booking_number, :daily_orders_limit => true
 
 end

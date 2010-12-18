@@ -47,6 +47,9 @@
       </li>
     </ol>
   </fieldset>
+
+  <%= order_form.hidden_field :product_id, :value => product.id %>
+  <%= order_form.hidden_field :coupon_id, :value => coupon.id %>
 <% end %>
 
 <% end %>

@@ -12,11 +12,11 @@
 
 
     <div class="section">
-      <%= semantic_form_for [:coupon, @reservation] do |f| %>
+      <%= semantic_form_for @reservation do |f| %>
 
         <h3>예약 변경</h3>
 
-        <%= render 'reservations/form', :f => f , :reservation => @reservation, :coupon => @coupon %>
+        <%= render 'reservations/edit_form', :f => f , :reservation => @reservation, :coupon => @coupon %>
 
         <%= f.submit "수정" %>
 

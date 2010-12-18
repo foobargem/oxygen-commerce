@@ -559,13 +559,15 @@ table.coupons {
   table.coupons th.used_quantity {
     width: 90px; }
   table.coupons th.purchaser_name {
-    width: 160px; }
+    width: 140px; }
   table.coupons th.phone_number {
-    width: 160px; }
+    width: 140px; }
   table.coupons th.agency_name {
-    width: 160px; }
+    width: 140px; }
+  table.coupons th.locked {
+    width: 100px; }
   table.coupons th.actions {
-    width: 120px; }
+    width: 160px; }
   table.coupons td.coupon_number {
     text-align: center; }
   table.coupons td.quantity {
@@ -577,6 +579,8 @@ table.coupons {
   table.coupons td.phone_number {
     text-align: center; }
   table.coupons td.agency_name {
+    text-align: center; }
+  table.coupons td.locked {
     text-align: center; }
   table.coupons td.actions {
     text-align: center; }
@@ -603,25 +607,21 @@ table.reservations {
       background: #ddeeff; }
   table.reservations tbody td.actions a {
     padding: 0 2px; }
-  table.reservations th.user_name {
-    width: 100px; }
+  table.reservations th.subscriber_name {
+    width: 120px; }
   table.reservations th.resort {
-    width: 90px; }
+    width: 120px; }
   table.reservations th.used_at {
-    width: 100px; }
+    width: 120px; }
   table.reservations th.part_time {
+    width: 120px; }
+  table.reservations th.booking_number {
     width: 100px; }
-  table.reservations th.shoe_type {
-    width: 90px; }
-  table.reservations th.board_stance {
-    width: 100px; }
-  table.reservations th.height {
-    width: 80px; }
-  table.reservations th.shoe_size {
-    width: 80px; }
+  table.reservations th.orders {
+    width: 120px; }
   table.reservations th.actions {
-    width: 90px; }
-  table.reservations td.user_name {
+    width: 120px; }
+  table.reservations td.subscriber_name {
     text-align: center; }
   table.reservations td.coupon_number {
     text-align: center; }
@@ -631,15 +631,76 @@ table.reservations {
     text-align: center; }
   table.reservations td.part_time {
     text-align: center; }
-  table.reservations td.shoe_type {
+  table.reservations td.booking_number {
     text-align: center; }
-  table.reservations td.board_stance {
-    text-align: center; }
-  table.reservations td.height {
-    text-align: center; }
-  table.reservations td.shoe_size {
+  table.reservations td.orders {
     text-align: center; }
   table.reservations td.actions {
+    text-align: center; }
+
+table.orders {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.orders thead tr {
+    background: #dddddd; }
+    table.orders thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.orders tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.orders tbody tr.total, table.orders tbody tr.average {
+    background: #ddeeff; }
+    table.orders tbody tr.total td, table.orders tbody tr.average td {
+      background: #ddeeff; }
+  table.orders tbody td.actions a {
+    padding: 0 2px; }
+  table.orders th.subscriber_name {
+    width: 90px; }
+  table.orders th.resort {
+    width: 90px; }
+  table.orders th.used_at {
+    width: 100px; }
+  table.orders th.part_time {
+    width: 90px; }
+  table.orders th.user_name {
+    width: 90px; }
+  table.orders th.shoe_type {
+    width: 90px; }
+  table.orders th.board_stance {
+    width: 100px; }
+  table.orders th.height {
+    width: 80px; }
+  table.orders th.shoe_size {
+    width: 80px; }
+  table.orders th.actions {
+    width: 90px; }
+  table.orders td.subscriber_name {
+    text-align: center; }
+  table.orders td.coupon_number {
+    text-align: center; }
+  table.orders td.resort {
+    text-align: center; }
+  table.orders td.used_at {
+    text-align: center; }
+  table.orders td.part_time {
+    text-align: center; }
+  table.orders td.user_name {
+    text-align: center; }
+  table.orders td.shoe_type {
+    text-align: center; }
+  table.orders td.board_stance {
+    text-align: center; }
+  table.orders td.height {
+    text-align: center; }
+  table.orders td.shoe_size {
+    text-align: center; }
+  table.orders td.actions {
     text-align: center; }
 
 table.not_reviewed {

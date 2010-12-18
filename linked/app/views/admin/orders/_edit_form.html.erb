@@ -1,0 +1,9 @@
+<% f = f %>
+
+<%= f.inputs do %>
+  <%= f.input :user_name, :as => :string, :label => "사용자명" %>
+  <%= f.input :shoe_type, :as => :select, :collection => shoe_type_options_collection, :include_blank => false, :label => "장비구분" %>
+  <%= f.input :board_stance, :as => :select, :collection => board_stance_options_collection, :include_blank => true, :label => "스탠스" %>
+  <%= f.input :height, :as => :string, :label => "신장" %>
+  <%= f.input :shoe_size, :as => :string, :label => "신발사이즈" %>
+<% end %>

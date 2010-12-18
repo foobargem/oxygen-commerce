@@ -50,8 +50,15 @@ Linked::Application.routes.draw do
         #get 'new_constraints'
       end
       resources :constraints
-      resources :coupons
-      resources :reservations
+      resources :coupons do
+        member do
+          get "lock"
+          get "release"
+        end
+      end
+      resources :reservations do
+        resources :orders
+      end
     end
 
   end

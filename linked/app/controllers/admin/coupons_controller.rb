@@ -46,6 +46,19 @@ class Admin::CouponsController < ApplicationController
   end
 
 
+  def lock
+    @coupon = Coupon.find(params[:id])
+    @coupon.update_attribute(:locked_at, Time.zone.now)
+    # ToDo: ajax
+    redirect_to [:admin, @product, :coupons]
+  end
+
+  def release
+    @coupon = Coupon.find(params[:id])
+    @coupon.update_attribute(:locked_at, nil)
+    redirect_to [:admin, @product, :coupons]
+  end
+
   protected
 
     def find_product

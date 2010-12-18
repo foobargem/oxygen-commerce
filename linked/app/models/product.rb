@@ -35,9 +35,19 @@ class Product < ActiveRecord::Base
   has_many :product_constraints
   accepts_nested_attributes_for :product_constraints
 
+  has_many :orders
 
   def free_type_ticket?
     self.ticket_type == "free"
+  end
+
+  def daily_reserved_orders_count(_date)
+    count = 0
+    reservations = self.reservations.where("used_at = ?", _date.to_time_in_current_zone).includes(:orders)
+    reservations.each do |r|
+      count += r.orders.count
+    end
+    count
   end
 
 end

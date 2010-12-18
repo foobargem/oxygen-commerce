@@ -25,21 +25,19 @@
         <table class="reservations">
           <thead>
             <tr>
-              <th class="user_name">사용자명</th>
+              <th class="subscriber_name">예약자</th>
               <th class="coupon_number">쿠폰번호</th>
               <th class="resort">스키장</th>
               <th class="used_at">이용일</th>
               <th class="part_time">시간대</th>
-              <th class="shoe_type">장비구분</th>
-              <th class="board_stance">스탠스</th>
-              <th class="height">신장</th>
-              <th class="shoe_size">발사이즈</th>
+              <th class="booking_number">인원수</th>
+              <th class="orders">예약내역</th>
               <th class="actions"></th>
             </tr>
           </thead>
           <tbody>
             <% reservations.each do |reservation| %>
-              <%= render 'admin/reservations/tr_reservation', :product => @product, :reservation => reservation %>
+              <%= render "admin/reservations/tr_reservation", :product => @product, :reservation => reservation %>
             <% end %>
           </tbody>
         </table>

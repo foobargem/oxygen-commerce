@@ -75,17 +75,17 @@ table.reservations
   +table_style1
   th
     &.subscriber_name
-      :width 120px
+      :width 100px
     &.resort
-      :width 100px
+      :width 90px
     &.used_at
-      :width 110px
-    &.part_time
       :width 100px
+    &.part_time
+      :width 90px
     &.booking_number
       :width 80px
     &.orders
-      :width 100px
+      :width 90px
     &.actions
   td
     &.subscriber_name
@@ -181,6 +181,37 @@ table.new_reservations
     &.used_at
       :text-align center
     &.part_time
+      :text-align center
+    &.shoe_type
+      :text-align center
+    &.board_stance
+      :text-align center
+    &.height
+      :text-align center
+    &.shoe_size
+      :text-align center
+    &.actions
+      :text-align center
+
+
+
+
+table.orders
+  +table_style1
+  th
+    &.user_name
+      :width 120px
+    &.shoe_type
+      :width 120px
+    &.board_stance
+      :width 120px
+    &.height
+      :width 100px
+    &.shoe_size
+      :width 100px
+    &.actions
+  td
+    &.user_name
       :text-align center
     &.shoe_type
       :text-align center

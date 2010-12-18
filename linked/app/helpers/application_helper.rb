@@ -16,4 +16,16 @@ module ApplicationHelper
     end
   end
 
+  def shoe_type_options_collection
+    SHOE_TYPE_OPTIONS.map{ |k, v| [v, k] }
+  end
+
+  def board_stance_options_collection
+    BOARD_STANCE_OPTIONS
+  end
+
+  def part_time_options_collection
+    PART_TIME_OPTIONS.map{ |k, v| [v, k] }
+  end
+
 end

@@ -29,4 +29,17 @@ class Order < ActiveRecord::Base
     shoe_type == "board"
   end
 
+
+  after_destroy :update_booking_number_of_reservation
+
+  def update_booking_number_of_reservation
+    orders_count = self.reservation.orders.size
+    if orders_count == 0
+      self.reservation.destroy
+    else
+      self.reservation.update_attribute(:booking_number, orders_count)
+    end
+  end
+
+
 end

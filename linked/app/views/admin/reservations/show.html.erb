@@ -5,23 +5,15 @@
 
   <div class="unit_content">
 
+    <h3>예약 내용
+      <span class="more"><%= link_to "편집", edit_admin_product_reservation_path(@product, @reservation) %></span>
+    </h3>
     <div class="section">
-
-        <h3>예약 내용
-          <span class="more"><%= link_to "편집", edit_admin_product_reservation_path(@product, @reservation) %></span>
-        </h3>
-
-        <div class="">
-          <p>사용자명: <%= @reservation.user_name %></p>
-          <p>스키장: <%= @reservation.resort %></p>
-          <p>이용일: <%= display_date(@reservation.used_at) %></p>
-          <p>이용시간: <%= @reservation.part_time %></p>
-          <p>장비: <%= @reservation.shoe_type %></p>
-          <p>스탠스: <%= @reservation.board_stance %></p>
-          <p>신장: <%= @reservation.height %></p>
-          <p>발사이즈: <%= @reservation.shoe_size %></p>
-        </div>
-
+      <p>예약자: <%= @reservation.subscriber_name %></p>
+      <p>예약인원: <%= number_with_delimiter(@reservation.booking_number) %></p>
+      <p>스키장: <%= @reservation.resort %></p>
+      <p>이용일: <%= display_date(@reservation.used_at) %></p>
+      <p>이용시간: <%= @reservation.part_time %></p>
     </div>
 
   </div><!-- unit_content -->
