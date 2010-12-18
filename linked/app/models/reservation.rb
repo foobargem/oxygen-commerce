@@ -43,6 +43,10 @@ class Reservation < ActiveRecord::Base
     self.current_step = steps[steps.index(current_step) + 1]
   end
 
+  def prev_step
+    self.current_step = steps[steps.index(current_step) - 1]
+  end
+
   def first_step?
     self.current_step == steps.first
   end

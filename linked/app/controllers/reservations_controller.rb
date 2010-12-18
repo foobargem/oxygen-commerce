@@ -10,7 +10,8 @@ class ReservationsController < ApplicationController
   end
 
   def new
-    session[:reservation_params] ||= {}  
+    session[:reservation_params] = {}  
+    session[:reservation_step] = nil
     @reservation = Reservation.new(session[:reservation_params])
     @reservation.current_step = session[:reservation_step]
   end
@@ -23,13 +24,13 @@ class ReservationsController < ApplicationController
     if @reservation.first_step?
       if @reservation.valid?
         @reservation.next_step
+        session[:reservation_step] = @reservation.current_step
       end
-      if @reservation.new_record?
-        render "new"
-      end
+      render "new" and return
     elsif @reservation.last_step?
       if @reservation.valid?
         @reservation.save
+        redirect_to :reservations
       else
         render "new"
       end
@@ -57,7 +58,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     editable_checking
     @reservation.destroy
-    redirect_to [:coupon, :reservations]
+    redirect_to :reservations
   end
 
 

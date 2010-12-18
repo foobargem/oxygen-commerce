@@ -1,8 +1,26 @@
 <% product = product %>
 <% coupon = coupon %>
+<% reservation = reservation %>
 <% f = f %>
 <% order = Order.new %>
-<% prefix = "reservation[new_order_attributes][]" %>
+<% prefix = "reservation[orders_attributes][]" %>
+<% orders_errors = errors_about_orders(reservation.errors) %>
+
+<% if orders_errors %>
+  <div class="errors">
+    <% orders_errors.each do |field, messages| %>
+      <p><%= field %>:
+        <% messages.each do |msg| %>
+          <%= msg %>
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+<% session[:reservation_params]["booking_number"].to_i.times do |i| %>
 
 <%= fields_for prefix, order do |order_form| %>
   <fieldset class="inputs">
@@ -10,12 +28,28 @@
       <li class="string required">
         <label for="order_user_name">사용자명<abbr title="required">*</abbr></label>
         <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :size => 10 %>
-        <%= order_form.errors[:user_name] unless order_form.errors.nil? %>
+      </li>
+      <li class="select required">
+        <label for="order_shoe_type">장비구분<abbr title="required">*</abbr></label>
+        <%= order_form.select :shoe_type, options_for_select(SHOE_TYPE_OPTIONS.map{ |k,v| [v,k] }), :name => "reservation[orders_attributes][][shoe_type]" %>
+      </li>
+      <li class="select">
+        <label for="order_board_stance">스탠스</label>
+        <%= order_form.select :board_stance, options_for_select(BOARD_STANCE_OPTIONS), :include_blank => true, :name => "reservation[orders_attributes][][board_stance]" %>
+      </li>
+      <li class="string required">
+        <label for="order_height">신장<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :height, :name => "reservation[orders_attributes][][height]", :size => 5 %>
+      </li>
+      <li class="string required">
+        <label for="order_shoe_size">신발사이즈<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :shoe_size, :name => "reservation[orders_attributes][][shoe_size]", :size => 5 %>
       </li>
     </ol>
   </fieldset>
 <% end %>
 
+<% end %>
 
 <%= f.hidden_field :product_id, :value => product.id %>
 

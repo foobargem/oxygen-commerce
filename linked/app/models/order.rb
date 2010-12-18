@@ -22,13 +22,11 @@ class Order < ActiveRecord::Base
   belongs_to :coupon, :counter_cache => true
   belongs_to :reservation
 
-  validates_presence_of :user_name, :shoe_type
+  validates_presence_of :user_name, :shoe_type, :height, :shoe_size
+  validates_presence_of :board_stance, :if => :board_type?
 
-
-  #validates_presence_of :board_stance, :if => :board_type?
-
-  #def board_type?
-    #shoe_type == "board"
-  #end
+  def board_type?
+    shoe_type == "board"
+  end
 
 end

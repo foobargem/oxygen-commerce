@@ -15,7 +15,7 @@
       <h3>예약</h3>
       <%= semantic_form_for @reservation do |f| %>
 
-        <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :f => f %>
+        <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
 
       <% end %>
     </div>

@@ -16,4 +16,10 @@ module ReservationsHelper
     end
   end
 
+  def errors_about_orders(errors)
+    errors.select do |key, values|
+      { key => values } if key.to_s[0..5] == "orders"
+    end
+  end
+
 end

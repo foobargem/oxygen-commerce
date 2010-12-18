@@ -26,7 +26,9 @@ Linked::Application.routes.draw do
       get "remove_reservation_fields"
     end
   end
-  resources :reservations
+  resources :reservations do
+    resources :orders
+  end
   
 
 
