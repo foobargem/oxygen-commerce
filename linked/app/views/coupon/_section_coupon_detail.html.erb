@@ -11,7 +11,7 @@
     <dd><%= coupon.coupon_number %></dd>
 
     <% if product.free_type_ticket? %>
-      <dt>사용 횟수:</dl>
+      <dt>사용 횟수:</dt>
       <dd><%= number_with_delimiter(coupon.orders_count) %></dd>
     <% else %>
       <dt>구매수량:</dt>

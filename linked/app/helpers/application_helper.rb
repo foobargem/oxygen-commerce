@@ -42,7 +42,7 @@ module ApplicationHelper
     if product.free_type_ticket?
       resort_options_collection
     else
-      [RESORT_OPTIONS[product.resort]]
+      {RESORT_OPTIONS[product.resort] => product.resort}
     end
   end
 
