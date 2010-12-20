@@ -48,7 +48,6 @@ Linked::Application.routes.draw do
         get 'new_coupons_from_import'
         get 'new_import'
         put 'import_from_excel_file'
-        get 'export_reservations_to_excel'
 
         #get 'new_constraints'
       end
@@ -59,11 +58,14 @@ Linked::Application.routes.draw do
           get "release"
         end
       end
-      resources :reservations do
-        resources :orders
-      end
     end
 
+    resources :reservations do
+      collection do
+        get "export_to_excel"
+      end
+      resources :orders
+    end
   end
 
 

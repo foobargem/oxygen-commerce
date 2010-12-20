@@ -1,12 +1,12 @@
+# encoding: utf-8
 class Admin::ReservationsController < ApplicationController
 
   before_filter :authenticate_admin!
-  before_filter :find_product
 
   layout "admin"
 
   def index
-    reservations = @product.reservations.includes(:coupon)
+    reservations = Reservation.scoped.includes(:orders)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
 
@@ -22,12 +22,13 @@ class Admin::ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+    @product = @reservation.product
   end
 
   def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update_attributes(params[:reservation])
-      redirect_to [:admin, @product, :reservations]
+      redirect_to [:admin, :reservations]
     else
       render :action => :edit
     end
@@ -39,13 +40,20 @@ class Admin::ReservationsController < ApplicationController
     redirect_to [:admin, @product, :reservations]
   end
 
+  def export_to_excel
+    reg = ReservationsExcelGenerator.new
+    reg.export_to_xls
+
+    postfix = Time.zone.now.strftime("%Y%m%d_%H%M")
+    download_filename = "예약목록_#{postfix}.xls"
+
+    send_file(reg.output_file_path, {
+      :filename => download_filename
+    })
+  end
+
 
   protected
-
-    def find_product
-      @product = Product.find(params[:product_id])
-    end
-
 
     def group_by_block_statement
       group_by = params[:groupby] || "used_at"

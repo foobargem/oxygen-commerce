@@ -8,19 +8,19 @@
     <%= render "admin/products/header" %>
 
     <div class="nav_history">
-      <%= link_to "예약목록>", [:admin, @product, :reservations] %>
+      <%= link_to "예약목록>", [:admin, :reservations] %>
     </div>
 
     <div class="section">
 
-      <%= semantic_form_for [:admin, @product, @reservation] do |f| %>
+      <%= semantic_form_for [:admin, @reservation] do |f| %>
 
         <h3>예약 편집</h3>
 
         <%= render "admin/reservations/edit_form", :f => f , :reservation => @reservation, :product => @product %>
 
         <%= f.submit "수정" %>
-        <%= link_to "취소", [:admin, @product, :reservations], :class => "careful" %>
+        <%= link_to "취소", [:admin, :reservations], :class => "careful" %>
 
       <% end %>
 

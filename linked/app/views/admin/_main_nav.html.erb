@@ -3,6 +3,10 @@
   <li class="spacer">&nbsp;</li>
   <%= navigation_tag :li, current_controller?("admin/dashboard"),
     (link_to "Dashboard", :admin_dashboard, :class => "action") %>
-  <%= navigation_tag :li, current_controller?(["admin/products", "admin/constraints", "admin/coupons", "admin/reservations", "admin/orders"]),
-    (link_to "상품및 쿠폰관리", :admin_products, :class => "action") %>
+  <%= navigation_tag :li, current_controller?(["admin/products", "admin/constraints", "admin/coupons"]),
+    (link_to "상품및 쿠폰관리", [:admin, :products], :class => "action") %>
+  <%= navigation_tag :li, current_controller?(["admin/reservations", "admin/orders"]),
+    (link_to "예약목록", [:admin, :reservations], :class => "action") %>
+  <%= navigation_tag :li, current_controller?(["admin/reservations"]) && current_action?("export_to_excel"),
+    (link_to "예약목록(Export to Excel file)", export_to_excel_admin_reservations_path) %>
 </ul>

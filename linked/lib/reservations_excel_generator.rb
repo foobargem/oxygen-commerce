@@ -3,11 +3,10 @@ class ReservationsExcelGenerator
 
   attr_reader :output_file_path
 
-  def initialize(product_id)
+  def initialize
     tmpfile = Tempfile.new("reservations")
     @output_file_path = tmpfile.path
-    @product = Product.find(product_id)
-    @reservations = @product.reservations.includes(:coupon, :orders)
+    @reservations = Reservation.scoped.includes(:product, :coupon, :orders)
   end
 
   def export_to_xls

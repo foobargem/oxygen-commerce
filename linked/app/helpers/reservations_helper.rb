@@ -23,4 +23,12 @@ module ReservationsHelper
     end
   end
 
+  def display_resort_name(resort)
+    if RESORT_OPTIONS.has_key?(resort)
+      RESORT_OPTIONS[resort]
+    else
+      ""
+    end
+  end
+
 end

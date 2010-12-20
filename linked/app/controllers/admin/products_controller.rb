@@ -165,16 +165,4 @@ class Admin::ProductsController < ApplicationController
   end
 
 
-  def export_reservations_to_excel
-    @product = Product.find(params[:id])
-    reg = ReservationsExcelGenerator.new(@product.id)
-    reg.export_to_xls
-
-    download_filename = "예약목록 - #{@product.name}.xls"
-
-    send_file(reg.output_file_path, {
-      :filename => download_filename
-    })
-  end
-
 end

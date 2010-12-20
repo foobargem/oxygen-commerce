@@ -5,34 +5,39 @@
 
   <div class="unit_content">
 
-    <h3>상품목록</h3>
+    <div class="section">
+      <ul class="filters">
+        <li>
+          <div class="bg_anchor"><%= link_to "상품등록", new_admin_product_path %></div>
+        </li>
+      </ul>
+    </div>
 
-    <ul class="filters">
-      <li>
-        <div class="bg_anchor"><%= link_to "Add new product", new_admin_product_path %></div>
-      </li>
-    </ul>
 
-    <table class="products">
-      <thead>
-        <tr>
-          <th class="name">상품명</th>
-          <th class="provider_name">판매업체</th>
-          <th class="resort">스키장</th>
-          <th class="ticket_type">이용권</th>
-          <th class="date_range">이용기간</th>
-          <th class="daily_reservations_limit">예약가능인원(1일)</th>
-          <th class="coupons">쿠폰목록</th>
-          <th class="reservations">예약목록</th>
-          <th class="actions"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <%= render "admin/products/tr_product", :product => product %>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="section">
+      <h3>상품목록</h3>
+
+      <table class="products">
+        <thead>
+          <tr>
+            <th class="name">상품명</th>
+            <th class="provider_name">판매업체</th>
+            <th class="resort">스키장</th>
+            <th class="ticket_type">이용권</th>
+            <th class="date_range">이용기간</th>
+            <th class="daily_reservations_limit">예약가능인원(1일)</th>
+            <th class="coupons">쿠폰목록</th>
+            <th class="actions"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <%= render "admin/products/tr_product", :product => product %>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
 
 
   </div><!-- unit_content -->

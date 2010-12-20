@@ -5,8 +5,6 @@
 
   <div class="unit_content">
 
-    <%= render "admin/products/header" %>
-
     <div class="section">
       <ul class="filters">
         <li><%= link_to "이용일별", "?groupby=used_at" %></li>
@@ -22,7 +20,7 @@
       <div class="section">
         <h4><%= display_group_by_string(params[:groupby], key) %></h4>
 
-        <table class="reservations">
+        <table class="reservations_with_orders">
           <thead>
             <tr>
               <th class="subscriber_name">예약자</th>
@@ -30,14 +28,19 @@
               <th class="resort">스키장</th>
               <th class="used_at">이용일</th>
               <th class="part_time">시간대</th>
-              <th class="booking_number">인원수</th>
-              <th class="orders">예약내역</th>
+              <th class="user_name">사용자명</th>
+              <th class="shoe_type">장비구분</th>
+              <th class="board_stance">스탠스</th>
+              <th class="height">신장</th>
+              <th class="shoe_size">신발크기</th>
               <th class="actions"></th>
             </tr>
           </thead>
           <tbody>
             <% reservations.each do |reservation| %>
-              <%= render "admin/reservations/tr_reservation", :product => @product, :reservation => reservation %>
+              <% reservation.orders.each do |order| %>
+                <%= render "admin/reservations/tr_reservation_with_order", :reservation => reservation, :order => order %>
+              <% end %>
             <% end %>
           </tbody>
         </table>

@@ -498,18 +498,16 @@ table.products {
     padding: 30px;
     text-align: center; }
   table.products th.provider_name {
-    width: 120px; }
+    width: 130px; }
   table.products th.resort {
-    width: 120px; }
+    width: 130px; }
   table.products th.ticket_type {
-    width: 100px; }
+    width: 110px; }
   table.products th.date_range {
     width: 160px; }
   table.products th.daily_reservations_limit {
-    width: 110px; }
+    width: 120px; }
   table.products th.coupons {
-    width: 100px; }
-  table.products th.reservations {
     width: 100px; }
   table.products th.actions {
     width: 100px; }
@@ -526,8 +524,6 @@ table.products {
   table.products td.daily_reservations_limit {
     text-align: center; }
   table.products td.coupons {
-    text-align: center; }
-  table.products td.reservations {
     text-align: center; }
   table.products td.actions {
     text-align: center; }
@@ -701,6 +697,71 @@ table.orders {
   table.orders td.shoe_size {
     text-align: center; }
   table.orders td.actions {
+    text-align: center; }
+
+table.reservations_with_orders {
+  margin-bottom: 20px;
+  width: 100%; }
+  table.reservations_with_orders thead tr {
+    background: #dddddd; }
+    table.reservations_with_orders thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.reservations_with_orders tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.reservations_with_orders tbody tr.total, table.reservations_with_orders tbody tr.average {
+    background: #ddeeff; }
+    table.reservations_with_orders tbody tr.total td, table.reservations_with_orders tbody tr.average td {
+      background: #ddeeff; }
+  table.reservations_with_orders tbody td.actions a {
+    padding: 0 2px; }
+  table.reservations_with_orders th.subscriber_name {
+    width: 90px; }
+  table.reservations_with_orders th.resort {
+    width: 90px; }
+  table.reservations_with_orders th.used_at {
+    width: 100px; }
+  table.reservations_with_orders th.part_time {
+    width: 90px; }
+  table.reservations_with_orders th.user_name {
+    width: 90px; }
+  table.reservations_with_orders th.shoe_type {
+    width: 90px; }
+  table.reservations_with_orders th.board_stance {
+    width: 100px; }
+  table.reservations_with_orders th.height {
+    width: 80px; }
+  table.reservations_with_orders th.shoe_size {
+    width: 80px; }
+  table.reservations_with_orders th.actions {
+    width: 90px; }
+  table.reservations_with_orders td.subscriber_name {
+    text-align: center; }
+  table.reservations_with_orders td.coupon_number {
+    text-align: center; }
+  table.reservations_with_orders td.resort {
+    text-align: center; }
+  table.reservations_with_orders td.used_at {
+    text-align: center; }
+  table.reservations_with_orders td.part_time {
+    text-align: center; }
+  table.reservations_with_orders td.user_name {
+    text-align: center; }
+  table.reservations_with_orders td.shoe_type {
+    text-align: center; }
+  table.reservations_with_orders td.board_stance {
+    text-align: center; }
+  table.reservations_with_orders td.height {
+    text-align: center; }
+  table.reservations_with_orders td.shoe_size {
+    text-align: center; }
+  table.reservations_with_orders td.actions {
     text-align: center; }
 
 table.not_reviewed {

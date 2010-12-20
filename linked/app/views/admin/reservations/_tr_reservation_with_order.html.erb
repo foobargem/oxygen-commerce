@@ -5,7 +5,7 @@
 <tr>
   <td class="subscriber_name"><%= reservation.subscriber_name %></td>
   <td class="coupon_number"><%= coupon.coupon_number %></td>
-  <td class="resort"><%= reservation.resort %></td>
+  <td class="resort"><%= display_resort_name(reservation.resort) %></td>
   <td class="used_at"><%= display_date(reservation.used_at) %></td>
   <td class="part_time"><%= reservation.part_time %></td>
   <td class="user_name"><%= order.user_name %></td>
@@ -14,7 +14,26 @@
   <td class="height"><%= order.height %></td>
   <td class="shoe_size"><%= order.shoe_size %></td>
   <td class="actions">
-    <%= link_to "edit", edit_admin_product_reservation_path(product, reservation) %>
-    <%= link_to "delete", [:admin, product, reservation], :method => :delete, :confirm => "Are you sure?", :class => "careful" %>
+    <ul>
+      <li>
+        <span class="button">
+          <%= link_to "예약수정", edit_admin_reservation_path(reservation) %>
+        </span>
+      </li>
+      <li>
+        <span class="button">
+          <%= link_to "예약삭제", [:admin, reservation], :method => :delete,
+            :confirm => "예약을 삭제하시겠습니까?\n예약이 삭제되면 장비 신청 내역도 함께 삭제됩니다." %>
+        </span>
+      </li>
+      <li>
+        <span class="button">
+          <%= link_to "edit", edit_admin_reservation_order_path(reservation, order) %>
+        </span>
+        <span class="button">
+          <%= link_to "delete", [:admin, reservation, order], :method => :delete, :confirm => "Are you sure?", :class => "destroy" %>
+        </span>
+      </li>
+    </div>
   </td>
 </tr>
