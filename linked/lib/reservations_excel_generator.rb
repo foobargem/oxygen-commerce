@@ -49,7 +49,7 @@ class ReservationsExcelGenerator
             sheet.row(row_index).replace [
               order.user_name,
               reservation.coupon.coupon_number,
-              reservation.resort,
+              RESORT_OPTIONS[reservation.resort],
               reservation.used_at.to_date,
               reservation.part_time,
               SHOE_TYPE_OPTIONS[order.shoe_type] || "",

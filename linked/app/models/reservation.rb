@@ -132,13 +132,16 @@ class Reservation < ActiveRecord::Base
     def validate_each(record, attribute, value)
       orders_count = record.product.daily_reserved_orders_count(record.used_at.to_date)
 
-      #old_record = Reservation.find(record.id)
-      #plus_value = if old_record.used_at == record.used_at
-                      #0
-                    #else
-                      #value.to_i
-                    #end
-      plus_value = value.to_i
+      if record.new_record?
+        plus_value = value.to_i
+      else
+        old_record = Reservation.find(record.id)
+        plus_value = if old_record.used_at == record.used_at
+                       0
+                     else
+                       value.to_i
+                     end
+      end
       
       if record.product.max_booking_count_per_oneday(record.resort).to_i < (orders_count + plus_value)
         record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])

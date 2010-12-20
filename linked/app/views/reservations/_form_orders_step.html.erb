@@ -6,6 +6,10 @@
 <% prefix = "reservation[orders_attributes][]" %>
 <% orders_errors = errors_about_orders(reservation.errors) %>
 
+
+<%= render "reservations/section_reservation_detail", :reservation => @reservation %>
+
+
 <% session[:reservation_params]["booking_number"].to_i.times do |i| %>
 
 <%= fields_for prefix, order do |order_form| %>

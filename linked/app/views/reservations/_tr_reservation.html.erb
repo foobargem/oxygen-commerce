@@ -1,7 +1,7 @@
 <% reservation = reservation %>
 <tr>
   <td class="subscriber_name"><%= reservation.subscriber_name %></td>
-  <td class="resort"><%= reservation.resort %></td>
+  <td class="resort"><%= display_resort_name(reservation.resort) %></td>
   <td class="used_at"><%= display_date(reservation.used_at) %></td>
   <td class="part_time"><%= reservation.part_time %></td>
   <td class="booking_number"><%= number_with_delimiter(reservation.booking_number) %></td>
