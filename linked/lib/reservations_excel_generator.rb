@@ -7,7 +7,7 @@ class ReservationsExcelGenerator
     tmpfile = Tempfile.new("reservations")
     @output_file_path = tmpfile.path
     @product = Product.find(product_id)
-    @reservations = @product.reservations.includes(:coupon)
+    @reservations = @product.reservations.includes(:coupon, :orders)
   end
 
   def export_to_xls
@@ -46,18 +46,20 @@ class ReservationsExcelGenerator
         row_index += 1
 
         reservations.each do |reservation|
-          sheet.row(row_index).replace [
-            reservation.user_name,
-            reservation.coupon.coupon_number,
-            reservation.resort,
-            reservation.used_at.to_date,
-            reservation.part_time,
-            SHOE_TYPE_OPTIONS[reservation.shoe_type] || "",
-            reservation.board_stance || "",
-            reservation.height,
-            reservation.shoe_size
-          ]
-          row_index += 1
+          reservation.orders.each do |order|
+            sheet.row(row_index).replace [
+              order.user_name,
+              reservation.coupon.coupon_number,
+              reservation.resort,
+              reservation.used_at.to_date,
+              reservation.part_time,
+              SHOE_TYPE_OPTIONS[order.shoe_type] || "",
+              order.board_stance || "",
+              order.height,
+              order.shoe_size
+            ]
+            row_index += 1
+          end
         end
 
         row_index += 2
