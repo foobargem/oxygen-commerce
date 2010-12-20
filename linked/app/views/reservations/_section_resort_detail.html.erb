@@ -1,0 +1,12 @@
+<% product = @product %>
+<div class="section">
+  <h4>스키장 정보</h4>
+  <div class="subsection">
+    <ul>
+      <% [[:name, "스키장"], [:rental_shop, "렌탈샵"],
+         [:phone, "연락처"], [:address, "주소"]].each do |k, display| %>
+        <li><%= display %>: <%= display_resort_info(product.resort, k) %>
+      <% end %>
+    </ul>
+  </div>
+</div>

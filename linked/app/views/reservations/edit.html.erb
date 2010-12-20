@@ -1,4 +1,4 @@
-<div class="container_1box">
+<div class="container_2box">
 
   <div class="container_header">
     <%= render "reservations/main_nav" %>
@@ -10,20 +10,29 @@
       <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
     </div>
 
+    <div class="nav_history">
+      <%= link_to "예약목록>", :reservations %>
+    </div>
 
     <div class="section">
+      <h3>예약 변경</h3>
       <%= semantic_form_for @reservation do |f| %>
-
-        <h3>예약 변경</h3>
 
         <%= render 'reservations/edit_form', :f => f , :reservation => @reservation, :coupon => @coupon %>
 
-        <%= f.submit "수정" %>
+        <%= f.buttons do %>
+          <%= f.submit "수정" %>
+          <%= link_to "취소", :reservations, :class => "careful" %>
+        <% end %>
 
       <% end %>
 
     </div>
 
   </div><!-- unit_content -->
+
+  <div class="unit_rail">
+    <%= render "share/section_contact" %>
+  </div>
 
 </div><!-- container_1box -->

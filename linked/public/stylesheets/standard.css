@@ -3003,8 +3003,33 @@ div.filters .right {
   display: inline;
   float: right; }
 
+dl.side_table_view {
+  padding: 5px; }
+  dl.side_table_view:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  dl.side_table_view {
+    display: inline-block; }
+  .IE dl.side_table_view {
+    height: 1%; }
+  dl.side_table_view {
+    display: block; }
+  dl.side_table_view dt, dl.side_table_view dd {
+    padding-top: 3px;
+    padding-bottom: 3px; }
+  dl.side_table_view dt {
+    display: inline;
+    float: left; }
+  dl.side_table_view dd {
+    padding-left: 60px;
+    color: #666666; }
+
 dl.table_view {
-  padding: 20px 40px; }
+  padding: 5px; }
   dl.table_view:after {
     content: ".";
     display: block;
@@ -3018,15 +3043,12 @@ dl.table_view {
     height: 1%; }
   dl.table_view {
     display: block; }
-  dl.table_view dt, dl.table_view dd {
-    padding-top: 3px;
-    padding-bottom: 3px; }
   dl.table_view dt {
     display: inline;
     float: left; }
   dl.table_view dd {
-    padding-left: 150px;
-    color: #666666; }
+    padding-left: 90px;
+    color: #333399; }
 
 .profile_form {
   padding: 15px 0 0 40px; }

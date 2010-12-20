@@ -16,6 +16,8 @@ module ApplicationHelper
     end
   end
 
+
+  # options of select
   def shoe_type_options_collection
     SHOE_TYPE_OPTIONS.map{ |k, v| [v, k] }
   end
@@ -26,6 +28,44 @@ module ApplicationHelper
 
   def part_time_options_collection
     PART_TIME_OPTIONS.map{ |k, v| [v, k] }
+  end
+
+  def ticket_type_options_collection
+    TICKET_TYPE_OPTIONS.map{ |k, v| [v, k] }
+  end
+
+  def resort_options_collection
+    RESORT_OPTIONS.map{ |k, v| [v, k] }
+  end
+
+  def resort_collection_by_ticket(product)
+    if product.free_type_ticket?
+      resort_options_collection
+    else
+      [RESORT_OPTIONS[product.resort]]
+    end
+  end
+
+  def display_resort(product)
+    if product.free_type_ticket?
+      RESORT_OPTIONS.values.join(",")
+    elsif RESORT_OPTIONS.has_key?(product.resort)
+      RESORT_OPTIONS[product.resort]
+    else
+      ""
+    end
+  end
+
+  def display_ticket_type(ticket_type)
+    if TICKET_TYPE_OPTIONS.has_key?(ticket_type)
+      TICKET_TYPE_OPTIONS[ticket_type]
+    else
+      ""
+    end
+  end
+
+  def display_resort_info(resort, key)
+    RESORTS[resort][key]
   end
 
 end

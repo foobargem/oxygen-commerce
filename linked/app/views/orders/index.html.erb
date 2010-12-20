@@ -8,42 +8,50 @@
 
     <div class="reservation_header">
       <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
-    </div>
-
-    <div class="reservation_header">
       <%= render "reservations/section_reservation_detail", :reservation => @reservation %>
     </div>
 
+    <div class="nav_history">
+      <%= link_to "예약목록>", :reservations %>
+    </div>
 
-    <table class="orders">
-      <thead>
-        <tr>
-          <th class="user_name">사용자명</th>
-          <th class="shoe_type">스키장</th>
-          <th class="board_stance">스탠스</th>
-          <th class="height">신장(cm)</th>
-          <th class="shoe_size">신발사이즈(mm)</th>
-          <th class="actions"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @orders.each do |order| %>
+    <div class="section">
+      <h4>예약내역</h4>
+
+      <table class="orders">
+        <thead>
           <tr>
-            <td class="user_name"><%= order.user_name %></td>
-            <td class="shoe_type"><%= display_shoe_type(order.shoe_type) %></td>
-            <td class="board_stance"><%= order.board_stance %></td>
-            <td class="height"><%= order.height %></td>
-            <td class="shoe_size"><%= order.shoe_size %></td>
-            <td class="actions">
-              <%= link_to "변경", edit_reservation_order_path(@reservation, order) %>
-            </td>
+            <th class="user_name">사용자명</th>
+            <th class="shoe_type">스키장</th>
+            <th class="board_stance">스탠스</th>
+            <th class="height">신장(cm)</th>
+            <th class="shoe_size">신발사이즈(mm)</th>
+            <th class="actions"></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+            <tr>
+              <td class="user_name"><%= order.user_name %></td>
+              <td class="shoe_type"><%= display_shoe_type(order.shoe_type) %></td>
+              <td class="board_stance"><%= order.board_stance %></td>
+              <td class="height"><%= order.height %></td>
+              <td class="shoe_size"><%= order.shoe_size %></td>
+              <td class="actions">
+                <%= link_to "변경", edit_reservation_order_path(@reservation, order) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
 
   </div><!-- unit_content -->
   <div class="unit_rail">
+
+    <%= render "reservations/section_resort_detail" %>
+
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

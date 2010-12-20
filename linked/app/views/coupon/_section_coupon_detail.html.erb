@@ -1,18 +1,36 @@
 <% coupon = coupon %>
 <% product = coupon.product %>
 
-<p>구매자: <%= coupon.purchaser_name %></p>
-<p>쿠폰번호: <%= coupon.coupon_number %></p>
-<p>
-  <% if product.free_type_ticket? %>
-    사용 횟수: <%= number_with_delimiter(coupon.orders_count) %>
-  <% else %>
-    구매수량: <%= number_with_delimiter(coupon.quantity) %>
-    (사용한 수량: <%= number_with_delimiter(coupon.orders_count) %>,
-    남은 수량: <%= number_with_delimiter(coupon.usable_quantity) %>)
-  <% end %>
-</p>
-<p>구매업체: <%= product.provider_name %></p>
-<p>이용권: <%= display_ticket_type(product.ticket_type) %></p>
-<p>스키장: <%= display_resort(product) %></p>
+<div class="section">
+  <h4>쿠폰정보</h4>
+  <dl class="section_coupon">
+    <dt>구매자:</dt>
+    <dd><%= coupon.purchaser_name %></dd>
 
+    <dt>쿠폰번호:</dt>
+    <dd><%= coupon.coupon_number %></dd>
+
+    <% if product.free_type_ticket? %>
+      <dt>사용 횟수:</dl>
+      <dd><%= number_with_delimiter(coupon.orders_count) %></dd>
+    <% else %>
+      <dt>구매수량:</dt>
+      <dd><%= number_with_delimiter(coupon.quantity) %></dd>
+
+      <dt>사용한 수량:</dt>
+      <dd><%= number_with_delimiter(coupon.orders_count) %></dd>
+
+      <dt>남은 수량:</dt>
+      <dd><%= number_with_delimiter(coupon.usable_quantity) %></dd>
+    <% end %>
+
+    <dt>판매업체:</dt>
+    <dd><%= product.provider_name %></dd>
+
+    <dt>이용권:</dt>
+    <dd><%= display_ticket_type(product.ticket_type) %></dd>
+    
+    <dt>스키장:</dt>
+    <dd><%= display_resort(product) %></dd>
+  </dl>
+</div>

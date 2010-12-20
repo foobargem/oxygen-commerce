@@ -7,7 +7,7 @@
 #  coupon_id       :integer(4)
 #  product_id      :integer(4)
 #  subscriber_name :string(255)
-#  booking_number  :integer(4)      default(0)
+#  booking_number  :integer(4)
 #  used_at         :datetime
 #  part_time       :string(255)
 #  resort          :string(255)

@@ -10,11 +10,15 @@
       <%= link_to "제약설정", [:admin, product, :constraints] %>
     </p>
   </td>
-  <td class="daily_reservations_limit"><%= number_with_delimiter(product.daily_reservations_limit) %></td>
+  <td class="daily_reservations_limit"><%= display_max_booking_limit_count(product) %></td>
   <td class="coupons"><%= link_to "쿠폰구매목록", [:admin, product, :coupons] %></td>
   <td class="reservations"><%= link_to "예약목록", [:admin, product, :reservations] %></td>
   <td class="actions">
-    <%= link_to "edit", edit_admin_product_path(product) %>
-    <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "careful" %>
+    <span class="button">
+      <%= link_to "edit", edit_admin_product_path(product) %>
+    </span>
+    <span class="button">
+      <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "destroy" %>
+    </span>
   </td>
 </tr>

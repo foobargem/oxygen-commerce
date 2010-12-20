@@ -8,13 +8,16 @@
 
     <div class="reservation_header">
       <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
-    </div>
-
-    <div class="reservation_header">
       <%= render "reservations/section_reservation_detail", :reservation => @reservation %>
+    </div> 
+    <div class="nav_history">
+      <%= link_to "예약목록>", :reservations %>
+      <%= link_to "예약내역>", [@reservation, :orders] %>
     </div>
 
     <div class="section">
+      <h3>예약내역 변경</h3>
+
       <%= semantic_form_for [@reservation, @order] do |f| %>
         <%= f.inputs do %>
           <%= f.input :user_name, :as => :string, :label => "사용자명", :input_html => { :size => 10 } %>
@@ -26,6 +29,7 @@
 
         <%= f.buttons do %>
           <%= f.submit "수정" %>
+          <%= link_to "취소", [@reservation, :orders], :class => "careful" %>
         <% end %>
       <% end %>
     </div>
@@ -33,6 +37,8 @@
   </div><!-- unit_content -->
 
   <div class="unit_rail">
+    <%= render "share/section_contact" %>
+    <%= render "reservations/section_resort_detail" %>
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

@@ -38,6 +38,9 @@ Linked::Application.routes.draw do
 
     resources :products do
       member do
+        get "edit_booking_constraints"
+        put "update_booking_constraints"
+
         get 'new_coupons'
         put 'create_coupons'
         get 'add_coupon_fields'

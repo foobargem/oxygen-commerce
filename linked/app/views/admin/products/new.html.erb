@@ -13,7 +13,7 @@
     <div class="section">
       <%= semantic_form_for [:admin, @product] do |f| %>
 
-        <%= render 'admin/products/form', :f => f %>
+        <%= render "admin/products/form", :f => f %>
 
         <%= f.buttons do %>
           <%= f.submit "등록" %>

@@ -528,3 +528,54 @@ table.orders {
     text-align: center; }
   table.orders td.actions {
     text-align: center; }
+
+dl.section_coupon {
+  padding: 5px;
+  border: 2px solid #dddddd; }
+  dl.section_coupon:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  dl.section_coupon {
+    display: inline-block; }
+  .IE dl.section_coupon {
+    height: 1%; }
+  dl.section_coupon {
+    display: block; }
+  dl.section_coupon dt, dl.section_coupon dd {
+    padding: 1px; }
+  dl.section_coupon dt {
+    display: inline;
+    float: left; }
+  dl.section_coupon dd {
+    padding-left: 100px;
+    color: #222222; }
+
+dl.section_reservation {
+  padding: 5px;
+  border: 2px solid #dddddd; }
+  dl.section_reservation:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  dl.section_reservation {
+    display: inline-block; }
+  .IE dl.section_reservation {
+    height: 1%; }
+  dl.section_reservation {
+    display: block; }
+  dl.section_reservation dt, dl.section_reservation dd {
+    padding: 1px; }
+  dl.section_reservation dt {
+    display: inline;
+    float: left;
+    color: #113399; }
+  dl.section_reservation dd {
+    padding-left: 100px;
+    color: #111111; }

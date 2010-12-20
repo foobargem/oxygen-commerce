@@ -10,27 +10,34 @@
       <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
     </div>
 
-    <table class="reservations">
-      <thead>
-        <tr>
-          <th class="subscriber_name">사용자명</th>
-          <th class="resort">스키장</th>
-          <th class="used_at">이용일</th>
-          <th class="part_time">시간대</th>
-          <th class="booking_number">예약인원</th>
-          <th class="orders">예약내역</th>
-          <th class="actions"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @reservations.each do |reservation| %>
-          <%= render 'reservations/tr_reservation', :reservation => reservation %>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="section">
+      <h3>예약목록</h3>
+
+      <table class="reservations">
+        <thead>
+          <tr>
+            <th class="subscriber_name">예약자명</th>
+            <th class="resort">스키장</th>
+            <th class="used_at">이용일</th>
+            <th class="part_time">시간대</th>
+            <th class="booking_number">예약인원</th>
+            <th class="orders">예약내역</th>
+            <th class="actions"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @reservations.each do |reservation| %>
+            <%= render 'reservations/tr_reservation', :reservation => reservation %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
 
   </div><!-- unit_content -->
   <div class="unit_rail">
+
+    <%= render "share/section_contact" %>
+
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

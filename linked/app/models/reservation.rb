@@ -7,7 +7,7 @@
 #  coupon_id       :integer(4)
 #  product_id      :integer(4)
 #  subscriber_name :string(255)
-#  booking_number  :integer(4)      default(0)
+#  booking_number  :integer(4)
 #  used_at         :datetime
 #  part_time       :string(255)
 #  resort          :string(255)
@@ -27,6 +27,10 @@ class Reservation < ActiveRecord::Base
                         :used_at, :part_time, :resort
 
   validates_numericality_of :booking_number
+
+
+  #attr_accessor :orders_count
+  #validates_presence_of :orders_count, :if => :last_step?
 
 
   attr_writer :current_step
@@ -100,10 +104,10 @@ class Reservation < ActiveRecord::Base
     def validate_each(record, attribute, value)
       unless record.product.free_type_ticket?
         if record.coupon.quantity.to_i < record.coupon.orders_count.to_i + 1
-          record.errors[attribute] << "Quantity exceeded"
+          record.errors[attribute] << I18n.t(:quantity_exceeded, :scope => [:activerecord, :errors, :messages])
         end
         if record.coupon.usable_quantity < value.to_i
-          record.errors[attribute] << "Quantity exceeded"
+          record.errors[attribute] << I18n.t(:quantity_exceeded, :scope => [:activerecord, :errors, :messages])
         end
       end
     end
@@ -116,10 +120,10 @@ class Reservation < ActiveRecord::Base
     def validate_each(record, attribute, value)
       unavailabled_dates = record.product.product_constraints.map{ |pc| pc.unavailabled_at.to_date }
       if unavailabled_dates.include?(value.to_date)
-        record.errors[attribute] << "Unavailabled. Please select another day."
+        record.errors[attribute] << I18n.t(:unavailabled, :scope => [:activerecord, :errors, :messages])
       end
       unless record.reservable_date?
-        record.errors[attribute] << "Unreservabled. Please select another day."
+        record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])
       end
     end
   end
@@ -130,8 +134,9 @@ class Reservation < ActiveRecord::Base
   class DailyOrdersLimitValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
       orders_count = record.product.daily_reserved_orders_count(record.used_at.to_date)
-      if record.product.daily_reservations_limit.to_i < (orders_count + value.to_i)
-        record.errors[attribute] << "Exceeded daily order limit."
+      
+      if record.product.max_booking_count_per_oneday(record.product.resort).to_i < (orders_count + value.to_i)
+        record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])
       end
     end
   end

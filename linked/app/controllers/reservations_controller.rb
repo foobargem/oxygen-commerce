@@ -26,9 +26,12 @@ class ReservationsController < ApplicationController
         @reservation.next_step
         session[:reservation_step] = @reservation.current_step
       end
-      render "new" and return
+      render "new"
     elsif @reservation.last_step?
-      if @reservation.valid?
+
+      if params[:reservation][:orders_attributes].nil? || params[:reservation][:orders_attributes].size < 1
+        render "new"
+      elsif @reservation.valid?
         @reservation.save
         redirect_to :reservations
       else

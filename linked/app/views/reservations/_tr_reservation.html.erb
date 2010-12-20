@@ -9,7 +9,7 @@
   <td class="actions">
     <% if reservation.editable? %>
       <%= link_to "변경", edit_reservation_path(reservation) %>
-      <%= link_to "예약취소", reservation, :method => :delete, :confirm => "정말 취소하시겠습니까?", :class => "careful" %>
+      <%= link_to "취소", reservation, :method => :delete, :confirm => "정말 취소하시겠습니까?", :class => "careful" %>
     <% else %>
       예약변경 불가
     <% end %>

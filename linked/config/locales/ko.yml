@@ -146,7 +146,14 @@ ko:
         file_size: "파일사이즈가 너무 큽니다"
         file_content_type: "지원하지 않는 형식입니다"
         file_presence: "파일을 선택해주세요"
+        unavailabled: "예약 하실수 없는 날짜입니다. 다른 날짜를 선택해 주세요."
+        unreservabled: "1일 예약인원 초과입니다. 인원수를 조정하시거나 다른 날짜를 선택해 주세요."
+        quantity_exceeded: "사용가능 수량을 초과했습니다. 인원수를 조정해주세요."
 
-
+  orders:
+    user_name: "사용자명"
+    height: "신장"
+    shoe_size: "신발사이즈"
+    shoe_type: "장비구분"
 
 

@@ -15,12 +15,16 @@ TICKET_TYPE_OPTIONS = {
   "free" => "자유권"
 }
 
-RESORT_OPTIONS = %w{
-  하이원 용평 보광 대명 성우 지산
+RESORT_OPTIONS = {
+  "highone" => "하이원",
+  "yongpyong" => "용평",
+  "bokwang" => "보광 휘닉스",
+  "daemyung" => "대명 비발디",
+  "sungwoo" => "현대 성우",
+  "jisan" => "지산"
 }
 
 BOARD_STANCE_OPTIONS = %w{
   레귤러(Regular)
   구피(Goofy)
 }
-

@@ -18,7 +18,8 @@ module ReservationsHelper
 
   def errors_about_orders(errors)
     errors.select do |key, values|
-      { key => values } if key.to_s[0..5] == "orders"
+      k = key.to_s.split('.').last.to_sym
+      { k => values } if key.to_s[0..5] == "orders"
     end
   end
 

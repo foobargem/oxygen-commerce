@@ -6,20 +6,6 @@
 <% prefix = "reservation[orders_attributes][]" %>
 <% orders_errors = errors_about_orders(reservation.errors) %>
 
-<% if orders_errors %>
-  <div class="errors">
-    <% orders_errors.each do |field, messages| %>
-      <p><%= field %>:
-        <% messages.each do |msg| %>
-          <%= msg %>
-        <% end %>
-      </p>
-    <% end %>
-  </div>
-<% end %>
-
-
-
 <% session[:reservation_params]["booking_number"].to_i.times do |i| %>
 
 <%= fields_for prefix, order do |order_form| %>
@@ -56,4 +42,19 @@
 
 <%= f.hidden_field :product_id, :value => product.id %>
 
+
+<% if orders_errors %>
+  <ul class="errors">
+    <% orders_errors.each do |field, messages| %>
+      <% unless field.to_s == "orders_count" %>
+        <% messages.each do |msg| %>
+          <li><%= I18n.t(field) %>은 <%= msg %></li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+
 <%= f.submit "예약" %>
+<%= link_to "취소", :reservations, :class => "careful" %>

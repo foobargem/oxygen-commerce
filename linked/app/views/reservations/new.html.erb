@@ -19,7 +19,7 @@
         <h3>쿠폰을 모두 사용하셨습니다.</h3>
         <p><strong>02) 2278 - 6633 으로 문의해주세요.</strong></p>
       <% else %>
-        <h3>예약</h3>
+        <h3>예약하기</h3>
         <%= semantic_form_for @reservation do |f| %>
 
           <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
@@ -31,6 +31,7 @@
   </div><!-- unit_content -->
 
   <div class="unit_rail">
+    <%= render "share/section_contact" %>
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

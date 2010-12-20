@@ -5,6 +5,7 @@ ko:
       already_confirmed: "이미 확인되셨습니다."
       not_locked: "was not locked"
 
+
   devise:
     failure:
       unauthenticated: 'You need to sign in or sign up before continuing.'

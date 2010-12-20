@@ -48,6 +48,31 @@ class Admin::ProductsController < ApplicationController
     redirect_to admin_products_path
   end
 
+  def edit_booking_constraints
+    @product = Product.find(params[:id])
+  end
+
+  def update_booking_constraints
+    @product = Product.find(params[:id])
+
+    consts = {}
+    if @product.free_type_ticket?
+      RESORT_OPTIONS.keys.each_with_index do |k, i|
+        consts.store(:"#{k}", params[:product][:constraints_max_booking_counts][i].to_i)
+      end
+    else
+      consts.store(:"#{@product.resort}", params[:product][:constraints_max_booking_counts].to_i)
+    end
+
+    if @product.update_attribute(:constraints_max_booking_counts, consts)
+      redirect_to [:admin, :products]
+    else
+      render :edit_booking_constraints
+    end
+  end
+
+
+
 
   def new_coupons
     flash[:error_message] = nil

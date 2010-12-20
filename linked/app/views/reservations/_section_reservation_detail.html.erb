@@ -1,8 +1,22 @@
 <% reservation = reservation %>
 
-<p>예약자: <%= reservation.subscriber_name %></p>
-<p>예약인원: <%= number_with_delimiter(reservation.booking_number) %></p>
-<p>사용일: <%= display_date(reservation.used_at) %></p>
-<p>시간대: <%= reservation.part_time %></p>
-<p>스키장: <%= reservation.resort %></p>
+<div class="section">
+  <h4>예약정보</h4>
+  <dl class="section_reservation">
+    <dt>예약자:</dt>
+    <dd><%= reservation.subscriber_name %></dd>
 
+    <dt>예약인원:</dt>
+    <dd><%= number_with_delimiter(reservation.booking_number) %></dd>
+
+    <dt>사용일:</dt>
+    <dd><%= display_date(reservation.used_at) %></dd>
+
+    <dt>시간대:</dt>
+    <dd><%= reservation.part_time %></dd>
+
+    <dt>스키장:</dt>
+    <dd><%= reservation.resort %></dd>
+
+  </dl>
+</div>
