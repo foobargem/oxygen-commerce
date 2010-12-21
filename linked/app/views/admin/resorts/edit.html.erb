@@ -1,0 +1,29 @@
+<div class="container_1box">
+
+  <div class="container_header">
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="section">
+      <h3>스키장 정보 수정</h3>
+
+      <dl class="table_view">
+        <dt>스키장:</dt>
+        <dd><%= @resort.display_name %></dd>
+      </dl>
+
+      <%= semantic_form_for [:admin, @resort] do |f| %>
+
+        <%= f.inputs do %>
+          <%= f.input :oneday_booking_limit_count, :as => :string, :label => "1일 예약가능 인원", :input_html => { :size => 5 } %>
+        <% end %>
+
+        <%= f.buttons do %>
+          <%= f.submit "수정" %>
+          <%= link_to "취소", [:admin, :resorts], :class => "careful" %>
+        <% end %>
+
+      <% end %>
+    </div>
+

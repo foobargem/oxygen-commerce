@@ -1,0 +1,37 @@
+<div class="container_1box">
+
+  <div class="container_header">
+  </div><!-- container_header -->
+
+  <div class="unit_content">
+
+    <div class="section">
+      <h3>스키장별 1일 예약인원</h3>
+
+      <table class="resorts">
+        <thead>
+          <tr>
+            <th class="display_name">스키장</th>
+            <th class="oneday_booking_limit_count">예약가능 인원</th>
+            <th class="actions"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @resorts.each do |resort| %>
+            <tr>
+              <td class="display_name"><%= resort.display_name %></td>
+              <td class="oneday_booking_limit_count"><%= number_with_delimiter(resort.oneday_booking_limit_count) %></td>
+              <td class="actions">
+                <span class="button">
+                  <%= link_to "편집", edit_admin_resort_path(resort) %>
+                </span>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
