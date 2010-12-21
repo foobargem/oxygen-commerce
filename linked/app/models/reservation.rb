@@ -127,6 +127,31 @@ class Reservation < ActiveRecord::Base
   validates :used_at, :unavailable_date => true, :unless => :used_at_is_nil?
 
 
+  class OnedayReservableValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      unless record.coupon.today_reservable? 
+        record.errors[attribute] << I18n.t(:oneday_reservable_limit_exceeded, :scope => [:activerecord, :errors, :messages])
+      end
+    end
+  end
+
+  class ContinuousReservationValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      if record.coupon.continuous_reservation?
+        record.errors[attribute] << I18n.t(:continuous_reservation, :scope => [:activerecord, :errors, :messages])
+      end
+    end
+  end
+
+  validates :used_at, :oneday_reservable => true,
+                      :continuous_reservation => true,
+                      :if => :free_ticket_and_new_record?
+
+
+  def free_ticket_and_new_record?
+    self.product.free_type_ticket? && self.new_record?
+  end
+
 
   class DailyOrdersLimitValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
@@ -148,10 +173,6 @@ class Reservation < ActiveRecord::Base
 
       if resort.oneday_booking_limit_count.to_i < (orders_count + plus_value)
         record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])
-      end
-
-      if record.product.free_type_ticket?
-
       end
     end
   end

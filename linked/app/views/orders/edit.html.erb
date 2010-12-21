@@ -6,13 +6,12 @@
 
   <div class="unit_content">
 
-    <div class="reservation_header">
-      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
+    <div class="section">
       <%= render "reservations/section_reservation_detail", :reservation => @reservation %>
     </div> 
     <div class="nav_history">
       <%= link_to "예약목록>", :reservations %>
-      <%= link_to "예약내역>", [@reservation, :orders] %>
+      <%= link_to "장비 신청내역>", [@reservation, :orders] %>
     </div>
 
     <div class="section">
@@ -37,8 +36,9 @@
   </div><!-- unit_content -->
 
   <div class="unit_rail">
-    <%= render "share/section_contact" %>
+    <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
     <%= render "reservations/section_resort_detail" %>
+    <%= render "share/section_contact" %>
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

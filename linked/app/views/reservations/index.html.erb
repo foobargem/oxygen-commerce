@@ -6,10 +6,6 @@
 
   <div class="unit_content">
 
-    <div class="reservation_header">
-      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
-    </div>
-
     <div class="section">
       <h3>예약목록</h3>
 
@@ -21,7 +17,7 @@
             <th class="used_at">이용일</th>
             <th class="part_time">시간대</th>
             <th class="booking_number">예약인원</th>
-            <th class="orders">예약내역</th>
+            <th class="created_at">예약일</th>
             <th class="actions"></th>
           </tr>
         </thead>
@@ -35,9 +31,8 @@
 
   </div><!-- unit_content -->
   <div class="unit_rail">
-
+    <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
     <%= render "share/section_contact" %>
-
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->

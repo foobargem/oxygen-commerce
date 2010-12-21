@@ -722,25 +722,25 @@ table.reservations_with_orders {
   table.reservations_with_orders tbody td.actions a {
     padding: 0 2px; }
   table.reservations_with_orders th.subscriber_name {
-    width: 90px; }
+    width: 80px; }
   table.reservations_with_orders th.resort {
-    width: 90px; }
+    width: 70px; }
   table.reservations_with_orders th.used_at {
-    width: 100px; }
+    width: 90px; }
   table.reservations_with_orders th.part_time {
-    width: 90px; }
+    width: 80px; }
   table.reservations_with_orders th.user_name {
-    width: 90px; }
+    width: 80px; }
   table.reservations_with_orders th.shoe_type {
-    width: 90px; }
+    width: 80px; }
   table.reservations_with_orders th.board_stance {
-    width: 100px; }
+    width: 90px; }
   table.reservations_with_orders th.height {
     width: 80px; }
   table.reservations_with_orders th.shoe_size {
     width: 80px; }
   table.reservations_with_orders th.actions {
-    width: 90px; }
+    width: 120px; }
   table.reservations_with_orders td.subscriber_name {
     text-align: center; }
   table.reservations_with_orders td.coupon_number {

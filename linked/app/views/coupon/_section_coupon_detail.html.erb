@@ -4,30 +4,30 @@
 <div class="section">
   <h4>쿠폰정보</h4>
   <dl class="section_coupon">
-    <dt>구매자:</dt>
+    <dt>구매자</dt>
     <dd><%= coupon.purchaser_name %></dd>
 
-    <dt>쿠폰번호:</dt>
+    <dt>쿠폰번호</dt>
     <dd><%= coupon.coupon_number %></dd>
 
     <% if product.free_type_ticket? %>
-      <dt>사용 횟수:</dt>
+      <dt>사용 횟수</dt>
       <dd><%= number_with_delimiter(coupon.orders_count) %></dd>
     <% else %>
-      <dt>구매수량:</dt>
+      <dt>구매수량</dt>
       <dd><%= number_with_delimiter(coupon.quantity) %></dd>
 
-      <dt>사용한 수량:</dt>
+      <dt>사용한 수량</dt>
       <dd><%= number_with_delimiter(coupon.orders_count) %></dd>
 
-      <dt>남은 수량:</dt>
+      <dt>남은 수량</dt>
       <dd><%= number_with_delimiter(coupon.usable_quantity) %></dd>
     <% end %>
 
-    <dt>판매업체:</dt>
+    <dt>판매업체</dt>
     <dd><%= product.provider_name %></dd>
 
-    <dt>스키장:</dt>
+    <dt>스키장</dt>
     <dd><%= display_resort(product) %></dd>
   </dl>
 </div>

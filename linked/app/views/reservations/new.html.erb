@@ -6,18 +6,17 @@
 
   <div class="unit_content">
 
-    <div class="reservation_header">
-      <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
-    </div>
-
-
     <div class="section">
       <% if @coupon.locked? %>
         <h3>쿠폰 사용이 정지 되었습니다.</h3>
-        <p><strong>02) 2278 - 6633 으로 문의해주세요.</strong></p>
+        <p>문의: 02) 2278 - 663k</p>
       <% elsif !@coupon.reservable? %>
         <h3>쿠폰을 모두 사용하셨습니다.</h3>
-        <p><strong>02) 2278 - 6633 으로 문의해주세요.</strong></p>
+        <p>문의: 02) 2278 - 663k</p>
+      <% elsif !@coupon.today_reservable? %>
+        <h3>오늘 사용가능한 쿠폰이 없습니다.</h3>
+        <p>다른 날 예약하실 수 있습니다.</p>
+        <p>문의: 02) 2278 - 663k</p>
       <% else %>
         <h3>예약하기</h3>
         <%= semantic_form_for @reservation do |f| %>
@@ -36,6 +35,7 @@
   </div><!-- unit_content -->
 
   <div class="unit_rail">
+    <%= render "coupon/section_coupon_detail", :coupon => @coupon %>
     <%= render "share/section_contact" %>
   </div><!-- unit_rail -->
 

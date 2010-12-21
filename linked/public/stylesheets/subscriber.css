@@ -113,17 +113,17 @@ table.reservations {
   table.reservations tbody td.actions a {
     padding: 0 2px; }
   table.reservations th.subscriber_name {
-    width: 100px; }
+    width: 90px; }
   table.reservations th.resort {
     width: 90px; }
   table.reservations th.used_at {
-    width: 100px; }
+    width: 90px; }
   table.reservations th.part_time {
-    width: 90px; }
-  table.reservations th.booking_number {
     width: 80px; }
-  table.reservations th.orders {
-    width: 90px; }
+  table.reservations th.booking_number {
+    width: 60px; }
+  table.reservations th.created_at {
+    width: 100px; }
   table.reservations td.subscriber_name {
     text-align: center; }
   table.reservations td.resort {
@@ -134,7 +134,7 @@ table.reservations {
     text-align: center; }
   table.reservations td.booking_number {
     text-align: center; }
-  table.reservations td.orders {
+  table.reservations td.created_at {
     text-align: center; }
   table.reservations td.actions {
     text-align: center; }
@@ -551,7 +551,7 @@ dl.section_coupon {
     display: inline;
     float: left; }
   dl.section_coupon dd {
-    padding-left: 100px;
+    padding-left: 70px;
     color: #222222; }
 
 dl.section_reservation {
