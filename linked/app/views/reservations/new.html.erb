@@ -22,7 +22,12 @@
         <h3>예약하기</h3>
         <%= semantic_form_for @reservation do |f| %>
 
-          <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
+          <% if @product.free_type_ticket? %>
+            <%= render "reservations/form_freeticket_#{@reservation.current_step}_step",
+                :product => @product, :coupon => @coupon, :reservation => @reservation, :orders => @orders, :f => f %>
+          <% else %>
+            <%= render "reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
+          <% end %>
 
         <% end %>
       <% end %>

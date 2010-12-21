@@ -149,9 +149,15 @@ class Reservation < ActiveRecord::Base
       if resort.oneday_booking_limit_count.to_i < (orders_count + plus_value)
         record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])
       end
+
+      if record.product.free_type_ticket?
+
+      end
     end
   end
   validates :booking_number, :daily_orders_limit => true, :if => :booking_number_validatable?
+
+
 
 
   def used_at_is_nil?

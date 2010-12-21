@@ -1,12 +1,12 @@
 <% reservation = @reservation %>
 <div class="section">
-  <h4>스키장 정보</h4>
-  <div class="subsection">
-    <ul>
-      <% [[:name, "스키장"], [:rental_shop, "렌탈샵"],
-         [:phone, "연락처"], [:address, "주소"]].each do |k, display| %>
-        <li><%= display %>: <%= display_resort_info(reservation.resort, k) %>
-      <% end %>
-    </ul>
-  </div>
+  <h3>렌탈샵 정보</h3>
+
+  <dl class="section_resort">
+    <% [[:name, "스키장"], [:rental_shop, "렌탈샵"],
+       [:phone, "연락처"], [:address, "주소"]].each do |k, display| %>
+      <dt><%= display %></dt>
+      <dd><%= display_resort_info(reservation.resort, k) %></dd>
+    <% end %>
+  </dl>
 </div>

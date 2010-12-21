@@ -4,7 +4,12 @@
 <% f = f %>
 
 <%= f.inputs do %>
-  <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :value => coupon.purchaser_name } %>
+  <% if product.free_type_ticket? %>
+    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :readonly => true, :value => coupon.purchaser_name } %>
+  <% else %>
+    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :value => coupon.purchaser_name } %>
+  <% end %>
+
   <li class="string required" id="reservation_used_at_input">
     <label for="reservation_used_at">이용일<abbr title="required">*</abbr></label>
     <%= f.calendar_date_select :used_at, :time => false, :valid_date_check => date_validates, :size => 14 %>
@@ -12,5 +17,11 @@
   </li>
   <%= f.input :part_time, :as => :select, :collection => part_time_options_collection, :include_blank => false, :label => "시간대" %>
   <%= f.input :resort, :as => :select, :collection => resort_collection_by_ticket(@product), :label => "스키장" %>
-  <%= f.input :booking_number, :as => :string, :label => "예약인원", :input_html => { :size => 5 } %>
+
+  <% if product.free_type_ticket? %>
+    <%= f.input :booking_number, :as => :string, :label => "예약인원", :input_html => { :readonly => true, :size => 5 } %>
+  <% else %>
+    <%= f.input :booking_number, :as => :string, :label => "예약인원", :input_html => { :size => 5 } %>
+  <% end %>
+
 <% end %>

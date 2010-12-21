@@ -579,3 +579,28 @@ dl.section_reservation {
   dl.section_reservation dd {
     padding-left: 100px;
     color: #111111; }
+
+dl.section_resort {
+  padding: 5px;
+  border: 2px solid #dddddd; }
+  dl.section_resort:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  dl.section_resort {
+    display: inline-block; }
+  .IE dl.section_resort {
+    height: 1%; }
+  dl.section_resort {
+    display: block; }
+  dl.section_resort dt, dl.section_resort dd {
+    padding: 1px; }
+  dl.section_resort dt {
+    display: inline;
+    float: left; }
+  dl.section_resort dd {
+    padding-left: 60px;
+    color: #222222; }
