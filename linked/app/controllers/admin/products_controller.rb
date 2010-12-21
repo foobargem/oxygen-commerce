@@ -133,10 +133,10 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     excel_file = params[:excel_file]
     unless excel_file.nil?
-      src_filename = "#{excel_file.tempfile.path}.xls"
+      src_filename = "#{excel_file.tempfile.path}.xlsx"
       File.rename(excel_file.tempfile.path, src_filename)
 
-      excel = Excel.new(src_filename)
+      excel = Excelx.new(src_filename)
       rows = (2..excel.last_row).to_a
 
       respond_to_parent do
@@ -148,14 +148,14 @@ class Admin::ProductsController < ApplicationController
 
             coupon = Coupon.new(
               :coupon_number => excel.cell(row_no, 1),
-              :quantity => excel.cell(row_no, 2).to_i,
-              :purchaser_name => excel.cell(row_no, 3),
+              :quantity => excel.cell(row_no, 2),
+              :purchaser_name => excel.cell(row_no, 3).force_encoding("utf-8"),
               :phone_number => excel.cell(row_no, 4),
-              :agency_name => excel.cell(row_no, 5)
+              :agency_name => excel.cell(row_no, 5).force_encoding("utf-8")
             )
 
             page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",
-                              :locals => { :product => @product, :coupon => coupon }
+                             :locals => { :product => @product, :coupon => coupon }
           end
         end 
       end
