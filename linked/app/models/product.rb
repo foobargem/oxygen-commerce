@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101218012805
+# Schema version: 20101221054709
 #
 # Table name: products
 #
@@ -47,36 +47,6 @@ class Product < ActiveRecord::Base
       count += r.orders.count
     end
     count
-  end
-
-
-
-  serialize :constraints
-
-  ["max_booking_counts"].each do |m|
-    method_name = "constraints_#{m}"
-    method_declaration = <<-EOF
-      def #{method_name}
-        self.constraints ||= {}
-        self.constraints[:#{m}]
-      end
-      def #{method_name}=(value)
-        self.constraints ||= {}
-        self.constraints[:#{m}] = value
-      end
-    EOF
-    eval method_declaration
-  end
-
-
-  def max_booking_count_per_oneday(resort = nil)
-    if self.constraints
-      unless resort.nil?
-        self.constraints[:max_booking_counts][:"#{resort}"]
-      else
-        self.constraints[:max_booking_counts][:"#{self.resort}"]
-      end
-    end
   end
 
 end

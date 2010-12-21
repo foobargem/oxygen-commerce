@@ -764,6 +764,40 @@ table.reservations_with_orders {
   table.reservations_with_orders td.actions {
     text-align: center; }
 
+table.resorts {
+  margin-bottom: 20px;
+  width: 100%;
+  width: 300px; }
+  table.resorts thead tr {
+    background: #dddddd; }
+    table.resorts thead tr th {
+      background: #dddddd;
+      font-size: 0.95em;
+      border: 1px solid #aaaaaa;
+      padding: 3px 3px;
+      vertical-align: middle;
+      text-align: center; }
+  table.resorts tbody tr td {
+    font-size: 0.95em;
+    border: 1px solid #aaaaaa;
+    padding: 4px 3px; }
+  table.resorts tbody tr.total, table.resorts tbody tr.average {
+    background: #ddeeff; }
+    table.resorts tbody tr.total td, table.resorts tbody tr.average td {
+      background: #ddeeff; }
+  table.resorts tbody td.actions a {
+    padding: 0 2px; }
+  table.resorts th.display_name {
+    width: 120px; }
+  table.resorts th.oneday_booking_limit_count {
+    width: 100px; }
+  table.resorts td.display_name {
+    text-align: center; }
+  table.resorts td.oneday_booking_limit_count {
+    text-align: center; }
+  table.resorts td.actions {
+    text-align: center; }
+
 table.not_reviewed {
   margin-bottom: 20px;
   width: 100%; }

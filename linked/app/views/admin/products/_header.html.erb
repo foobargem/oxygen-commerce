@@ -9,9 +9,6 @@
   <ul class="main_tab_nav">
     <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("edit"),
       (link_to "상품수정", edit_admin_product_path(@product), :class => "") %>
-    <%= navigation_tag :li, current_controller?(["admin/products"]) && current_action?("edit_booking_constraints"),
-      (link_to "예약 가능인원 설정", edit_booking_constraints_admin_product_path(@product), :class => "") %>
-
     <%= navigation_tag :li, current_controller?(["admin/constraints"]) && current_action?("index"),
       (link_to "예약 불가능일 설정", [:admin, @product, :constraints], :class => "") %>
     <%= navigation_tag :li, current_controller?(["admin/coupons"]) && current_action?("index"),

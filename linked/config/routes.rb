@@ -66,6 +66,8 @@ Linked::Application.routes.draw do
       end
       resources :orders
     end
+
+    resources :resorts
   end
 
 

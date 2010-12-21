@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101218012805
+# Schema version: 20101221054709
 #
 # Table name: reservations
 #
@@ -143,16 +143,23 @@ class Reservation < ActiveRecord::Base
                      end
       end
       
-      if record.product.max_booking_count_per_oneday(record.resort).to_i < (orders_count + plus_value)
+      p "##{record.resort}"
+      resort = Resort.find_by_name(record.resort)
+
+      if resort.oneday_booking_limit_count.to_i < (orders_count + plus_value)
         record.errors[attribute] << I18n.t(:unreservabled, :scope => [:activerecord, :errors, :messages])
       end
     end
   end
-  validates :booking_number, :daily_orders_limit => true, :unless => :used_at_is_nil?
+  validates :booking_number, :daily_orders_limit => true, :if => :booking_number_validatable?
 
 
   def used_at_is_nil?
     self.used_at.nil?
+  end
+
+  def booking_number_validatable?
+    !self.used_at.blank? && !self.resort.blank?
   end
 
 end
