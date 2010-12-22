@@ -41,7 +41,9 @@
               <td class="height"><%= order.height %></td>
               <td class="shoe_size"><%= order.shoe_size %></td>
               <td class="actions">
-                <%= link_to "변경", edit_reservation_order_path(@reservation, order) %>
+                <% if @reservation.editable? %>
+                  <%= link_to "변경", edit_reservation_order_path(@reservation, order) %>
+                <% end %>
               </td>
             </tr>
           <% end %>

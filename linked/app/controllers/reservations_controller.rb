@@ -43,11 +43,13 @@ class ReservationsController < ApplicationController
   def edit
     @reservation = Reservation.find(params[:id])
     editable_checking
+    coupon_permission_checking!
   end
   
   def update
     @reservation = Reservation.find(params[:id])
     editable_checking
+    coupon_permission_checking!
     if @reservation.update_attributes(params[:reservation])
       redirect_to :reservations
     else
@@ -58,6 +60,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     editable_checking
+    coupon_permission_checking!
     @reservation.destroy
     redirect_to :reservations
   end
@@ -84,6 +87,12 @@ class ReservationsController < ApplicationController
   
     def editable_checking
       unless @reservation.editable?
+        redirect_to :reservations
+      end
+    end
+ 
+    def coupon_permission_checking!
+      if current_user.id != @reservation.coupon.id
         redirect_to :reservations
       end
     end
