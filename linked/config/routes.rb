@@ -58,7 +58,7 @@ Linked::Application.routes.draw do
         get 'remove_coupon_fields'
         get 'new_coupons_from_import'
         get 'new_import'
-        put 'import_from_excel_file'
+        post 'import_from_excel_file'
 
         #get 'new_constraints'
       end

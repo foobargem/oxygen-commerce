@@ -142,7 +142,6 @@ class Admin::ProductsController < ApplicationController
       respond_to_parent do
         render :update do |page|
 
-
           (2..excel.last_row).to_a.each do |row_no|
             session[:current_tr_count] += 1
 
