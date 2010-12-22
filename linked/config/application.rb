@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+require File.expand_path("../../lib/patches/rack_params_utf8", __FILE__)
+require File.expand_path("../../lib/patches/rack_multipart_utf8", __FILE__)
+
 module Linked
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
