@@ -21,9 +21,8 @@
         <label for="order_shoe_type">장비구분<abbr title="required">*</abbr></label>
         <%= order_form.select :shoe_type, options_for_select(SHOE_TYPE_OPTIONS.map{ |k,v| [v,k] }), :name => "reservation[orders_attributes][][shoe_type]" %>
       </li>
-      <li class="select">
-        <label for="order_board_stance">스탠스</label>
-        <%= order_form.select :board_stance, options_for_select(BOARD_STANCE_OPTIONS), :include_blank => true, :name => "reservation[orders_attributes][][board_stance]" %>
+      <li id="shoe_options_0" class="select required">
+        <%= render "reservations/select_shoe_options", :shoe_options => SKI_OPTIONS %>
       </li>
       <li class="string required">
         <label for="order_height">신장<abbr title="required">*</abbr></label>
@@ -66,3 +65,4 @@
 
 <%= f.submit "예약" %>
 <%= link_to "취소", :reservations, :class => "careful" %>
+

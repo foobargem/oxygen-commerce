@@ -23,7 +23,7 @@ class Order < ActiveRecord::Base
   belongs_to :reservation
 
   validates_presence_of :user_name, :shoe_type, :height, :shoe_size
-  validates_presence_of :board_stance, :if => :board_type?
+  validates_presence_of :board_stance
 
   def board_type?
     shoe_type == "board"

@@ -18,7 +18,7 @@
     <div class="section">
 
       <%= semantic_form_for [:admin, @reservation, @order] do |f| %>
-        <%= render "admin/orders/edit_form", :f  => f %>
+        <%= render "admin/orders/edit_form", :f  => f, :order => @order %>
 
         <%= f.submit "Update" %>
       <% end %>
@@ -31,3 +31,20 @@
   </div><!-- unit_rail -->
 
 </div><!-- container_1box -->
+
+
+
+<script type="text/javascript">
+
+  var toggle_shoe_options = function() {
+    new Ajax.Request("/orders/toggle_shoe_options", {
+      parameters: {
+        shoe_type: Form.Element.getValue("order_shoe_type"),
+        wrapper_id: '0'
+      }
+    });
+  }
+  
+  Event.observe("order_shoe_type", "change", toggle_shoe_options.bindAsEventListener(this));
+
+</script>

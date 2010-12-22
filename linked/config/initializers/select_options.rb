@@ -28,3 +28,9 @@ BOARD_STANCE_OPTIONS = %w{
   레귤러(Regular)
   구피(Goofy)
 }
+
+SKI_OPTIONS = %w{
+  숏스키
+  카빙스키
+  블레이드
+}

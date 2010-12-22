@@ -1,0 +1,8 @@
+<% shoe_options = shoe_options || SKI_OPTIONS %>
+<% default_value = default_value || nil %>
+
+<label for="order_board_stance">장비옵션<abbr>*</abbr></label>
+<%= select_tag :board_stance,
+  options_for_select(shoe_options, default_value),
+  :include_blank => true,
+  :name => "reservation[orders_attributes][][board_stance]" %>

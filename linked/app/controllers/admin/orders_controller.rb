@@ -17,7 +17,7 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update_attributes(params[:order])
-      redirect_to [:admin, @product, @reservation, :orders]
+      redirect_to [:admin, @reservation, :orders]
     else
       render :action => :edit
     end
@@ -28,9 +28,9 @@ class Admin::OrdersController < ApplicationController
     @order.destroy
 
     if @reservation.orders.size == 0
-      redirect_to [:admin, @product, :reservations]
+      redirect_to [:admin, :reservations]
     else
-      redirect_to [:admin, @product, @reservation, :orders]
+      redirect_to [:admin, @reservation, :orders]
     end
   end
 

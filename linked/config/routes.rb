@@ -18,18 +18,29 @@ Linked::Application.routes.draw do
   match 'login' => 'sessions#new', :as => :login
 
 
-  resource :coupon, :controller => :coupon do
-    member do
-      get "new_reservations"
-      put "create_reservations"
-      get "add_reservation_fields"
-      get "remove_reservation_fields"
+  #resource :coupon, :controller => :coupon do
+    #member do
+      #get "new_reservations"
+      #put "create_reservations"
+      #get "add_reservation_fields"
+      #get "remove_reservation_fields"
+    #end
+  #end
+  resources :reservations do
+    collection do
+      get "toggle_shoe_options"
+    end
+    resources :orders do
+      collection do
+        get "toggle_shoe_options"
+      end
     end
   end
-  resources :reservations do
-    resources :orders
-  end
+
+  match "/orders/toggle_shoe_options" => "orders#toggle_shoe_options"
   
+  match "/reservations/toggle_shoe_options" => "reservations#toggle_shoe_options"
+
 
 
   namespace :admin do

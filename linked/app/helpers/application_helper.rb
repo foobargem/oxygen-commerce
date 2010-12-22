@@ -26,6 +26,10 @@ module ApplicationHelper
     BOARD_STANCE_OPTIONS
   end
 
+  def ski_options_collection
+    SKI_OPTIONS
+  end
+
   def part_time_options_collection
     PART_TIME_OPTIONS.map{ |k, v| [v, k] }
   end

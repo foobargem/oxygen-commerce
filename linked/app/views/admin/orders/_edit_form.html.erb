@@ -1,9 +1,19 @@
 <% f = f %>
+<% order = order %>
 
 <%= f.inputs do %>
   <%= f.input :user_name, :as => :string, :label => "사용자명" %>
   <%= f.input :shoe_type, :as => :select, :collection => shoe_type_options_collection, :include_blank => false, :label => "장비구분" %>
-  <%= f.input :board_stance, :as => :select, :collection => board_stance_options_collection, :include_blank => true, :label => "스탠스" %>
+
+  <li id="shoe_options_0" class="select required">
+    <% if order.board_type? %>
+      <%= render "orders/select_shoe_options", :shoe_options => board_stance_options_collection, :default_value => order.board_stance %>
+    <% else %>
+      <%= render "orders/select_shoe_options", :shoe_options => ski_options_collection, :default_value => order.board_stance %>
+    <% end %>
+    <%= f.inline_errors_for :board_stance %>
+  </li>
+
   <%= f.input :height, :as => :string, :label => "신장" %>
   <%= f.input :shoe_size, :as => :string, :label => "신발사이즈" %>
 <% end %>

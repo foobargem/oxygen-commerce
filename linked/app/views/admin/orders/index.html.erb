@@ -8,7 +8,7 @@
     <%= render "admin/products/header" %>
 
     <div class="nav_history">
-      <%= link_to "예약목록>", [:admin, @product, :reservations] %>
+      <%= link_to "예약목록>", [:admin, :reservations] %>
     </div>
 
     <div class="section">
@@ -22,7 +22,7 @@
           <tr>
             <th class="user_name">사용자명</th>
             <th class="shoe_type">장비구분</th>
-            <th class="board_stance">스탠스</th>
+            <th class="board_stance">장비옵션</th>
             <th class="height">신장</th>
             <th class="shoe_size">신발사이즈</th>
             <th class="actions"></th>
