@@ -150,7 +150,7 @@ ko:
         unreservabled: "1일 예약인원 초과입니다. 인원수를 조정하시거나 다른 날짜를 선택해 주세요."
         quantity_exceeded: "사용가능 수량을 초과했습니다. 인원수를 조정해주세요."
         oneday_reservable_limit_exceeded: "오늘은 더 예약하실 수 없습니다. 다른날 예약을 시도해 주세요."
-        continuous_reservation: "3일 연속으로 예약하셨습니다. 하루 뒤에 예약이 가능합니다."
+        continuous_reservation: "3일 연속으로 예약하셨습니다. 일주일 뒤에 예약이 가능합니다."
 
   orders:
     user_name: "사용자명"

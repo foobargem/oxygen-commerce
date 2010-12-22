@@ -168,7 +168,6 @@ class Reservation < ActiveRecord::Base
                      end
       end
       
-      p "##{record.resort}"
       resort = Resort.find_by_name(record.resort)
 
       if resort.oneday_booking_limit_count.to_i < (orders_count + plus_value)

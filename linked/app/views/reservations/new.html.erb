@@ -17,6 +17,10 @@
         <h3>오늘 사용가능한 쿠폰이 없습니다.</h3>
         <p>다른 날 예약하실 수 있습니다.</p>
         <p>문의: 02) 2278 - 663k</p>
+      <% elsif @coupon.continuous_reservation? %>
+        <h3>3일 연속 예약을 하셨습니다.</h3>
+        <p>1주일 후에 예약하실 수 있습니다.</p>
+        <p>문의: 02) 2278 - 663k</p>
       <% else %>
         <h3>예약하기</h3>
         <%= semantic_form_for @reservation do |f| %>

@@ -71,12 +71,12 @@ class Coupon < ActiveRecord::Base
     if self.product.free_type_ticket?
       today = Date.today
       dates = self.reservations.map{ |r| r.created_at.to_date }
-      [(today - 3.days), (today - 2.days), (today - 1.days)].each do |d|
-        unless dates.member?(d)
-          return false
+      recent_dates = dates.sort.reverse[0..2]
+      if ((recent_dates.first.to_time - recent_dates.last.to_time) / 1.day.to_i).to_i == 2
+        if (recent_dates.first + 7.days) > Date.today
+          return true
         end
       end
-      return true
     end
     false
   end
