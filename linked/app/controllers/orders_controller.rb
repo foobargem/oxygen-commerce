@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 
   layout "subscriber"
 
-  before_filter :login_required
+  before_filter :login_required, :except => :toggle_shoe_options
   before_filter :find_coupon, :except => :toggle_shoe_options
   before_filter :find_reservation, :except => :toggle_shoe_options
   
