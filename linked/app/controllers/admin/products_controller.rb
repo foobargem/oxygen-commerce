@@ -133,10 +133,20 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     excel_file = params[:excel_file]
     unless excel_file.nil?
-      src_filename = "#{excel_file.tempfile.path}.xlsx"
+
+      case File.extname(excel_file.original_filename)
+      when ".xls"
+        src_filename = "#{excel_file.tempfile.path}.xls"
+        excel_klass = Excel
+      when ".xlsx"
+        src_filename = "#{excel_file.tempfile.path}.xlsx"
+        excel_klass = Excelx
+      end
+
       File.rename(excel_file.tempfile.path, src_filename)
 
-      excel = Excelx.new(src_filename)
+      excel = excel_klass.new(src_filename)
+
       rows = (2..excel.last_row).to_a
 
       respond_to_parent do
