@@ -72,9 +72,11 @@ class Coupon < ActiveRecord::Base
       today = Date.today
       dates = self.reservations.map{ |r| r.created_at.to_date }
       recent_dates = dates.sort.reverse[0..2]
-      if ((recent_dates.first.to_time - recent_dates.last.to_time) / 1.day.to_i).to_i == 2
-        if (recent_dates.first + 7.days) > Date.today
-          return true
+      unless recent_dates.blank?
+        if ((recent_dates.first.to_time - recent_dates.last.to_time) / 1.day.to_i).to_i == 2
+          if (recent_dates.first + 7.days) > Date.today
+            return true
+          end
         end
       end
     end
