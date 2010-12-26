@@ -20,8 +20,8 @@ class Coupon < ActiveRecord::Base
 
   belongs_to :product
 
-  has_many :reservations
-  has_many :orders
+  has_many :reservations, :dependent => :nullity
+  has_many :orders, :dependent => :nullify
 
   #accepts_nested_attributes_for :reservations
 

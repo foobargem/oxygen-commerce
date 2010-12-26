@@ -25,14 +25,14 @@ class Product < ActiveRecord::Base
   validates_presence_of :resort, :unless => :free_type_ticket?
 
 
-  has_many :coupons
+  has_many :coupons, :dependent => :nullify
   accepts_nested_attributes_for :coupons
 
-  has_many :reservations
+  has_many :reservations, :dependent => :nullify
 
-  has_many :orders
+  has_many :orders, :dependent => :nullify
 
-  has_many :product_constraints
+  has_many :product_constraints, :dependent => :destroy
 
 
 
