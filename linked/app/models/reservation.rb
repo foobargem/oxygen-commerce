@@ -129,7 +129,7 @@ class Reservation < ActiveRecord::Base
 
   class OnedayReservableValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
-      unless record.coupon.today_reservable? 
+      unless record.coupon.reservable_date?(value)
         record.errors[attribute] << I18n.t(:oneday_reservable_limit_exceeded, :scope => [:activerecord, :errors, :messages])
       end
     end

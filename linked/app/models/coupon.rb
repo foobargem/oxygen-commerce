@@ -59,9 +59,12 @@ class Coupon < ActiveRecord::Base
     usable_quantity > 0
   end
 
-  def today_reservable?
+  def reservable_date?(dt)
     if self.product.free_type_ticket?
-      if self.reservations.select{ |r| r.created_at.to_date == Date.today }.size > 0
+      if dt.nil?
+        return false
+      end
+      if self.reservations.select{ |r| r.used_at.to_date == dt.to_date }.size > 0
         return false
       end
     end
@@ -71,11 +74,11 @@ class Coupon < ActiveRecord::Base
   def continuous_reservation?
     if self.product.free_type_ticket?
       today = Date.today
-      dates = self.reservations.map{ |r| r.created_at.to_date }
+      dates = self.reservations.map{ |r| r.used_at.to_date }
       recent_dates = dates.sort.reverse[0..2]
       unless recent_dates.blank?
         if ((recent_dates.first.to_time - recent_dates.last.to_time) / 1.day.to_i).to_i == 2
-          if (recent_dates.first + 7.days) > Date.today
+          if (recent_dates.first + 3.days) > Date.today
             return true
           end
         end
