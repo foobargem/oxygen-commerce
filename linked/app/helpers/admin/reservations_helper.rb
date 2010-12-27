@@ -12,4 +12,12 @@ module Admin::ReservationsHelper
     end
   end
 
+  def display_coupon_number_of_reservation(coupon)
+    if coupon.nil?
+      "삭제된 쿠폰입니다."
+    else
+      coupon.coupon_number
+    end
+  end
+
 end
