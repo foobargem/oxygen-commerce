@@ -71,20 +71,32 @@ class Coupon < ActiveRecord::Base
     true
   end
 
-  def continuous_reservation?
+  def unavailable_dates_by_continuous_reservations
+    unavailable_dates = []
     if self.product.free_type_ticket?
-      today = Date.today
       dates = self.reservations.map{ |r| r.used_at.to_date }
-      recent_dates = dates.sort.reverse[0..2]
-      unless recent_dates.blank?
-        if ((recent_dates.first.to_time - recent_dates.last.to_time) / 1.day.to_i).to_i == 2
-          if (recent_dates.first + 3.days) > Date.today
-            return true
+
+      cnt = 1
+
+      dates.each_with_index do |d, i|
+        if i < dates.size - 1
+          if (d.to_time.to_i + 1.day) == dates[i + 1].to_time.to_i
+            cnt += 1
+          else
+            cnt = 1
           end
+
+          if cnt == 3
+            unavailable_dates << (dates[i + 1] + 1.day).to_date
+            unavailable_dates << (dates[i + 1] + 2.days).to_date
+            unavailable_dates << (dates[i + 1] + 3.days).to_date
+          end
+
         end
       end
+
     end
-    false
+    unavailable_dates
   end
 
 end

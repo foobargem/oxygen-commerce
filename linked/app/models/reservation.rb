@@ -71,9 +71,11 @@ class Reservation < ActiveRecord::Base
     Time.zone.now < self.used_at.to_date.ago(ago_days).change(:hour => 12)
   end
 
+
   def reservable_date?
-    cday = Date.today.cwday
-    cweek = Date.today.cweek
+    today = Date.today
+    cday = today.cwday
+    cweek = today.cweek
     current_hour = Time.zone.now.hour
 
     if self.product.closed_at.to_date < self.used_at.to_date
@@ -81,18 +83,31 @@ class Reservation < ActiveRecord::Base
     end
 
     if current_hour < 12 && !([6, 7].include?(cday))
-      true
+      return true
     else
-      dt_cday = self.used_at.to_date.cwday
-      dt_cweek = self.used_at.to_date.cweek
+      dt = self.used_at
+      dt_cday = dt.to_date.cwday
+      dt_cweek = dt.to_date.cweek
 
-      if [6, 7].include?(dt_cday) && cweek == dt_cweek
-        false
-      elsif 1 == dt_cday && (self.used_at.to_date - Date.today).to_i < 7
-        false
-      else
-        true
+      if current_hour > 12 && cday == 5
+        if [today + 1.day, today + 2.days, today + 3.days].include?(dt)
+          return false
+        end
       end
+
+      if cday == 6
+        if [today + 1.day, today + 2.days].include?(dt)
+          return false
+        end
+      end
+
+      if cday == 7
+        if [today + 1.day].include?(dt)
+          return false
+        end
+      end
+
+      return true
     end
   end
 
@@ -120,11 +135,28 @@ class Reservation < ActiveRecord::Base
         record.errors[attribute] << I18n.t(:unavailabled, :scope => [:activerecord, :errors, :messages])
       end
       unless record.reservable_date?
+        p " NONONONONONO"
         record.errors[attribute] << I18n.t(:unavailabled, :scope => [:activerecord, :errors, :messages])
       end
     end
   end
-  validates :used_at, :unavailable_date => true, :unless => :used_at_is_nil?
+
+  validates :used_at, :unavailable_date => true,
+                      :unless => :used_at_is_nil?
+
+
+  class ContinuousReservationValidator < ActiveModel::EachValidator
+    def validate_each(record, attribute, value)
+      unavailable_dates = record.coupon.unavailable_dates_by_continuous_reservations
+      if unavailable_dates.include?(value.to_date)
+        record.errors[attribute] << I18n.t(:continuous_reservation, :scope => [:activerecord, :errors, :messages])
+      end
+    end
+  end
+
+  validates :used_at, :continuous_reservation => true,
+                      :unless => :used_at_is_nil?
+
 
 
   class OnedayReservableValidator < ActiveModel::EachValidator
@@ -135,16 +167,7 @@ class Reservation < ActiveRecord::Base
     end
   end
 
-  class ContinuousReservationValidator < ActiveModel::EachValidator
-    def validate_each(record, attribute, value)
-      if record.coupon.continuous_reservation?
-        record.errors[attribute] << I18n.t(:continuous_reservation, :scope => [:activerecord, :errors, :messages])
-      end
-    end
-  end
-
   validates :used_at, :oneday_reservable => true,
-                      :continuous_reservation => true,
                       :if => :free_ticket_and_new_record?
 
 
