@@ -32,6 +32,7 @@ class Coupon < ActiveRecord::Base
 
 
 
+
   def self.authorize_by_coupon_and_purchaser(params)
     if coupon = Coupon.where("coupon_number = ? AND purchaser_name = ?",
                               params[:coupon_number],
