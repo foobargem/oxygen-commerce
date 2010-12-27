@@ -15,7 +15,11 @@
     <ol>
       <li class="string required">
         <label for="order_user_name">사용자명<abbr title="required">*</abbr></label>
-          <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => coupon.purchaser_name, :size => 10, :readonly => true %>
+          <% if coupon.reservations.size > 0 %>
+            <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => coupon.orders.first.user_name, :size => 10, :readonly => true %>
+          <% else %>
+            <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => coupon.purchaser_name, :size => 10, :readonly => false %>
+          <% end %>
       </li>
       <li class="select required">
         <label for="order_shoe_type">장비구분<abbr title="required">*</abbr></label>

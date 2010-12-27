@@ -30,6 +30,7 @@ BOARD_STANCE_OPTIONS = %w{
 }
 
 SKI_OPTIONS = %w{
+  일반스키
   숏스키
   카빙스키
   블레이드

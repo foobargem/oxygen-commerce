@@ -4,7 +4,11 @@
 
 <%= f.inputs do %>
 
-  <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :readonly => true, :value => coupon.purchaser_name } %>
+  <% if coupon.reservations.size > 0 %>
+    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :readonly => true, :value => coupon.reservations.first.subscriber_name } %>
+  <% else %>
+    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :readonly => false, :value => coupon.purchaser_name } %>
+  <% end %>
 
   <li class="string required" id="reservation_used_at_input">
     <label for="reservation_used_at">이용일<abbr title="required">*</abbr></label>
