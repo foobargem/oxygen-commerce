@@ -165,11 +165,17 @@ class Admin::ProductsController < ApplicationController
 
             page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",
                              :locals => { :product => @product, :coupon => coupon }
+
+            page << "facebox.close();"
           end
         end 
       end
     else
-      render :text => ""
+      respond_to_parent do
+        render :update do |page|
+          page << "facebox.close();"
+        end
+      end
     end
   end
 

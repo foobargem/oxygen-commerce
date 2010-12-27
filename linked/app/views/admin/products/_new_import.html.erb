@@ -7,11 +7,12 @@
   </div><!-- popup_header -->
 
   <div class="popup_body">
-    <%= form_for product, :url => import_from_excel_file_admin_product_path(product), :html => { :method => :post, :multipart => true, :target => "magic_hole" } do |f| %>
+    <%= form_for product, :url => import_from_excel_file_admin_product_path(product), :html => { :method => :post, :multipart => true, :target => "magic_hole", :id => "import_form" } do |f| %>
 
       File: <%= file_field_tag "excel_file" %>
 
-      <%= f.submit "불러오기" %>
+      <%= f.submit "불러오기", :id => "import_submit_btn" %>
+      <span id="wait_process" style="display:none;">loading..</span>
 
     <% end %>
   </div><!-- popup_body -->
@@ -19,3 +20,16 @@
 </div><!-- popup_container -->
 
 <iframe id="magic_hole" name="magic_hole" class="fake_ajax"></iframe>
+
+
+
+
+
+<script type="text/javascript">
+
+  Event.observe("import_form", "submit", function(){
+    $("import_submit_btn").hide();
+    $("wait_process").show();
+  });
+
+</script>
