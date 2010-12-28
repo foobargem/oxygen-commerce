@@ -6,7 +6,7 @@ class Admin::ReservationsController < ApplicationController
   layout "admin"
 
   def index
-    reservations = Reservation.scoped.includes(:orders)
+    reservations = Reservation.scoped.order("subscriber_name asc").includes(:orders)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
 
