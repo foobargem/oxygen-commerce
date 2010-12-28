@@ -3,10 +3,19 @@
 <div class="popup_container">
 
   <div class="popup_header">
-    <h2>Import from excel file</h2>
+    <h3>Import from excel file</h3>
   </div><!-- popup_header -->
 
   <div class="popup_body">
+
+    <div class="section">
+      <h4>사용안내</h4>
+      <ul class="excel_import_guides">
+        <li>엑셀파일의 컬럼순서: 쿠폰번호, 수량, 구매자명, 연락처, 판매업체</li>
+        <li>컬럼 순서가 다른경우 정상적으로 등록이 되지 않습니다.</li>
+      </ul>
+    </div>
+
     <%= form_for product, :url => import_from_excel_file_admin_product_path(product), :html => { :method => :post, :multipart => true, :target => "magic_hole", :id => "import_form" } do |f| %>
 
       File: <%= file_field_tag "excel_file" %>

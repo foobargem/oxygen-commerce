@@ -156,11 +156,11 @@ class Admin::ProductsController < ApplicationController
             session[:current_tr_count] += 1
 
             coupon = Coupon.new(
-              :coupon_number => excel.cell(row_no, 1),
-              :quantity => excel.cell(row_no, 2),
-              :purchaser_name => excel.cell(row_no, 3).force_encoding("utf-8"),
-              :phone_number => excel.cell(row_no, 4),
-              :agency_name => excel.cell(row_no, 5).force_encoding("utf-8")
+              :coupon_number => excel.cell(row_no, 1).to_s.force_encoding("utf-8"),
+              :quantity => excel.cell(row_no, 2).to_s.force_encoding("utf-8"),
+              :purchaser_name => excel.cell(row_no, 3).to_s.force_encoding("utf-8"),
+              :phone_number => excel.cell(row_no, 4).to_s.force_encoding("utf-8"),
+              :agency_name => excel.cell(row_no, 5).to_s.force_encoding("utf-8")
             )
 
             page.insert_html :bottom, "coupon_fields_wrapper", :partial => "admin/products/tr_form",

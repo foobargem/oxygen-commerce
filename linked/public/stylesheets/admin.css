@@ -798,6 +798,12 @@ table.resorts {
   table.resorts td.actions {
     text-align: center; }
 
+ul.excel_import_guides {
+  margin-left: 30px; }
+  ul.excel_import_guides li {
+    padding: 0px;
+    list-style: circle; }
+
 table.not_reviewed {
   margin-bottom: 20px;
   width: 100%; }
