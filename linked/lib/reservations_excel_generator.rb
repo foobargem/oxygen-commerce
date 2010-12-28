@@ -6,7 +6,7 @@ class ReservationsExcelGenerator
   def initialize
     tmpfile = Tempfile.new("reservations")
     @output_file_path = tmpfile.path
-    @reservations = Reservation.scoped.includes(:product, :coupon, :orders)
+    @reservations = Reservation.scoped.where("coupon_id is not null").order("subscriber_name asc").includes(:product, :coupon, :orders)
   end
 
   def export_to_xls
@@ -48,7 +48,7 @@ class ReservationsExcelGenerator
           reservation.orders.each do |order|
             sheet.row(row_index).replace [
               order.user_name,
-              reservation.coupon.coupon_number,
+              (reservation.coupon.nil? ? "삭제된쿠폰" : reservation.coupon.coupon_number),
               RESORT_OPTIONS[reservation.resort],
               reservation.used_at.to_date,
               reservation.part_time,
