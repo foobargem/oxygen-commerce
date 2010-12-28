@@ -84,11 +84,29 @@ class Admin::ProductsController < ApplicationController
 
   def create_coupons
     @product = Product.find(params[:id])
+
+    coupons = []
+    invalid_coupons = []
+    params[:product][:coupons_attributes].each do |coupon|
+      c = Coupon.new(coupon)
+      unless c.valid?
+        invalid_coupons << coupon
+      else
+        coupons << coupon
+      end
+    end
+
     if @product.update_attributes(params[:product])
       redirect_to admin_product_coupons_path(@product)
     else
       @coupons = []
       flash[:error_message] = "등록실패"
+
+      invalid_coupons.each do |coupon|
+        flash[:error_message] << '\n'
+        flash[:error_message] << " - 쿠폰번호 중복: #{coupon[:coupon_number]}"
+      end
+
       params[:product][:coupons_attributes].each do |coupon_attrs|
         @coupons << @product.coupons.build(coupon_attrs)
       end
