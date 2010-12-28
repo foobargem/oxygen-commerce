@@ -17,11 +17,7 @@
     <ol>
       <li class="string required">
         <label for="order_user_name">사용자명<abbr title="required">*</abbr></label>
-        <% if product.free_type_ticket? %>
-          <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => coupon.purchaser_name, :size => 10, :readonly => true %>
-        <% else %>
-          <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :size => 10 %>
-        <% end %>
+        <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => reservation.subscriber_name ,:size => 10 %>
       </li>
       <li class="select required">
         <label for="order_shoe_type">장비구분<abbr title="required">*</abbr></label>
@@ -31,12 +27,12 @@
         <%= render "select_shoe_options", :shoe_options => SKI_OPTIONS %>
       </li>
       <li class="string required">
-        <label for="order_height">신장<abbr title="required">*</abbr></label>
-        <%= order_form.text_field :height, :name => "reservation[orders_attributes][][height]", :size => 5 %>
+        <label for="order_height">신장(cm)<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :height, :name => "reservation[orders_attributes][][height]", :size => 5 %> cm
       </li>
       <li class="string required">
-        <label for="order_shoe_size">신발사이즈<abbr title="required">*</abbr></label>
-        <%= order_form.text_field :shoe_size, :name => "reservation[orders_attributes][][shoe_size]", :size => 5 %>
+        <label for="order_shoe_size">신발사이즈(mm)<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :shoe_size, :name => "reservation[orders_attributes][][shoe_size]", :size => 5 %> mm
       </li>
     </ol>
   </fieldset>

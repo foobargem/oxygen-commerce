@@ -20,7 +20,9 @@
 
       <%= semantic_form_for [@reservation, @order] do |f| %>
         <%= f.inputs do %>
-          <%= f.input :user_name, :as => :string, :label => "사용자명", :input_html => { :size => 10 } %>
+          <% unless @reservation.product.free_type_ticket? %>
+            <%= f.input :user_name, :as => :string, :label => "사용자명", :input_html => { :size => 10, :readonly => true } %>
+          <% end %>
           <%= f.input :shoe_type, :as => :select, :collection => shoe_type_options_collection, :label => "장비구분", :include_blank => false %>
           <li id="shoe_options_0" class="select required">
             <% if @order.board_type? %>

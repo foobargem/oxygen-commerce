@@ -4,10 +4,10 @@
 
 <%= f.inputs do %>
 
-  <% if product.free_type_ticket? %>
-    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :readonly => true, :value => coupon.purchaser_name } %>
+  <% if coupon.reservations.size > 0 %>
+    <%= f.input :subscriber_name, :as => :string, :label => "등록사용자", :hint => "최초 등록 사용자는 변경이 불가합니다.", :input_html => { :size => 10, :readonly => true, :value => coupon.reservations.first.subscriber_name } %>
   <% else %>
-    <%= f.input :subscriber_name, :as => :string, :label => "예약자", :input_html => { :size => 10, :value => coupon.purchaser_name } %>
+    <%= f.input :subscriber_name, :as => :string, :label => "등록사용자", :hint => "최초 등록 사용자는 변경이 불가합니다.", :input_html => { :size => 10, :readonly => false, :value => coupon.purchaser_name } %>
   <% end %>
 
   <li class="string required" id="reservation_used_at_input">
