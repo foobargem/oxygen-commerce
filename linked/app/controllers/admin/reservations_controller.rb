@@ -6,7 +6,7 @@ class Admin::ReservationsController < ApplicationController
   layout "admin"
 
   def index
-    reservations = Reservation.scoped.order("subscriber_name asc").includes(:orders)
+    reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc").includes(:orders, :coupon, :product)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
 
@@ -66,6 +66,29 @@ class Admin::ReservationsController < ApplicationController
                 Proc.new{ |r| r.product.provider_name }
               end
       block
+    end
+
+    def scope_by_cond(scoped)
+      unless params[:starts_at].blank?
+        scoped = scoped.where("used_at >= ?", params[:starts_at])
+      end
+
+      unless params[:ends_at].blank?
+        scoped = scoped.where("reservations.used_at <= ?", params[:ends_at])
+      end
+
+      unless params[:resort].blank?
+        scoped = scoped.where("reservations.resort in (?)", params[:resort])
+      end
+
+      unless params[:user_name].blank?
+        scoped = scoped.where("orders.user_name like ?", "%#{params[:user_name]}%")
+      end
+
+      unless params[:coupon_number].blank?
+        scoped = scoped.where("coupons.coupon_number = ?", params[:coupon_number])
+      end
+      scoped
     end
   
 end

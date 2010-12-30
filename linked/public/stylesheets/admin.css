@@ -804,6 +804,63 @@ ul.excel_import_guides {
     padding: 0px;
     list-style: circle; }
 
+div.search_filter {
+  padding: 3px; }
+  div.search_filter:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  div.search_filter {
+    display: inline-block; }
+  .IE div.search_filter {
+    height: 1%; }
+  div.search_filter {
+    display: block; }
+  div.search_filter .left {
+    display: inline;
+    float: left;
+    width: 80px; }
+    div.search_filter .left:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    div.search_filter .left {
+      display: inline-block; }
+    .IE div.search_filter .left {
+      height: 1%; }
+    div.search_filter .left {
+      display: block; }
+  div.search_filter .right {
+    display: inline;
+    float: left; }
+    div.search_filter .right:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    div.search_filter .right {
+      display: inline-block; }
+    .IE div.search_filter .right {
+      height: 1%; }
+    div.search_filter .right {
+      display: block; }
+  div.search_filter ul li {
+    display: inline;
+    float: left;
+    padding-left: 10px; }
+    div.search_filter ul li.spacer {
+      padding: 0 5px; }
+    div.search_filter ul li.current {
+      background: #ddffee; }
+
 table.not_reviewed {
   margin-bottom: 20px;
   width: 100%; }
