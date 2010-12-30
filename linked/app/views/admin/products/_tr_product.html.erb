@@ -10,13 +10,18 @@
       <%= link_to "제약설정", [:admin, product, :constraints] %>
     </p>
   </td>
-  <td class="coupons"><%= link_to "쿠폰구매목록", [:admin, product, :coupons] %></td>
   <td class="actions">
     <span class="button">
-      <%= link_to "edit", edit_admin_product_path(product) %>
+      <%= link_to "상세정보", [:admin, product] %>
     </span>
     <span class="button">
-      <%= link_to "delete", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "destroy" %>
+      <%= link_to "쿠폰구매목록", [:admin, product, :coupons] %>
+    </span>
+    <span class="button">
+      <%= link_to "수정", edit_admin_product_path(product), :class => "approve" %>
+    </span>
+    <span class="button">
+      <%= link_to "삭제", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "destroy" %>
     </span>
   </td>
 </tr>

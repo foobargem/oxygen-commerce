@@ -498,19 +498,19 @@ table.products {
     padding: 30px;
     text-align: center; }
   table.products th.provider_name {
-    width: 130px; }
+    width: 140px; }
   table.products th.resort {
-    width: 130px; }
+    width: 150px; }
   table.products th.ticket_type {
-    width: 110px; }
+    width: 100px; }
   table.products th.date_range {
     width: 160px; }
   table.products th.daily_reservations_limit {
-    width: 120px; }
+    width: 140px; }
   table.products th.coupons {
     width: 100px; }
   table.products th.actions {
-    width: 100px; }
+    width: 190px; }
   table.products td.name {
     text-align: left; }
   table.products td.provider_name {
@@ -551,19 +551,19 @@ table.coupons {
   table.coupons tbody td.actions a {
     padding: 0 2px; }
   table.coupons th.quantity {
-    width: 90px; }
+    width: 80px; }
   table.coupons th.used_quantity {
     width: 90px; }
   table.coupons th.purchaser_name {
-    width: 140px; }
+    width: 120px; }
   table.coupons th.phone_number {
-    width: 140px; }
+    width: 120px; }
   table.coupons th.agency_name {
-    width: 140px; }
+    width: 120px; }
   table.coupons th.locked {
     width: 100px; }
   table.coupons th.actions {
-    width: 160px; }
+    width: 170px; }
   table.coupons td.coupon_number {
     text-align: center; }
   table.coupons td.quantity {

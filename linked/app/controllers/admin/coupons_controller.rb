@@ -6,7 +6,7 @@ class Admin::CouponsController < ApplicationController
   layout "admin"
 
   def index
-    @coupons = @product.coupons
+    @coupons = @product.coupons.order("purchaser_name asc")
   end
 
   def show
