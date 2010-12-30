@@ -1,0 +1,28 @@
+<% product = product %>
+<% coupon = coupon %>
+<% f = f %>
+
+<%= f.inputs do %>
+
+  <% if coupon.reservations.size > 0 %>
+    <%= f.input :subscriber_name, :as => :string, :label => "등록사용자", :hint => "최초 등록 사용자는 변경이 불가합니다.", :input_html => { :size => 10, :readonly => true, :value => coupon.reservations.first.subscriber_name } %>
+  <% else %>
+    <%= f.input :subscriber_name, :as => :string, :label => "등록사용자", :hint => "최초 등록 사용자는 변경이 불가합니다.", :input_html => { :size => 10, :readonly => false, :value => coupon.purchaser_name } %>
+  <% end %>
+
+  <li class="string required" id="reservation_used_at_input">
+    <label for="reservation_used_at">이용일<abbr title="required">*</abbr></label>
+    <%= f.calendar_date_select :used_at, :time => false, :size => 14 %>
+    <%= f.inline_errors_for :used_at %>
+  </li>
+  <%= f.input :part_time, :as => :select, :collection => part_time_options_collection, :include_blank => false, :label => "시간대" %>
+  <%= f.input :resort, :as => :select, :collection => resort_collection_by_ticket(@product), :label => "스키장" %>
+
+  <%= f.input :booking_number, :as => :string, :label => "예약인원", :input_html => { :readonly => true, :size => 5, :value => "1" }, :hint => "자유권은 본인만 사용가능합니다." %>
+
+<% end %>
+
+<%= f.hidden_field :product_id, :value => product.id %>
+<%= f.hidden_field :coupon_id, :value => coupon.id %>
+
+<%= f.submit "예약 가능 확인 및 장비선택" %>

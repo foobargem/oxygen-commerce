@@ -2,6 +2,7 @@
 class Admin::ReservationsController < ApplicationController
 
   before_filter :authenticate_admin!
+  before_filter :find_coupon_with_product, :only => [:new, :create]
 
   layout "admin"
 
@@ -15,9 +16,36 @@ class Admin::ReservationsController < ApplicationController
   end
 
   def new
+    session[:reservation_params] = {}  
+    session[:reservation_step] = nil
+    @reservation = Reservation.new(session[:reservation_params])
+    @reservation.current_step = session[:reservation_step]
+    @reservation.user_role = "admin"
   end
 
   def create
+    session[:reservation_params].deep_merge!(params[:reservation]) if params[:reservation]  
+    @reservation = Reservation.new(session[:reservation_params])
+    @reservation.current_step = session[:reservation_step]
+    @reservation.user_role = "admin"
+
+    if @reservation.first_step?
+      if @reservation.valid?
+        @reservation.next_step
+        session[:reservation_step] = @reservation.current_step
+      end
+      render "new"
+    elsif @reservation.last_step?
+
+      if params[:reservation][:orders_attributes].nil? || params[:reservation][:orders_attributes].size < 1
+        render "new"
+      elsif @reservation.valid?
+        @reservation.save
+        redirect_to [:admin, :reservations]
+      else
+        render "new"
+      end
+    end
   end
 
   def edit
@@ -53,7 +81,18 @@ class Admin::ReservationsController < ApplicationController
   end
 
 
+
   protected
+
+    def find_coupon_with_product
+      @coupon = Coupon.find(params[:coupon_id])
+      @product = @coupon.product
+    end
+
+    def find_product
+      @product = Product.find(params[:product_id])
+    end
+
 
     def group_by_block_statement
       group_by = params[:groupby] || "used_at"
@@ -90,5 +129,5 @@ class Admin::ReservationsController < ApplicationController
       end
       scoped
     end
-  
+
 end

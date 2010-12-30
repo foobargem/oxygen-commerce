@@ -1,0 +1,63 @@
+<% product = product %>
+<% coupon = coupon %>
+<% reservation = reservation %>
+<% f = f %>
+<% order = Order.new %>
+<% prefix = "reservation[orders_attributes][]" %>
+<% orders_errors = errors_about_orders(reservation.errors) %>
+
+
+<%= render "reservations/section_reservation_detail", :reservation => @reservation %>
+
+
+<% session[:reservation_params]["booking_number"].to_i.times do |i| %>
+
+<%= fields_for prefix, order do |order_form| %>
+  <fieldset class="inputs">
+    <ol>
+      <li class="string required">
+        <label for="order_user_name">사용자명<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :user_name, :name => "reservation[orders_attributes][][user_name]", :value => reservation.subscriber_name ,:size => 10 %>
+      </li>
+      <li class="select required">
+        <label for="order_shoe_type">장비구분<abbr title="required">*</abbr></label>
+        <%= order_form.select :shoe_type, options_for_select(SHOE_TYPE_OPTIONS.map{ |k,v| [v,k] }), :name => "reservation[orders_attributes][][shoe_type]" %>
+      </li>
+      <li id="<%= "shoe_options_#{i}" %>" class="select">
+        <%= render "reservations/select_shoe_options", :shoe_options => SKI_OPTIONS %>
+      </li>
+      <li class="string required">
+        <label for="order_height">신장(cm)<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :height, :name => "reservation[orders_attributes][][height]", :size => 5 %> cm
+      </li>
+      <li class="string required">
+        <label for="order_shoe_size">신발사이즈(mm)<abbr title="required">*</abbr></label>
+        <%= order_form.text_field :shoe_size, :name => "reservation[orders_attributes][][shoe_size]", :size => 5 %> mm
+      </li>
+    </ol>
+  </fieldset>
+
+  <%= order_form.hidden_field :product_id, :value => product.id %>
+  <%= order_form.hidden_field :coupon_id, :value => coupon.id %>
+<% end %>
+
+<% end %>
+
+<%= f.hidden_field :product_id, :value => product.id %>
+
+
+<% if orders_errors %>
+  <ul class="errors">
+    <% orders_errors.each do |field, messages| %>
+      <% unless field.to_s == "orders_count" %>
+        <% messages.each do |msg| %>
+          <li><%= I18n.t(field) %>은 <%= msg %></li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= f.submit "예약" %>
+<%= link_to "취소", :reservations, :class => "careful" %>

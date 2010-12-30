@@ -563,7 +563,7 @@ table.coupons {
   table.coupons th.locked {
     width: 100px; }
   table.coupons th.actions {
-    width: 170px; }
+    width: 200px; }
   table.coupons td.coupon_number {
     text-align: center; }
   table.coupons td.quantity {
@@ -860,6 +860,32 @@ div.search_filter {
       padding: 0 5px; }
     div.search_filter ul li.current {
       background: #ddffee; }
+
+dl.section_reservation {
+  padding: 5px;
+  border: 2px solid #dddddd; }
+  dl.section_reservation:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden; }
+  dl.section_reservation {
+    display: inline-block; }
+  .IE dl.section_reservation {
+    height: 1%; }
+  dl.section_reservation {
+    display: block; }
+  dl.section_reservation dt, dl.section_reservation dd {
+    padding: 1px; }
+  dl.section_reservation dt {
+    display: inline;
+    float: left;
+    color: #113399; }
+  dl.section_reservation dd {
+    padding-left: 100px;
+    color: #111111; }
 
 table.not_reviewed {
   margin-bottom: 20px;

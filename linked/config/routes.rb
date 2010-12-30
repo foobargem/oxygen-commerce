@@ -59,16 +59,18 @@ Linked::Application.routes.draw do
         get 'new_coupons_from_import'
         get 'new_import'
         post 'import_from_excel_file'
-
-        #get 'new_constraints'
       end
+
       resources :constraints
+
       resources :coupons do
         member do
           get "lock"
           get "release"
         end
       end
+
+      resources :reservations
     end
 
     resources :reservations do

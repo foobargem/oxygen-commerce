@@ -1,12 +1,32 @@
+<div class="container_1box">
 
-<%= semantic_form_for [:admin, @reservation] do |f| %>
+  <div class="container_header">
+  </div><!-- container_header -->
 
-  <h3>예약 쿠폰 등록</h3>
+  <div class="unit_content">
 
-  <%= render 'form', :f => f %>
+    <%= render "admin/products/header" %>
 
-  <%= f.buttons do %>
-    <%= f.submit "등록" %>
-  <% end %>
+    <div class="section">
 
-<% end %>
+      <h3>예약하기</h3>
+      <%= semantic_form_for [:admin, @reservation] do |f| %>
+
+        <% if @product.free_type_ticket? %>
+          <%= render "admin/reservations/form_freeticket_#{@reservation.current_step}_step",
+              :product => @product, :coupon => @coupon, :reservation => @reservation, :orders => @orders, :f => f %>
+        <% else %>
+          <%= render "admin/reservations/form_#{@reservation.current_step}_step", :product => @product, :coupon => @coupon, :reservation => @reservation, :f => f %>
+        <% end %>
+
+        <%= f.hidden_field :coupon_id, :value => @coupon.id, :name => "coupon_id" %>
+        <%= f.hidden_field :product_id, :value => @product.id, :name => "product_id" %>
+
+      <% end %>
+
+    </div>
+
+  </div><!-- unit_content -->
+
+</div><!-- container_1box -->
+

@@ -29,6 +29,16 @@ class Reservation < ActiveRecord::Base
   validates_numericality_of :booking_number
 
 
+  attr_writer :user_role
+
+  def user_role
+    @user_role || "user"
+  end
+
+  def validation_bypass?
+    @user_role == "admin"
+  end
+
 
   attr_writer :current_step
 
@@ -142,7 +152,7 @@ class Reservation < ActiveRecord::Base
   end
 
   validates :used_at, :unavailable_date => true,
-                      :unless => :used_at_is_nil?
+                      :unless => Proc.new{ |m| m.used_at_is_nil? || m.validation_bypass? }
 
 
   class ContinuousReservationValidator < ActiveModel::EachValidator
@@ -155,7 +165,7 @@ class Reservation < ActiveRecord::Base
   end
 
   validates :used_at, :continuous_reservation => true,
-                      :unless => :used_at_is_nil?
+                      :unless => Proc.new{ |m| m.used_at_is_nil? || m.validation_bypass? }
 
 
 
@@ -168,7 +178,7 @@ class Reservation < ActiveRecord::Base
   end
 
   validates :used_at, :oneday_reservable => true,
-                      :if => :free_ticket_and_new_record?
+                      :if => Proc.new{ |m| m.free_ticket_and_new_record? && !m.validation_bypass? }
 
 
   def free_ticket_and_new_record?
@@ -198,7 +208,8 @@ class Reservation < ActiveRecord::Base
       end
     end
   end
-  validates :booking_number, :daily_orders_limit => true, :if => :booking_number_validatable?
+  validates :booking_number, :daily_orders_limit => true,
+            :if => Proc.new{ |m| m.booking_number_validatable? && !m.validation_bypass? }
 
 
 

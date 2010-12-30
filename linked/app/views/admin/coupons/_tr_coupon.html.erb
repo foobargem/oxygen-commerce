@@ -10,6 +10,9 @@
   <td class="locked"><%= display_coupon_locked(coupon) %></td>
   <td class="actions">
     <span class="button">
+      <%= link_to "예약하기", new_admin_product_reservation_path(product, :coupon_id => coupon) %>
+    </span>
+    <span class="button">
       <% if coupon.locked? %>
         <%= link_to "사용정지 해제", release_admin_product_coupon_path(product, coupon), :class => "puase" %>
       <% else %>
