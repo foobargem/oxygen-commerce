@@ -11,4 +11,16 @@ module Admin::ProductsHelper
     txt.join(", ")
   end
 
+  def display_constraint_dates(p)
+    if p.product_constraints.size < 1
+      "설정된 날짜가 없습니다."
+    else
+      str = []
+      p.product_constraints.each do |c|
+        str << display_date(c.unavailabled_at)
+      end
+      return "(제외: " + str.join(", ") + ")"
+    end
+  end
+
 end

@@ -887,6 +887,10 @@ dl.section_reservation {
     padding-left: 100px;
     color: #111111; }
 
+.constraint_dates {
+  font-size: 0.9em;
+  color: #cc9999; }
+
 table.not_reviewed {
   margin-bottom: 20px;
   width: 100%; }

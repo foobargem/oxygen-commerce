@@ -6,8 +6,13 @@
   <td class="ticket_type"><%= display_ticket_type(product.ticket_type) %></td>
   <td class="date_range">
     <%= display_date(product.opened_at) %> ~ <%= display_date(product.closed_at) %>
-    <p>
-      <%= link_to "제약설정", [:admin, product, :constraints] %>
+    <p class="constraint_dates">
+      <%= display_constraint_dates(product) %>
+    </p>
+    <p class="actions">
+      <span class="button">
+        <%= link_to "제약설정", [:admin, product, :constraints] %>
+      </span>
     </p>
   </td>
   <td class="actions">
