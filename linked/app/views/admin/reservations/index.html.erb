@@ -55,14 +55,6 @@
         <%= submit_tag "조회" %>
       <% end %>
 
-
-      <ul class="filters">
-        <li><%= link_to "이용일별", "?groupby=used_at" %></li>
-        <li class="spacer">|</li>
-        <li><%= link_to "구매업체별", "?groupby=agency" %></li>
-        <li class="spacer">|</li>
-        <li><%= link_to "판매업체별", "?groupby=provider" %></li>
-      </ul>
     </div>
 
     <% @grouped_reservations.each do |key, reservations| %>
