@@ -1,0 +1,47 @@
+<%= form_tag "/admin/reservations", :method => :get do %>
+  <div class="search_filter">
+    <div class="left">기간:</div>
+    <div class="right">
+      <%= calendar_date_select_tag "starts_at", params[:starts_at], :popup => false, :size => 10 %>
+      ~
+      <%= calendar_date_select_tag "ends_at", params[:ends_at], :popup => false, :size => 10 %>
+    </div>
+  </div>
+
+  <div class="search_filter">
+    <div class="left">그룹:</div>
+    <div class="right">
+      <ul>
+        <li><%= radio_button_tag "groupby", "used_at", (params[:groupby] == "used_at" || params[:groupby].nil? ? true : false) %>이용일</li>
+        <li><%= radio_button_tag "groupby", "agency", (params[:groupby] == "agency" ? true : false) %>판매업체</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="search_filter">
+    <div class="left">스키장:</div>
+    <div class="right">
+      <ul>
+        <% RESORT_OPTIONS.each do |value, text| %>
+          <li><%= check_box_tag "resort[]", value, ((params[:resort] && params[:resort].include?(value)) ? true : false) %><%= text %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="search_filter">
+    <div class="left">사용자명:</div>
+    <div class="right">
+      <%= text_field_tag "user_name", params[:user_name], :size => 14 %></li>
+    </div>
+  </div>
+
+  <div class="search_filter">
+    <div class="left">쿠폰번호:</div>
+    <div class="right">
+      <%= text_field_tag "coupon_number", params[:coupon_number] %></li>
+    </div>
+  </div>
+
+  <%= submit_tag "조회" %>
+<% end %>
