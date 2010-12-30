@@ -5,8 +5,10 @@ module Admin::ReservationsHelper
     case group_by
     when "agency"
       "구매업체: #{key}"
-    when "provider"
-      "공급업체: #{key}"
+    when "product"
+      "상품명: #{key}"
+    when "resort"
+      "스키장: #{RESORT_OPTIONS[key]}"
     else
       "이용일: #{key}"
     end

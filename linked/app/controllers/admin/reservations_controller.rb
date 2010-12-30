@@ -7,7 +7,8 @@ class Admin::ReservationsController < ApplicationController
   layout "admin"
 
   def index
-    reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc").includes(:orders, :coupon, :product)
+    params[:starts_at] ||= Date.today.beginning_of_day
+    reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
 
@@ -97,12 +98,14 @@ class Admin::ReservationsController < ApplicationController
     def group_by_block_statement
       group_by = params[:groupby] || "used_at"
       block = case group_by
-              when "used_at"
-                Proc.new{ |r| r.used_at.to_date }
               when "agency"
                 Proc.new{ |r| r.coupon.agency_name }
-              when "provider"
-                Proc.new{ |r| r.product.provider_name }
+              when "product"
+                Proc.new{ |r| r.product.name }
+              when "resort"
+                Proc.new{ |r| r.resort }
+              else
+                Proc.new{ |r| r.used_at.to_date }
               end
       block
     end

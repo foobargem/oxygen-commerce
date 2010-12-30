@@ -14,6 +14,8 @@
       <ul>
         <li><%= radio_button_tag "groupby", "used_at", (params[:groupby] == "used_at" || params[:groupby].nil? ? true : false) %>이용일</li>
         <li><%= radio_button_tag "groupby", "agency", (params[:groupby] == "agency" ? true : false) %>판매업체</li>
+        <li><%= radio_button_tag "groupby", "product", (params[:groupby] == "product" ? true : false) %>상품명</li>
+        <li><%= radio_button_tag "groupby", "resort", (params[:groupby] == "resort" ? true : false) %>스키장</li>
       </ul>
     </div>
   </div>
