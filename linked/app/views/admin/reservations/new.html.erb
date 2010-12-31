@@ -30,3 +30,30 @@
 
 </div><!-- container_1box -->
 
+
+<script type="text/javascript">
+
+  var toggle_shoe_options = function(ev, ele, wrapper_id) {
+    var _shoe_type = ele.childElements()[ele.selectedIndex].value;
+    var _wrapper_id = wrapper_id;
+    new Ajax.Request("/admin/reservations/toggle_shoe_options", {
+          parameters: { shoe_type: _shoe_type, wrapper_id: _wrapper_id },
+          onSuccess: function(msg) {
+          }
+
+    });
+  };
+
+  Event.observe(window, "load", function() {
+
+    var entry_size = $$('select[name="reservation[orders_attributes][][shoe_type]"]').size();
+
+    for (var i = 0; i < entry_size; i++) {
+      var shoe_type_ele = $$('select[name="reservation[orders_attributes][][shoe_type]"]')[i];
+      shoe_type_ele.observe("change", toggle_shoe_options.bindAsEventListener(this, shoe_type_ele, i));
+    }
+
+  });
+
+</script>
+

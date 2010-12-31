@@ -84,6 +84,8 @@ Linked::Application.routes.draw do
   end
 
 
+  match "/admin/reservations/toggle_shoe_options" => "admin/reservations#toggle_shoe_options"
+
   root :to => 'reservations#index'
 
 end
