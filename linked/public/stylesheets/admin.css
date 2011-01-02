@@ -722,7 +722,7 @@ table.reservations_with_orders {
   table.reservations_with_orders tbody td.actions a {
     padding: 0 2px; }
   table.reservations_with_orders th.subscriber_name {
-    width: 80px; }
+    width: 90px; }
   table.reservations_with_orders th.resort {
     width: 70px; }
   table.reservations_with_orders th.used_at {
@@ -890,6 +890,10 @@ dl.section_reservation {
 .constraint_dates {
   font-size: 0.9em;
   color: #cc9999; }
+
+.sub-desc {
+  font-size: 0.9em;
+  color: #777777; }
 
 table.not_reviewed {
   margin-bottom: 20px;

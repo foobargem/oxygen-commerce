@@ -22,4 +22,10 @@ module Admin::ReservationsHelper
     end
   end
 
+  def display_contact(phone_number)
+    unless phone_number.nil?
+      phone_number
+    end
+  end
+
 end
