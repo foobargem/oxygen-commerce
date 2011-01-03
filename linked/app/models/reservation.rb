@@ -92,7 +92,7 @@ class Reservation < ActiveRecord::Base
       return false
     end
 
-    if current_hour < 12 && !([6, 7].include?(cday))
+    if (current_hour < 12) && !([6, 7].include?(cday))
       return true
     else
       dt = self.used_at
@@ -100,19 +100,19 @@ class Reservation < ActiveRecord::Base
       dt_cweek = dt.to_date.cweek
 
       if current_hour > 12 && cday == 5
-        if [today + 1.day, today + 2.days, today + 3.days].include?(dt)
+        if [today + 1.day, today + 2.days, today + 3.days].include?(dt.to_date)
           return false
         end
       end
 
       if cday == 6
-        if [today + 1.day, today + 2.days].include?(dt)
+        if [today + 1.day, today + 2.days].include?(dt.to_date)
           return false
         end
       end
 
       if cday == 7
-        if [today + 1.day].include?(dt)
+        if [today + 1.day].include?(dt.to_date)
           return false
         end
       end
