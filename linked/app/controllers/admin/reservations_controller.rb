@@ -127,11 +127,15 @@ class Admin::ReservationsController < ApplicationController
 
     def scope_by_cond(scoped)
       unless params[:starts_at].blank?
-        scoped = scoped.where("used_at >= ?", params[:starts_at])
+        if params[:starts_at] =~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
+          scoped = scoped.where("used_at >= ?", params[:starts_at].to_date.beginning_of_day)
+        end
       end
 
       unless params[:ends_at].blank?
-        scoped = scoped.where("reservations.used_at <= ?", params[:ends_at])
+        if params[:ends_at] =~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
+          scoped = scoped.where("reservations.used_at <= ?", params[:ends_at].to_date.end_of_day)
+        end
       end
 
       unless params[:resort].blank?
