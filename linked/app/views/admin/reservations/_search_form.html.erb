@@ -1,4 +1,4 @@
-<%= form_tag "/admin/reservations", :method => :get do %>
+<%= form_tag "/admin/reservations", :method => :get, :id => "search_form" do %>
   <div class="search_filter">
     <div class="left">기간:</div>
     <div class="right">
@@ -46,4 +46,23 @@
   </div>
 
   <%= submit_tag "조회" %>
+  <%= button_to_function "검색 결과를 Excel 로 다운로드하기", "", { :id => "foo" } %>
 <% end %>
+
+
+<script type="text/javascript">
+
+  var export_to_excel = function () {
+    var original_action = $("search_form").action;
+    $("search_form").action = "/admin/reservations/export_to_excel";
+    $("search_form").submit();
+    $("search_form").action = original_action;
+  };
+
+  Event.observe(window, "load", function(){
+
+    Event.observe("foo", "click", export_to_excel.bind(this));
+
+  });
+
+</script>

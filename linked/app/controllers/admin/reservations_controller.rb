@@ -70,7 +70,10 @@ class Admin::ReservationsController < ApplicationController
   end
 
   def export_to_excel
-    reg = ReservationsExcelGenerator.new
+    params[:starts_at] ||= Date.today.beginning_of_day
+    @reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
+
+    reg = ReservationsExcelGenerator.new(@reservations)
     reg.export_to_xls
 
     postfix = Time.zone.now.strftime("%Y%m%d_%H%M")
