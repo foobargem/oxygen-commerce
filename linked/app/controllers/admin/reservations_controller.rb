@@ -7,7 +7,7 @@ class Admin::ReservationsController < ApplicationController
   layout "admin"
 
   def index
-    params[:starts_at] ||= Date.today.beginning_of_day
+    params[:starts_at] ||= Date.today.strftime("%Y-%m-%d")
     reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
