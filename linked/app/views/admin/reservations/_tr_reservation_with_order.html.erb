@@ -1,15 +1,15 @@
 <% reservation = reservation %>
 <% coupon = coupon || reservation.coupon %>
-<% product = product || coupon.product %>
+<% product = product || reservation.product || nil %>
 <% order = order %>
 <tr>
   <td class="subscriber_name">
     <%= reservation.subscriber_name %>
-    <p class="sub-desc"><%= display_contact(coupon.phone_number) %></p>
+    <p class="sub-desc"><%= display_contact(coupon) %></p>
   </td>
   <td class="coupon_number">
     <p><%= display_coupon_number_of_reservation(coupon) %></p>
-    <p class="sub-desc"><%= display_ticket_type(product.ticket_type) %></p>
+    <p class="sub-desc"><%= display_ticket_type(product) %></p>
   </td>
   <td class="resort"><%= display_resort_name(reservation.resort) %></td>
   <td class="used_at"><%= display_date(reservation.used_at) %></td>

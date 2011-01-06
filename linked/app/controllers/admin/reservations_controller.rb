@@ -72,6 +72,7 @@ class Admin::ReservationsController < ApplicationController
   def export_to_excel
     params[:starts_at] ||= Date.today.beginning_of_day
     @reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
+    @reservations = @reservations.where("product_id is not null or coupon_id is not null")
 
     reg = ReservationsExcelGenerator.new(@reservations)
     reg.export_to_xls

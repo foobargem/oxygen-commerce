@@ -3,7 +3,7 @@
   <td class="name"><%= product.name %></td>
   <td class="provider_name"><%= product.provider_name %></td>
   <td class="resort"><%= display_resort(product) %></td>
-  <td class="ticket_type"><%= display_ticket_type(product.ticket_type) %></td>
+  <td class="ticket_type"><%= display_ticket_type(product) %></td>
   <td class="date_range">
     <%= display_date(product.opened_at) %> ~ <%= display_date(product.closed_at) %>
     <p class="constraint_dates">
@@ -23,7 +23,7 @@
       <%= link_to "수정", edit_admin_product_path(product), :class => "approve" %>
     </span>
     <span class="button">
-      <%= link_to "삭제", admin_product_path(product), :confirm => "Are you sure?", :method => :delete, :class => "destroy" %>
+      <%= link_to "삭제", admin_product_path(product), :confirm => "상품을 삭제하시면\n해당 상품의 쿠폰과\n모든 예약내역이 삭제집니다.\n\n삭제하시겠습니까?", :method => :delete, :class => "destroy" %>
     </span>
   </td>
 </tr>

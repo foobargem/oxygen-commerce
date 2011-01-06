@@ -22,9 +22,13 @@ module Admin::ReservationsHelper
     end
   end
 
-  def display_contact(phone_number)
-    unless phone_number.nil?
-      phone_number
+  def display_contact(coupon)
+    unless coupon.nil?
+      unless coupon.phone_number.nil?
+        coupon.phone_number
+      end
+    else
+      "삭제된 쿠폰"
     end
   end
 

@@ -58,7 +58,7 @@ class ReservationsExcelGenerator
           reservation.orders.each do |order|
             sheet.row(row_index).replace [
               reservation.subscriber_name,
-              reservation.coupon.phone_number || "",
+              (reservation.coupon.nil? ? "삭제된쿠폰" : reservation.coupon.phone_number || ""),
               (reservation.coupon.nil? ? "삭제된쿠폰" : reservation.coupon.coupon_number),
               RESORT_OPTIONS[reservation.resort],
               reservation.used_at.to_date,

@@ -1,3 +1,4 @@
+# encoding: utf-8
 module ApplicationHelper
 
   def display_date_with_time(date_time)
@@ -60,11 +61,15 @@ module ApplicationHelper
     end
   end
 
-  def display_ticket_type(ticket_type)
-    if TICKET_TYPE_OPTIONS.has_key?(ticket_type)
-      TICKET_TYPE_OPTIONS[ticket_type]
+  def display_ticket_type(product)
+    unless product.nil?
+      if TICKET_TYPE_OPTIONS.has_key?(product.ticket_type)
+        TICKET_TYPE_OPTIONS[product.ticket_type]
+      else
+        ""
+      end
     else
-      ""
+      "삭제된 상품"
     end
   end
 
