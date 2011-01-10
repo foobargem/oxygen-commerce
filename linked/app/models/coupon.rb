@@ -74,7 +74,7 @@ class Coupon < ActiveRecord::Base
   def unavailable_dates_by_continuous_reservations
     unavailable_dates = []
     if self.product.free_type_ticket?
-      dates = self.reservations.map{ |r| r.used_at.to_date }
+      dates = self.reservations.map{ |r| r.used_at.to_date }.sort
 
       cnt = 1
 
