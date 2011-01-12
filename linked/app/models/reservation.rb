@@ -157,7 +157,7 @@ class Reservation < ActiveRecord::Base
 
   class ContinuousReservationValidator < ActiveModel::EachValidator
     def validate_each(record, attribute, value)
-      unavailable_dates = record.coupon.unavailable_dates_by_continuous_reservations
+      unavailable_dates = record.coupon.unavailable_dates_by_continuous_reservations(value.to_date)
       if unavailable_dates.include?(value.to_date)
         record.errors[attribute] << I18n.t(:continuous_reservation, :scope => [:activerecord, :errors, :messages])
       end
