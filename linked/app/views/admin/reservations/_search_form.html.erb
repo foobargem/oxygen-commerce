@@ -9,6 +9,13 @@
   </div>
 
   <div class="search_filter">
+    <div class="left">예약 등록(작성)일:</div>
+    <div class="right">
+      <%= calendar_date_select_tag "created_at", params[:created_at], :popup => false, :size => 10 %>
+    </div>
+  </div>
+
+  <div class="search_filter">
     <div class="left">그룹:</div>
     <div class="right">
       <ul>

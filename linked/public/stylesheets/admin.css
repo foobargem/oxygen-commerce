@@ -822,7 +822,7 @@ div.search_filter {
   div.search_filter .left {
     display: inline;
     float: left;
-    width: 80px; }
+    width: 120px; }
     div.search_filter .left:after {
       content: ".";
       display: block;

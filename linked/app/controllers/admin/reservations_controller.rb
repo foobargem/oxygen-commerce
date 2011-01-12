@@ -139,6 +139,14 @@ class Admin::ReservationsController < ApplicationController
         end
       end
 
+      unless params[:created_at].blank?
+        if params[:created_at] =~ /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/
+          scoped = scoped.where("reservations.created_at >= ? AND reservations.created_at <= ?",
+                                params[:created_at].to_date.beginning_of_day,
+                                params[:created_at].to_date.end_of_day)
+        end
+      end
+
       unless params[:resort].blank?
         scoped = scoped.where("reservations.resort in (?)", params[:resort])
       end
