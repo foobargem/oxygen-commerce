@@ -29,6 +29,9 @@ class Reservation < ActiveRecord::Base
   validates_numericality_of :booking_number
 
 
+  scope :valid, where("coupon_id is not null")
+
+
   attr_writer :user_role
 
   def user_role

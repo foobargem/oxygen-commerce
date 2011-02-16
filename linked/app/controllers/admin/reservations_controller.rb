@@ -8,7 +8,7 @@ class Admin::ReservationsController < ApplicationController
 
   def index
     params[:starts_at] ||= Date.today.strftime("%Y-%m-%d")
-    reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
+    reservations = scope_by_cond(Reservation.scoped.valid).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
     @grouped_reservations = reservations.group_by(&group_by_block_statement)
   end
 
@@ -71,7 +71,7 @@ class Admin::ReservationsController < ApplicationController
 
   def export_to_excel
     params[:starts_at] ||= Date.today.beginning_of_day
-    @reservations = scope_by_cond(Reservation.scoped).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
+    @reservations = scope_by_cond(Reservation.scoped.valid).order("used_at asc, subscriber_name asc, reservations.resort asc").includes(:orders, :coupon, :product)
     @reservations = @reservations.where("product_id is not null or coupon_id is not null")
 
     reg = ReservationsExcelGenerator.new(@reservations)
