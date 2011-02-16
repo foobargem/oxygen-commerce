@@ -78,7 +78,7 @@ class Admin::ReservationsController < ApplicationController
     reg.export_to_xls
 
     postfix = Time.zone.now.strftime("%Y%m%d_%H%M")
-    download_filename = "예약목록_#{postfix}.xls"
+    download_filename = "ReservationsList_#{postfix}.xls"
 
     send_file(reg.output_file_path, {
       :filename => download_filename,
