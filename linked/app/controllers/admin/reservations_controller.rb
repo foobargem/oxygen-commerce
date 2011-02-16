@@ -81,7 +81,8 @@ class Admin::ReservationsController < ApplicationController
     download_filename = "예약목록_#{postfix}.xls"
 
     send_file(reg.output_file_path, {
-      :filename => download_filename
+      :filename => download_filename,
+      :type => "application/vnd.ms-excel;charset=utf-8"
     })
   end
 
